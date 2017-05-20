@@ -4,32 +4,12 @@
 
     
   <url>
-    <loc>http://www.crocutax.com/2017/05/18/RatingBar%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F/</loc>
-    <lastmod>2017-05-18T14:32:17.300Z</lastmod>
+    <loc>http://www.crocutax.com/2017/05/20/Hexo%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96-%E5%9C%A8%E6%96%87%E7%AB%A0%E5%B0%BE%E9%83%A8%E6%B7%BB%E5%8A%A0%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E%E4%BF%A1%E6%81%AF/</loc>
+    <lastmod>2017-05-20T05:46:31.698Z</lastmod>
     <data>
         <display>
-        <title>RatingBar的基本使用和自定义样式</title>
-        <pubTime>2017-05-18T14:31:18.000Z</pubTime>
-        
-        <tag>心得总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/05/05/Coding-Github%E5%8F%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%89%98%E7%AE%A1%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2017-05-18T13:01:28.123Z</lastmod>
-    <data>
-        <display>
-        <title>Coding+Github双服务器托管个人博客</title>
-        <pubTime>2017-05-05T09:35:07.000Z</pubTime>
+        <title>Hexo持续优化-在文章尾部添加版权声明信息</title>
+        <pubTime>2017-05-20T04:34:32.000Z</pubTime>
         
         <tag>Hexo</tag>
          
@@ -37,390 +17,6 @@
            
              
               <breadCrumb title="Other" url="http://www.crocutax.com/categories/Other/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/05/18/GoogleDrive%E4%BA%91%E7%9B%98%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2017-05-18T13:01:24.366Z</lastmod>
-    <data>
-        <display>
-        <title>GoogleDrive云盘同步本地博客文件</title>
-        <pubTime>2017-05-18T12:15:03.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Other" url="http://www.crocutax.com/categories/Other/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/05/12/RecyclerView%E5%88%86%E5%89%B2%E7%BA%BF-ItemDecoration/</loc>
-    <lastmod>2017-05-12T14:45:38.614Z</lastmod>
-    <data>
-        <display>
-        <title>RecyclerView分割线-ItemDecoration</title>
-        <pubTime>2017-05-12T14:44:33.000Z</pubTime>
-        
-        <tag>心得总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/05/11/Hexo%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1%E3%80%81%E9%98%85%E8%AF%BB%E6%97%B6%E9%95%BF%E3%80%81%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</loc>
-    <lastmod>2017-05-11T02:58:20.515Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo添加字数统计、阅读时长、友情链接</title>
-        <pubTime>2017-05-11T02:24:32.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Other" url="http://www.crocutax.com/categories/Other/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/05/10/Android%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E6%B5%81%E7%A8%8B%E5%8F%8A%E8%BF%94%E5%9B%9E%E7%A0%81-1%E4%B9%8B%E5%9D%91/</loc>
-    <lastmod>2017-05-10T15:02:16.565Z</lastmod>
-    <data>
-        <display>
-        <title>Android微信支付流程及返回码-1之坑</title>
-        <pubTime>2017-05-10T14:45:31.000Z</pubTime>
-        
-        <tag>心得总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2016/05/06/AndroidStudio%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2017-05-09T14:14:07.187Z</lastmod>
-    <data>
-        <display>
-        <title>AndroidStudio自定义配置</title>
-        <pubTime>2016-05-06T11:40:32.000Z</pubTime>
-        
-        <tag>心得总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2016/06/03/AndroidStudio%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2017-05-09T14:14:04.891Z</lastmod>
-    <data>
-        <display>
-        <title>AndroidStudio使用中的问题记录</title>
-        <pubTime>2016-06-03T08:00:11.000Z</pubTime>
-        
-        <tag>心得总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2016/12/23/ViewPager+Fragment%E7%BB%84%E5%90%88%E7%9A%84%E9%A2%84%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%87%92%E5%8A%A0%E8%BD%BD/</loc>
-    <lastmod>2017-05-09T14:14:00.821Z</lastmod>
-    <data>
-        <display>
-        <title>ViewPager+Fragment组合的预加载和懒加载</title>
-        <pubTime>2016-12-23T07:43:51.000Z</pubTime>
-        
-        <tag>心得总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2016/12/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84TextView%E6%8A%80%E5%B7%A7%E7%82%B9%E6%95%B4%E7%90%86/</loc>
-    <lastmod>2017-05-09T14:13:49.836Z</lastmod>
-    <data>
-        <display>
-        <title>开发中的TextView技巧点整理</title>
-        <pubTime>2016-12-28T12:31:12.000Z</pubTime>
-        
-        <tag>心得总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/04/22/Android%E5%BC%80%E5%8F%91%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/</loc>
-    <lastmod>2017-05-09T14:13:47.239Z</lastmod>
-    <data>
-        <display>
-        <title>Android开发命名规范</title>
-        <pubTime>2017-04-22T06:57:24.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/04/25/Android7.0%E9%80%82%E9%85%8D%E4%B9%8BFileProvider%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2017-05-09T14:13:44.428Z</lastmod>
-    <data>
-        <display>
-        <title>Android7.0适配之FileProvider的使用</title>
-        <pubTime>2017-04-25T10:26:01.000Z</pubTime>
-        
-        <tag>版本特性</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/04/25/AndroidStudio%E5%AF%BC%E5%85%A5Eclipse%E9%A1%B9%E7%9B%AE-%E5%A1%AB%E5%9D%91%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2017-05-09T14:13:40.968Z</lastmod>
-    <data>
-        <display>
-        <title>AndroidStudio导入Eclipse项目 填坑记录</title>
-        <pubTime>2017-04-25T03:37:03.000Z</pubTime>
-        
-        <tag>心得总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/05/09/DrawerLayout-%E7%A9%BA%E7%99%BD%E5%8C%BA%E5%9F%9F%E7%82%B9%E5%87%BB%E7%A9%BF%E9%80%8F%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2017-05-09T14:13:25.663Z</lastmod>
-    <data>
-        <display>
-        <title>DrawerLayout 空白区域点击穿透问题</title>
-        <pubTime>2017-05-09T10:59:53.000Z</pubTime>
-        
-        <tag>心得总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/05/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E3%80%8B-GC%E5%AF%B9%E8%B1%A1%E5%88%A4%E5%AE%9A%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2017-05-04T14:11:40.639Z</lastmod>
-    <data>
-        <display>
-        <title>读书笔记-《深入理解Java虚拟机》-GC对象判定算法</title>
-        <pubTime>2017-05-04T14:10:17.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="读书笔记" url="http://www.crocutax.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/05/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E3%80%8B-%E5%AF%B9%E8%B1%A1%E6%8E%A2%E7%A7%98/</loc>
-    <lastmod>2017-05-04T13:16:19.115Z</lastmod>
-    <data>
-        <display>
-        <title>读书笔记-《深入理解Java虚拟机》-对象探秘</title>
-        <pubTime>2017-05-04T13:15:35.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="读书笔记" url="http://www.crocutax.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/05/02/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E3%80%8B-JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</loc>
-    <lastmod>2017-05-02T15:04:41.965Z</lastmod>
-    <data>
-        <display>
-        <title>读书笔记-《深入理解Java虚拟机》-JVM内存模型</title>
-        <pubTime>2017-05-02T15:00:53.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="读书笔记" url="http://www.crocutax.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/05/01/%E6%9C%80%E8%BF%91%E9%9D%A2%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%82%9F/</loc>
-    <lastmod>2017-05-01T14:53:20.237Z</lastmod>
-    <data>
-        <display>
-        <title>最近面试的一些感悟</title>
-        <pubTime>2017-05-01T13:59:28.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Life" url="http://www.crocutax.com/categories/Life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/02/26/%E3%80%8A%E7%94%9F%E5%8C%96%E5%8D%B1%E6%9C%BA-%E7%BB%88%E7%AB%A0%E3%80%8B%E5%92%8C%E3%80%8A%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A1%E3%80%8B%E8%A7%82%E5%BD%B1%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2017-05-01T13:57:43.650Z</lastmod>
-    <data>
-        <display>
-        <title>《生化危机-终章》和《刺客信条》观影随笔</title>
-        <pubTime>2017-02-26T06:57:24.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Life" url="http://www.crocutax.com/categories/Life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/05/01/%E8%87%AA%E6%89%BE%E7%9A%84%E5%8E%8B%E5%8A%9B%E4%B8%8E%E7%84%A6%E8%99%91/</loc>
-    <lastmod>2017-05-01T13:57:30.585Z</lastmod>
-    <data>
-        <display>
-        <title>自找的压力与焦虑</title>
-        <pubTime>2017-05-01T13:16:56.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Life" url="http://www.crocutax.com/categories/Life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/04/23/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2017-05-01T13:57:10.304Z</lastmod>
-    <data>
-        <display>
-        <title>线程池运行原理分析</title>
-        <pubTime>2017-04-23T15:21:08.000Z</pubTime>
-        
-        <tag>原理</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="http://www.crocutax.com/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2017/04/23/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</loc>
-    <lastmod>2017-05-01T13:57:04.035Z</lastmod>
-    <data>
-        <display>
-        <title>线程池基础知识整理</title>
-        <pubTime>2017-04-23T15:16:08.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Java" url="http://www.crocutax.com/categories/Java/"/>
           
         </display>
     </data>
@@ -429,11 +25,31 @@
     
   <url>
     <loc>http://www.crocutax.com/2016/04/01/Java%E5%9F%BA%E7%A1%80-%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6%E5%9B%9E%E9%A1%BE/</loc>
-    <lastmod>2017-05-01T13:55:58.577Z</lastmod>
+    <lastmod>2017-05-20T04:19:28.168Z</lastmod>
     <data>
         <display>
         <title>Java基础-位运算符回顾</title>
         <pubTime>2016-04-01T10:13:32.000Z</pubTime>
+        
+        <tag>基础知识</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://www.crocutax.com/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2016/04/23/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</loc>
+    <lastmod>2017-05-20T04:19:10.651Z</lastmod>
+    <data>
+        <display>
+        <title>线程池基础知识整理</title>
+        <pubTime>2016-04-23T15:16:08.000Z</pubTime>
         
          
            
@@ -446,8 +62,26 @@
 
     
   <url>
+    <loc>http://www.crocutax.com/2016/04/22/Android%E5%BC%80%E5%8F%91%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/</loc>
+    <lastmod>2017-05-20T04:19:06.317Z</lastmod>
+    <data>
+        <display>
+        <title>Android开发命名规范</title>
+        <pubTime>2016-04-22T12:13:47.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.crocutax.com/2016/03/10/Hexo+Github%20Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2017-05-01T13:55:45.994Z</lastmod>
+    <lastmod>2017-05-20T04:18:54.867Z</lastmod>
     <data>
         <display>
         <title>Hexo+Github Pages搭建个人博客</title>
@@ -467,11 +101,431 @@
     
   <url>
     <loc>http://www.crocutax.com/2016/03/01/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E5%AE%9A%E8%A6%81%E6%8D%AF%E9%A5%AC%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</loc>
-    <lastmod>2017-05-01T13:55:30.260Z</lastmod>
+    <lastmod>2017-05-20T04:18:50.722Z</lastmod>
     <data>
         <display>
-        <title>为什么一定要捯饬个人网站？</title>
+        <title>为什么一定要捯饬个人网站</title>
         <pubTime>2016-03-01T05:23:52.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Other" url="http://www.crocutax.com/categories/Other/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2016/05/06/AndroidStudio%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2017-05-20T04:18:27.109Z</lastmod>
+    <data>
+        <display>
+        <title>AndroidStudio自定义配置</title>
+        <pubTime>2016-05-06T06:14:07.000Z</pubTime>
+        
+        <tag>经验总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2016/06/03/AndroidStudio%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2017-05-20T04:18:20.860Z</lastmod>
+    <data>
+        <display>
+        <title>AndroidStudio使用中的问题记录</title>
+        <pubTime>2016-06-03T11:14:04.000Z</pubTime>
+        
+        <tag>经验总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2016/12/23/ViewPager+Fragment%E7%BB%84%E5%90%88%E7%9A%84%E9%A2%84%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%87%92%E5%8A%A0%E8%BD%BD/</loc>
+    <lastmod>2017-05-20T04:18:14.981Z</lastmod>
+    <data>
+        <display>
+        <title>ViewPager+Fragment组合的预加载和懒加载</title>
+        <pubTime>2016-12-23T07:43:51.000Z</pubTime>
+        
+        <tag>经验总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2016/12/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84TextView%E6%8A%80%E5%B7%A7%E7%82%B9%E6%95%B4%E7%90%86/</loc>
+    <lastmod>2017-05-20T04:18:09.962Z</lastmod>
+    <data>
+        <display>
+        <title>开发中的TextView技巧点整理</title>
+        <pubTime>2016-12-28T13:31:12.000Z</pubTime>
+        
+        <tag>经验总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2016/02/26/%E3%80%8A%E7%94%9F%E5%8C%96%E5%8D%B1%E6%9C%BA-%E7%BB%88%E7%AB%A0%E3%80%8B%E5%92%8C%E3%80%8A%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A1%E3%80%8B%E8%A7%82%E5%BD%B1%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2017-05-20T04:18:04.432Z</lastmod>
+    <data>
+        <display>
+        <title>《生化危机-终章》和《刺客信条》观影随笔</title>
+        <pubTime>2016-02-26T06:57:24.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Life" url="http://www.crocutax.com/categories/Life/"/>
+          
+             
+              <breadCrumb title="观影感悟" url="http://www.crocutax.com/categories/Life/%E8%A7%82%E5%BD%B1%E6%84%9F%E6%82%9F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2016/05/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E3%80%8B-%E5%AF%B9%E8%B1%A1%E6%8E%A2%E7%A7%98/</loc>
+    <lastmod>2017-05-20T04:17:57.335Z</lastmod>
+    <data>
+        <display>
+        <title>读书笔记-《深入理解Java虚拟机》-对象探秘</title>
+        <pubTime>2016-05-04T13:15:35.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://www.crocutax.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="《深入理解Java虚拟机》" url="http://www.crocutax.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E3%80%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2016/04/25/Android7.0%E9%80%82%E9%85%8D%E4%B9%8BFileProvider%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2017-05-20T04:17:52.469Z</lastmod>
+    <data>
+        <display>
+        <title>Android7.0适配之FileProvider的使用</title>
+        <pubTime>2016-04-25T10:26:01.000Z</pubTime>
+        
+        <tag>版本特性</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2016/04/23/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2017-05-20T04:17:03.449Z</lastmod>
+    <data>
+        <display>
+        <title>线程池运行原理分析</title>
+        <pubTime>2016-04-23T14:25:08.000Z</pubTime>
+        
+        <tag>原理</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://www.crocutax.com/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2016/04/25/AndroidStudio%E5%AF%BC%E5%85%A5Eclipse%E9%A1%B9%E7%9B%AE-%E5%A1%AB%E5%9D%91%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2017-05-20T04:16:57.508Z</lastmod>
+    <data>
+        <display>
+        <title>AndroidStudio导入Eclipse项目-填坑记录</title>
+        <pubTime>2016-04-25T03:37:03.000Z</pubTime>
+        
+        <tag>经验总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2016/05/01/%E6%9C%80%E8%BF%91%E9%9D%A2%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%82%9F/</loc>
+    <lastmod>2017-05-20T04:16:52.470Z</lastmod>
+    <data>
+        <display>
+        <title>自找的压力与焦虑</title>
+        <pubTime>2016-05-01T13:16:56.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Life" url="http://www.crocutax.com/categories/Life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2016/05/01/%E8%87%AA%E6%89%BE%E7%9A%84%E5%8E%8B%E5%8A%9B%E4%B8%8E%E7%84%A6%E8%99%91/</loc>
+    <lastmod>2017-05-20T04:16:48.013Z</lastmod>
+    <data>
+        <display>
+        <title>自找的压力与焦虑</title>
+        <pubTime>2016-05-01T13:16:56.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Life" url="http://www.crocutax.com/categories/Life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2016/05/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E3%80%8B-GC%E5%AF%B9%E8%B1%A1%E5%88%A4%E5%AE%9A%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2017-05-20T04:16:42.406Z</lastmod>
+    <data>
+        <display>
+        <title>读书笔记-《深入理解Java虚拟机》-GC对象判定算法</title>
+        <pubTime>2016-05-04T14:10:17.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://www.crocutax.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="《深入理解Java虚拟机》" url="http://www.crocutax.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E3%80%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2016/05/02/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E3%80%8B-JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</loc>
+    <lastmod>2017-05-20T04:16:37.132Z</lastmod>
+    <data>
+        <display>
+        <title>读书笔记-《深入理解Java虚拟机》-JVM内存模型</title>
+        <pubTime>2016-05-02T15:00:53.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://www.crocutax.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="《深入理解Java虚拟机》" url="http://www.crocutax.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E3%80%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2016/05/05/Coding+Github%E5%8F%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%89%98%E7%AE%A1%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2017-05-20T04:16:26.042Z</lastmod>
+    <data>
+        <display>
+        <title>Coding+Github双服务器托管个人博客</title>
+        <pubTime>2016-05-05T09:35:07.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Other" url="http://www.crocutax.com/categories/Other/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2017/05/18/RatingBar%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F/</loc>
+    <lastmod>2017-05-20T04:16:18.649Z</lastmod>
+    <data>
+        <display>
+        <title>RatingBar的基本使用和自定义样式</title>
+        <pubTime>2017-05-18T14:31:18.000Z</pubTime>
+        
+        <tag>经验总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2017/05/18/GoogleDrive%E4%BA%91%E7%9B%98%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2017-05-20T04:16:13.196Z</lastmod>
+    <data>
+        <display>
+        <title>GoogleDrive云盘同步本地博客文件</title>
+        <pubTime>2017-05-18T12:15:03.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Other" url="http://www.crocutax.com/categories/Other/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2017/05/12/RecyclerView%E5%88%86%E5%89%B2%E7%BA%BF-ItemDecoration/</loc>
+    <lastmod>2017-05-20T04:16:08.048Z</lastmod>
+    <data>
+        <display>
+        <title>RecyclerView分割线-ItemDecoration</title>
+        <pubTime>2017-05-12T14:44:33.000Z</pubTime>
+        
+        <tag>经验总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2017/05/11/Hexo%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1%E3%80%81%E9%98%85%E8%AF%BB%E6%97%B6%E9%95%BF%E3%80%81%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</loc>
+    <lastmod>2017-05-20T04:16:01.518Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo添加字数统计、阅读时长、友情链接</title>
+        <pubTime>2017-05-11T02:24:32.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Other" url="http://www.crocutax.com/categories/Other/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2017/05/10/Android%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E6%B5%81%E7%A8%8B%E5%8F%8A%E8%BF%94%E5%9B%9E%E7%A0%81-1%E4%B9%8B%E5%9D%91/</loc>
+    <lastmod>2017-05-20T04:15:56.608Z</lastmod>
+    <data>
+        <display>
+        <title>Android微信支付流程及返回码-1之坑</title>
+        <pubTime>2017-05-10T14:45:31.000Z</pubTime>
+        
+        <tag>经验总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2017/05/09/DrawerLayout-%E7%A9%BA%E7%99%BD%E5%8C%BA%E5%9F%9F%E7%82%B9%E5%87%BB%E7%A9%BF%E9%80%8F%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2017-05-20T04:15:45.274Z</lastmod>
+    <data>
+        <display>
+        <title>开发中的TextView技巧点整理</title>
+        <pubTime>2017-05-09T10:59:53.000Z</pubTime>
+        
+        <tag>经验总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2017/05/20/Hexo%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96-%E5%88%9B%E5%BB%BA%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2/</loc>
+    <lastmod>2017-05-20T02:22:08.308Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo持续优化-创建分类和标签页面</title>
+        <pubTime>2017-05-20T02:03:58.000Z</pubTime>
         
         <tag>Hexo</tag>
          
