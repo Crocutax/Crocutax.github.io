@@ -9,14 +9,15 @@ http://www.crocutax.com/2017/05/10/Android微信支付流程及返回码-1之坑
 http://www.crocutax.com/2017/05/09/DrawerLayout-空白区域点击穿透问题/
 http://www.crocutax.com/2016/12/28/开发中的TextView技巧点整理/
 http://www.crocutax.com/2016/12/23/ViewPager+Fragment组合的预加载和懒加载/
+http://www.crocutax.com/2016/10/02/笔记-代码家学习经验分享/
 http://www.crocutax.com/2016/06/03/AndroidStudio使用中的问题记录/
 http://www.crocutax.com/2016/05/06/AndroidStudio自定义配置/
 http://www.crocutax.com/2016/05/05/Coding+Github双服务器托管个人博客/
 http://www.crocutax.com/2016/05/04/读书笔记-《深入理解Java虚拟机》-GC对象判定算法/
 http://www.crocutax.com/2016/05/04/读书笔记-《深入理解Java虚拟机》-对象探秘/
 http://www.crocutax.com/2016/05/02/读书笔记-《深入理解Java虚拟机》-JVM内存模型/
-http://www.crocutax.com/2016/05/01/自找的压力与焦虑/
 http://www.crocutax.com/2016/05/01/最近面试的一些感悟/
+http://www.crocutax.com/2016/05/01/自找的压力与焦虑/
 http://www.crocutax.com/2016/04/25/Android7.0适配之FileProvider的使用/
 http://www.crocutax.com/2016/04/25/AndroidStudio导入Eclipse项目-填坑记录/
 http://www.crocutax.com/2016/04/23/线程池基础知识整理/

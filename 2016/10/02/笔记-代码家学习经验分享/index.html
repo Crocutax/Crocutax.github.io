@@ -92,18 +92,16 @@
 
 
 
-<meta name="description" content="Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域，这些区域都有各自不同的用途：  程序计数器程序计数器（Program Counter Register）是一块较小的内存空间，属于线程私有区域，此区域是唯一一个在Java虚拟机规范中没有规定任何OutOfMemoryError情况的区域。 作用：当前线程所执行的字节码的行号指示器。 在虚拟机概念模型中，字节码解释">
+<meta name="description" content="在微信公众号上看了代码家的分享文章 分享一些自己的学习历程和学习建议 ,了解到了大神的学习方法，颇有收获。 对比自己，发现确实是二手知识获取的太多了，一手知识和自主思考太少了，学习时越轻松，工作时越麻烦，而真正应有的学习方式应该是反过来。 技术永无止境，而学习方式也尤其重要，整理阅读笔记如下： 学习的三个阶段 第一阶段：消费者阶段 第二阶段：实践者阶段 第三阶段：创造者阶段  真正的学习学习的过程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="读书笔记-《深入理解Java虚拟机》-JVM内存模型">
-<meta property="og:url" content="http://www.crocutax.com/2016/05/02/读书笔记-《深入理解Java虚拟机》-JVM内存模型/index.html">
+<meta property="og:title" content="笔记-代码家学习经验分享">
+<meta property="og:url" content="http://www.crocutax.com/2016/10/02/笔记-代码家学习经验分享/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
-<meta property="og:description" content="Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域，这些区域都有各自不同的用途：  程序计数器程序计数器（Program Counter Register）是一块较小的内存空间，属于线程私有区域，此区域是唯一一个在Java虚拟机规范中没有规定任何OutOfMemoryError情况的区域。 作用：当前线程所执行的字节码的行号指示器。 在虚拟机概念模型中，字节码解释">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-94fef5834e5f47ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-05-27T02:01:23.253Z">
+<meta property="og:description" content="在微信公众号上看了代码家的分享文章 分享一些自己的学习历程和学习建议 ,了解到了大神的学习方法，颇有收获。 对比自己，发现确实是二手知识获取的太多了，一手知识和自主思考太少了，学习时越轻松，工作时越麻烦，而真正应有的学习方式应该是反过来。 技术永无止境，而学习方式也尤其重要，整理阅读笔记如下： 学习的三个阶段 第一阶段：消费者阶段 第二阶段：实践者阶段 第三阶段：创造者阶段  真正的学习学习的过程">
+<meta property="og:updated_time" content="2017-05-27T02:01:09.338Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="读书笔记-《深入理解Java虚拟机》-JVM内存模型">
-<meta name="twitter:description" content="Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域，这些区域都有各自不同的用途：  程序计数器程序计数器（Program Counter Register）是一块较小的内存空间，属于线程私有区域，此区域是唯一一个在Java虚拟机规范中没有规定任何OutOfMemoryError情况的区域。 作用：当前线程所执行的字节码的行号指示器。 在虚拟机概念模型中，字节码解释">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1958298-94fef5834e5f47ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="笔记-代码家学习经验分享">
+<meta name="twitter:description" content="在微信公众号上看了代码家的分享文章 分享一些自己的学习历程和学习建议 ,了解到了大神的学习方法，颇有收获。 对比自己，发现确实是二手知识获取的太多了，一手知识和自主思考太少了，学习时越轻松，工作时越麻烦，而真正应有的学习方式应该是反过来。 技术永无止境，而学习方式也尤其重要，整理阅读笔记如下： 学习的三个阶段 第一阶段：消费者阶段 第二阶段：实践者阶段 第三阶段：创造者阶段  真正的学习学习的过程">
 
 
 
@@ -131,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://www.crocutax.com/2016/05/02/读书笔记-《深入理解Java虚拟机》-JVM内存模型/"/>
+  <link rel="canonical" href="http://www.crocutax.com/2016/10/02/笔记-代码家学习经验分享/"/>
 
 
 
 
 
-  <title>读书笔记-《深入理解Java虚拟机》-JVM内存模型 | Crocutax's Blog</title>
+  <title>笔记-代码家学习经验分享 | Crocutax's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -276,7 +274,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2016/05/02/读书笔记-《深入理解Java虚拟机》-JVM内存模型/">
+    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2016/10/02/笔记-代码家学习经验分享/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Crocutax">
@@ -297,7 +295,7 @@
             
             
               
-                读书笔记-《深入理解Java虚拟机》-JVM内存模型
+                笔记-代码家学习经验分享
               
             
           </h1>
@@ -312,8 +310,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-02T23:00:53+08:00">
-                2016-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-02T09:46:51+08:00">
+                2016-10-02
               </time>
             
 
@@ -342,17 +340,6 @@
 
                 
                 
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Note/《深入理解Java虚拟机》/" itemprop="url" rel="index">
-                    <span itemprop="name">《深入理解Java虚拟机》</span>
-                  </a>
-                </span>
-
-                
-                
               
             </span>
           
@@ -364,7 +351,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2016/05/02/读书笔记-《深入理解Java虚拟机》-JVM内存模型/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2016/10/02/笔记-代码家学习经验分享/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -373,7 +360,7 @@
 
           
           
-             <span id="/2016/05/02/读书笔记-《深入理解Java虚拟机》-JVM内存模型/" class="leancloud_visitors" data-flag-title="读书笔记-《深入理解Java虚拟机》-JVM内存模型">
+             <span id="/2016/10/02/笔记-代码家学习经验分享/" class="leancloud_visitors" data-flag-title="笔记-代码家学习经验分享">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -398,7 +385,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,368 字
+                  559 字
                 </span>
               
 
@@ -414,7 +401,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -432,52 +419,29 @@
       
 
       
-        <p>Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域，这些区域都有各自不同的用途：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1958298-94fef5834e5f47ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="JVM内存模型图.png"></p>
-<h1 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h1><p>程序计数器（Program Counter Register）是一块较小的内存空间，属于线程私有区域，此区域是唯一一个在Java虚拟机规范中没有规定任何OutOfMemoryError情况的区域。</p>
-<p><strong>作用：</strong><br>当前线程所执行的字节码的行号指示器。</p>
-<p>在虚拟机概念模型中，字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常处理、线程恢复等都依赖此计数器。</p>
-<p><strong>为什么该区域属于线程私有</strong><br>Java虚拟机的多线程是通过：线程轮流切换，并分配CPU执行时间的方式来实现的（CPU在任何一个确定的时刻只会执行【一条线程】中的指令）。为了线程切换后能恢复到正确的执行位置，每条线程都需要有一个独立的程序计数器，不同线程之间互不影响，独立存储。</p>
-<h1 id="Java虚拟机栈"><a href="#Java虚拟机栈" class="headerlink" title="Java虚拟机栈"></a>Java虚拟机栈</h1><p>Java虚拟机栈（Java Virtual Machine Stacks）描述的是Java方法执行的内存模型：每个方法在执行的同时都会创建一个栈帧（方法运行时的基础数据结构）用于存储局部变量表、操作数栈、动态链接、方法出口等信息，每个方法从调用直至执行完毕，就对应着一个栈帧在虚拟机栈中入栈到出栈的过程。</p>
-<p><strong>注意事项：</strong></p>
-<ul>
-<li>线程私有区域，生命周期与线程一致。</li>
-<li>局部变量表存放了<strong>编译期</strong>可知的各种基本数据类型，对象引用</li>
-<li>64位长度的long和double类型的数据占用2个Slot，其余数据类型只占1个</li>
-<li>局部变量表所需的内存空间在编译期间完成分配，运行期间方法入栈时在帧中分配的局部变量空间是确定的，不会发生改变。</li>
+        <p>在微信公众号上看了代码家的分享文章 <a href="https://mp.weixin.qq.com/s?__biz=MzA3MDQ2OTQ3Mw%3D%3D&amp;mid=2652591829&amp;idx=1&amp;sn=defd4cfb64adc6dfbf0b8c63c7420768" target="_blank" rel="external">分享一些自己的学习历程和学习建议</a> ,了解到了大神的学习方法，颇有收获。</p>
+<p>对比自己，发现确实是二手知识获取的太多了，一手知识和自主思考太少了，学习时越轻松，工作时越麻烦，而真正应有的学习方式应该是反过来。</p>
+<p>技术永无止境，而学习方式也尤其重要，整理阅读笔记如下：</p>
+<h1 id="学习的三个阶段"><a href="#学习的三个阶段" class="headerlink" title="学习的三个阶段"></a>学习的三个阶段</h1><ul>
+<li>第一阶段：消费者阶段</li>
+<li>第二阶段：实践者阶段</li>
+<li>第三阶段：创造者阶段</li>
 </ul>
-<p><strong>本区域的两种异常：</strong></p>
-<ul>
-<li>StackOverflowError<br>如果线程请求的栈深度大于虚拟机锁允许的深度，则抛出此异常。</li>
-<li>OutOfMemoryError<br>虚拟机扩展时无法申请到足够的内存时，抛出此异常。</li>
+<h1 id="真正的学习"><a href="#真正的学习" class="headerlink" title="真正的学习"></a>真正的学习</h1><p>学习的过程都是伴随着思考和痛苦的，如果你边笑边学习（学习过程非常轻松），那你真的得醒醒了</p>
+<h1 id="目标和激励很重要"><a href="#目标和激励很重要" class="headerlink" title="目标和激励很重要"></a>目标和激励很重要</h1><p>用小Demo做目标,而不是一味的学习，一味的输入知识.有激励才有动力,持续的输入而没有输出,会很快丧失兴趣和动力.</p>
+<p>用适度的成果输出来激励自己，能更高的提升知识输入的效率和效果。</p>
+<h1 id="你永远无法一步达到完美"><a href="#你永远无法一步达到完美" class="headerlink" title="你永远无法一步达到完美"></a>你永远无法一步达到完美</h1><p>以最低成本去展现你想法的核心部分，后期再迭代，而非直接做一个大而全的方案</p>
+<h1 id="赶在兴趣消失之前，马上开始学习新知识"><a href="#赶在兴趣消失之前，马上开始学习新知识" class="headerlink" title="赶在兴趣消失之前，马上开始学习新知识"></a>赶在兴趣消失之前，马上开始学习新知识</h1><p>如果对哪门新技术产生了兴趣，不要往后拖,赶紧去入个门,否则这个兴趣会很快消失,而自己也失去了一次了解新知识的机会.</p>
+<h1 id="少看别人写的文章，多看优秀的代码"><a href="#少看别人写的文章，多看优秀的代码" class="headerlink" title="少看别人写的文章，多看优秀的代码"></a>少看别人写的文章，多看优秀的代码</h1><p>慢慢减少对二手知识的依赖,多学习官方文档,源码,更加全面的培养自主知识体系和解决问题的能力</p>
+<h1 id="收藏的意义不大"><a href="#收藏的意义不大" class="headerlink" title="收藏的意义不大"></a>收藏的意义不大</h1><ul>
+<li>以后不会看的,没有时间.</li>
+<li>如果以后用到了,再去Google就可以了,说不定能找到更好的.</li>
 </ul>
-<h1 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h1><p>本地方法栈（Native Method Stack）与Java虚拟机栈作用类似，区别在于前者服务于Native方法，而后者服务于Java方法。</p>
-<p>虚拟机规范中对应本地方法栈中方法使用的语言、使用方式与数据结构并没有强制规定，因此具体的虚拟机实现方式各自不同。其中Sun HotSpot虚拟机直接把<strong>本地方法栈</strong> 和 <strong>Java虚拟机栈</strong>合二为一了。</p>
-<p>和Java虚拟机栈一样，本地方法栈也会抛出<code>StackOverflowError</code>和<code>OutOfMemoryError</code>异常。</p>
-<h1 id="Java堆"><a href="#Java堆" class="headerlink" title="Java堆"></a>Java堆</h1><ul>
-<li>此区域的作用是存放对象的实例，几乎所有的对象实例都在这里分配内存。</li>
-<li>该区域是被所有线程共享的一块内存区域，在虚拟机启动时创建。</li>
-<li>该区域是垃圾回收器管理的主要区域</li>
-<li>从内存回收中分代收集的角度看，该区域可分为：新生代和老年代。</li>
-<li>该区域的内存空间可以是不连续的，只要逻辑上连续即可（类似磁盘空间）</li>
-<li>如果对中没有内存完成实例分配，并且堆也无法再扩展时，抛出<code>OutOfMemoryError</code>异常</li>
+<h1 id="培养一些对产品的感觉"><a href="#培养一些对产品的感觉" class="headerlink" title="培养一些对产品的感觉"></a>培养一些对产品的感觉</h1><ul>
+<li>培养产品经理的思维,而不是一味的做一个码农</li>
+<li>每个人都应该有个 idea list</li>
 </ul>
-<h1 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h1><ul>
-<li>方法区（Method Area）用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据</li>
-<li>如果GC分代收集扩展至方法区，那么该区域一般被称为“永久代”。但是不同的虚拟机对此的定义，有所不同。</li>
-<li>垃圾回收在此区域比较少出现，一般是针对常量池的回收，和对类型的卸载。</li>
-<li>当方法区无法满足内存分配需求时，将抛出<code>OutOfMemoryError</code></li>
-</ul>
-<h1 id="运行时常量池"><a href="#运行时常量池" class="headerlink" title="运行时常量池"></a>运行时常量池</h1><ul>
-<li>运行时常量池（Runtime Constant Pool）是方法区的一部分，Class文件中除了有类的版本、字段、方法、接口等描述信息外，还有一项信息是常量池（Constant Pool Table），用于存放编译器生成的各种字面量和符号引用，这部分内容将在类加载后进入方法区的运行时常量池中。</li>
-<li>运行时常量池相对于Class文件常量池而言更具动态性。</li>
-<li>受方法区内存的限制，当常量池无法再申请到内存时会抛出<code>OutOfMemoryError</code></li>
-</ul>
-<h1 id="直接内存"><a href="#直接内存" class="headerlink" title="直接内存"></a>直接内存</h1><ul>
-<li>在JDK1.4中引入了NIO类，一种基于通过（Channel）与缓冲区（Buffer）的IO方式，它可以使用Native函数库直接分配堆外内存，然后通过一个存储在Java堆中的DirectByteBuffer对象作为这块内存的引用进行操作。由于变了在Java堆和Native堆中来回复制数据，因此在一些场景中可以显著提高性能。</li>
-<li>直接内存（Direct Memory）并不是虚拟机运行时数据的一部分</li>
-<li>直接内存的分配不会受Java堆内存大小的限制，但是受本机总内存大小以及处理器寻址空间的限制。</li>
-</ul>
+<h1 id="争取去更优秀的地方"><a href="#争取去更优秀的地方" class="headerlink" title="争取去更优秀的地方"></a>争取去更优秀的地方</h1><p>顾名思义</p>
 
       
     </div>
@@ -537,16 +501,16 @@
 
             <li class="post-copyright-link">
               <strong>本文标题：</strong>
-              <a href="http://www.crocutax.com/2016/05/02/读书笔记-《深入理解Java虚拟机》-JVM内存模型/" title="读书笔记-《深入理解Java虚拟机》-JVM内存模型">读书笔记-《深入理解Java虚拟机》-JVM内存模型</a>
+              <a href="http://www.crocutax.com/2016/10/02/笔记-代码家学习经验分享/" title="笔记-代码家学习经验分享">笔记-代码家学习经验分享</a>
             </li>
 
             <li class="post-copyright-link">
               <strong>本文链接：</strong>
-              <a href="http://www.crocutax.com/2016/05/02/读书笔记-《深入理解Java虚拟机》-JVM内存模型/" title="读书笔记-《深入理解Java虚拟机》-JVM内存模型">http://www.crocutax.com/2016/05/02/读书笔记-《深入理解Java虚拟机》-JVM内存模型/</a>
+              <a href="http://www.crocutax.com/2016/10/02/笔记-代码家学习经验分享/" title="笔记-代码家学习经验分享">http://www.crocutax.com/2016/10/02/笔记-代码家学习经验分享/</a>
             </li>
 
             <li class="post-copyright-date">
-                <strong>发布时间：</strong>2016年5月2日 - 23时05分
+                <strong>发布时间：</strong>2016年10月2日 - 09时10分
             </li>  
 
             <li class="post-copyright-license">
@@ -568,8 +532,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/01/最近面试的一些感悟/" rel="next" title="自找的压力与焦虑">
-                <i class="fa fa-chevron-left"></i> 自找的压力与焦虑
+              <a href="/2016/06/03/AndroidStudio使用中的问题记录/" rel="next" title="AndroidStudio使用中的问题记录">
+                <i class="fa fa-chevron-left"></i> AndroidStudio使用中的问题记录
               </a>
             
           </div>
@@ -578,8 +542,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/04/读书笔记-《深入理解Java虚拟机》-对象探秘/" rel="prev" title="读书笔记-《深入理解Java虚拟机》-对象探秘">
-                读书笔记-《深入理解Java虚拟机》-对象探秘 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/23/ViewPager+Fragment组合的预加载和懒加载/" rel="prev" title="ViewPager+Fragment组合的预加载和懒加载">
+                ViewPager+Fragment组合的预加载和懒加载 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -764,7 +728,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#程序计数器"><span class="nav-number">1.</span> <span class="nav-text">程序计数器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java虚拟机栈"><span class="nav-number">2.</span> <span class="nav-text">Java虚拟机栈</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地方法栈"><span class="nav-number">3.</span> <span class="nav-text">本地方法栈</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java堆"><span class="nav-number">4.</span> <span class="nav-text">Java堆</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法区"><span class="nav-number">5.</span> <span class="nav-text">方法区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行时常量池"><span class="nav-number">6.</span> <span class="nav-text">运行时常量池</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#直接内存"><span class="nav-number">7.</span> <span class="nav-text">直接内存</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#学习的三个阶段"><span class="nav-number">1.</span> <span class="nav-text">学习的三个阶段</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#真正的学习"><span class="nav-number">2.</span> <span class="nav-text">真正的学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目标和激励很重要"><span class="nav-number">3.</span> <span class="nav-text">目标和激励很重要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#你永远无法一步达到完美"><span class="nav-number">4.</span> <span class="nav-text">你永远无法一步达到完美</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#赶在兴趣消失之前，马上开始学习新知识"><span class="nav-number">5.</span> <span class="nav-text">赶在兴趣消失之前，马上开始学习新知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#少看别人写的文章，多看优秀的代码"><span class="nav-number">6.</span> <span class="nav-text">少看别人写的文章，多看优秀的代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#收藏的意义不大"><span class="nav-number">7.</span> <span class="nav-text">收藏的意义不大</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#培养一些对产品的感觉"><span class="nav-number">8.</span> <span class="nav-text">培养一些对产品的感觉</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#争取去更优秀的地方"><span class="nav-number">9.</span> <span class="nav-text">争取去更优秀的地方</span></a></li></ol></div>
             
 
           </div>
