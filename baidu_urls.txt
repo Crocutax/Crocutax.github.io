@@ -22,7 +22,7 @@ http://www.crocutax.com/2016/04/25/Android7.0适配之FileProvider的使用/
 http://www.crocutax.com/2016/04/25/AndroidStudio导入Eclipse项目-填坑记录/
 http://www.crocutax.com/2016/04/23/线程池基础知识整理/
 http://www.crocutax.com/2016/04/23/线程池运行原理分析/
-http://www.crocutax.com/2016/04/22/Android开发命名规范/
+http://www.crocutax.com/2016/04/22/Android开发规范/
 http://www.crocutax.com/2016/04/01/Java基础-位运算符回顾/
 http://www.crocutax.com/2016/03/10/Hexo+Github Pages搭建个人博客/
 http://www.crocutax.com/2016/03/01/为什么一定要捯饬个人网站/
