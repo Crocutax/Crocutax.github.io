@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://www.crocutax.com/2016/05/06/AndroidStudio自定义配置/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="AndroidStudio主题官方主题站,另外还有一个 国内站点   ,下载速度会快一些. 将主题jar包下载下来 , AS中点击左上角File–&amp;gt;,import settings,导入jar包即可. AS项目中哪些文件需要保留,哪些是自动生成的?需要保留的有:   Project下,3个   app build.gradle settings.gradle   Module下 , 4个">
-<meta property="og:updated_time" content="2017-05-20T04:18:27.109Z">
+<meta property="og:updated_time" content="2017-05-29T08:05:35.788Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AndroidStudio自定义配置">
 <meta name="twitter:description" content="AndroidStudio主题官方主题站,另外还有一个 国内站点   ,下载速度会快一些. 将主题jar包下载下来 , AS中点击左上角File–&amp;gt;,import settings,导入jar包即可. AS项目中哪些文件需要保留,哪些是自动生成的?需要保留的有:   Project下,3个   app build.gradle settings.gradle   Module下 , 4个">
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  703 字
+                  916 字
                 </span>
               
 
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -447,6 +447,32 @@
 <h1 id="Offline离线模式"><a href="#Offline离线模式" class="headerlink" title="Offline离线模式"></a>Offline离线模式</h1><p>Settings –&gt;Build,Execution,Deployment–&gt;Gradle–&gt;勾选Offline work<br>优点 : 提高项目的编译效率,不用每次都去联网更新.<br>缺点 : 当导入一些其他项目时,可能需要去下载一些依赖,如果离线,则无限下载.导致项目无法使用. 而且很多远程依赖会定期更新,采用离线模式无法达到及时更新.</p>
 <h1 id="修改字体大小"><a href="#修改字体大小" class="headerlink" title="修改字体大小"></a>修改字体大小</h1><p>1.修改编辑区字体大小<br>Settings–&gt;Editor–&gt;Colors&amp;Fonts–&gt;Font–&gt;Save AS         保存自己的风格.然后就可以修改字体,并使用自定义的风格了.    </p>
 <p>2.修改工程目录区字体大小<br>Settings–&gt;Appearance–&gt;修改字体大小即可</p>
+<h1 id="添加-更换字体"><a href="#添加-更换字体" class="headerlink" title="添加/更换字体"></a>添加/更换字体</h1><p>Settings–&gt;Editor–&gt;Colors&amp;Fonts–&gt;Font–&gt;Editor Font选项 选择字体喜欢的字体.</p>
+<p><strong>Show only monospace fonts</strong> 表示是否 [只显示等宽字体]</p>
+<blockquote>
+<p>另外,可以去网上搜索下载自己喜欢的字体样式,然后按照如下方式配置</p>
+</blockquote>
+<ol>
+<li>下载字体文件,Windows下使用 <strong>ttf</strong> 格式的字体文件</li>
+<li>安装字体文件<ol>
+<li>方式1:直接双击ttf文件-&gt;安装(推荐方式)</li>
+<li>方式2:把该字体复制粘贴到C:\Windows\Fonts目录下,系统会自动把该字体安装</li>
+</ol>
+</li>
+<li>重启AndroidStudio</li>
+</ol>
+<p>AndroidStudio的字体默认也是从系统字体中选择的,经过以上配置,就可以使用自己想要的字体了.</p>
+<p>个人比较喜欢的字体样式有:</p>
+<ul>
+<li>consolas</li>
+<li>Fira</li>
+<li>menlo</li>
+<li>monaco</li>
+<li>UbuntuMono</li>
+<li>Source Code Pro</li>
+</ul>
+<p>下载地址:</p>
+<p><a href="http://download.csdn.net/detail/wangxw725/9855412" target="_blank" rel="external">AndroidStudio常用字体备份</a></p>
 <h1 id="代码块-方法分割线"><a href="#代码块-方法分割线" class="headerlink" title="代码块/方法分割线"></a>代码块/方法分割线</h1><p>Settings–&gt;Editor–&gt;General–&gt;Appearance–&gt;Show Method separators    </p>
 <h1 id="每行代码最大容量"><a href="#每行代码最大容量" class="headerlink" title="每行代码最大容量"></a>每行代码最大容量</h1><p>Settings–&gt;Editor–&gt;Code Style–&gt;Default Options–&gt;Right margin(columns)</p>
 <h1 id="代码提示时忽略大小写"><a href="#代码提示时忽略大小写" class="headerlink" title="代码提示时忽略大小写"></a>代码提示时忽略大小写</h1><p>Settings–&gt;Editor–&gt;General–&gt;Code Completion–&gt;Case sensitive completion–&gt;选择None即可(默认是First Letters)</p>
@@ -644,7 +670,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -666,7 +692,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -751,7 +777,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AndroidStudio主题"><span class="nav-number">1.</span> <span class="nav-text">AndroidStudio主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AS项目中哪些文件需要保留-哪些是自动生成的"><span class="nav-number">2.</span> <span class="nav-text">AS项目中哪些文件需要保留,哪些是自动生成的?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取消Android-Studio启动时自动打开上次关闭时的界面"><span class="nav-number">3.</span> <span class="nav-text">取消Android Studio启动时自动打开上次关闭时的界面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#格式化代码不换行"><span class="nav-number">4.</span> <span class="nav-text">格式化代码不换行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Offline离线模式"><span class="nav-number">5.</span> <span class="nav-text">Offline离线模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改字体大小"><span class="nav-number">6.</span> <span class="nav-text">修改字体大小</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码块-方法分割线"><span class="nav-number">7.</span> <span class="nav-text">代码块/方法分割线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#每行代码最大容量"><span class="nav-number">8.</span> <span class="nav-text">每行代码最大容量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码提示时忽略大小写"><span class="nav-number">9.</span> <span class="nav-text">代码提示时忽略大小写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义字体颜色"><span class="nav-number">10.</span> <span class="nav-text">自定义字体颜色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改代码区背景色"><span class="nav-number">11.</span> <span class="nav-text">修改代码区背景色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改控制台Logcat颜色"><span class="nav-number">12.</span> <span class="nav-text">修改控制台Logcat颜色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义文件注释模板"><span class="nav-number">13.</span> <span class="nav-text">自定义文件注释模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全屏编辑代码"><span class="nav-number">14.</span> <span class="nav-text">全屏编辑代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#恢复已删除的文件"><span class="nav-number">15.</span> <span class="nav-text">恢复已删除的文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AndroidStudio主题"><span class="nav-number">1.</span> <span class="nav-text">AndroidStudio主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AS项目中哪些文件需要保留-哪些是自动生成的"><span class="nav-number">2.</span> <span class="nav-text">AS项目中哪些文件需要保留,哪些是自动生成的?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取消Android-Studio启动时自动打开上次关闭时的界面"><span class="nav-number">3.</span> <span class="nav-text">取消Android Studio启动时自动打开上次关闭时的界面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#格式化代码不换行"><span class="nav-number">4.</span> <span class="nav-text">格式化代码不换行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Offline离线模式"><span class="nav-number">5.</span> <span class="nav-text">Offline离线模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改字体大小"><span class="nav-number">6.</span> <span class="nav-text">修改字体大小</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加-更换字体"><span class="nav-number">7.</span> <span class="nav-text">添加/更换字体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码块-方法分割线"><span class="nav-number">8.</span> <span class="nav-text">代码块/方法分割线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#每行代码最大容量"><span class="nav-number">9.</span> <span class="nav-text">每行代码最大容量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码提示时忽略大小写"><span class="nav-number">10.</span> <span class="nav-text">代码提示时忽略大小写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义字体颜色"><span class="nav-number">11.</span> <span class="nav-text">自定义字体颜色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改代码区背景色"><span class="nav-number">12.</span> <span class="nav-text">修改代码区背景色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改控制台Logcat颜色"><span class="nav-number">13.</span> <span class="nav-text">修改控制台Logcat颜色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义文件注释模板"><span class="nav-number">14.</span> <span class="nav-text">自定义文件注释模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全屏编辑代码"><span class="nav-number">15.</span> <span class="nav-text">全屏编辑代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#恢复已删除的文件"><span class="nav-number">16.</span> <span class="nav-text">恢复已删除的文件</span></a></li></ol></div>
             
 
           </div>
