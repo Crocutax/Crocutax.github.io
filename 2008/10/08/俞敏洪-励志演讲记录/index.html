@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="经验总结," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -92,19 +92,16 @@
 
 
 
-<meta name="description" content="今天项目中又用到了RatingBar，于是翻出来之前踩坑的一篇笔记，快速解决问题，顺便把笔记内容整理在此，方便以后查阅。 当项目中遇到【评分】需求的时候，一般情况下都会使用RatingBar用于UI展示，而且很多时候都不会使用原生样式。原因有两个：  Android和iOS样式的统一 系统原生样式的版本兼容性问题  所以适当的自定义RatingBar样式就显得很有必要了。 RatingBar基本使">
-<meta name="keywords" content="经验总结">
+<meta name="description" content="老俞的励志演讲总是很能激励人，忘了哪一年，看赢在中国第一季的时候，对老俞的其中两段演讲印象及其深刻，一个是树草论，一个是关于水的理论，当时连续看了很多遍，简直是热泪盈眶。 后来有机会，也曾经在班级里跟同学一起分享过，但是可能内容大家曾经听过了，或者说自己的演讲的像是在背词，或者各位已经彻底堕落的不想再燃起生命的激情了，所以印象中当然大家也没什么自己预期中的比较激动的反馈。 当时《心灵鸡汤》还是一本">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RatingBar的基本使用和自定义样式">
-<meta property="og:url" content="http://www.crocutax.com/2017/05/18/RatingBar的基本使用和自定义样式/index.html">
+<meta property="og:title" content="俞敏洪-励志演讲记录">
+<meta property="og:url" content="http://www.crocutax.com/2008/10/08/俞敏洪-励志演讲记录/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
-<meta property="og:description" content="今天项目中又用到了RatingBar，于是翻出来之前踩坑的一篇笔记，快速解决问题，顺便把笔记内容整理在此，方便以后查阅。 当项目中遇到【评分】需求的时候，一般情况下都会使用RatingBar用于UI展示，而且很多时候都不会使用原生样式。原因有两个：  Android和iOS样式的统一 系统原生样式的版本兼容性问题  所以适当的自定义RatingBar样式就显得很有必要了。 RatingBar基本使">
-<meta property="og:image" content="http://opfgq15e3.bkt.clouddn.com/2017-05-18%20%E8%87%AA%E5%AE%9A%E4%B9%89RatingBar%E6%A0%B7%E5%BC%8F.png">
-<meta property="og:updated_time" content="2017-05-20T04:16:18.649Z">
+<meta property="og:description" content="老俞的励志演讲总是很能激励人，忘了哪一年，看赢在中国第一季的时候，对老俞的其中两段演讲印象及其深刻，一个是树草论，一个是关于水的理论，当时连续看了很多遍，简直是热泪盈眶。 后来有机会，也曾经在班级里跟同学一起分享过，但是可能内容大家曾经听过了，或者说自己的演讲的像是在背词，或者各位已经彻底堕落的不想再燃起生命的激情了，所以印象中当然大家也没什么自己预期中的比较激动的反馈。 当时《心灵鸡汤》还是一本">
+<meta property="og:updated_time" content="2017-05-31T16:15:55.400Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RatingBar的基本使用和自定义样式">
-<meta name="twitter:description" content="今天项目中又用到了RatingBar，于是翻出来之前踩坑的一篇笔记，快速解决问题，顺便把笔记内容整理在此，方便以后查阅。 当项目中遇到【评分】需求的时候，一般情况下都会使用RatingBar用于UI展示，而且很多时候都不会使用原生样式。原因有两个：  Android和iOS样式的统一 系统原生样式的版本兼容性问题  所以适当的自定义RatingBar样式就显得很有必要了。 RatingBar基本使">
-<meta name="twitter:image" content="http://opfgq15e3.bkt.clouddn.com/2017-05-18%20%E8%87%AA%E5%AE%9A%E4%B9%89RatingBar%E6%A0%B7%E5%BC%8F.png">
+<meta name="twitter:title" content="俞敏洪-励志演讲记录">
+<meta name="twitter:description" content="老俞的励志演讲总是很能激励人，忘了哪一年，看赢在中国第一季的时候，对老俞的其中两段演讲印象及其深刻，一个是树草论，一个是关于水的理论，当时连续看了很多遍，简直是热泪盈眶。 后来有机会，也曾经在班级里跟同学一起分享过，但是可能内容大家曾经听过了，或者说自己的演讲的像是在背词，或者各位已经彻底堕落的不想再燃起生命的激情了，所以印象中当然大家也没什么自己预期中的比较激动的反馈。 当时《心灵鸡汤》还是一本">
 
 
 
@@ -132,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://www.crocutax.com/2017/05/18/RatingBar的基本使用和自定义样式/"/>
+  <link rel="canonical" href="http://www.crocutax.com/2008/10/08/俞敏洪-励志演讲记录/"/>
 
 
 
 
 
-  <title>RatingBar的基本使用和自定义样式 | Crocutax's Blog</title>
+  <title>俞敏洪-励志演讲记录 | Crocutax's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -311,7 +308,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2017/05/18/RatingBar的基本使用和自定义样式/">
+    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2008/10/08/俞敏洪-励志演讲记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Crocutax">
@@ -332,7 +329,7 @@
             
             
               
-                RatingBar的基本使用和自定义样式
+                俞敏洪-励志演讲记录
               
             
           </h1>
@@ -347,8 +344,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-18T22:31:18+08:00">
-                2017-05-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2008-10-08T23:59:38+08:00">
+                2008-10-08
               </time>
             
 
@@ -370,8 +367,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/Life/" itemprop="url" rel="index">
+                    <span itemprop="name">Life</span>
                   </a>
                 </span>
 
@@ -388,7 +385,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/05/18/RatingBar的基本使用和自定义样式/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2008/10/08/俞敏洪-励志演讲记录/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -397,7 +394,7 @@
 
           
           
-             <span id="/2017/05/18/RatingBar的基本使用和自定义样式/" class="leancloud_visitors" data-flag-title="RatingBar的基本使用和自定义样式">
+             <span id="/2008/10/08/俞敏洪-励志演讲记录/" class="leancloud_visitors" data-flag-title="俞敏洪-励志演讲记录">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -422,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  916 字
+                  697 字
                 </span>
               
 
@@ -438,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -456,62 +453,17 @@
       
 
       
-        <p>今天项目中又用到了RatingBar，于是翻出来之前踩坑的一篇笔记，快速解决问题，顺便把笔记内容整理在此，方便以后查阅。</p>
-<p>当项目中遇到【评分】需求的时候，一般情况下都会使用RatingBar用于UI展示，而且很多时候都不会使用原生样式。原因有两个：</p>
-<ul>
-<li>Android和iOS样式的统一</li>
-<li>系统原生样式的版本兼容性问题</li>
-</ul>
-<p>所以适当的自定义RatingBar样式就显得很有必要了。</p>
-<h1 id="RatingBar基本使用"><a href="#RatingBar基本使用" class="headerlink" title="RatingBar基本使用"></a>RatingBar基本使用</h1><p>RatingBar的基本使用比较简单，这里只记录一下几个常用的属性：</p>
-<ul>
-<li><strong>isIndicator</strong> 是否是指示器，如果设置为true,则不可以通过点击来改变进度；如果设置为false，则可点击</li>
-<li><strong>numStars</strong> 一共有几个星星，默认是5个。</li>
-<li><strong>rating</strong> 表示进度 </li>
-</ul>
-<h1 id="RatingBar-样式展示"><a href="#RatingBar-样式展示" class="headerlink" title="RatingBar 样式展示"></a>RatingBar 样式展示</h1><p>之前项目中一共碰到过四种RatingBar样式，各自效果图整理如下：</p>
-<p><img src="http://opfgq15e3.bkt.clouddn.com/2017-05-18%20%E8%87%AA%E5%AE%9A%E4%B9%89RatingBar%E6%A0%B7%E5%BC%8F.png" alt="自定义RatingBar样式"></p>
-<p>说明：</p>
-<ul>
-<li>第一个：原生普通样式（随着主题不同，样式会变）</li>
-<li>第二个：原生普通样式-小icon</li>
-<li>第三个：自定义RatingBar 颜色</li>
-<li>第四个：自定义RatingBar Drawable</li>
-</ul>
-<h1 id="RatingBar-各样式实现"><a href="#RatingBar-各样式实现" class="headerlink" title="RatingBar 各样式实现"></a>RatingBar 各样式实现</h1><h2 id="原生样式"><a href="#原生样式" class="headerlink" title="原生样式"></a>原生样式</h2><p>原生样式其实没什么好说的，使用系统提供的<code>style</code> 即可</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--第一个：原生主题样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">RatingBar</span></span></div><div class="line">    <span class="attr">style</span>=<span class="string">"?android:attr/ratingBarStyleIndicator"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:rating</span>=<span class="string">"3"</span>/&gt;</div><div class="line"></div><div class="line"><span class="comment">&lt;!--第二个：原生主题样式：小--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">RatingBar</span></span></div><div class="line">    <span class="attr">style</span>=<span class="string">"?android:attr/ratingBarStyleSmall"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:rating</span>=<span class="string">"3"</span>/&gt;</div></pre></td></tr></table></figure>
-<h2 id="自定义颜色"><a href="#自定义颜色" class="headerlink" title="自定义颜色"></a>自定义颜色</h2><p>这种方式也很简单，只需要要定义一个样式即可，两步完成。</p>
-<blockquote>
-<p>第一步，定义样式，指定背景色 和 进度色</p>
-</blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--自定义RatingBar Color--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"RatingBar_CustomColor"</span> <span class="attr">parent</span>=<span class="string">"@android:style/Widget.Holo.RatingBar.Indicator"</span>&gt;</span><span class="xml"></span></div><div class="line">    <span class="comment">&lt;!--Background Color--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlNormal"</span>&gt;</span>#D7D7D7<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--Progress Color--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlActivated"</span>&gt;</span>#F49800<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>第二步，XML中使用该主题</p>
-</blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--自定义 Color--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">RatingBar</span></span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/go_rating"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:isIndicator</span>=<span class="string">"true"</span></div><div class="line">    <span class="attr">style</span>=<span class="string">"?android:attr/ratingBarStyleSmall"</span></div><div class="line">    <span class="attr">android:theme</span>=<span class="string">"@style/RatingBar_CustomColor"</span></div><div class="line">    <span class="attr">android:rating</span>=<span class="string">"3"</span>/&gt;</div></pre></td></tr></table></figure>
-<h2 id="自定义Drawable"><a href="#自定义Drawable" class="headerlink" title="自定义Drawable"></a>自定义Drawable</h2><p>这种方式相对于前面几种，算是稍微麻烦一点的方式了，而且还存在图片拉伸的坑（图片底部被垂直拉伸成一条直线，跟哭了似的-_-!，就不贴图了）。先说具体实现方法，再说坑。</p>
-<blockquote>
-<p>第一步，定义层叠布局layerlist</p>
-</blockquote>
-<p>自定义过ProgressBar的同学，相信对下面的background，secondProgress，progress属性都不会陌生。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">layer-list</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">	</div><div class="line">	<span class="tag">&lt;<span class="name">item</span> <span class="attr">android:id</span>=<span class="string">"@android:id/background"</span></span></div><div class="line">		<span class="attr">android:drawable</span>=<span class="string">"@drawable/star"</span>/&gt;</div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">item</span> <span class="attr">android:id</span>=<span class="string">"@android:id/secondaryProgress"</span></span></div><div class="line">		<span class="attr">android:drawable</span>=<span class="string">"@drawable/star"</span>/&gt;</div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">item</span> <span class="attr">android:id</span>=<span class="string">"@android:id/progress"</span></span></div><div class="line">		<span class="attr">android:drawable</span>=<span class="string">"@drawable/star_solid"</span>/&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">layer-list</span>&gt;</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>第二步，自定义样式，指定ProgressDrawable</p>
-</blockquote>
-<p>注意这里指定minHeight和maxHeight，根据项目中的UI需求而定，定死高度的其中一个作用就是防止drawable图片被垂直拉伸。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--自定义RatingBar Drawable--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"RatingBar_CustomDrawable"</span> <span class="attr">parent</span>=<span class="string">"@android:style/Widget.Holo.RatingBar.Indicator"</span>&gt;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:progressDrawable"</span>&gt;</span>@drawable/custom_rating_bar<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:minHeight"</span>&gt;</span>15dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:maxHeight"</span>&gt;</span>15dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>第三步，在xml中使用刚才定义好的样式</p>
-</blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--自定义Drawable样式--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">RatingBar</span></span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/room_ratingbar"</span></div><div class="line">    <span class="attr">style</span>=<span class="string">"@style/RatingBar_CustomDrawable"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:rating</span>=<span class="string">"3"</span>/&gt;</div></pre></td></tr></table></figure>
-<p>最后说下图片垂直拉伸的解决方案：</p>
-<ol>
-<li>设置minHeight和maxHeight，写死像素值。</li>
-<li>让UI帮忙切一张底部留有空隙的star图标，比如有1px的空隙</li>
-<li>使用略大于当前控件空间的icon，比如整个UI切图是按照drawable-xxhdpi来切的，那么使用高一级的drawable目录下比如drawable-xxxhdpi的icon，这样在运行的时候，icon会进行相应比例的缩放。</li>
-</ol>
-<p>图片拉伸问题，还可以参考以下链接：<br>  <a href="http://shikezhi.com/html/2015/android_0920/375199.html" target="_blank" rel="external">http://shikezhi.com/html/2015/android_0920/375199.html</a><br><a href="http://blog.csdn.net/QMLN31821007/article/details/41121891" target="_blank" rel="external">http://blog.csdn.net/QMLN31821007/article/details/41121891</a> </p>
-<p>（完）</p>
+        <p>老俞的励志演讲总是很能激励人，忘了哪一年，看赢在中国第一季的时候，对老俞的其中两段演讲印象及其深刻，一个是树草论，一个是关于水的理论，当时连续看了很多遍，简直是热泪盈眶。</p>
+<p>后来有机会，也曾经在班级里跟同学一起分享过，但是可能内容大家曾经听过了，或者说自己的演讲的像是在背词，或者各位已经彻底堕落的不想再燃起生命的激情了，所以印象中当然大家也没什么自己预期中的比较激动的反馈。</p>
+<p>当时《心灵鸡汤》还是一本很正规的系列书籍，而现在倒成了反义词了，而且有了各种反鸡汤。不过这么多年过去了，演讲的内容依然记得很清晰，现在回想起来，摘录如下：</p>
+<h1 id="树草论"><a href="#树草论" class="headerlink" title="树草论"></a>树草论</h1><p>人活着有两种方式：</p>
+<p>第一种是像草一样的活着，你尽管活着，每年还在成长，<br>但是你毕竟是一棵草，你吸收雨露阳光，但是长不大；<br>人们可以踩过你，但是人们不会因为你的痛苦而让他产生痛苦；<br>人们不会因为你被踩了而来怜悯你，因为人们本身就没有看到你。</p>
+<p>所以我们每一个人都应该像树一样的成长，<br>即使我们现在什么都不是，但是只要你有树的种子，<br>即使被人踩到泥土中间，你依然能够吸收泥土的养分，让自己成长起来！</p>
+<p>当你长成参天大树以后，<br>遥远的地方人们就能看到你，走近你你能给人一片绿色；<br>活着，是美丽的风景，死了，依然是栋梁之才，活着、死了都有用，<br>这应该是我们每个人做人的标准和成长的标准！</p>
+<h1 id="水一样活着"><a href="#水一样活着" class="headerlink" title="水一样活着"></a>水一样活着</h1><p>每一条河流，都有自己不同的生命曲线，但是每条河流都有自己的梦想，那就是奔向大海。</p>
+<p>我们的生命，有的时候会是泥沙，你可能慢慢地就会像泥沙一样，沉淀下去了，一旦你沉淀下去了，也许你不用再为了前进而努力了，但是你却永远也见不到阳光了。</p>
+<p>所以我建议大家，不管你现在的生命是怎样的，一定要有水的精神，像水一样不断的积蓄自己的力量，不断的冲破障碍。</p>
+<p>当你发现时机不到的和时候，把先自己的厚度给积累起来；当有一天时机来临的时候，你就能够奔腾入海，成就自己的生命！</p>
 
       
     </div>
@@ -571,16 +523,16 @@
 
             <li class="post-copyright-link">
               <strong>本文标题：</strong>
-              <a href="http://www.crocutax.com/2017/05/18/RatingBar的基本使用和自定义样式/" title="RatingBar的基本使用和自定义样式">RatingBar的基本使用和自定义样式</a>
+              <a href="http://www.crocutax.com/2008/10/08/俞敏洪-励志演讲记录/" title="俞敏洪-励志演讲记录">俞敏洪-励志演讲记录</a>
             </li>
 
             <li class="post-copyright-link">
               <strong>本文链接：</strong>
-              <a href="http://www.crocutax.com/2017/05/18/RatingBar的基本使用和自定义样式/" title="RatingBar的基本使用和自定义样式">http://www.crocutax.com/2017/05/18/RatingBar的基本使用和自定义样式/</a>
+              <a href="http://www.crocutax.com/2008/10/08/俞敏洪-励志演讲记录/" title="俞敏洪-励志演讲记录">http://www.crocutax.com/2008/10/08/俞敏洪-励志演讲记录/</a>
             </li>
 
             <li class="post-copyright-date">
-                <strong>发布时间：</strong>2017年5月18日 - 22时05分
+                <strong>发布时间：</strong>2008年10月8日 - 23时10分
             </li>  
 
             <li class="post-copyright-license">
@@ -593,12 +545,6 @@
 
        
       
-        <div class="post-tags">
-          
-            <a href="/tags/经验总结/" rel="tag"># 经验总结</a>
-          
-        </div>
-      
 
       
         
@@ -608,8 +554,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/18/GoogleDrive云盘同步本地博客文件/" rel="next" title="GoogleDrive云盘同步本地博客文件">
-                <i class="fa fa-chevron-left"></i> GoogleDrive云盘同步本地博客文件
+              <a href="/2007/09/09/篮球与人生/" rel="next" title="篮球与人生">
+                <i class="fa fa-chevron-left"></i> 篮球与人生
               </a>
             
           </div>
@@ -618,8 +564,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/20/Hexo持续优化-创建分类和标签页面/" rel="prev" title="Hexo持续优化-创建分类和标签页面">
-                Hexo持续优化-创建分类和标签页面 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/03/01/为什么一定要捯饬个人网站/" rel="prev" title="为什么一定要捯饬个人网站">
+                为什么一定要捯饬个人网站 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -804,7 +750,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RatingBar基本使用"><span class="nav-number">1.</span> <span class="nav-text">RatingBar基本使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RatingBar-样式展示"><span class="nav-number">2.</span> <span class="nav-text">RatingBar 样式展示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RatingBar-各样式实现"><span class="nav-number">3.</span> <span class="nav-text">RatingBar 各样式实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原生样式"><span class="nav-number">3.1.</span> <span class="nav-text">原生样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义颜色"><span class="nav-number">3.2.</span> <span class="nav-text">自定义颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义Drawable"><span class="nav-number">3.3.</span> <span class="nav-text">自定义Drawable</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#树草论"><span class="nav-number">1.</span> <span class="nav-text">树草论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#水一样活着"><span class="nav-number">2.</span> <span class="nav-text">水一样活着</span></a></li></ol></div>
             
 
           </div>

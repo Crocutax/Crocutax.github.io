@@ -29,4 +29,5 @@ http://www.crocutax.com/2016/05/06/AndroidStudio自定义配置/
 http://www.crocutax.com/2016/04/01/Java基础-位运算符回顾/
 http://www.crocutax.com/2016/03/10/Hexo+Github Pages搭建个人博客/
 http://www.crocutax.com/2016/03/01/为什么一定要捯饬个人网站/
-http://www.crocutax.com/2008/09/09/篮球与人生/
+http://www.crocutax.com/2008/10/08/俞敏洪-励志演讲记录/
+http://www.crocutax.com/2007/09/09/篮球与人生/
