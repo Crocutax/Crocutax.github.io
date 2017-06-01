@@ -21,6 +21,7 @@ http://www.crocutax.com/2017/04/23/线程池运行原理分析/
 http://www.crocutax.com/2017/04/22/Android开发规范/
 http://www.crocutax.com/2017/02/26/观影随笔-《生化危机-终章》和《刺客信条》/
 http://www.crocutax.com/2017/02/02/读书笔记-《普京传》/
+http://www.crocutax.com/2017/01/12/如何写好博客-技术小黑屋LIVE-笔记/
 http://www.crocutax.com/2016/12/28/开发中的TextView技巧点整理/
 http://www.crocutax.com/2016/12/23/ViewPager+Fragment组合的预加载和懒加载/
 http://www.crocutax.com/2016/10/06/观影随笔-《百鸟朝凤》/
