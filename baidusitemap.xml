@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://www.crocutax.com/2017/06/09/%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BB%B7%E5%80%BC%E5%92%8C%E5%AE%9A%E4%BD%8D/</loc>
-    <lastmod>2017-06-09T13:16:18.886Z</lastmod>
+    <loc>http://www.crocutax.com/2017/06/25/%E6%88%90%E7%86%9F%E7%9A%84%E6%A0%87%E5%BF%97/</loc>
+    <lastmod>2017-06-25T02:13:37.094Z</lastmod>
     <data>
         <display>
-        <title>技术的价值和定位</title>
-        <pubTime>2017-06-09T12:48:56.000Z</pubTime>
+        <title>成熟的标志</title>
+        <pubTime>2017-06-25T02:08:44.000Z</pubTime>
         
          
            
@@ -22,8 +22,29 @@
 
     
   <url>
+    <loc>http://www.crocutax.com/2017/06/11/%E7%AC%94%E8%AE%B0-%E7%8E%8B%E5%B0%9A%E9%A2%91%E9%81%93/</loc>
+    <lastmod>2017-06-25T02:09:31.596Z</lastmod>
+    <data>
+        <display>
+        <title>笔记-王尚频道</title>
+        <pubTime>2017-06-11T03:32:11.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Note" url="http://www.crocutax.com/categories/Note/"/>
+          
+             
+              <breadCrumb title="Study" url="http://www.crocutax.com/categories/Note/Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.crocutax.com/2016/06/03/AndroidStudio%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2017-06-03T07:50:53.613Z</lastmod>
+    <lastmod>2017-06-15T00:41:40.053Z</lastmod>
     <data>
         <display>
         <title>AndroidStudio使用中的问题记录</title>
@@ -35,6 +56,24 @@
            
              
               <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crocutax.com/2017/06/09/%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BB%B7%E5%80%BC%E5%92%8C%E5%AE%9A%E4%BD%8D/</loc>
+    <lastmod>2017-06-09T13:17:45.558Z</lastmod>
+    <data>
+        <display>
+        <title>技术的价值和定位</title>
+        <pubTime>2017-06-09T12:48:56.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Life" url="http://www.crocutax.com/categories/Life/"/>
           
         </display>
     </data>

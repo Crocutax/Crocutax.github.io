@@ -3,10 +3,84 @@
   
     
     <entry>
+      <title><![CDATA[成熟的标志]]></title>
+      <url>/2017/06/25/%E6%88%90%E7%86%9F%E7%9A%84%E6%A0%87%E5%BF%97/</url>
+      <content type="html"><![CDATA[<p>一个人成熟的标志之一就是，明白每天发生在自己身上的99%的事情对于别人而言根本毫无意义。<br>我们需要在自己的生命中保留一个空间，可以与世界、与历史、与艺术相遇。</p>
+<p><img src="http://opfgq15e3.bkt.clouddn.com/2017-06-25-%E6%88%90%E7%86%9F%E7%9A%84%E6%A0%87%E5%BF%97.jpg" alt="2017-06-25-成熟的标志"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Life </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[笔记-王尚频道]]></title>
+      <url>/2017/06/11/%E7%AC%94%E8%AE%B0-%E7%8E%8B%E5%B0%9A%E9%A2%91%E9%81%93/</url>
+      <content type="html"><![CDATA[<h1 id="财富四大象限"><a href="#财富四大象限" class="headerlink" title="财富四大象限"></a>财富四大象限</h1><p><img src="http://opfgq15e3.bkt.clouddn.com/2017-06-11-%E8%B4%A2%E5%AF%8C%E5%9B%9B%E5%A4%A7%E8%B1%A1%E9%99%90.jpg" alt="2017-06-11-财富四大象限"></p>
+<blockquote>
+<p>E象限</p>
+</blockquote>
+<ul>
+<li>更高的收入 = 跟高的生活品质 + 更大的工作压力 +更少的时间</li>
+<li>不可持续，收入随着劳动力的下降而下降</li>
+</ul>
+<blockquote>
+<p>S象限</p>
+</blockquote>
+<ul>
+<li>风险大、失败率高、回报高</li>
+<li>更成功意味着收入更高、工作更加努力、空余时间更少</li>
+<li>不可持续，收入随着劳动力的下降而下降</li>
+<li>一般失败于经验、资金不足、身体问题</li>
+</ul>
+<blockquote>
+<p>B象限</p>
+</blockquote>
+<ul>
+<li>搭建企业系统，寻找优秀人才各司其职，运转起这个系统</li>
+</ul>
+<blockquote>
+<p>I 象限</p>
+</blockquote>
+<ul>
+<li>资金和知识密集型区域</li>
+</ul>
+<h1 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h1><ul>
+<li>资产的多少不来自于薪资多少，而是来自于能服务多少人，以及提供服务的价值，二者缺一不可。<ul>
+<li>一部分人很努力，很优秀，但是提供的服务只能影响很少的人；</li>
+<li>明星的作品能够服务的人群足够大，所以收益高很正常。</li>
+</ul>
+</li>
+<li>改变生活并不是指更加努力，而是改变思维方式，进而拥有完全不同的行为方式。</li>
+<li>重要的不是你做什么事，而是你“成为”了谁，做到了后者，自然而然能做到前者；反之则未必，更是导致前者无效的原因。前者是术，后者是道，后者引导、促成了前者。</li>
+<li>个人财富 = 杠杆他人的时间 + 杠杆他人的钱，需要搭建系统</li>
+<li>没有经历过失败的成功，无法持续</li>
+<li>网络为王，一部分努力寻找和搭建网络，而绝大部分人都被教育着成为、做好网络中的其中一个节点。这个网络可以是销售网络、人际网络、物流网络……</li>
+<li>拥有独立思考能力很重要，大部分人都没有。</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Note </category>
+            
+            <category> Study </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[技术的价值和定位]]></title>
       <url>/2017/06/09/%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BB%B7%E5%80%BC%E5%92%8C%E5%AE%9A%E4%BD%8D/</url>
       <content type="html"><![CDATA[<p><img src="http://opfgq15e3.bkt.clouddn.com/2017-06-09-%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BB%B7%E5%80%BC%E5%92%8C%E5%AE%9A%E4%BD%8D.jpg" alt="mobike-来自网络"></p>
-<p>技术出身的人,有钻研精神，但是同时很多都有强迫症，会为了一丁点问题花费大量的时间，有些出于工作需要，有些则纯粹是和自己较劲，比如:</p>
+<p>技术出身的人，有钻研精神，但是同时很多都有强迫症，会为了一丁点问题花费大量的时间，有些出于工作需要，有些则纯粹是和自己较劲，比如:</p>
 <ul>
 <li>为了解耦更加彻底，而多写N个接口，层层回调，解耦的便捷度换来的是大量重复的体力活-接口。</li>
 <li>为了丁点的性能，花费了大量的时间去尝试多种方案、优化、调试。</li>
@@ -2344,6 +2418,7 @@ public void setUserVisibleHint(boolean isVisibleToUser) {
 <li>设置sdk的目录位置为你Android studio使用的sdk的目录 , 例如 <code>D:\Dev\Android\sdk</code></li>
 <li>将Genymotion Device和AndroidStudio 都重启</li>
 </ol>
+<h1 id="Error-Execution-failed-for-task-‘-app-packageDebug’-gt-zip-isFile"><a href="#Error-Execution-failed-for-task-‘-app-packageDebug’-gt-zip-isFile" class="headerlink" title="Error:Execution failed for task ‘:app:packageDebug’. &gt; !zip.isFile()"></a>Error:Execution failed for task ‘:app:packageDebug’. &gt; !zip.isFile()</h1><p>顶部工具栏 Clean and Rebuild project 完事</p>
 ]]></content>
       
         <categories>
