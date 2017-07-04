@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.crocutax.com/2016/06/03/AndroidStudio%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2017-07-04T02:15:30.283Z</lastmod>
+    <data>
+        <display>
+        <title>AndroidStudio使用中的问题记录</title>
+        <pubTime>2016-06-03T11:14:04.000Z</pubTime>
+        
+        <tag>经验总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.crocutax.com/2017/07/04/%E8%9E%8D%E4%BA%91IM%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2017-07-04T01:20:37.688Z</lastmod>
     <data>
@@ -54,26 +74,6 @@
           
              
               <breadCrumb title="Study" url="http://www.crocutax.com/categories/Note/Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.crocutax.com/2016/06/03/AndroidStudio%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2017-06-15T00:41:40.053Z</lastmod>
-    <data>
-        <display>
-        <title>AndroidStudio使用中的问题记录</title>
-        <pubTime>2016-06-03T11:14:04.000Z</pubTime>
-        
-        <tag>经验总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.crocutax.com/categories/Android/"/>
           
         </display>
     </data>
