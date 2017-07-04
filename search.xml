@@ -3,6 +3,49 @@
   
     
     <entry>
+      <title><![CDATA[融云IM踩坑记录]]></title>
+      <url>/2017/07/04/%E8%9E%8D%E4%BA%91IM%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</url>
+      <content type="html"><![CDATA[<p>融云自身引入了一些第三方库,当我们自己在项目中再引入这些第三方库的时候,就会出现冲突的情况.比如duplicate entry XXX 类的错误.</p>
+<h1 id="PhotoView冲突"><a href="#PhotoView冲突" class="headerlink" title="PhotoView冲突"></a>PhotoView冲突</h1><blockquote>
+<p>错误信息</p>
+</blockquote>
+<p>duplicate entry: uk/co/senab/photoview/BuildConfig.class</p>
+<blockquote>
+<p>原因</p>
+</blockquote>
+<p>如果从Github仓库在gradle中以<code>compile &#39;com.commit451:PhotoView:1.2.4&#39;</code>引入PhotoView,那么此时PhotoView会有两个</p>
+<ul>
+<li>uk.co.senab.photoview.PhotoView (正式photoview)</li>
+<li>io.rong.photoview.PhotoView (融云中的photoview)</li>
+</ul>
+<blockquote>
+<p>解决方案</p>
+</blockquote>
+<p>使用融云中的PhotoView即可</p>
+<h1 id="Eventbus冲突"><a href="#Eventbus冲突" class="headerlink" title="Eventbus冲突"></a>Eventbus冲突</h1><ul>
+<li>org.greenrobot.eventbus.EventBus(正式Eventbus)</li>
+<li>io.rong.eventbus.EventBus (融云SDK中的Eventbus)</li>
+</ul>
+<blockquote>
+<p>项目中碰到的问题</p>
+</blockquote>
+<p>误使用了不同包下的Eventbus,导致事件传递失败.</p>
+<blockquote>
+<p>解决方案</p>
+</blockquote>
+<p>使用同一包下的Eventbus即可</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Android </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[成熟的标志]]></title>
       <url>/2017/06/25/%E6%88%90%E7%86%9F%E7%9A%84%E6%A0%87%E5%BF%97/</url>
       <content type="html"><![CDATA[<p>一个人成熟的标志之一就是，明白每天发生在自己身上的99%的事情对于别人而言根本毫无意义。<br>我们需要在自己的生命中保留一个空间，可以与世界、与历史、与艺术相遇。</p>
