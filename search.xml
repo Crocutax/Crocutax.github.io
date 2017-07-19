@@ -3,9 +3,9 @@
   
     
     <entry>
-      <title><![CDATA[idea配置Tomcat,启动Web项目]]></title>
-      <url>/2017/07/19/idea%E9%85%8D%E7%BD%AETomcat-%E5%90%AF%E5%8A%A8Web%E9%A1%B9%E7%9B%AE/</url>
-      <content type="html"><![CDATA[<ol>
+      <title><![CDATA[Idea使用中的问题记录]]></title>
+      <url>/2017/07/19/Idea%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+      <content type="html"><![CDATA[<h1 id="idea配置Tomcat-启动Web项目"><a href="#idea配置Tomcat-启动Web项目" class="headerlink" title="idea配置Tomcat,启动Web项目"></a>idea配置Tomcat,启动Web项目</h1><ol>
 <li>Run-&gt;Edit Configuration</li>
 <li>添加TomcatServer-&gt;Local Server,在Server选项卡中选择Tomcat服务器,并进行Tomcat名称,默认部署后启动的浏览器等信息<ul>
 <li>编辑器已有默认配置</li>
@@ -28,6 +28,41 @@
 </ul>
 <p>4.此时Apply之后发现tomcat并没有添加成功 , 还差最后一步 . 在Edit Configuration页面下方 , 有<code>Befor launch:Build,Build Artifacts,Activate tool window</code>选项 , 默认只有一个<strong>Build</strong>条目 , 再添加一个<code>Build Artifacts</code>条目 , 再Apply-&gt;OK </p>
 <p>配置成功!完事!</p>
+<h1 id="错误-找不到或无法加载主类"><a href="#错误-找不到或无法加载主类" class="headerlink" title="错误:找不到或无法加载主类"></a>错误:找不到或无法加载主类</h1><p>环境状况:</p>
+<ul>
+<li>环境变量配置没有问题,通过windows命令行窗口可以正常查看版本号</li>
+<li>电脑里的其他Java和Android项目都运行正常</li>
+</ul>
+<p>在此前提下,运行Demo时报出 <strong>错误:找不到或无法加载主类</strong>. 说明是Idea配置问题导致的.</p>
+<blockquote>
+<p>原因</p>
+</blockquote>
+<ol>
+<li>没有给Project设置编译文件的输出路径,即Project Structure -&gt; Project Settings -&gt; Project compiler output没有设置,但是却在Modules -&gt; Paths 中选择了 <code>Inherit project compile output path</code></li>
+<li>Project Structure -&gt; Modules -&gt; Paths 中,选择了<code>Use module compile output path</code> , 但是只是默认的相对路径.</li>
+</ol>
+<blockquote>
+<p>解决方案</p>
+</blockquote>
+<p>首先,确保Project Structure -&gt; Project,已为Project指定SDK</p>
+<p>其次:</p>
+<p><strong>方案1:使用Project的编译输出路径</strong></p>
+<ul>
+<li>在Project Settings -&gt; Project compiler output中设置Project的编译输出路径</li>
+<li>在Project Settings -&gt; Modules中选择  <code>Inherit project compile output path</code> 即继承Project的路径</li>
+</ul>
+<p><strong>方案2:使用Module的编译输出路径</strong></p>
+<p>Project Structure -&gt; Modules -&gt; Paths,改变<code>Output path</code> 和 <code>Test output path</code>的路径.</p>
+<p>两个路径默认是:</p>
+<ul>
+<li>\out\lib</li>
+<li>\out\test\lib</li>
+</ul>
+<p>改为项目绝对路径+上述目录,比如项目文件路径为E:\JavaEE\HelloWorld,那么修改后的两个Path分别为:</p>
+<ul>
+<li>E:\JavaEE\HelloWorld\out\lib</li>
+<li>E:\JavaEE\HelloWorld\out\test\lib</li>
+</ul>
 ]]></content>
       
         <categories>
