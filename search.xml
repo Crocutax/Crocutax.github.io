@@ -3,6 +3,49 @@
   
     
     <entry>
+      <title><![CDATA[idea配置Tomcat,启动Web项目]]></title>
+      <url>/2017/07/19/idea%E9%85%8D%E7%BD%AETomcat-%E5%90%AF%E5%8A%A8Web%E9%A1%B9%E7%9B%AE/</url>
+      <content type="html"><![CDATA[<ol>
+<li>Run-&gt;Edit Configuration</li>
+<li>添加TomcatServer-&gt;Local Server,在Server选项卡中选择Tomcat服务器,并进行Tomcat名称,默认部署后启动的浏览器等信息<ul>
+<li>编辑器已有默认配置</li>
+</ul>
+</li>
+<li>选择Deployment选项卡,按绿色+号 添加需要部署的项目,右侧<code>Application context</code>为项目名称.<ul>
+<li>如果<code>Application context</code>不配置,默认为<code>/</code>,那么通过<code>http://localhost:8080/index.jsp</code>即可访问项目页面</li>
+<li>如果<code>Application context</code>配置为<code>/test</code>,那么访问路径变为<code>http://localhost:8080/test/index.jsp</code></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>注意</p>
+</blockquote>
+<p>如果发现配置的部署的项目无法Apply,或者无法通过绿色铅笔按钮进行编辑 , 那么采用如下方法:</p>
+<ul>
+<li>idea编辑器左上角File-&gt;Project Structure-&gt;Project Settings-&gt;Artifacts-&gt;绿色按钮添加-&gt;Web Application Exploded</li>
+<li>左边<code>output root</code>为编译文件输出目录 , 右侧<code>Available Elements</code>为可用项目元素 , 默认编辑器已配置好可用项目元素 , 双击 , 或右键选择 , 即可将指定目录左移到<code>output root</code>目录.</li>
+<li>回到Edit Configuration-&gt;Deployment界面 , 重新添加部署的项目 , 来源选择<code>Artifacts</code>即可</li>
+</ul>
+<p>4.此时Apply之后发现tomcat并没有添加成功 , 还差最后一步 . 在Edit Configuration页面下方 , 有<code>Befor launch:Build,Build Artifacts,Activate tool window</code>选项 , 默认只有一个<strong>Build</strong>条目 , 再添加一个<code>Build Artifacts</code>条目 , 再Apply-&gt;OK </p>
+<p>配置成功!完事!</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Java </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 经验总结 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[融云IM踩坑记录]]></title>
       <url>/2017/07/04/%E8%9E%8D%E4%BA%91IM%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</url>
       <content type="html"><![CDATA[<p>融云自身引入了一些第三方库,当我们自己在项目中再引入这些第三方库的时候,就会出现冲突的情况.比如duplicate entry XXX 类的错误.</p>
