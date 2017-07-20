@@ -100,7 +100,8 @@
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="Android Studio在使用过程中遇到了各种各样的小问题 , 记录在此 , 方便备查 , 后续若再有新问题 , 也追加到这里. 首次安装AS，卡在downloading Components界面 从任务管理器中强制退出 在AndroidStudio安装目录的bin目录下，打开 idea.properties 文件 在文件末尾追加 disable.android.first.run=true">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-0160203b78fcec7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-07-04T02:15:30.283Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-82dbefdb18ce3176.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-07-20T15:34:22.366Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AndroidStudio使用中的问题记录">
 <meta name="twitter:description" content="Android Studio在使用过程中遇到了各种各样的小问题 , 记录在此 , 方便备查 , 后续若再有新问题 , 也追加到这里. 首次安装AS，卡在downloading Components界面 从任务管理器中强制退出 在AndroidStudio安装目录的bin目录下，打开 idea.properties 文件 在文件末尾追加 disable.android.first.run=true">
@@ -422,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  629 字
+                  714 字
                 </span>
               
 
@@ -490,6 +491,10 @@
 <li>将Genymotion Device和AndroidStudio 都重启</li>
 </ol>
 <h1 id="Error-Execution-failed-for-task-‘-app-packageDebug’-gt-zip-isFile"><a href="#Error-Execution-failed-for-task-‘-app-packageDebug’-gt-zip-isFile" class="headerlink" title="Error:Execution failed for task ‘:app:packageDebug’. &gt; !zip.isFile()"></a>Error:Execution failed for task ‘:app:packageDebug’. &gt; !zip.isFile()</h1><p>顶部工具栏 Clean and Rebuild project 完事</p>
+<h1 id="Find-in-Path全局搜索失败"><a href="#Find-in-Path全局搜索失败" class="headerlink" title="Find in Path全局搜索失败"></a>Find in Path全局搜索失败</h1><p>Ctrl+Shift+F 调出Find in path全局搜索页面,输入关键字搜索时,发现明明项目里有这个内容,但是却在Preview界面没有任何结果展示.</p>
+<p><strong>解决方案:</strong></p>
+<p>Find in path-&gt;Options-&gt;File name filter,把File masks的对勾去掉.就可以正常使用了.</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-82dbefdb18ce3176.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="FindInPath设置.png"></p>
 
       
     </div>
@@ -764,7 +769,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#首次安装AS，卡在downloading-Components界面"><span class="nav-number">1.</span> <span class="nav-text">首次安装AS，卡在downloading Components界面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卡在Refreshing-…gradle-project"><span class="nav-number">2.</span> <span class="nav-text">卡在Refreshing …gradle project</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#It-is-currently-in-use-by-another-Gradle-instance"><span class="nav-number">3.</span> <span class="nav-text">It is currently in use by another Gradle instance</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gradle-project-refresh-failed-Error：-“Invalid-argument”"><span class="nav-number">4.</span> <span class="nav-text">gradle project refresh failed Error： “Invalid argument”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Plugin-with-id-‘android-library’-not-found"><span class="nav-number">5.</span> <span class="nav-text">Plugin with id ‘android-library’ not found</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OutOfMemoryError"><span class="nav-number">6.</span> <span class="nav-text">OutOfMemoryError</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Error-147-Apostrophe-not-preceded-by-in-Cost-can’t-be-empty"><span class="nav-number">7.</span> <span class="nav-text">Error:(147) Apostrophe not preceded by \ (in Cost can’t be empty)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#XML中无法预览"><span class="nav-number">8.</span> <span class="nav-text">XML中无法预览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#识别不到Genymotion-Device"><span class="nav-number">9.</span> <span class="nav-text">识别不到Genymotion Device</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Error-Execution-failed-for-task-‘-app-packageDebug’-gt-zip-isFile"><span class="nav-number">10.</span> <span class="nav-text">Error:Execution failed for task ‘:app:packageDebug’. > !zip.isFile()</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#首次安装AS，卡在downloading-Components界面"><span class="nav-number">1.</span> <span class="nav-text">首次安装AS，卡在downloading Components界面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卡在Refreshing-…gradle-project"><span class="nav-number">2.</span> <span class="nav-text">卡在Refreshing …gradle project</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#It-is-currently-in-use-by-another-Gradle-instance"><span class="nav-number">3.</span> <span class="nav-text">It is currently in use by another Gradle instance</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gradle-project-refresh-failed-Error：-“Invalid-argument”"><span class="nav-number">4.</span> <span class="nav-text">gradle project refresh failed Error： “Invalid argument”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Plugin-with-id-‘android-library’-not-found"><span class="nav-number">5.</span> <span class="nav-text">Plugin with id ‘android-library’ not found</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OutOfMemoryError"><span class="nav-number">6.</span> <span class="nav-text">OutOfMemoryError</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Error-147-Apostrophe-not-preceded-by-in-Cost-can’t-be-empty"><span class="nav-number">7.</span> <span class="nav-text">Error:(147) Apostrophe not preceded by \ (in Cost can’t be empty)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#XML中无法预览"><span class="nav-number">8.</span> <span class="nav-text">XML中无法预览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#识别不到Genymotion-Device"><span class="nav-number">9.</span> <span class="nav-text">识别不到Genymotion Device</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Error-Execution-failed-for-task-‘-app-packageDebug’-gt-zip-isFile"><span class="nav-number">10.</span> <span class="nav-text">Error:Execution failed for task ‘:app:packageDebug’. > !zip.isFile()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Find-in-Path全局搜索失败"><span class="nav-number">11.</span> <span class="nav-text">Find in Path全局搜索失败</span></a></li></ol></div>
             
 
           </div>

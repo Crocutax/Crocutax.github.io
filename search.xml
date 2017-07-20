@@ -2545,6 +2545,10 @@ public void setUserVisibleHint(boolean isVisibleToUser) {
 <li>将Genymotion Device和AndroidStudio 都重启</li>
 </ol>
 <h1 id="Error-Execution-failed-for-task-‘-app-packageDebug’-gt-zip-isFile"><a href="#Error-Execution-failed-for-task-‘-app-packageDebug’-gt-zip-isFile" class="headerlink" title="Error:Execution failed for task ‘:app:packageDebug’. &gt; !zip.isFile()"></a>Error:Execution failed for task ‘:app:packageDebug’. &gt; !zip.isFile()</h1><p>顶部工具栏 Clean and Rebuild project 完事</p>
+<h1 id="Find-in-Path全局搜索失败"><a href="#Find-in-Path全局搜索失败" class="headerlink" title="Find in Path全局搜索失败"></a>Find in Path全局搜索失败</h1><p>Ctrl+Shift+F 调出Find in path全局搜索页面,输入关键字搜索时,发现明明项目里有这个内容,但是却在Preview界面没有任何结果展示.</p>
+<p><strong>解决方案:</strong></p>
+<p>Find in path-&gt;Options-&gt;File name filter,把File masks的对勾去掉.就可以正常使用了.</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-82dbefdb18ce3176.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="FindInPath设置.png"></p>
 ]]></content>
       
         <categories>
