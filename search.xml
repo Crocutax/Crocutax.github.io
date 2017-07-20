@@ -3,6 +3,39 @@
   
     
     <entry>
+      <title><![CDATA[Android支付宝支付之坑]]></title>
+      <url>/2017/07/21/Android%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%AF%E4%BB%98%E4%B9%8B%E5%9D%91/</url>
+      <content type="html"><![CDATA[<p>之前用支付宝支付，总体来说一直比较顺利，没有遇到什么坑。不过人生处处有惊喜，现在在一家外包公司工作，项目质量参差不齐，奇葩情况也偶有出现。</p>
+<p>前几天项目组的一位小伙伴遇到了一个支付宝支付的问题，原因后台把支付宝的加签工作甩给了移动端，当时我就震惊了！还有这种操作？！！WTF！！！而且ios已经按照这种移动端加签的方式做好了，这就让Android端很尴尬了。如果让后台重新按正规流程做一遍，ios也得改，而且显得Android端技术很差啊，后台和ios都做好了，就Android还是支付不了，于是只能硬上了。</p>
+<p>支付宝Demo中的签名方法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SignUtils</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String ALGORITHM = <span class="string">"RSA"</span>;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String SIGN_ALGORITHMS = <span class="string">"SHA1WithRSA"</span>;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String SIGN_SHA256RSA_ALGORITHMS = <span class="string">"SHA256WithRSA"</span>;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_CHARSET = <span class="string">"UTF-8"</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">getAlgorithms</span><span class="params">(<span class="keyword">boolean</span> rsa2)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> rsa2 ? SIGN_SHA256RSA_ALGORITHMS : SIGN_ALGORITHMS;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">sign</span><span class="params">(String content, String privateKey, <span class="keyword">boolean</span> rsa2)</span> </span>&#123;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			PKCS8EncodedKeySpec priPKCS8 = <span class="keyword">new</span> PKCS8EncodedKeySpec(</div><div class="line">					Base64.decode(privateKey));</div><div class="line">			KeyFactory keyf = KeyFactory.getInstance(ALGORITHM);</div><div class="line">			PrivateKey priKey = keyf.generatePrivate(priPKCS8);</div><div class="line"></div><div class="line">			java.security.Signature signature = java.security.Signature</div><div class="line">					.getInstance(getAlgorithms(rsa2));</div><div class="line"></div><div class="line">			signature.initSign(priKey);</div><div class="line">			signature.update(content.getBytes(DEFAULT_CHARSET));</div><div class="line"></div><div class="line">			<span class="keyword">byte</span>[] signed = signature.sign();</div><div class="line"></div><div class="line">			<span class="keyword">return</span> Base64.encode(signed);</div><div class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果项目中直接用这个方法去跑，一定是无法正常调起支付宝支付的，会报如下异常：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java.security.spec.InvalidKeySpecException: java.lang.RuntimeException: error:<span class="number">0</span>D0680A8:asn1 encoding routines:ASN1_CHECK_TLEN:wrong tag</div></pre></td></tr></table></figure>
+<p>这是支付宝Demo留给我们的坑，按照网上的说法，将其中获取KeyFactory的代码改为</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">KeyFactory keyf = KeyFactory.getInstance(ALGORITHM,<span class="string">"BC"</span>);</div></pre></td></tr></table></figure>
+<p>再次运行后，报异常：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ExtendedInvalidKeySpecException: unable to process key spec: java.lang.ClassCastException: com.android.org.bouncycastle.asn1.DLSequence cannot be cast to com.android.org.bouncycastle.asn1.ASN1Integer</div></pre></td></tr></table></figure>
+<p>以为这次又是支付宝的坑，其实这次是同事留给我的坑，同事把PrivateKey用错了。。。正常的<code>RSA2_PRIVATE</code> 长这样，注意是以<code>==</code>号结尾</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-aa8610c383f57c60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="支付宝RSA2_PRIVATE.png"></p>
+<p>更换了之后，这种支付宝加签的方式就可以跑通了。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Android </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 经验总结 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Idea使用中的问题记录]]></title>
       <url>/2017/07/19/Idea%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
       <content type="html"><![CDATA[<h1 id="idea配置Tomcat-启动Web项目"><a href="#idea配置Tomcat-启动Web项目" class="headerlink" title="idea配置Tomcat,启动Web项目"></a>idea配置Tomcat,启动Web项目</h1><ol>
