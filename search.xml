@@ -2652,7 +2652,22 @@ public void setUserVisibleHint(boolean isVisibleToUser) {
 <p><strong>解决方案:</strong></p>
 <p>Find in path-&gt;Options-&gt;File name filter,把File masks的对勾去掉.就可以正常使用了.</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1958298-82dbefdb18ce3176.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="FindInPath设置.png"></p>
-]]></content>
+<h1 id="AndroidStudio2-X目录移动至其他目录"><a href="#AndroidStudio2-X目录移动至其他目录" class="headerlink" title=".AndroidStudio2.X目录移动至其他目录"></a>.AndroidStudio2.X目录移动至其他目录</h1><p>.AndroidStudio2.X 默认放在C盘的C:\Users{yourUsername}/目录下,轻轻松松占用几个G的磁盘空间,不过一般C盘是系统盘,所以希望保留足够的剩余空间.此时可以将此目录剪切到任何地方.然后做如下配置修改:</p>
+<p>1.在AndroidStudio安装目录(比如<code>D:\Dev\Android\Android Studio\bin</code>),找到<code>idea.properties</code>配置文件</p>
+<p>里面有两个默认配置如下</p>
+<pre><code>#---------------------------------------------------------------------
+# Uncomment this option if you want to customize path to IDE config folder. Make sure you&apos;re using forward slashes.
+#---------------------------------------------------------------------
+# idea.config.path=${user.home}/.AndroidStudio/config
+
+#---------------------------------------------------------------------
+# Uncomment this option if you want to customize path to IDE system folder. Make sure you&apos;re using forward slashes.
+#---------------------------------------------------------------------
+# idea.system.path=${user.home}/.AndroidStudio/system
+</code></pre><p>2.针对于<code>idea.config.path</code> 和 <code>idea.system.path</code>,可以修改原有默认配置,或者新增均可,然后取消前面的注释符号<code>#</code>即可.<br>比如修改后为</p>
+<pre><code>idea.config.path=D:\cache\.AndroidStudio2.3\config
+idea.system.path=D:\cache\.AndroidStudio2.3\system
+</code></pre>]]></content>
       
         <categories>
             
