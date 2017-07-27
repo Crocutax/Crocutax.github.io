@@ -92,17 +92,20 @@
 
 
 
-<meta name="description" content="idea配置Tomcat,启动Web项目 Run-&amp;gt;Edit Configuration 添加TomcatServer-&amp;gt;Local Server,在Server选项卡中选择Tomcat服务器,并进行Tomcat名称,默认部署后启动的浏览器等信息 编辑器已有默认配置   选择Deployment选项卡,按绿色+号 添加需要部署的项目,右侧Application context为项目名称">
+<meta name="description" content="Realm使用注意事项 Realm默认运行在主线程,使用时须开启异步任务 Realm本身是单例类,可以多线程并发调用,但是RealmObject则不允许并发,每个RealmObject都绑定了一个TreadId,必须在创建该RealmObject的线程中使用它. 在子线程查询出的数据无法在主线程使用,自己的方案是:子线程查询,置换为自己的Bean类,然后在主线程使用 没有主键的realmObjec">
 <meta name="keywords" content="经验总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Idea使用中的问题记录">
-<meta property="og:url" content="http://www.crocutax.com/2017/07/19/Idea使用中的问题记录/index.html">
+<meta property="og:title" content="Realm数据库使用总结及采坑记录">
+<meta property="og:url" content="http://www.crocutax.com/2017/07/27/Realm数据库使用总结及采坑记录/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
-<meta property="og:description" content="idea配置Tomcat,启动Web项目 Run-&amp;gt;Edit Configuration 添加TomcatServer-&amp;gt;Local Server,在Server选项卡中选择Tomcat服务器,并进行Tomcat名称,默认部署后启动的浏览器等信息 编辑器已有默认配置   选择Deployment选项卡,按绿色+号 添加需要部署的项目,右侧Application context为项目名称">
-<meta property="og:updated_time" content="2017-07-19T09:44:58.475Z">
+<meta property="og:description" content="Realm使用注意事项 Realm默认运行在主线程,使用时须开启异步任务 Realm本身是单例类,可以多线程并发调用,但是RealmObject则不允许并发,每个RealmObject都绑定了一个TreadId,必须在创建该RealmObject的线程中使用它. 在子线程查询出的数据无法在主线程使用,自己的方案是:子线程查询,置换为自己的Bean类,然后在主线程使用 没有主键的realmObjec">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-779a88e30f16a14b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-cd6e0fc8eb2dd057.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-07-27T01:04:20.810Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Idea使用中的问题记录">
-<meta name="twitter:description" content="idea配置Tomcat,启动Web项目 Run-&amp;gt;Edit Configuration 添加TomcatServer-&amp;gt;Local Server,在Server选项卡中选择Tomcat服务器,并进行Tomcat名称,默认部署后启动的浏览器等信息 编辑器已有默认配置   选择Deployment选项卡,按绿色+号 添加需要部署的项目,右侧Application context为项目名称">
+<meta name="twitter:title" content="Realm数据库使用总结及采坑记录">
+<meta name="twitter:description" content="Realm使用注意事项 Realm默认运行在主线程,使用时须开启异步任务 Realm本身是单例类,可以多线程并发调用,但是RealmObject则不允许并发,每个RealmObject都绑定了一个TreadId,必须在创建该RealmObject的线程中使用它. 在子线程查询出的数据无法在主线程使用,自己的方案是:子线程查询,置换为自己的Bean类,然后在主线程使用 没有主键的realmObjec">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1958298-779a88e30f16a14b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -130,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://www.crocutax.com/2017/07/19/Idea使用中的问题记录/"/>
+  <link rel="canonical" href="http://www.crocutax.com/2017/07/27/Realm数据库使用总结及采坑记录/"/>
 
 
 
 
 
-  <title>Idea使用中的问题记录 | Crocutax's Blog</title>
+  <title>Realm数据库使用总结及采坑记录 | Crocutax's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -309,7 +312,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2017/07/19/Idea使用中的问题记录/">
+    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2017/07/27/Realm数据库使用总结及采坑记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Crocutax">
@@ -330,7 +333,7 @@
             
             
               
-                Idea使用中的问题记录
+                Realm数据库使用总结及采坑记录
               
             
           </h1>
@@ -345,8 +348,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-19T11:09:27+08:00">
-                2017-07-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-27T08:49:38+08:00">
+                2017-07-27
               </time>
             
 
@@ -368,8 +371,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -386,7 +389,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/07/19/Idea使用中的问题记录/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/07/27/Realm数据库使用总结及采坑记录/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -395,7 +398,7 @@
 
           
           
-             <span id="/2017/07/19/Idea使用中的问题记录/" class="leancloud_visitors" data-flag-title="Idea使用中的问题记录">
+             <span id="/2017/07/27/Realm数据库使用总结及采坑记录/" class="leancloud_visitors" data-flag-title="Realm数据库使用总结及采坑记录">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -420,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  662 字
+                  886 字
                 </span>
               
 
@@ -436,7 +439,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -454,64 +457,43 @@
       
 
       
-        <h1 id="idea配置Tomcat-启动Web项目"><a href="#idea配置Tomcat-启动Web项目" class="headerlink" title="idea配置Tomcat,启动Web项目"></a>idea配置Tomcat,启动Web项目</h1><ol>
-<li>Run-&gt;Edit Configuration</li>
-<li>添加TomcatServer-&gt;Local Server,在Server选项卡中选择Tomcat服务器,并进行Tomcat名称,默认部署后启动的浏览器等信息<ul>
-<li>编辑器已有默认配置</li>
+        <h1 id="Realm使用注意事项"><a href="#Realm使用注意事项" class="headerlink" title="Realm使用注意事项"></a>Realm使用注意事项</h1><ul>
+<li>Realm默认运行在主线程,使用时须开启异步任务</li>
+<li>Realm本身是单例类,可以多线程并发调用,但是RealmObject则不允许并发,每个RealmObject都绑定了一个TreadId,必须在创建该RealmObject的线程中使用它.</li>
+<li>在子线程查询出的数据无法在主线程使用,自己的方案是:子线程查询,置换为自己的Bean类,然后在主线程使用</li>
+<li>没有主键的realmObject无法进行update操作.所以如果要使用realm.copyToRealmOrUpdate(realmObject),那么这个realmObject必须设置primaryKey</li>
+<li>如果Realm关闭，所有查询得到的RealmObject都不能使用了,解决方案是复制一份数据到内存中。</li>
+<li>操作数据库必须在transaction中完成</li>
 </ul>
-</li>
-<li>选择Deployment选项卡,按绿色+号 添加需要部署的项目,右侧<code>Application context</code>为项目名称.<ul>
-<li>如果<code>Application context</code>不配置,默认为<code>/</code>,那么通过<code>http://localhost:8080/index.jsp</code>即可访问项目页面</li>
-<li>如果<code>Application context</code>配置为<code>/test</code>,那么访问路径变为<code>http://localhost:8080/test/index.jsp</code></li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>注意</p>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="Object-not-managed-by-Realm-so-it-cannot-be-removed"><a href="#Object-not-managed-by-Realm-so-it-cannot-be-removed" class="headerlink" title="Object not managed by Realm, so it cannot be removed"></a>Object not managed by Realm, so it cannot be removed</h2><p>Realm不支持直接通过deleteFromRealm删除Bean类,即使该Bean extends RealmObject，否则会报此异常</p>
+<p><strong>正确姿势</strong>:</p>
+<p>根据指定字段，从数据库中查询到该Bean，然后再删除</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 从数据库中删除CollectBean</div><div class="line"> * <span class="doctag">@param</span> conType</div><div class="line"> * <span class="doctag">@param</span> relateId</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteCollectBeanByTypeAndId</span><span class="params">(String conType,<span class="keyword">int</span> relateId)</span></span>&#123;</div><div class="line">    Realm realm = RealmUtils.getInstance().mRealm;</div><div class="line">    CollectBean bean = realm.where(CollectBean.class)</div><div class="line">            .equalTo(CollectBean.CON_TYPE, conType)</div><div class="line">            .equalTo(CollectBean.RELATE_ID,relateId)</div><div class="line">            .findFirst();</div><div class="line">    realm.beginTransaction();</div><div class="line">    bean.deleteFromRealm();</div><div class="line">    realm.commitTransaction();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Realm-accessed-from-incorrect-thread"><a href="#Realm-accessed-from-incorrect-thread" class="headerlink" title="Realm accessed from incorrect thread"></a>Realm accessed from incorrect thread</h2><p>RealmObject自带线程保护功能，只能在创建它的线程中访问，在子线程中不能访问。<br>也就是说，如果你在主线程中new了一个RealmObject对象 user，那么在子线程中是访问不了user对象的。<br>要想在子线程中访问，必须先将user存入Ream中，然后在子线程中query出来。<br><a href="http://www.jianshu.com/p/dd5c7f926218" target="_blank" rel="external">简书文章</a></p>
+<h2 id="is-not-part-of-the-schema-for-this-Realm"><a href="#is-not-part-of-the-schema-for-this-Realm" class="headerlink" title="is not part of the schema for this Realm"></a>is not part of the schema for this Realm</h2><blockquote>
+<p>详细异常信息:  java.lang.IllegalArgumentException: UserBean is not part of the schema for this Realm</p>
 </blockquote>
-<p>如果发现配置的部署的项目无法Apply,或者无法通过绿色铅笔按钮进行编辑 , 那么采用如下方法:</p>
-<ul>
-<li>idea编辑器左上角File-&gt;Project Structure-&gt;Project Settings-&gt;Artifacts-&gt;绿色按钮添加-&gt;Web Application Exploded</li>
-<li>左边<code>output root</code>为编译文件输出目录 , 右侧<code>Available Elements</code>为可用项目元素 , 默认编辑器已配置好可用项目元素 , 双击 , 或右键选择 , 即可将指定目录左移到<code>output root</code>目录.</li>
-<li>回到Edit Configuration-&gt;Deployment界面 , 重新添加部署的项目 , 来源选择<code>Artifacts</code>即可</li>
-</ul>
-<p>4.此时Apply之后发现tomcat并没有添加成功 , 还差最后一步 . 在Edit Configuration页面下方 , 有<code>Befor launch:Build,Build Artifacts,Activate tool window</code>选项 , 默认只有一个<strong>Build</strong>条目 , 再添加一个<code>Build Artifacts</code>条目 , 再Apply-&gt;OK </p>
-<p>配置成功!完事!</p>
-<h1 id="错误-找不到或无法加载主类"><a href="#错误-找不到或无法加载主类" class="headerlink" title="错误:找不到或无法加载主类"></a>错误:找不到或无法加载主类</h1><p>环境状况:</p>
-<ul>
-<li>环境变量配置没有问题,通过windows命令行窗口可以正常查看版本号</li>
-<li>电脑里的其他Java和Android项目都运行正常</li>
-</ul>
-<p>在此前提下,运行Demo时报出 <strong>错误:找不到或无法加载主类</strong>. 说明是Idea配置问题导致的.</p>
-<blockquote>
-<p>原因</p>
+<p>需要调整plugin中的顺序,如下:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">apply plugin: <span class="string">'com.android.application'</span></div><div class="line">apply plugin: <span class="string">'com.bugtags.library.plugin'</span></div><div class="line">apply plugin: <span class="string">'android-apt'</span></div><div class="line">apply plugin: <span class="string">'realm-android'</span></div><div class="line">apply plugin: <span class="string">'com.neenbedankt.android-apt'</span></div></pre></td></tr></table></figure>
+<h2 id="bean-has-a-primary-key-use-‘createObject-Class-Object-’-instead"><a href="#bean-has-a-primary-key-use-‘createObject-Class-Object-’-instead" class="headerlink" title="{bean}has a primary key, use ‘createObject(Class, Object)’ instead"></a>{bean}has a primary key, use ‘createObject(Class<e>, Object)’ instead</e></h2><blockquote>
+<p>详细异常信息: io.realm.exceptions.RealmException: ‘UserBean’ has a primary key, use ‘createObject(Class<e>, Object)’ instead.</e></p>
 </blockquote>
-<ol>
-<li>没有给Project设置编译文件的输出路径,即Project Structure -&gt; Project Settings -&gt; Project compiler output没有设置,但是却在Modules -&gt; Paths 中选择了 <code>Inherit project compile output path</code></li>
-<li>Project Structure -&gt; Modules -&gt; Paths 中,选择了<code>Use module compile output path</code> , 但是只是默认的相对路径.</li>
-</ol>
-<blockquote>
-<p>解决方案</p>
+<p>如果实体中已经通过<code>@PrimaryKey</code>标明了主键,那么想要通过<code>createObject(Class&lt;E&gt;, Object)</code>创建实体对象,则必须传入primaryKeyValue(主键值)</p>
+<h2 id="异步查询之坑"><a href="#异步查询之坑" class="headerlink" title="异步查询之坑"></a>异步查询之坑</h2><p> 1.官方文档介绍 <a href="https://realm.io/docs/java/latest/#getting-started" target="_blank" rel="external">主线程操作Realm会卡顿/阻塞线程</a><br><img src="http://upload-images.jianshu.io/upload_images/1958298-779a88e30f16a14b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="防止ANR"><br>官方表示Realm运行速度很快,足以在主线程运行,而后又表示其实还是会阻塞线程导致偶发的ANR,因此建议在子线程操作Realm.</p>
+<p> 2.<a href="http://stackoverflow.com/questions/27805580/realm-io-and-asynchronous-queries" target="_blank" rel="external">子线程查询的数据,无法在主线程使用</a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-cd6e0fc8eb2dd057.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><strong>解决方案:</strong></p>
+<p>子线程查询,置换为自己的Bean类,然后在主线程使用.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">Realm.getDefaultInstance().executeTransactionAsync(<span class="keyword">new</span> Realm.Transaction() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">(Realm realm)</span> </span>&#123;</div><div class="line">        Person ziPerson = realm.where(Person.class).findFirst();</div><div class="line">        personInfo = <span class="keyword">new</span> PersonInfo();</div><div class="line">        personInfo.setName(ziPerson.getName());</div><div class="line">        personInfo.setAge(ziPerson.getAge());</div><div class="line">        <span class="comment">//Log 输出#Execute ] false..Person&#123;name='小明', age=18&#125;</span></div><div class="line">        KLog.i((Looper.getMainLooper()==Looper.myLooper())+<span class="string">".."</span>+ personInfo.toString());</div><div class="line">    &#125;</div><div class="line">&#125;, <span class="keyword">new</span> Realm.Transaction.OnSuccess() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">//Log 输出#OnSuccess ] true..personInfo:Person&#123;name='小明', age=18&#125;</span></div><div class="line">        KLog.i((Looper.getMainLooper()==Looper.myLooper())+<span class="string">".."</span>+ personInfo.toString());</div><div class="line">    &#125;</div><div class="line">&#125;, <span class="keyword">new</span> Realm.Transaction.OnError() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable error)</span> </span>&#123;</div><div class="line">        KLog.i(error.toString());</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="RejectedExecutionException"><a href="#RejectedExecutionException" class="headerlink" title="RejectedExecutionException"></a>RejectedExecutionException</h2><blockquote>
+<p>详细异常信息:java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@4dffbdd rejected from io.realm.internal.async.RealmThreadPoolExecutor@c09c352[Running, pool size = 17, active threads = 2, queued tasks = 100, completed tasks = 110]</p>
 </blockquote>
-<p>首先,确保Project Structure -&gt; Project,已为Project指定SDK</p>
-<p>其次:</p>
-<p><strong>方案1:使用Project的编译输出路径</strong></p>
-<ul>
-<li>在Project Settings -&gt; Project compiler output中设置Project的编译输出路径</li>
-<li>在Project Settings -&gt; Modules中选择  <code>Inherit project compile output path</code> 即继承Project的路径</li>
-</ul>
-<p><strong>方案2:使用Module的编译输出路径</strong></p>
-<p>Project Structure -&gt; Modules -&gt; Paths,改变<code>Output path</code> 和 <code>Test output path</code>的路径.</p>
-<p>两个路径默认是:</p>
-<ul>
-<li>\out\lib</li>
-<li>\out\test\lib</li>
-</ul>
-<p>改为项目绝对路径+上述目录,比如项目文件路径为E:\JavaEE\HelloWorld,那么修改后的两个Path分别为:</p>
-<ul>
-<li>E:\JavaEE\HelloWorld\out\lib</li>
-<li>E:\JavaEE\HelloWorld\out\test\lib</li>
-</ul>
+<p><strong>解决方案:</strong></p>
+<p>不要在for循环中使用Realm,将数据存入集合中,然后开启事务,直接使用copyToRealmOrUpdate(realmObjectList)存储即可.</p>
+<h2 id="事务嵌套报异常"><a href="#事务嵌套报异常" class="headerlink" title="事务嵌套报异常"></a>事务嵌套报异常</h2><blockquote>
+<p>详细异常信息:The Realm is already in a write transaction in /Users/blakemeike/Working/release/realm/realm-library/src/main/cpp/io_realm_internal_SharedRealm.cpp line 116</p>
+</blockquote>
+<p>原因 : 在一个事务中开启了另外一个事务.应避免这种情况.</p>
 
       
     </div>
@@ -571,16 +553,16 @@
 
             <li class="post-copyright-link">
               <strong>本文标题：</strong>
-              <a href="http://www.crocutax.com/2017/07/19/Idea使用中的问题记录/" title="Idea使用中的问题记录">Idea使用中的问题记录</a>
+              <a href="http://www.crocutax.com/2017/07/27/Realm数据库使用总结及采坑记录/" title="Realm数据库使用总结及采坑记录">Realm数据库使用总结及采坑记录</a>
             </li>
 
             <li class="post-copyright-link">
               <strong>本文链接：</strong>
-              <a href="http://www.crocutax.com/2017/07/19/Idea使用中的问题记录/" title="Idea使用中的问题记录">http://www.crocutax.com/2017/07/19/Idea使用中的问题记录/</a>
+              <a href="http://www.crocutax.com/2017/07/27/Realm数据库使用总结及采坑记录/" title="Realm数据库使用总结及采坑记录">http://www.crocutax.com/2017/07/27/Realm数据库使用总结及采坑记录/</a>
             </li>
 
             <li class="post-copyright-date">
-                <strong>发布时间：</strong>2017年7月19日 - 11时07分
+                <strong>发布时间：</strong>2017年7月27日 - 08时07分
             </li>  
 
             <li class="post-copyright-license">
@@ -608,8 +590,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/04/融云IM踩坑记录/" rel="next" title="融云IM踩坑记录">
-                <i class="fa fa-chevron-left"></i> 融云IM踩坑记录
+              <a href="/2017/07/23/SSM开发Web项目问题解决记录/" rel="next" title="SSM开发Web项目问题解决记录">
+                <i class="fa fa-chevron-left"></i> SSM开发Web项目问题解决记录
               </a>
             
           </div>
@@ -617,10 +599,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/21/Android支付宝支付之坑/" rel="prev" title="Android支付宝支付之坑">
-                Android支付宝支付之坑 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -786,7 +764,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#idea配置Tomcat-启动Web项目"><span class="nav-number">1.</span> <span class="nav-text">idea配置Tomcat,启动Web项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误-找不到或无法加载主类"><span class="nav-number">2.</span> <span class="nav-text">错误:找不到或无法加载主类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Realm使用注意事项"><span class="nav-number">1.</span> <span class="nav-text">Realm使用注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见问题"><span class="nav-number">2.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-not-managed-by-Realm-so-it-cannot-be-removed"><span class="nav-number">2.1.</span> <span class="nav-text">Object not managed by Realm, so it cannot be removed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Realm-accessed-from-incorrect-thread"><span class="nav-number">2.2.</span> <span class="nav-text">Realm accessed from incorrect thread</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#is-not-part-of-the-schema-for-this-Realm"><span class="nav-number">2.3.</span> <span class="nav-text">is not part of the schema for this Realm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bean-has-a-primary-key-use-‘createObject-Class-Object-’-instead"><span class="nav-number">2.4.</span> <span class="nav-text">{bean}has a primary key, use ‘createObject(Class, Object)’ instead</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步查询之坑"><span class="nav-number">2.5.</span> <span class="nav-text">异步查询之坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RejectedExecutionException"><span class="nav-number">2.6.</span> <span class="nav-text">RejectedExecutionException</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务嵌套报异常"><span class="nav-number">2.7.</span> <span class="nav-text">事务嵌套报异常</span></a></li></ol></li></ol></div>
             
 
           </div>
