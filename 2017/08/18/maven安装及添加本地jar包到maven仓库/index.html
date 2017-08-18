@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="经验总结," />
 
 
 
@@ -92,15 +92,20 @@
 
 
 
-<meta name="description" content="知行合一,活在当下">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Crocutax&#39;s Blog">
-<meta property="og:url" content="http://www.crocutax.com/archives/2008/10/index.html">
+<meta name="description" content="配置maven环境首先,下载插件,解压 http://maven.apache.org/download.cgi然后开始配置环境变量,  新建系统变量 MAVEN_HOME 变量值：D:\Dev\apache-maven-3.5.0 (即maven的安装目录) 编辑系统变量 Path 添加变量值：;%MAVEN_HOME%\bin 测试:mcd打开dos窗口 ,输入 mvn --version">
+<meta name="keywords" content="经验总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="maven安装及添加本地jar包到maven仓库">
+<meta property="og:url" content="http://www.crocutax.com/2017/08/18/maven安装及添加本地jar包到maven仓库/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
-<meta property="og:description" content="知行合一,活在当下">
+<meta property="og:description" content="配置maven环境首先,下载插件,解压 http://maven.apache.org/download.cgi然后开始配置环境变量,  新建系统变量 MAVEN_HOME 变量值：D:\Dev\apache-maven-3.5.0 (即maven的安装目录) 编辑系统变量 Path 添加变量值：;%MAVEN_HOME%\bin 测试:mcd打开dos窗口 ,输入 mvn --version">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-393d7084c1b00d12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-5932c0721980be94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-08-18T13:11:26.647Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Crocutax&#39;s Blog">
-<meta name="twitter:description" content="知行合一,活在当下">
+<meta name="twitter:title" content="maven安装及添加本地jar包到maven仓库">
+<meta name="twitter:description" content="配置maven环境首先,下载插件,解压 http://maven.apache.org/download.cgi然后开始配置环境变量,  新建系统变量 MAVEN_HOME 变量值：D:\Dev\apache-maven-3.5.0 (即maven的安装目录) 编辑系统变量 Path 添加变量值：;%MAVEN_HOME%\bin 测试:mcd打开dos窗口 ,输入 mvn --version">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1958298-393d7084c1b00d12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -128,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://www.crocutax.com/archives/2008/10/"/>
+  <link rel="canonical" href="http://www.crocutax.com/2017/08/18/maven安装及添加本地jar包到maven仓库/"/>
 
 
 
 
 
-  <title>归档 | Crocutax's Blog</title>
+  <title>maven安装及添加本地jar包到maven仓库 | Crocutax's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -169,7 +174,7 @@
     
   
 
-  <div class="container sidebar-position-right  page-archive  ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -297,65 +302,300 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-       
-      
-      OK! 目前共计 47 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2017/08/18/maven安装及添加本地jar包到maven仓库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crocutax">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crocutax's Blog">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                maven安装及添加本地jar包到maven仓库
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-18T21:08:36+08:00">
+                2017-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/08/18/maven安装及添加本地jar包到maven仓库/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/08/18/maven安装及添加本地jar包到maven仓库/" class="leancloud_visitors" data-flag-title="maven安装及添加本地jar包到maven仓库">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  225 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <h1 id="配置maven环境"><a href="#配置maven环境" class="headerlink" title="配置maven环境"></a>配置maven环境</h1><p>首先,下载插件,解压 <a href="http://maven.apache.org/download.cgi" target="_blank" rel="external">http://maven.apache.org/download.cgi</a><br>然后开始配置环境变量,</p>
+<ol>
+<li>新建系统变量 <code>MAVEN_HOME</code> 变量值：<code>D:\Dev\apache-maven-3.5.0</code> (即maven的安装目录)</li>
+<li>编辑系统变量 Path 添加变量值：<code>;%MAVEN_HOME%\bin</code></li>
+<li>测试:mcd打开dos窗口 ,输入 <code>mvn --version</code></li>
+</ol>
+<p>显示如下界面代表maven安装成功<br><img src="http://upload-images.jianshu.io/upload_images/1958298-393d7084c1b00d12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="maven安装成功测试.png"></p>
+<h1 id="添加本地jar包到maven仓库"><a href="#添加本地jar包到maven仓库" class="headerlink" title="添加本地jar包到maven仓库"></a>添加本地jar包到maven仓库</h1><p>安装非开源插件进行maven管理时需要添加本地jar包到maven仓库</p>
+<p>在jar包所在目录打开dos窗口,进行maven安装.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn install:install-file -DgroupId=com.alipay -DartifactId=sdk-java -Dversion=<span class="number">20170725114550</span> -Dpackaging=jar -Dfile=alipay-sdk-java20170725114550.jar</div></pre></td></tr></table></figure>
+<p>出现如下界面,说明成功安装到了maven本地仓库</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-5932c0721980be94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="添加jar包到maven本地仓库成功.png"></p>
+<p>可以在<code>C:\Users\用户名\.m2\repository</code> 目录下查看该仓库</p>
+<p>再在pom.xml中添加依赖,就OK了</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alipay<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>sdk-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>20170725114550<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2008">2008</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.png" alt="Crocutax WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Crocutax Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
+    <div>
+      
         
-            <a class="post-title-link" href="/2008/10/08/俞敏洪-励志演讲记录/" itemprop="url">
-              
-                <span itemprop="name">俞敏洪-励志演讲记录</span>
-              
-            </a>
-        
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2008-10-08T23:59:38+08:00"
-              content="2008-10-08" >
-          10-08
-        </time>
+      
+    </div>
+
+    <footer class="post-footer">
+
+        
+         <div>    
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 Crocutax 的个人博客">Crocutax</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="http://www.crocutax.com/2017/08/18/maven安装及添加本地jar包到maven仓库/" title="maven安装及添加本地jar包到maven仓库">maven安装及添加本地jar包到maven仓库</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="http://www.crocutax.com/2017/08/18/maven安装及添加本地jar包到maven仓库/" title="maven安装及添加本地jar包到maven仓库">http://www.crocutax.com/2017/08/18/maven安装及添加本地jar包到maven仓库/</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间：</strong>2017年8月18日 - 21时08分
+            </li>  
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 Crocutax 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
       </div>
 
-    </header>
+       
+      
+        <div class="post-tags">
+          
+            <a href="/tags/经验总结/" rel="tag"># 经验总结</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/27/Realm数据库使用总结及采坑记录/" rel="next" title="Realm数据库使用总结及采坑记录">
+                <i class="fa fa-chevron-left"></i> Realm数据库使用总结及采坑记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
   
-
 
 
           </div>
@@ -363,6 +603,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
 
         </div>
         
@@ -382,8 +628,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -477,6 +732,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置maven环境"><span class="nav-number">1.</span> <span class="nav-text">配置maven环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加本地jar包到maven仓库"><span class="nav-number">2.</span> <span class="nav-text">添加本地jar包到maven仓库</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -590,11 +861,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
