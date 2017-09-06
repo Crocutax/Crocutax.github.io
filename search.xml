@@ -264,7 +264,7 @@ resolve 让系统自动解决冲突(合并两者的代码,有点麻烦)
 <p>错误信息:Uncaught ReferenceError: [<br>function] is not defined at HTMLInputElement.onclick</p>
 </blockquote>
 <p><strong>解决方法:</strong><br>先添加jquery依赖,再定义另外的script标签,并在其中声明function</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%--引入js的包--%</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"$&#123;pageContext.request.contextPath &#125;/js/jquery-1.4.4.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    your <span class="function"><span class="keyword">function</span>...</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%--引入js的包--%</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"$&#123;pageContext.request.contextPath &#125;/js/jquery-1.4.4.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    your function...</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <h1 id="HttpMediaTypeNotSupportedException"><a href="#HttpMediaTypeNotSupportedException" class="headerlink" title="HttpMediaTypeNotSupportedException"></a>HttpMediaTypeNotSupportedException</h1><blockquote>
 <p>错误信息:HttpMediaTypeNotSupportedException: Content type ‘application/json;charset=UTF-8’ not supported</p>
 </blockquote>
@@ -382,6 +382,10 @@ resolve 让系统自动解决冲突(合并两者的代码,有点麻烦)
 <li>E:\JavaEE\HelloWorld\out\lib</li>
 <li>E:\JavaEE\HelloWorld\out\test\lib</li>
 </ul>
+<h1 id="实现接口方法报错"><a href="#实现接口方法报错" class="headerlink" title="实现接口方法报错"></a>实现接口方法报错</h1><p>当实现一些接口方法时,报出<code>@Override is not allowed when implementing Interface method</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-ccc803345608b589.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="override报错.png"></p>
+<p>由于项目所使用的java语言版本所导致的,打开<code>File-&gt;Project Structure-&gt;Modules-&gt;选择项目目录-&gt;Sources选项卡-&gt;Language Level</code>,更换Language Level即可,比如更换为<code>8-Lambdas</code>. 即可解决问题,如下图所示</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-977114780653c53d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="更换LanguageLevel.png"></p>
 ]]></content>
       
         <categories>

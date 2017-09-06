@@ -99,10 +99,13 @@
 <meta property="og:url" content="http://www.crocutax.com/2017/07/19/Idea使用中的问题记录/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="idea配置Tomcat,启动Web项目 Run-&amp;gt;Edit Configuration 添加TomcatServer-&amp;gt;Local Server,在Server选项卡中选择Tomcat服务器,并进行Tomcat名称,默认部署后启动的浏览器等信息 编辑器已有默认配置   选择Deployment选项卡,按绿色+号 添加需要部署的项目,右侧Application context为项目名称">
-<meta property="og:updated_time" content="2017-07-19T09:44:58.475Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-ccc803345608b589.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-977114780653c53d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-09-06T12:48:42.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Idea使用中的问题记录">
 <meta name="twitter:description" content="idea配置Tomcat,启动Web项目 Run-&amp;gt;Edit Configuration 添加TomcatServer-&amp;gt;Local Server,在Server选项卡中选择Tomcat服务器,并进行Tomcat名称,默认部署后启动的浏览器等信息 编辑器已有默认配置   选择Deployment选项卡,按绿色+号 添加需要部署的项目,右侧Application context为项目名称">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1958298-ccc803345608b589.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -420,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  662 字
+                  749 字
                 </span>
               
 
@@ -512,6 +515,10 @@
 <li>E:\JavaEE\HelloWorld\out\lib</li>
 <li>E:\JavaEE\HelloWorld\out\test\lib</li>
 </ul>
+<h1 id="实现接口方法报错"><a href="#实现接口方法报错" class="headerlink" title="实现接口方法报错"></a>实现接口方法报错</h1><p>当实现一些接口方法时,报出<code>@Override is not allowed when implementing Interface method</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-ccc803345608b589.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="override报错.png"></p>
+<p>由于项目所使用的java语言版本所导致的,打开<code>File-&gt;Project Structure-&gt;Modules-&gt;选择项目目录-&gt;Sources选项卡-&gt;Language Level</code>,更换Language Level即可,比如更换为<code>8-Lambdas</code>. 即可解决问题,如下图所示</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-977114780653c53d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="更换LanguageLevel.png"></p>
 
       
     </div>
@@ -786,7 +793,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#idea配置Tomcat-启动Web项目"><span class="nav-number">1.</span> <span class="nav-text">idea配置Tomcat,启动Web项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误-找不到或无法加载主类"><span class="nav-number">2.</span> <span class="nav-text">错误:找不到或无法加载主类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#idea配置Tomcat-启动Web项目"><span class="nav-number">1.</span> <span class="nav-text">idea配置Tomcat,启动Web项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误-找不到或无法加载主类"><span class="nav-number">2.</span> <span class="nav-text">错误:找不到或无法加载主类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现接口方法报错"><span class="nav-number">3.</span> <span class="nav-text">实现接口方法报错</span></a></li></ol></div>
             
 
           </div>
