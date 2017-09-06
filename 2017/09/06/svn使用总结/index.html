@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="AndroidStudio主题官方主题站,另外还有一个 国内站点   ,下载速度会快一些. 将主题jar包下载下来 , AS中点击左上角File–&amp;gt;,import settings,导入jar包即可. AS项目中哪些文件需要保留,哪些是自动生成的?需要保留的有:   Project下,3个   app build.gradle settings.gradle   Module下 , 4个">
+<meta name="description" content="客户端关联SVN仓库方式方式一(本地空目录)  创建一个空文件夹,空白处右键 checkout,输入服务器仓库的URL 当checkout的文件夹下多了个.svn的文件夹时代表关联成功  方式二(本地有项目文件夹)  将客户端项目import到服务器仓库 删除本地文件 将刚才导入服务器的项目checkout检出到本地,完成关联  提交 文件上有”？”图标时，代表服务器不知道该文件存在，右击 add">
 <meta name="keywords" content="经验总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AndroidStudio自定义配置">
-<meta property="og:url" content="http://www.crocutax.com/2016/05/06/AndroidStudio自定义配置/index.html">
+<meta property="og:title" content="svn使用总结">
+<meta property="og:url" content="http://www.crocutax.com/2017/09/06/svn使用总结/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
-<meta property="og:description" content="AndroidStudio主题官方主题站,另外还有一个 国内站点   ,下载速度会快一些. 将主题jar包下载下来 , AS中点击左上角File–&amp;gt;,import settings,导入jar包即可. AS项目中哪些文件需要保留,哪些是自动生成的?需要保留的有:   Project下,3个   app build.gradle settings.gradle   Module下 , 4个">
-<meta property="og:updated_time" content="2017-05-29T08:05:35.788Z">
+<meta property="og:description" content="客户端关联SVN仓库方式方式一(本地空目录)  创建一个空文件夹,空白处右键 checkout,输入服务器仓库的URL 当checkout的文件夹下多了个.svn的文件夹时代表关联成功  方式二(本地有项目文件夹)  将客户端项目import到服务器仓库 删除本地文件 将刚才导入服务器的项目checkout检出到本地,完成关联  提交 文件上有”？”图标时，代表服务器不知道该文件存在，右击 add">
+<meta property="og:updated_time" content="2017-09-06T12:28:41.191Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AndroidStudio自定义配置">
-<meta name="twitter:description" content="AndroidStudio主题官方主题站,另外还有一个 国内站点   ,下载速度会快一些. 将主题jar包下载下来 , AS中点击左上角File–&amp;gt;,import settings,导入jar包即可. AS项目中哪些文件需要保留,哪些是自动生成的?需要保留的有:   Project下,3个   app build.gradle settings.gradle   Module下 , 4个">
+<meta name="twitter:title" content="svn使用总结">
+<meta name="twitter:description" content="客户端关联SVN仓库方式方式一(本地空目录)  创建一个空文件夹,空白处右键 checkout,输入服务器仓库的URL 当checkout的文件夹下多了个.svn的文件夹时代表关联成功  方式二(本地有项目文件夹)  将客户端项目import到服务器仓库 删除本地文件 将刚才导入服务器的项目checkout检出到本地,完成关联  提交 文件上有”？”图标时，代表服务器不知道该文件存在，右击 add">
 
 
 
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://www.crocutax.com/2016/05/06/AndroidStudio自定义配置/"/>
+  <link rel="canonical" href="http://www.crocutax.com/2017/09/06/svn使用总结/"/>
 
 
 
 
 
-  <title>AndroidStudio自定义配置 | Crocutax's Blog</title>
+  <title>svn使用总结 | Crocutax's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -309,7 +309,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2016/05/06/AndroidStudio自定义配置/">
+    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2017/09/06/svn使用总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Crocutax">
@@ -330,7 +330,7 @@
             
             
               
-                AndroidStudio自定义配置
+                svn使用总结
               
             
           </h1>
@@ -345,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-06T14:14:07+08:00">
-                2016-05-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T20:27:03+08:00">
+                2017-09-06
               </time>
             
 
@@ -368,8 +368,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/Tool/" itemprop="url" rel="index">
+                    <span itemprop="name">Tool</span>
                   </a>
                 </span>
 
@@ -386,7 +386,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2016/05/06/AndroidStudio自定义配置/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/09/06/svn使用总结/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -395,7 +395,7 @@
 
           
           
-             <span id="/2016/05/06/AndroidStudio自定义配置/" class="leancloud_visitors" data-flag-title="AndroidStudio自定义配置">
+             <span id="/2017/09/06/svn使用总结/" class="leancloud_visitors" data-flag-title="svn使用总结">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  916 字
+                  925 字
                 </span>
               
 
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -454,71 +454,76 @@
       
 
       
-        <h1 id="AndroidStudio主题"><a href="#AndroidStudio主题" class="headerlink" title="AndroidStudio主题"></a>AndroidStudio主题</h1><p><a href="http://color-themes.com/" target="_blank" rel="external">官方主题站</a>,另外还有一个 <a href="http://www.riaway.com/theme.php" target="_blank" rel="external">国内站点</a>   ,下载速度会快一些.</p>
-<p>将主题jar包下载下来 , AS中点击左上角File–&gt;,import settings,导入jar包即可.</p>
-<h1 id="AS项目中哪些文件需要保留-哪些是自动生成的"><a href="#AS项目中哪些文件需要保留-哪些是自动生成的" class="headerlink" title="AS项目中哪些文件需要保留,哪些是自动生成的?"></a>AS项目中哪些文件需要保留,哪些是自动生成的?</h1><p>需要保留的有: </p>
-<blockquote>
-<p>Project下,3个</p>
-</blockquote>
-<ul>
-<li>app</li>
-<li>build.gradle</li>
-<li>settings.gradle</li>
+        <h1 id="客户端关联SVN仓库方式"><a href="#客户端关联SVN仓库方式" class="headerlink" title="客户端关联SVN仓库方式"></a>客户端关联SVN仓库方式</h1><p><strong>方式一(本地空目录)</strong></p>
+<ol>
+<li>创建一个空文件夹,空白处右键 checkout,输入服务器仓库的URL</li>
+<li>当checkout的文件夹下多了个.svn的文件夹时代表关联成功</li>
+</ol>
+<p><strong>方式二(本地有项目文件夹)</strong></p>
+<ol>
+<li>将客户端项目import到服务器仓库</li>
+<li>删除本地文件</li>
+<li>将刚才导入服务器的项目checkout检出到本地,完成关联</li>
+</ol>
+<h1 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h1><ul>
+<li>文件上有”？”图标时，代表服务器不知道该文件存在，右击 add，让该文件计划提交</li>
+<li>commit提交,注意提交备注信息</li>
+<li>养成先update,再commit的习惯</li>
+</ul>
+<h1 id="误删恢复"><a href="#误删恢复" class="headerlink" title="误删恢复"></a>误删恢复</h1><ul>
+<li>本地删除  ,恢复方法:SVN Update</li>
+<li>服务器删除 ,恢复方法:show log,revert to this version</li>
+</ul>
+<h1 id="版本冲突"><a href="#版本冲突" class="headerlink" title="版本冲突"></a>版本冲突</h1><pre><code>* 当本地版本低于服务器的版本,就会出现提交的冲突,因此每次提交前,先从服务器更新最新版本到本地.
+
+* 比如用户A提交,用户B编译代码后没有update,直接提交,就会产生冲突
+
+* 冲突解决
+edit conflicts 自己编辑冲突
+resolve 让系统自动解决冲突(合并两者的代码,有点麻烦)
+</code></pre><h1 id="图标解释"><a href="#图标解释" class="headerlink" title="图标解释"></a>图标解释</h1><pre><code>1.绿色的对勾 : 首次关联仓库成功后，代码提交完成
+2.蓝色?号： 服务器不识别该文件，新建的文件
+3.蓝色+号： 计划将该文件提交到服务器的仓库
+4.红色！号：文件修改了
+5.黄色！号：产生冲突了。
+6.灰色对勾： 只读文件，如果需要修改需要右击  get Lock
+7.黄色小锁： 获取锁可以修改文件。其他用户不能再次获取锁来修改文件
+8.灰色横杠： 被忽略，不提交服务器
+</code></pre><h1 id="锁操作"><a href="#锁操作" class="headerlink" title="锁操作"></a>锁操作</h1><pre><code>* 图片、视频、so、等不可被编辑的文件才使用锁,其他慎用。
+
+* 锁只能锁住一个文件状态，如果该文件被修改了，锁自动就没了。
+</code></pre><h1 id="提交原则"><a href="#提交原则" class="headerlink" title="提交原则"></a>提交原则</h1><ul>
+<li>先update,后commit</li>
+<li>每完成一个小模块,每天下班前都需要提交    </li>
+<li>禁止提交不能通过编译的代码</li>
+<li>每次提交必须书写明晰的标注</li>
+<li>不要提交自动生成的代码</li>
+<li>慎用锁定功能</li>
+</ul>
+<h1 id="其他注意事项"><a href="#其他注意事项" class="headerlink" title="其他注意事项"></a>其他注意事项</h1><ul>
+<li>提交时候提交的是一个目录,右键空白处选择提交,默认提交的是文件所在的整个目录</li>
+<li>永远不要去删除Server端的仓库，否则无法找回代</li>
+<li>谨慎使用还原，因为如果本地代码没有commit，那么还原后没有commit的代码将无法找回</li>
+<li>直接忽略的文件,直接显示横杠 ; 已提交过的文件,设置为忽略时,会先显示红叉,提交后,变为白色横杠<ul>
+<li>由于是已经提交过的文件,所以设置为忽略时,显示红叉,表示计划从版本控制中删除,当提交后,就从服务器里删除了,然后成为忽略状态.如果一个文件没有提交过,直接设置为忽略,是显示不出红叉的.因为服务器里没有,不需要计划删除.</li>
+</ul>
+</li>
 </ul>
 <blockquote>
-<p>Module下 , 4个</p>
+<p>修改远程仓库url地址</p>
 </blockquote>
-<ul>
-<li>libs</li>
-<li>src</li>
-<li>build.gradle</li>
-<li>proguard-rules.pro</li>
-</ul>
-<p>其他全部都是自动生成的 , 均可删除 . 如果要将代码备份留存 , 保留以上文件即可 , 这样可以极大的缩小体积.</p>
-<h1 id="取消Android-Studio启动时自动打开上次关闭时的界面"><a href="#取消Android-Studio启动时自动打开上次关闭时的界面" class="headerlink" title="取消Android Studio启动时自动打开上次关闭时的界面"></a>取消Android Studio启动时自动打开上次关闭时的界面</h1><p>Settings–&gt;Appearance Behavior–&gt;System Settings–&gt;取消勾选 Reopen last project on startup</p>
-<p>这个如果勾选 , 启动后会直接进入上次退出时正在编辑的界面.   如果不勾选,就会进入初始化主界面.</p>
-<h1 id="格式化代码不换行"><a href="#格式化代码不换行" class="headerlink" title="格式化代码不换行"></a>格式化代码不换行</h1><p>File–&gt;Code Style–&gt;java –&gt;Wrapping and  Braces  –&gt;line  breaks<br>把这勾勾去掉   就可以了  </p>
-<h1 id="Offline离线模式"><a href="#Offline离线模式" class="headerlink" title="Offline离线模式"></a>Offline离线模式</h1><p>Settings –&gt;Build,Execution,Deployment–&gt;Gradle–&gt;勾选Offline work<br>优点 : 提高项目的编译效率,不用每次都去联网更新.<br>缺点 : 当导入一些其他项目时,可能需要去下载一些依赖,如果离线,则无限下载.导致项目无法使用. 而且很多远程依赖会定期更新,采用离线模式无法达到及时更新.</p>
-<h1 id="修改字体大小"><a href="#修改字体大小" class="headerlink" title="修改字体大小"></a>修改字体大小</h1><p>1.修改编辑区字体大小<br>Settings–&gt;Editor–&gt;Colors&amp;Fonts–&gt;Font–&gt;Save AS         保存自己的风格.然后就可以修改字体,并使用自定义的风格了.    </p>
-<p>2.修改工程目录区字体大小<br>Settings–&gt;Appearance–&gt;修改字体大小即可</p>
-<h1 id="添加-更换字体"><a href="#添加-更换字体" class="headerlink" title="添加/更换字体"></a>添加/更换字体</h1><p>Settings–&gt;Editor–&gt;Colors&amp;Fonts–&gt;Font–&gt;Editor Font选项 选择字体喜欢的字体.</p>
-<p><strong>Show only monospace fonts</strong> 表示是否 [只显示等宽字体]</p>
-<blockquote>
-<p>另外,可以去网上搜索下载自己喜欢的字体样式,然后按照如下方式配置</p>
+<pre><code>TortoiseSVN-&gt;Relocate(重新定位),输入修改后的URL地址即可.
+</code></pre><h1 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h1><blockquote>
+<p>Unable to connect to a repository at URL “https://…” Access to “/svn/…” forbidden</p>
 </blockquote>
 <ol>
-<li>下载字体文件,Windows下使用 <strong>ttf</strong> 格式的字体文件</li>
-<li>安装字体文件<ol>
-<li>方式1:直接双击ttf文件-&gt;安装(推荐方式)</li>
-<li>方式2:把该字体复制粘贴到C:\Windows\Fonts目录下,系统会自动把该字体安装</li>
+<li>跟管理员确认自己是否拥有该仓库的访问权限</li>
+<li>有权限的前提下依然存在此错误,则<code>TortoiseSVN--&gt;Settings--&gt;Saved Data--&gt;clear</code> ,即可解决</li>
 </ol>
-</li>
-<li>重启AndroidStudio</li>
-</ol>
-<p>AndroidStudio的字体默认也是从系统字体中选择的,经过以上配置,就可以使用自己想要的字体了.</p>
-<p>个人比较喜欢的字体样式有:</p>
-<ul>
-<li>consolas</li>
-<li>Fira</li>
-<li>menlo</li>
-<li>monaco</li>
-<li>UbuntuMono</li>
-<li>Source Code Pro</li>
-</ul>
-<p>下载地址:</p>
-<p><a href="http://download.csdn.net/detail/wangxw725/9855412" target="_blank" rel="external">AndroidStudio常用字体备份</a></p>
-<h1 id="代码块-方法分割线"><a href="#代码块-方法分割线" class="headerlink" title="代码块/方法分割线"></a>代码块/方法分割线</h1><p>Settings–&gt;Editor–&gt;General–&gt;Appearance–&gt;Show Method separators    </p>
-<h1 id="每行代码最大容量"><a href="#每行代码最大容量" class="headerlink" title="每行代码最大容量"></a>每行代码最大容量</h1><p>Settings–&gt;Editor–&gt;Code Style–&gt;Default Options–&gt;Right margin(columns)</p>
-<h1 id="代码提示时忽略大小写"><a href="#代码提示时忽略大小写" class="headerlink" title="代码提示时忽略大小写"></a>代码提示时忽略大小写</h1><p>Settings–&gt;Editor–&gt;General–&gt;Code Completion–&gt;Case sensitive completion–&gt;选择None即可(默认是First Letters)</p>
-<h1 id="自定义字体颜色"><a href="#自定义字体颜色" class="headerlink" title="自定义字体颜色"></a>自定义字体颜色</h1><p>Settings–&gt;Editor–&gt;Colors&amp;Fonts–&gt;Language Defaults     点击示例文本中的关键字,可以自动选择名称,修改颜色.</p>
-<h1 id="修改代码区背景色"><a href="#修改代码区背景色" class="headerlink" title="修改代码区背景色"></a>修改代码区背景色</h1><p>Settings–&gt;Edito–&gt;colors &amp; fonts–&gt;General–&gt;Text–&gt;default text<br>在右侧选择前景色 , 背景色</p>
-<p>个人喜欢使用专家们建议的豆沙绿（RGB：#BEEDBE）or （204,232,207）</p>
-<h1 id="修改控制台Logcat颜色"><a href="#修改控制台Logcat颜色" class="headerlink" title="修改控制台Logcat颜色"></a>修改控制台Logcat颜色</h1><p>File–&gt;Settings–&gt;Editor –&gt; Colors &amp;Fonts –&gt; Android Logcat<br>将Use Inberited attributes 去掉勾选 ,然后就可以根据Logcat级别自定义颜色了</p>
-<h1 id="自定义文件注释模板"><a href="#自定义文件注释模板" class="headerlink" title="自定义文件注释模板"></a>自定义文件注释模板</h1><p>Settings–&gt;Editor–&gt;File and Code Templates–&gt;Includes–&gt;File Header<br>在里面自定义即可.</p>
-<p>比如我的模板是<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by wangxiwen on $&#123;DATE&#125; $&#123;HOUR&#125;:$&#123;MINUTE&#125;.</div><div class="line"> * E-mail : wangxw725@gmail.com</div><div class="line"> * Function : </div><div class="line"> */</div></pre></td></tr></table></figure></p>
-<p>那么每当新创建一个类时,就会带上这个文件头<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by wangxiwen on 2017/4/15 06:44.</div><div class="line"> * E-mail : wangxw725@gmail.com</div><div class="line"> * Function :</div><div class="line"> */</div></pre></td></tr></table></figure></p>
-<h1 id="全屏编辑代码"><a href="#全屏编辑代码" class="headerlink" title="全屏编辑代码"></a>全屏编辑代码</h1><p>View–&gt;Enter Presentation Mode</p>
-<h1 id="恢复已删除的文件"><a href="#恢复已删除的文件" class="headerlink" title="恢复已删除的文件"></a>恢复已删除的文件</h1><p>VCS–&gt;Local History–&gt;Show History</p>
+<blockquote>
+<p>SVN 图标不显示</p>
+</blockquote>
+<p><a href="http://www.cnblogs.com/likebeta/archive/2012/07/01/2571731.html" target="_blank" rel="external">svn图标不显示的解决方案</a> ,自己依靠第四种方法解决了问题.</p>
 
       
     </div>
@@ -578,16 +583,16 @@
 
             <li class="post-copyright-link">
               <strong>本文标题：</strong>
-              <a href="http://www.crocutax.com/2016/05/06/AndroidStudio自定义配置/" title="AndroidStudio自定义配置">AndroidStudio自定义配置</a>
+              <a href="http://www.crocutax.com/2017/09/06/svn使用总结/" title="svn使用总结">svn使用总结</a>
             </li>
 
             <li class="post-copyright-link">
               <strong>本文链接：</strong>
-              <a href="http://www.crocutax.com/2016/05/06/AndroidStudio自定义配置/" title="AndroidStudio自定义配置">http://www.crocutax.com/2016/05/06/AndroidStudio自定义配置/</a>
+              <a href="http://www.crocutax.com/2017/09/06/svn使用总结/" title="svn使用总结">http://www.crocutax.com/2017/09/06/svn使用总结/</a>
             </li>
 
             <li class="post-copyright-date">
-                <strong>发布时间：</strong>2016年5月6日 - 14时05分
+                <strong>发布时间：</strong>2017年9月6日 - 20时09分
             </li>  
 
             <li class="post-copyright-license">
@@ -615,8 +620,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/01/Java基础-位运算符回顾/" rel="next" title="Java基础-位运算符回顾">
-                <i class="fa fa-chevron-left"></i> Java基础-位运算符回顾
+              <a href="/2017/08/18/maven安装及添加本地jar包到maven仓库/" rel="next" title="maven安装及添加本地jar包到maven仓库">
+                <i class="fa fa-chevron-left"></i> maven安装及添加本地jar包到maven仓库
               </a>
             
           </div>
@@ -624,10 +629,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/03/AndroidStudio使用中的问题记录/" rel="prev" title="AndroidStudio使用中的问题记录">
-                AndroidStudio使用中的问题记录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -793,7 +794,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AndroidStudio主题"><span class="nav-number">1.</span> <span class="nav-text">AndroidStudio主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AS项目中哪些文件需要保留-哪些是自动生成的"><span class="nav-number">2.</span> <span class="nav-text">AS项目中哪些文件需要保留,哪些是自动生成的?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取消Android-Studio启动时自动打开上次关闭时的界面"><span class="nav-number">3.</span> <span class="nav-text">取消Android Studio启动时自动打开上次关闭时的界面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#格式化代码不换行"><span class="nav-number">4.</span> <span class="nav-text">格式化代码不换行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Offline离线模式"><span class="nav-number">5.</span> <span class="nav-text">Offline离线模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改字体大小"><span class="nav-number">6.</span> <span class="nav-text">修改字体大小</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加-更换字体"><span class="nav-number">7.</span> <span class="nav-text">添加/更换字体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码块-方法分割线"><span class="nav-number">8.</span> <span class="nav-text">代码块/方法分割线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#每行代码最大容量"><span class="nav-number">9.</span> <span class="nav-text">每行代码最大容量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码提示时忽略大小写"><span class="nav-number">10.</span> <span class="nav-text">代码提示时忽略大小写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义字体颜色"><span class="nav-number">11.</span> <span class="nav-text">自定义字体颜色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改代码区背景色"><span class="nav-number">12.</span> <span class="nav-text">修改代码区背景色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改控制台Logcat颜色"><span class="nav-number">13.</span> <span class="nav-text">修改控制台Logcat颜色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义文件注释模板"><span class="nav-number">14.</span> <span class="nav-text">自定义文件注释模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全屏编辑代码"><span class="nav-number">15.</span> <span class="nav-text">全屏编辑代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#恢复已删除的文件"><span class="nav-number">16.</span> <span class="nav-text">恢复已删除的文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#客户端关联SVN仓库方式"><span class="nav-number">1.</span> <span class="nav-text">客户端关联SVN仓库方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提交"><span class="nav-number">2.</span> <span class="nav-text">提交</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#误删恢复"><span class="nav-number">3.</span> <span class="nav-text">误删恢复</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本冲突"><span class="nav-number">4.</span> <span class="nav-text">版本冲突</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图标解释"><span class="nav-number">5.</span> <span class="nav-text">图标解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#锁操作"><span class="nav-number">6.</span> <span class="nav-text">锁操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提交原则"><span class="nav-number">7.</span> <span class="nav-text">提交原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他注意事项"><span class="nav-number">8.</span> <span class="nav-text">其他注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见错误"><span class="nav-number">9.</span> <span class="nav-text">常见错误</span></a></li></ol></div>
             
 
           </div>

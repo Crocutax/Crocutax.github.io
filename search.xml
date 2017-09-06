@@ -3,6 +3,96 @@
   
     
     <entry>
+      <title><![CDATA[svn使用总结]]></title>
+      <url>/2017/09/06/svn%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</url>
+      <content type="html"><![CDATA[<h1 id="客户端关联SVN仓库方式"><a href="#客户端关联SVN仓库方式" class="headerlink" title="客户端关联SVN仓库方式"></a>客户端关联SVN仓库方式</h1><p><strong>方式一(本地空目录)</strong></p>
+<ol>
+<li>创建一个空文件夹,空白处右键 checkout,输入服务器仓库的URL</li>
+<li>当checkout的文件夹下多了个.svn的文件夹时代表关联成功</li>
+</ol>
+<p><strong>方式二(本地有项目文件夹)</strong></p>
+<ol>
+<li>将客户端项目import到服务器仓库</li>
+<li>删除本地文件</li>
+<li>将刚才导入服务器的项目checkout检出到本地,完成关联</li>
+</ol>
+<h1 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h1><ul>
+<li>文件上有”？”图标时，代表服务器不知道该文件存在，右击 add，让该文件计划提交</li>
+<li>commit提交,注意提交备注信息</li>
+<li>养成先update,再commit的习惯</li>
+</ul>
+<h1 id="误删恢复"><a href="#误删恢复" class="headerlink" title="误删恢复"></a>误删恢复</h1><ul>
+<li>本地删除  ,恢复方法:SVN Update</li>
+<li>服务器删除 ,恢复方法:show log,revert to this version</li>
+</ul>
+<h1 id="版本冲突"><a href="#版本冲突" class="headerlink" title="版本冲突"></a>版本冲突</h1><pre><code>* 当本地版本低于服务器的版本,就会出现提交的冲突,因此每次提交前,先从服务器更新最新版本到本地.
+
+* 比如用户A提交,用户B编译代码后没有update,直接提交,就会产生冲突
+
+* 冲突解决
+edit conflicts 自己编辑冲突
+resolve 让系统自动解决冲突(合并两者的代码,有点麻烦)
+</code></pre><h1 id="图标解释"><a href="#图标解释" class="headerlink" title="图标解释"></a>图标解释</h1><pre><code>1.绿色的对勾 : 首次关联仓库成功后，代码提交完成
+2.蓝色?号： 服务器不识别该文件，新建的文件
+3.蓝色+号： 计划将该文件提交到服务器的仓库
+4.红色！号：文件修改了
+5.黄色！号：产生冲突了。
+6.灰色对勾： 只读文件，如果需要修改需要右击  get Lock
+7.黄色小锁： 获取锁可以修改文件。其他用户不能再次获取锁来修改文件
+8.灰色横杠： 被忽略，不提交服务器
+</code></pre><h1 id="锁操作"><a href="#锁操作" class="headerlink" title="锁操作"></a>锁操作</h1><pre><code>* 图片、视频、so、等不可被编辑的文件才使用锁,其他慎用。
+
+* 锁只能锁住一个文件状态，如果该文件被修改了，锁自动就没了。
+</code></pre><h1 id="提交原则"><a href="#提交原则" class="headerlink" title="提交原则"></a>提交原则</h1><ul>
+<li>先update,后commit</li>
+<li>每完成一个小模块,每天下班前都需要提交    </li>
+<li>禁止提交不能通过编译的代码</li>
+<li>每次提交必须书写明晰的标注</li>
+<li>不要提交自动生成的代码</li>
+<li>慎用锁定功能</li>
+</ul>
+<h1 id="其他注意事项"><a href="#其他注意事项" class="headerlink" title="其他注意事项"></a>其他注意事项</h1><ul>
+<li>提交时候提交的是一个目录,右键空白处选择提交,默认提交的是文件所在的整个目录</li>
+<li>永远不要去删除Server端的仓库，否则无法找回代</li>
+<li>谨慎使用还原，因为如果本地代码没有commit，那么还原后没有commit的代码将无法找回</li>
+<li>直接忽略的文件,直接显示横杠 ; 已提交过的文件,设置为忽略时,会先显示红叉,提交后,变为白色横杠<ul>
+<li>由于是已经提交过的文件,所以设置为忽略时,显示红叉,表示计划从版本控制中删除,当提交后,就从服务器里删除了,然后成为忽略状态.如果一个文件没有提交过,直接设置为忽略,是显示不出红叉的.因为服务器里没有,不需要计划删除.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>修改远程仓库url地址</p>
+</blockquote>
+<pre><code>TortoiseSVN-&gt;Relocate(重新定位),输入修改后的URL地址即可.
+</code></pre><h1 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h1><blockquote>
+<p>Unable to connect to a repository at URL “https://…” Access to “/svn/…” forbidden</p>
+</blockquote>
+<ol>
+<li>跟管理员确认自己是否拥有该仓库的访问权限</li>
+<li>有权限的前提下依然存在此错误,则<code>TortoiseSVN--&gt;Settings--&gt;Saved Data--&gt;clear</code> ,即可解决</li>
+</ol>
+<blockquote>
+<p>SVN 图标不显示</p>
+</blockquote>
+<p><a href="http://www.cnblogs.com/likebeta/archive/2012/07/01/2571731.html" target="_blank" rel="external">svn图标不显示的解决方案</a> ,自己依靠第四种方法解决了问题.</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Tool </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 经验总结 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[maven安装及添加本地jar包到maven仓库]]></title>
       <url>/2017/08/18/maven%E5%AE%89%E8%A3%85%E5%8F%8A%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0jar%E5%8C%85%E5%88%B0maven%E4%BB%93%E5%BA%93/</url>
       <content type="html"><![CDATA[<h1 id="配置maven环境"><a href="#配置maven环境" class="headerlink" title="配置maven环境"></a>配置maven环境</h1><p>首先,下载插件,解压 <a href="http://maven.apache.org/download.cgi" target="_blank" rel="external">http://maven.apache.org/download.cgi</a><br>然后开始配置环境变量,</p>
@@ -174,7 +264,7 @@
 <p>错误信息:Uncaught ReferenceError: [<br>function] is not defined at HTMLInputElement.onclick</p>
 </blockquote>
 <p><strong>解决方法:</strong><br>先添加jquery依赖,再定义另外的script标签,并在其中声明function</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%--引入js的包--%</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"$&#123;pageContext.request.contextPath &#125;/js/jquery-1.4.4.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    your function...</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%--引入js的包--%</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"$&#123;pageContext.request.contextPath &#125;/js/jquery-1.4.4.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    your <span class="function"><span class="keyword">function</span>...</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <h1 id="HttpMediaTypeNotSupportedException"><a href="#HttpMediaTypeNotSupportedException" class="headerlink" title="HttpMediaTypeNotSupportedException"></a>HttpMediaTypeNotSupportedException</h1><blockquote>
 <p>错误信息:HttpMediaTypeNotSupportedException: Content type ‘application/json;charset=UTF-8’ not supported</p>
 </blockquote>
