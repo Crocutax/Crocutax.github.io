@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://www.crocutax.com/2017/09/09/%E5%B0%86Mysql%E4%B8%AD%E7%9A%84%E8%A1%A8%E4%B8%80%E9%94%AE%E7%94%9F%E6%88%90Hibernate%E7%9A%84POJO/</loc>
+    <lastmod>2017-09-09T06:50:58.166Z</lastmod>
+    <data>
+        <display>
+        <title>将Mysql中的表一键生成Hibernate的POJO</title>
+        <pubTime>2017-09-09T06:47:05.000Z</pubTime>
+        
+        <tag>经验总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tool" url="http://www.crocutax.com/categories/Tool/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.crocutax.com/2017/07/19/Idea%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2017-09-06T12:48:42.524Z</lastmod>
+    <lastmod>2017-09-09T06:48:07.504Z</lastmod>
     <data>
         <display>
         <title>Idea使用中的问题记录</title>
@@ -16,7 +36,7 @@
          
            
              
-              <breadCrumb title="Java" url="http://www.crocutax.com/categories/Java/"/>
+              <breadCrumb title="Tool" url="http://www.crocutax.com/categories/Tool/"/>
           
         </display>
     </data>
