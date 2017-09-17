@@ -14,8 +14,8 @@
 <li>tomcat服务器 (web服务器)</li>
 </ul>
 <h1 id="1-添加tomcat用户及权限"><a href="#1-添加tomcat用户及权限" class="headerlink" title="1.添加tomcat用户及权限"></a>1.添加tomcat用户及权限</h1><p>由于涉及到tomcat的自动部署，所以需要具备tomcat的管理权限,而普通的tomcat用户是没有管理权限的，比如通过<code>{TOMCAT_HOME}/bin/startup.bat</code>启动tomcat之后，在首页右侧的<strong>Manager App</strong>中，需要先输入管理员账户和密码才能进行项目服务器上项目的管理，否则根本无法进入管理页面。</p>
-<p>添加用户和权限也很简单，在<code>{TOMCAT_HOME}/conf/tomcat-users.xml</code> 文件中，<code>&lt;/tomcat-users&gt;</code>节点下添加如下内容:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 创建管理角色和用户,并授权用户管理角色 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-gui"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-script"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">"tomcat"</span> <span class="attr">password</span>=<span class="string">"tomcat"</span> <span class="attr">roles</span>=<span class="string">"manager-gui, manager-script"</span>/&gt;</span></div></pre></td></tr></table></figure>
+<p>添加用户和权限也很简单，在<code>{TOMCAT_HOME}/conf/tomcat-users.xml</code> 文件中，<code>&lt;/tomcat-users&gt;</code>节点下添加如下内容,创建管理角色和用户,并授权用户管理角色:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-gui"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-script"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">"tomcat"</span> <span class="attr">password</span>=<span class="string">"tomcat"</span> <span class="attr">roles</span>=<span class="string">"manager-gui, manager-script"</span>/&gt;</span></div></pre></td></tr></table></figure>
 <p>之后进入tomcat首页-&gt;Manager App测试管理员账号是否创建成功</p>
 <p><strong>注：</strong></p>
 <ul>
@@ -64,14 +64,25 @@
 <li><strong>tomcat7:redeploy</strong>    重新部署项目</li>
 <li><strong>tomcat7:undeploy</strong>    取消部署当前项目</li>
 </ul>
-<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="Connection-reset-by-peer-socket-write-error"><a href="#Connection-reset-by-peer-socket-write-error" class="headerlink" title="Connection reset by peer: socket write error"></a>Connection reset by peer: socket write error</h2><blockquote>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="Tomcat-return-http-status-error-401-Reason-Phrase-Unauthorized"><a href="#Tomcat-return-http-status-error-401-Reason-Phrase-Unauthorized" class="headerlink" title="Tomcat return http status error: 401, Reason Phrase: Unauthorized"></a>Tomcat return http status error: 401, Reason Phrase: Unauthorized</h2><p>未授权访问tomcat，即没有tomcat的管理权限，如果没有进行步骤1中的”添加tomcat用户及权限”操作,远程部署时就会报此异常。</p>
+<p>还有一种情况，已经在<code>conf/tomcat-users.xml</code>中配置了用户和权限</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 创建用户,并授权 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-gui"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-script"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">"tomcat"</span> <span class="attr">password</span>=<span class="string">"tomcat"</span> <span class="attr">roles</span>=<span class="string">"manager-gui, manager-script"</span>/&gt;</span></div></pre></td></tr></table></figure>
+<p>但是还是有这个异常信息，于是在服务器tomcat首页测试Manager App，发现定义的tomcat管理员角色无法正常登陆。这说明配置的用户和角色出问题了,继续排查，在tomcat启动日志中,发现了如下异常信息:</p>
+<pre><code>警告: Unexpected exception resolving reference
+com.sun.org.apache.xerces.internal.impl.io.MalformedByteSequenceException: 1 字节的 UTF-8 序列的字节 1 无效。
+</code></pre><p>于是怀疑是有中文字符造成的影响，删掉了在tomcat-users.xml中的中文注释,即</p>
+<pre><code>&lt;!-- 创建用户,并授权 --&gt;
+</code></pre><p>再次部署,tomcat Manager App 测试成功,远程一键部署成功!</p>
+<p><strong>注：</strong></p>
+<p>虽然这里是WARN而不是ERROR，但是还是有可能造成一些内部程序的加载失败导致功能缺失，比如这里的tomcat启动成功，但是内部管理权限却配置失败，进而导致远程部署因没有权限而失败。所以，从严谨性角度出发，如果精力足够，那么所有的WARN都不容忽视。</p>
+<h2 id="Connection-reset-by-peer-socket-write-error"><a href="#Connection-reset-by-peer-socket-write-error" class="headerlink" title="Connection reset by peer: socket write error"></a>Connection reset by peer: socket write error</h2><blockquote>
 <p>异常信息：[ERROR] Failed to execute goal org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:deploy (default-cli) on project cmw: Cannot invoke Tomcat manager: Connection reset by peer: socke<br>t write error -&gt; [Help 1]</p>
 </blockquote>
 <p>这个应该是部署的时候最容易出现的异常了，在这里卡了很久。网上查了一大圈。根本原因是:当客户端发出请求（request）后，如果还没有完全获得服务端的响应（response），客户端与服务器段的连接断开（例如断网、按了“停止”按钮、或者客户端浏览器关闭等），服务器端就会抛出此Exception。 </p>
 <p>这个问题需要从多方面排查。</p>
 <p>1.如果是远程服务器，需要配置tomcat允许远程访问，见步骤2</p>
 <p>2.有的说tomcat9在步骤1中配置用户权限时，同一个用户不能同时拥有<code>manager-gui</code>和<code>manager-script</code>权限，但是我分开了之后，依然没有解决这个问题。最终放弃使用tomcat9，使用tomcat7，一切正常了。</p>
-<p>3.如果tomcat上已经部署了该项目，那么需要使用redeploy命令，即<code>mvn mvn tomcat7:redeploy</code></p>
+<p>3.如果tomcat上已经部署了该项目，那么需要使用redeploy命令，即<code>mvn tomcat7:redeploy</code></p>
 <h2 id="部署后的项目404"><a href="#部署后的项目404" class="headerlink" title="部署后的项目404"></a>部署后的项目404</h2><p>以下3种原因都有可能造成部署后的项目无法正常访问，报404：</p>
 <ol>
 <li>如果是远程服务器，请确保8080端口已经添加到入网规则中</li>
