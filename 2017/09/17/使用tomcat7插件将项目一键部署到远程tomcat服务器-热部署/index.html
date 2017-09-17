@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="版本特性," />
+  <meta name="keywords" content="经验总结," />
 
 
 
@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="本文包括4个部分:  FileProvider登场的背景 尝试翻译官方文档 FileProvider (只是自己学习的过程中顺便翻译了,并未校验,因为懒的弄;如发现错误,麻烦帮忙指正;如果掉坑里了,后果自负-_-!) FileProvider支持的path类型 FileProvider的使用示例  Android 7.0 文件权限的变化为了提高私有文件的安全性，在targetSdk版本为N或者以后">
-<meta name="keywords" content="版本特性">
+<meta name="description" content="现在用maven管理J2EE项目应该是常态了，在开发阶段我们经常需要经历反复的”修改代码-&amp;gt;部署-&amp;gt;测试”过程。如果每次修改完代码，都通过maven先clean-&amp;gt;package，再手动到输出目录把打好的war包copy到tomcat的webapps下，多次的重复这种无意义的体力活会让人烦躁,而且显得没有程序员精神。 不得不说，有些时候“懒”还是有很多正面意义的。这篇文章就是介绍">
+<meta name="keywords" content="经验总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android7.0适配之FileProvider的使用">
-<meta property="og:url" content="http://www.crocutax.com/2017/04/25/Android7.0适配之FileProvider的使用/index.html">
+<meta property="og:title" content="使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署">
+<meta property="og:url" content="http://www.crocutax.com/2017/09/17/使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
-<meta property="og:description" content="本文包括4个部分:  FileProvider登场的背景 尝试翻译官方文档 FileProvider (只是自己学习的过程中顺便翻译了,并未校验,因为懒的弄;如发现错误,麻烦帮忙指正;如果掉坑里了,后果自负-_-!) FileProvider支持的path类型 FileProvider的使用示例  Android 7.0 文件权限的变化为了提高私有文件的安全性，在targetSdk版本为N或者以后">
-<meta property="og:updated_time" content="2017-05-29T13:50:48.041Z">
+<meta property="og:description" content="现在用maven管理J2EE项目应该是常态了，在开发阶段我们经常需要经历反复的”修改代码-&amp;gt;部署-&amp;gt;测试”过程。如果每次修改完代码，都通过maven先clean-&amp;gt;package，再手动到输出目录把打好的war包copy到tomcat的webapps下，多次的重复这种无意义的体力活会让人烦躁,而且显得没有程序员精神。 不得不说，有些时候“懒”还是有很多正面意义的。这篇文章就是介绍">
+<meta property="og:updated_time" content="2017-09-17T05:43:31.937Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android7.0适配之FileProvider的使用">
-<meta name="twitter:description" content="本文包括4个部分:  FileProvider登场的背景 尝试翻译官方文档 FileProvider (只是自己学习的过程中顺便翻译了,并未校验,因为懒的弄;如发现错误,麻烦帮忙指正;如果掉坑里了,后果自负-_-!) FileProvider支持的path类型 FileProvider的使用示例  Android 7.0 文件权限的变化为了提高私有文件的安全性，在targetSdk版本为N或者以后">
+<meta name="twitter:title" content="使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署">
+<meta name="twitter:description" content="现在用maven管理J2EE项目应该是常态了，在开发阶段我们经常需要经历反复的”修改代码-&amp;gt;部署-&amp;gt;测试”过程。如果每次修改完代码，都通过maven先clean-&amp;gt;package，再手动到输出目录把打好的war包copy到tomcat的webapps下，多次的重复这种无意义的体力活会让人烦躁,而且显得没有程序员精神。 不得不说，有些时候“懒”还是有很多正面意义的。这篇文章就是介绍">
 
 
 
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://www.crocutax.com/2017/04/25/Android7.0适配之FileProvider的使用/"/>
+  <link rel="canonical" href="http://www.crocutax.com/2017/09/17/使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署/"/>
 
 
 
 
 
-  <title>Android7.0适配之FileProvider的使用 | Crocutax's Blog</title>
+  <title>使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署 | Crocutax's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -309,7 +309,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2017/04/25/Android7.0适配之FileProvider的使用/">
+    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2017/09/17/使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Crocutax">
@@ -330,7 +330,7 @@
             
             
               
-                Android7.0适配之FileProvider的使用
+                使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署
               
             
           </h1>
@@ -345,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-25T18:26:01+08:00">
-                2017-04-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-17T13:42:44+08:00">
+                2017-09-17
               </time>
             
 
@@ -368,8 +368,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/Tool/" itemprop="url" rel="index">
+                    <span itemprop="name">Tool</span>
                   </a>
                 </span>
 
@@ -386,7 +386,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/04/25/Android7.0适配之FileProvider的使用/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/09/17/使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -395,7 +395,7 @@
 
           
           
-             <span id="/2017/04/25/Android7.0适配之FileProvider的使用/" class="leancloud_visitors" data-flag-title="Android7.0适配之FileProvider的使用">
+             <span id="/2017/09/17/使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署/" class="leancloud_visitors" data-flag-title="使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  2,536 字
+                  1,955 字
                 </span>
               
 
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  10 分钟
+                  8 分钟
                 </span>
               
             </div>
@@ -454,133 +454,90 @@
       
 
       
-        <p>本文包括4个部分:</p>
+        <p>现在用maven管理J2EE项目应该是常态了，在开发阶段我们经常需要经历反复的”修改代码-&gt;部署-&gt;测试”过程。如果每次修改完代码，都通过maven先clean-&gt;package，再手动到输出目录把打好的war包copy到tomcat的webapps下，多次的重复这种无意义的体力活会让人烦躁,而且显得没有程序员精神。</p>
+<p>不得不说，有些时候“懒”还是有很多正面意义的。这篇文章就是介绍下如何通过tomcat7插件将项目一键部署到tomcat服务器的webapps目录下。命令很简单，主要是环境配置，以及踩坑记录。</p>
+<p>实现tomcat热部署用到了:</p>
 <ul>
-<li>FileProvider登场的背景</li>
-<li>尝试翻译官方文档 FileProvider (只是自己学习的过程中顺便翻译了,并未校验,因为懒的弄;如发现错误,麻烦帮忙指正;如果掉坑里了,后果自负-_-!)</li>
-<li>FileProvider支持的path类型</li>
-<li>FileProvider的使用示例</li>
+<li>maven (项目构建和依赖管理)</li>
+<li><a href="https://tomcat.apache.org/maven-plugin-trunk/tomcat7-maven-plugin/plugin-info.html" target="_blank" rel="external">tomcat7插件</a> (部署到tomcat的插件)</li>
+<li>tomcat服务器 (web服务器)</li>
 </ul>
-<h1 id="Android-7-0-文件权限的变化"><a href="#Android-7-0-文件权限的变化" class="headerlink" title="Android 7.0 文件权限的变化"></a>Android 7.0 文件权限的变化</h1><p>为了提高私有文件的安全性，在targetSdk版本为N或者以后版本的app中，其私有目录将会限制访问。这可以防止私有文件元数据的泄露，比如文件大小或者是文件是否存在。但这给开发者带来了一些不利的影响：</p>
+<h1 id="1-添加tomcat用户及权限"><a href="#1-添加tomcat用户及权限" class="headerlink" title="1.添加tomcat用户及权限"></a>1.添加tomcat用户及权限</h1><p>由于涉及到tomcat的自动部署，所以需要具备tomcat的管理权限,而普通的tomcat用户是没有管理权限的，比如通过<code>{TOMCAT_HOME}/bin/startup.bat</code>启动tomcat之后，在首页右侧的<strong>Manager App</strong>中，需要先输入管理员账户和密码才能进行项目服务器上项目的管理，否则根本无法进入管理页面。</p>
+<p>添加用户和权限也很简单，在<code>{TOMCAT_HOME}/conf/tomcat-users.xml</code> 文件中，<code>&lt;/tomcat-users&gt;</code>节点下添加如下内容:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 创建管理角色和用户,并授权用户管理角色 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-gui"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-script"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">"tomcat"</span> <span class="attr">password</span>=<span class="string">"tomcat"</span> <span class="attr">roles</span>=<span class="string">"manager-gui, manager-script"</span>/&gt;</span></div></pre></td></tr></table></figure>
+<p>之后进入tomcat首页-&gt;Manager App测试管理员账号是否创建成功</p>
+<p><strong>注：</strong></p>
 <ul>
-<li>文件的所有者不能放宽文件权限，如果你使用MODE_WORLD_READABLE<br>或者 MODE_WORLD_WRITEABLE操作文件，将会触发<code>SecurityException</code>。</li>
-<li>当跨package域传递file://的URI时，接收者得到的将是一个无权访问的路径，因此，这将会触发<code>FileUriExposedException</code>。对于这类操作，可以使用<code>ContentProvider</code>, 但官方推荐的方式是使用<code>FileProvider</code>.<br>在targetSdk为Android N之前的系统版本中，可以使用如下方法调用系统相机拍照并存入指定路径中</li>
+<li>username和password可以自定义，这里为了简单记忆使用了<strong>tomcat</strong>同时作为用户名和密码。</li>
+<li>网上有的博客这里配置了大量的权限，但是目前并没有发现其在这个阶段的作用和意义。</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(MediaStore.ACTION_IMAGE_CAPTURE);</div><div class="line">Uri uri = Uri.fromFile(sdcardTempFile);</div><div class="line">intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);</div></pre></td></tr></table></figure>
-<p>但是当你将targetSdk设置为Android N时 , 在执行到这段代码时app就crash了，crash的原因便是<code>FileUriExposedException</code> 。这里有两种解决方案:</p>
-<p><strong>方案1: ContentProvider</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(MediaStore.ACTION_IMAGE_CAPTURE);</div><div class="line">ContentValues contentValues = <span class="keyword">new</span> ContentValues(<span class="number">1</span>);</div><div class="line">contentValues.put(MediaStore.Images.Media.DATA, sdcardTempFile.getAbsolutePath());</div><div class="line">Uri uri = context.getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);</div></pre></td></tr></table></figure>
-<p><strong>方案2: FileProvider</strong></p>
-<h1 id="FileProvider简介"><a href="#FileProvider简介" class="headerlink" title="FileProvider简介"></a>FileProvider简介</h1><p><code>FileProvider</code> 是 <code>ContentProvider</code> 一个特殊的子类,用于通过创建<code>content://</code>  类型的URI来替代<code>file://</code> 类型的URI,从而为一个app提供更加安全的文件分享操作.</p>
-<p>一个content URI允许你授予临时的读写权限,当你创建一个包含content URI的intent时,为了将这个content URI发送给一个客户端app,还可以调用Intent.setFlags()方法添加权限.这个Content类型的URI只要app存在活跃的activity就会一直有效,一旦退出app,该URI失效.</p>
-<p>相比之下,<code>File://</code>类型的URI一旦提供了以后,任何app都可以使用该URI,并且在主动改变URI路径之前,这个URI一直有效,可以随时访问.这使得安全性大为降低.<br>由于Content URI提供的更高等级的文件安全机制,使得FileProvider成为Android安全架构的一个关键部分.</p>
-<p>FileProvider主要包含以下5方面的知识点:</p>
-<ul>
-<li>定义一个FileProvider</li>
-<li>指定可访问的文件</li>
-<li>为一个文件创建一个Content URI</li>
-<li>为URI提供临时权限</li>
-<li>将Content URI提供给另外一个app</li>
-</ul>
-<h2 id="1-定义一个FileProvider"><a href="#1-定义一个FileProvider" class="headerlink" title="1.定义一个FileProvider"></a>1.定义一个FileProvider</h2><p>由于FileProvider默认提供了为文件创建content URI的功能,因此你就不必再在代码中定义一个它的子类了.你可以直接在XML文件中声明一个FileProvider.</p>
-<p>声明FileProvider步骤:</p>
-<ol>
-<li>在application标签下添加一个标签</li>
-<li>设置android:name 属性为android.support.v4.content.FileProvider</li>
-<li>基于app的包名来设置android:authorities属性,例如:包名为mydomain.com,那么授权路径为:com.mydomain.fileprovider</li>
-<li>设置android:exported 属性为false;FileProvider不需要public</li>
-<li>设置android:grantURIPermissions 属性为true,允许文件的临时访问</li>
-</ol>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">manifest</span>&gt;</span></div><div class="line">    ...</div><div class="line">    <span class="tag">&lt;<span class="name">application</span>&gt;</span></div><div class="line">        ...</div><div class="line">        <span class="tag">&lt;<span class="name">provider</span></span></div><div class="line">            <span class="attr">android:name</span>=<span class="string">"android.support.v4.content.FileProvider"</span></div><div class="line">            <span class="attr">android:authorities</span>=<span class="string">"com.mydomain.fileprovider"</span></div><div class="line">            <span class="attr">android:exported</span>=<span class="string">"false"</span></div><div class="line">            <span class="attr">android:grantURIPermissions</span>=<span class="string">"true"</span>&gt;</div><div class="line">            ...</div><div class="line">        <span class="tag">&lt;/<span class="name">provider</span>&gt;</span></div><div class="line">        ...</div><div class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>如果想重写FileProvider中的方法,那么继承FileProvider类,并且在XML文件中的声明时,android:name 需要使用自定义类的全路径类名</p>
-<h2 id="2-指定可访问的文件"><a href="#2-指定可访问的文件" class="headerlink" title="2.指定可访问的文件"></a>2.指定可访问的文件</h2><p>一个FileProvider只能为提前指定好的文件目录生成content URI.可以通过在xml文件中,以<code>&lt;paths&gt;</code>标签的形式指定文件目录.<br>比如下面的代码,表明你计划为 images/ 目录下的子文件请求content URI</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">paths</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">files-path</span> <span class="attr">name</span>=<span class="string">"my_images"</span> <span class="attr">path</span>=<span class="string">"images/"</span>/&gt;</span></div><div class="line">    ...</div><div class="line"><span class="tag">&lt;/<span class="name">paths</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><code>&lt;paths&gt;</code>标签必须包含一个或多个下列标签</p>
-<ul>
-<li><code>&lt;files-path name=&quot;name&quot; path=&quot;path&quot; /&gt;</code><br>内部存储路径,与Context.getFilesDir()返回的路径一致</li>
-</ul>
-<ul>
-<li><code>&lt;cache-path name=&quot;name&quot; path=&quot;path&quot; /&gt;</code><br>内部缓存路径,与Context.getExternalFilesDir() 返回的路径一致</li>
-</ul>
-<ul>
-<li><code>&lt;external-path name=&quot;name&quot; path=&quot;path&quot; /&gt;</code><br>外置存储卡根目录,与Context.getExternalFilesDir()返回的路径一致</li>
-</ul>
+<h1 id="2-配置tomcat允许远程访问"><a href="#2-配置tomcat允许远程访问" class="headerlink" title="2.配置tomcat允许远程访问"></a>2.配置tomcat允许远程访问</h1><p>默认tomcat只允许本地部署，如果是要部署到远程服务器上，那么需要在远程服务器的<code>{TOMCAT_HOME}conf/Catalina/localhost/</code>目录下创建一个<code>manager.xml</code>文件，配置如下内容：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">Context</span> <span class="attr">privileged</span>=<span class="string">"true"</span> <span class="attr">antiResourceLocking</span>=<span class="string">"false"</span> <span class="attr">docBase</span>=<span class="string">"$&#123;catalina.home&#125;/webapps/manager"</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">Valve</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.valves.RemoteAddrValve"</span> <span class="attr">allow</span>=<span class="string">"^.*$"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Context</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>如果只想允许部分IP拥有访问权限，那么可以配置<code>allow</code>节点，比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">allow=&quot;127.0.0.1,192.168.1.*&quot;</div></pre></td></tr></table></figure></p>
+<p>代表只允许主机拥有访问权限。</p>
 <blockquote>
-<p>注意</p>
+<p>注意：</p>
+</blockquote>
+<p>如果没有这一步的配置，本地tomcat服务器部署正常，但是远程tomcat服务器会报出下方<strong>常见问题</strong>中提到的<code>Cannot invoke Tomcat manager: Connection reset by peer: socket write error</code>异常</p>
+<h1 id="3-为maven添加tomcat管理员账号"><a href="#3-为maven添加tomcat管理员账号" class="headerlink" title="3.为maven添加tomcat管理员账号"></a>3.为maven添加tomcat管理员账号</h1><p>由于需要使用maven来构建和部署项目，所以maven就需要拥有tomcat的管理员账号信息。<br>在<code>{MAVEN_HOME}/conf/settings.xml</code>文件中<code>&lt;servers&gt;</code>节点下添加如下内容：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 配置可以操作tomcat的用户名和密码 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">server</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>crocutax<span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- server login name --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">username</span>&gt;</span>tomcat<span class="tag">&lt;/<span class="name">username</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- server login password --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">password</span>&gt;</span>tomcat<span class="tag">&lt;/<span class="name">password</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">server</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="4-配置tomcat7插件"><a href="#4-配置tomcat7插件" class="headerlink" title="4.配置tomcat7插件"></a>4.配置tomcat7插件</h1><p>在项目的pom.xml中配置tomcat7 plugin，具体节点的意义看注释或下方清单</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 配置Tomcat插件 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!-- 此处的名字必须和&#123;MAVEN_HOME&#125;/conf/settings.xml中配置的server节点的id一致--&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">server</span>&gt;</span>crocutax<span class="tag">&lt;/<span class="name">server</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!--服务器端口号--&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">port</span>&gt;</span>8080<span class="tag">&lt;/<span class="name">port</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!-- 项目发布的路径,默认就是tomcat/webapps目录,可以指定深层次目录,留"/",则默认在webapps目录下部署ROOT.war包--&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">path</span>&gt;</span><span class="tag">&lt;/<span class="name">path</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!-- 注意tomcat7此处的url，不能随意修改,后缀必须是text,不能是html. 如果是本地tomcat部署,用localhost和ip都可以 --&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">url</span>&gt;</span>http://localhost:8080/manager/text<span class="tag">&lt;/<span class="name">url</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!--&lt;url&gt;http://117.62.110.110:8080/manager/text&lt;/url&gt;--&gt;</span></div><div class="line">		<span class="comment">&lt;!--解决中文参数乱码问题--&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">uriEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">uriEncoding</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">update</span>&gt;</span>true<span class="tag">&lt;/<span class="name">update</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!--配置在tomcat\conf\tomcat-users.xml中定义的用户名--&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">username</span>&gt;</span>tomcat<span class="tag">&lt;/<span class="name">username</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">password</span>&gt;</span>tomcat<span class="tag">&lt;/<span class="name">password</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>节点清单</p>
 </blockquote>
 <ul>
-<li>name代表URI的路径,为了安全起见,隐藏了具体的目录位置 , 具体的目录位置由path字段指定</li>
-<li>所有的path指定的都是目录名,包含了旗下的子目录,而不是文件名.无法通过文件名来指定单个文件,也无法通过通配符的形式指定一系列子文件.</li>
+<li><strong>server</strong> : 名字必须和<code>{MAVEN_HOME}/conf/settings.xml</code>中配置的server节点的id一致</li>
+<li><strong>port</strong> : 服务器端口号</li>
+<li><strong>path</strong> ：项目发布的路径,默认就是tomcat/webapps目录,可以指定深层次目录,留”/“,则默认在webapps目录下部署ROOT.war包</li>
+<li><strong>url</strong> ： 注意tomcat7此处的url，不能随意修改,后缀必须是text,不能是html. 如果是本地tomcat部署,用localhost和ip都可以</li>
+<li><strong>uriEncoding</strong> ：解决中文参数乱码问题</li>
+<li><strong>update</strong> ： 热部署，否则后期会报错</li>
+<li><strong>username</strong> ：配置<code>{TOMCAT_HOME}\conf\tomcat-users.xml</code>中定义的用户名</li>
+<li><strong>password</strong> ：同上</li>
 </ul>
-<p>必须为每个需要content URI的路径在xml提供标签来指定,比如下面的代码就提供了两个目录</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">paths</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">files-path</span> <span class="attr">name</span>=<span class="string">"my_images"</span> <span class="attr">path</span>=<span class="string">"images/"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">files-path</span> <span class="attr">name</span>=<span class="string">"my_docs"</span> <span class="attr">path</span>=<span class="string">"docs/"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">paths</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>在资源目录下创建对应的xml文件,比如res/xml/file_paths.xml,在Manifest文件中将路径xml通过<code>&lt;meta-data&gt;</code>标签与<code>FileProvider</code>绑定起来.</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">provider</span></span></div><div class="line">    <span class="attr">android:name</span>=<span class="string">"android.support.v4.content.FileProvider"</span></div><div class="line">    <span class="attr">android:authorities</span>=<span class="string">"com.mydomain.fileprovider"</span></div><div class="line">    <span class="attr">android:exported</span>=<span class="string">"false"</span></div><div class="line">    <span class="attr">android:grantURIPermissions</span>=<span class="string">"true"</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line">        <span class="attr">android:name</span>=<span class="string">"android.support.FILE_PROVIDER_PATHS"</span></div><div class="line">        <span class="attr">android:resource</span>=<span class="string">"@xml/file_paths"</span> /&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">provider</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="3-为文件生成content-URI"><a href="#3-为文件生成content-URI" class="headerlink" title="3.为文件生成content URI"></a>3.为文件生成content URI</h2><p>为了与其他app通过content URI来分享文件,你的app需要生成一个content URI.方法如下:</p>
-<p><strong>分享方app:</strong></p>
-<ol>
-<li>为该文件创建一个File对象</li>
-<li>将File对象传递给getUriForFile(),获取一个URI对象</li>
-<li>将该URI对象通过intent传递给其他的app</li>
-</ol>
-<p><strong>接收方app:</strong><br>通过ContentResolver.openFileDescriptor获取一个ParcelFileDescriptor , 读取该文件</p>
-<p>例如:<br>假设你的app需要提供给其他app一个FileProvider , authority授权名为<code>com.mydomain.fileprovider</code> , 为内部存储目录<code>images/</code> 目录下的<code>default_image.jpg</code> 文件创建一个content URI.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">File imagePath = <span class="keyword">new</span> File(Context.getFilesDir(), <span class="string">"images"</span>);</div><div class="line">File newFile = <span class="keyword">new</span> File(imagePath, <span class="string">"default_image.jpg"</span>);</div><div class="line">Uri contentUri = FileProvider.getUriForFile(getContext(), <span class="string">"com.mydomain.fileprovider"</span>, newFile);</div></pre></td></tr></table></figure>
-<p>代码结果:<br><code>getUriForFile()</code>方法返回了一个contentUri , 路径内容为: <code>content://com.mydomain.fileprovider/my_images/default_image.jpg</code></p>
-<h2 id="4-给URI提供临时权限"><a href="#4-给URI提供临时权限" class="headerlink" title="4.给URI提供临时权限"></a>4.给URI提供临时权限</h2><p>从getUriForFile()获取到content URI以后,通过以下任意一种方式授予访问权限</p>
-<p><strong>方式1:</strong><br>调用<code>Context.grantUriPermission(package, Uri, mode_flags)</code>为content URI 授权.使用指定的mode_flags</p>
-<p>这里需指定授权的包名和mode_flags,权限分为</p>
+<h1 id="5-启动tomcat服务器"><a href="#5-启动tomcat服务器" class="headerlink" title="5.启动tomcat服务器"></a>5.启动tomcat服务器</h1><p>先通过<code>{TOMCAT_HOME}/bin/startup.bat</code>启动tomcat，启动完毕之后再进行部署，否则会报出如下异常</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Cannot invoke Tomcat manager: Connection refused: connect -&gt; [H</div><div class="line">elp <span class="number">1</span>]</div></pre></td></tr></table></figure>
+<h1 id="6-maven命令部署"><a href="#6-maven命令部署" class="headerlink" title="6.maven命令部署"></a>6.maven命令部署</h1><p>在IDE-&gt;Terminal 或 项目根目录打开dos窗口，输入maven命令</p>
 <ul>
-<li>FLAG_GRANT_READ_URI_PERMISSION 读</li>
-<li>FLAG_GRANT_WRITE_URI_PERMISSION 写</li>
+<li>mvn clean package <strong>tomcat</strong>:deploy (使用的是插件1.1版本，如果pom.xml中配置的是2.2版本，那么使用这么命令会报错)</li>
+<li>mvn clean package <strong>tomcat7</strong>:deploy (使用的是插件2.2版本，自己用的这个)</li>
 </ul>
-<p>可单选可多选<br>权限的有效期为:手动撤销授权revokeUriPermission() 或 重启设备.</p>
-<p><strong>方式2:</strong><br>通过调用<code>Intent</code> 的 <code>setData()</code>方法将此content URI放入intent中<br>调用<code>Intent.setFlags()</code> ,选项为</p>
+<p>然后看着命令行歇一会吧</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">[INFO] --- maven-war-plugin:<span class="number">2.2</span>:war (<span class="keyword">default</span>-war) @ cmw ---</div><div class="line">[INFO] Packaging webapp</div><div class="line">[INFO] Assembling webapp [cmw] in [D:\code\server\chinesemedicine\target\cmw]</div><div class="line">[INFO] Processing war project</div><div class="line">[INFO] Copying webapp resources [D:\code\server\chinesemedicine\src\main\webapp]</div><div class="line">[INFO] Webapp assembled in [<span class="number">887</span> msecs]</div><div class="line">[INFO] Building war: D:\code\server\chinesemedicine\target\cmw.war</div><div class="line">[INFO] WEB-INF\web.xml already added, skipping</div><div class="line">[INFO]</div><div class="line">[INFO] &lt;&lt;&lt; tomcat7-maven-plugin:<span class="number">2.2</span>:deploy (<span class="keyword">default</span>-cli) &lt; <span class="keyword">package</span> @ cmw &lt;&lt;&lt;</div><div class="line">[INFO]</div><div class="line">[INFO]</div><div class="line">[INFO] --- tomcat7-maven-plugin:<span class="number">2.2</span>:deploy (<span class="keyword">default</span>-cli) @ cmw ---</div><div class="line">[INFO] Deploying war to http:<span class="comment">//localhost:8080/cmw</span></div><div class="line">Uploading: http:<span class="comment">//localhost:8080/manager/text/deploy?path=%2Fcmw&amp;update=true</span></div><div class="line">Uploaded: http:<span class="comment">//localhost:8080/manager/text/deploy?path=%2Fcmw&amp;update=true (45960 KB at 40564.5 KB/sec)</span></div><div class="line"></div><div class="line">[INFO] tomcatManager status code:<span class="number">200</span>, ReasonPhrase:OK</div><div class="line">[INFO] OK - Deployed application at context path /cmw</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] BUILD SUCCESS</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] Total time: <span class="number">18.075</span> s</div><div class="line">[INFO] Finished at: <span class="number">2017</span>-<span class="number">09</span>-<span class="number">17</span>T11:<span class="number">31</span>:<span class="number">21</span>+<span class="number">08</span>:<span class="number">00</span></div><div class="line">[INFO] Final Memory: <span class="number">20</span>M/<span class="number">293</span>M</div><div class="line">[INFO] ------------------------------------------------------------------------</div></pre></td></tr></table></figure>
+<p>出现 <strong>BUILD SUCCESS</strong>，就部署成功了！</p>
+<p>常见的部署命令，在<a href="https://tomcat.apache.org/maven-plugin-trunk/tomcat7-maven-plugin/plugin-info.html" target="_blank" rel="external">Tomcat7 Plugin Documentation </a> 中有详细介绍，这里罗列几个常用的：</p>
 <ul>
-<li>FLAG_GRANT_READ_URI_PERMISSION 读</li>
-<li>FLAG_GRANT_WRITE_URI_PERMISSION 写</li>
+<li><strong>tomcat7:run</strong>        运行当前项目</li>
+<li><strong>tomcat7:deploy</strong>    部署当前项目</li>
+<li><strong>tomcat7:redeploy</strong>    重新部署项目</li>
+<li><strong>tomcat7:undeploy</strong>    取消部署当前项目</li>
 </ul>
-<p>可单选可多选<br>将此intent发送给其他app.一般情况下,会通过<code>setResult()</code>方法发送给其他intent</p>
-<p><strong>权限有效期</strong> : 当接收到的activity处于活跃状态时持续有效 , 退出时自动失效,一个activity获取到得content URI权限,这个权限会延展至所属的整个app.</p>
-<h2 id="5-为其他app提供content-URI"><a href="#5-为其他app提供content-URI" class="headerlink" title="5.为其他app提供content URI"></a>5.为其他app提供content URI</h2><h3 id="5-1其他app请求自己app"><a href="#5-1其他app请求自己app" class="headerlink" title="5.1其他app请求自己app"></a>5.1其他app请求自己app</h3><p>为一个文件提供content URI给其他app有很多形式,其中一个常用的方式时接收其他app通过<code>startActivityResult()</code>方法启动自己的app , 通过Intent来启动自己app中的一个Activity.<br>你可以立即返回一个content URI , 或者展示一个交互界面供用户选择一个文件 , 一旦用户选择了该文件 , 就将该文件的的content URI返回给请求者app . 无论哪种方式 , 最终都通过<code>setResult()</code>方式将content URI返回给请求者.</p>
-<h3 id="5-2自己app请求其他app"><a href="#5-2自己app请求其他app" class="headerlink" title="5.2自己app请求其他app"></a>5.2自己app请求其他app</h3><p>将content URI放入<code>ClipData</code>对象中,然后将ClipData对象添加进Intent中,再将Intent发送给一个app.</p>
-<p>调用<code>Intent.setClipData()</code>来添加<code>ClipData</code>对象,可以放入1个或多个 . 每个ClipData对象都包含一个content URI</p>
-<p>当通过<code>Intent.setFlags()</code>来设置临时访问权限时,这些权限会适用于所有的content URIs</p>
-<blockquote>
-<p>注意</p>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="Connection-reset-by-peer-socket-write-error"><a href="#Connection-reset-by-peer-socket-write-error" class="headerlink" title="Connection reset by peer: socket write error"></a>Connection reset by peer: socket write error</h2><blockquote>
+<p>异常信息：[ERROR] Failed to execute goal org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:deploy (default-cli) on project cmw: Cannot invoke Tomcat manager: Connection reset by peer: socke<br>t write error -&gt; [Help 1]</p>
 </blockquote>
-<p><code>Intent.setClipData()</code>方法只能在API 16(Android4.1)以上才能使用 , 如果为了确保版本的兼容性,那么只能每次通过intent发送一个content URI.将<code>ACTION_SEND</code>添加进<code>action</code>,通过<code>setData()</code>将content URI添加进<code>data</code>.</p>
-<h1 id="FileProvider支持的path类型"><a href="#FileProvider支持的path类型" class="headerlink" title="FileProvider支持的path类型"></a>FileProvider支持的path类型</h1><p>从FileProvider源码查看其中涉及的Path类型</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG_ROOT_PATH = <span class="string">"root-path"</span>;</div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG_FILES_PATH = <span class="string">"files-path"</span>;</div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG_CACHE_PATH = <span class="string">"cache-path"</span>;</div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG_EXTERNAL = <span class="string">"external-path"</span>;</div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG_EXTERNAL_FILES = <span class="string">"external-files-path"</span>;</div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG_EXTERNAL_CACHE = <span class="string">"external-cache-path"</span>;</div></pre></td></tr></table></figure>
-<p>从Android官方文档上可以看出FileProvider提供以下几种path类型：</p>
-<ul>
-<li><code>&lt;files-path path=&quot;&quot; name=&quot;camera_photos&quot; /&gt;</code></li>
+<p>这个应该是部署的时候最容易出现的异常了，在这里卡了很久。网上查了一大圈。根本原因是:当客户端发出请求（request）后，如果还没有完全获得服务端的响应（response），客户端与服务器段的连接断开（例如断网、按了“停止”按钮、或者客户端浏览器关闭等），服务器端就会抛出此Exception。 </p>
+<p>这个问题需要从多方面排查。</p>
+<p>1.如果是远程服务器，需要配置tomcat允许远程访问，见步骤2</p>
+<p>2.有的说tomcat9在步骤1中配置用户权限时，同一个用户不能同时拥有<code>manager-gui</code>和<code>manager-script</code>权限，但是我分开了之后，依然没有解决这个问题。最终放弃使用tomcat9，使用tomcat7，一切正常了。</p>
+<p>3.如果tomcat上已经部署了该项目，那么需要使用redeploy命令，即<code>mvn mvn tomcat7:redeploy</code></p>
+<h2 id="部署后的项目404"><a href="#部署后的项目404" class="headerlink" title="部署后的项目404"></a>部署后的项目404</h2><p>以下3种原因都有可能造成部署后的项目无法正常访问，报404：</p>
+<ol>
+<li>如果是远程服务器，请确保8080端口已经添加到入网规则中</li>
+<li>pom.xml中tomcat7插件的<code>path</code>节点配置的有问题</li>
+<li>项目本身404</li>
+</ol>
+<h2 id="tomcat内存泄漏"><a href="#tomcat内存泄漏" class="headerlink" title="tomcat内存泄漏"></a>tomcat内存泄漏</h2><p>tomcat日志中报出</p>
+<blockquote>
+<p>The web application [/appStore] appears to have started a thread named [Thread-2],but has failed to stop it ,this is very likely to create a memory leak</p>
+</blockquote>
+<p>等有时间了再研究，<a href="http://www.cnblogs.com/xyb930826/p/5725340.html" target="_blank" rel="external">http://www.cnblogs.com/xyb930826/p/5725340.html</a> 中有提到</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="http://www.cnblogs.com/xyb930826/p/5725340.html" target="_blank" rel="external">http://www.cnblogs.com/xyb930826/p/5725340.html</a></li>
+<li><a href="https://my.oschina.net/simpleton/blog/598692" target="_blank" rel="external">https://my.oschina.net/simpleton/blog/598692</a></li>
+<li><a href="http://www.jianshu.com/p/78b17d656a5e" target="_blank" rel="external">http://www.jianshu.com/p/78b17d656a5e</a></li>
+<li><a href="https://github.com/hehongwei44/my-blog/issues/148" target="_blank" rel="external">https://github.com/hehongwei44/my-blog/issues/148</a></li>
 </ul>
-<p>该方式提供在应用的内部存储区的文件/子目录的文件。它对应<code>Context.getFilesDir()</code>返回的路径，例如<code>/data/data/com.crocutax.mytest/files</code></p>
-<ul>
-<li><code>&lt;cache-path name=&quot;name&quot; path=&quot;path&quot; /&gt;</code></li>
-</ul>
-<p>该方式提供在应用的内部存储区的缓存子目录的文件。它对应<code>Context.getCacheDir()</code>返回的路径，例如<code>/data/data/com.crocutax.mytest/cache</code></p>
-<ul>
-<li><code>&lt;external-path name=&quot;name&quot; path=&quot;path&quot; /&gt;</code></li>
-</ul>
-<p>该方式提供在外部存储区域根目录下的文件。它对应<code>Environment.getExternalStorageDirectory()</code>返回的路径，例如<code>/storage/emulated/0</code></p>
-<ul>
-<li><code>&lt;external-files-path name=&quot;name&quot; path=&quot;path&quot; /&gt;</code></li>
-</ul>
-<p>该方式提供在应用的外部存储区根目录的下的文件。它对应<code>Context.getExternalFilesDir(String type)</code>返回的路径。例如</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ContextCompat.getExternalFilesDirs(MainActivity.<span class="keyword">this</span>,<span class="keyword">null</span>)[<span class="number">0</span>]:  </div><div class="line"><span class="comment">//log输出: /storage/emulated/0/Android/data/com.crocutax.mytest/files</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>&lt;external-cache-path name=&quot;name&quot; path=&quot;path&quot; /&gt;</code></li>
-</ul>
-<p>该方式提供在应用的外部缓存区根目录的文件。它对应<code>Context.getExternalCacheDir()</code>返回的路径。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ContextCompat.getExternalCacheDirs(MainActivity.<span class="keyword">this</span>)[<span class="number">0</span>]: </div><div class="line"><span class="comment">//log输出: /storage/emulated/0/Android/data/com.crocutax.mytest/cache</span></div></pre></td></tr></table></figure>
-<h1 id="FileProvider的使用示例"><a href="#FileProvider的使用示例" class="headerlink" title="FileProvider的使用示例"></a>FileProvider的使用示例</h1><h2 id="1-在Manifest文件中定义FileProvider"><a href="#1-在Manifest文件中定义FileProvider" class="headerlink" title="1.在Manifest文件中定义FileProvider"></a>1.在Manifest文件中定义FileProvider</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">provider</span></span></div><div class="line">     <span class="attr">android:name</span>=<span class="string">"android.support.v4.content.FileProvider"</span></div><div class="line">     <span class="attr">android:authorities</span>=<span class="string">"com.touchmedia.daolan.fileprovider"</span></div><div class="line">     <span class="attr">android:exported</span>=<span class="string">"false"</span></div><div class="line">     <span class="attr">android:grantUriPermissions</span>=<span class="string">"true"</span>&gt;</div><div class="line">     <span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line">         <span class="attr">android:name</span>=<span class="string">"android.support.FILE_PROVIDER_PATHS"</span></div><div class="line">         <span class="attr">android:resource</span>=<span class="string">"@xml/file_paths"</span> /&gt;</div><div class="line"> <span class="tag">&lt;/<span class="name">provider</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="2-res-xml-file-paths中指定共享目录"><a href="#2-res-xml-file-paths中指定共享目录" class="headerlink" title="2.res/xml/file_paths中指定共享目录"></a>2.res/xml/file_paths中指定共享目录</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">paths</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">external-path</span> <span class="attr">name</span>=<span class="string">"sdcard_path"</span> <span class="attr">path</span>=<span class="string">""</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">paths</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="3-通过FileProvider获取ContentUri"><a href="#3-通过FileProvider获取ContentUri" class="headerlink" title="3.通过FileProvider获取ContentUri"></a>3.通过FileProvider获取ContentUri</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//安装app</span></div><div class="line">...</div><div class="line"><span class="comment">//通过FileProvider获取contentUri</span></div><div class="line">Uri contentUri = FileProvider.getUriForFile(mContext, <span class="string">"com.touchmedia.daolan.fileprovider"</span>, apkFile);</div><div class="line"><span class="comment">//授予临时访问权限</span></div><div class="line">intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);</div><div class="line">intent.setDataAndType(contentUri,<span class="string">"application/vnd.android.package-archive"</span>);</div><div class="line"><span class="comment">//跳往安装界面</span></div><div class="line">mContext.startActivityForResult(intent,INSTALL_APP);</div></pre></td></tr></table></figure>
-<p>其他涉及到本地文件读取的操作,例如图库,操作方式都一样,跟以前唯一的不同仅仅只是FileProvider的引入.</p>
-<p>另外,可参考如下链接:</p>
-<p><a href="https://github.com/commonsguy/cw-omnibus/tree/master/ContentProvider/V4FileProvider" target="_blank" rel="external">CommonsWare FileProvider专题</a><br><a href="http://blog.csdn.net/fengyuzhengfan/article/details/52876586" target="_blank" rel="external">FileProvider无法获取外置SD卡问题解决方案</a><br><a href="http://www.devio.org/2016/09/28/Android7.0%E9%80%82%E9%85%8D%E5%BF%83%E5%BE%97/" target="_blank" rel="external">Android7.0适配心得</a></p>
 
       
     </div>
@@ -640,16 +597,16 @@
 
             <li class="post-copyright-link">
               <strong>本文标题：</strong>
-              <a href="http://www.crocutax.com/2017/04/25/Android7.0适配之FileProvider的使用/" title="Android7.0适配之FileProvider的使用">Android7.0适配之FileProvider的使用</a>
+              <a href="http://www.crocutax.com/2017/09/17/使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署/" title="使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署">使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署</a>
             </li>
 
             <li class="post-copyright-link">
               <strong>本文链接：</strong>
-              <a href="http://www.crocutax.com/2017/04/25/Android7.0适配之FileProvider的使用/" title="Android7.0适配之FileProvider的使用">http://www.crocutax.com/2017/04/25/Android7.0适配之FileProvider的使用/</a>
+              <a href="http://www.crocutax.com/2017/09/17/使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署/" title="使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署">http://www.crocutax.com/2017/09/17/使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署/</a>
             </li>
 
             <li class="post-copyright-date">
-                <strong>发布时间：</strong>2017年4月25日 - 18时04分
+                <strong>发布时间：</strong>2017年9月17日 - 13时09分
             </li>  
 
             <li class="post-copyright-license">
@@ -664,7 +621,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/版本特性/" rel="tag"># 版本特性</a>
+            <a href="/tags/经验总结/" rel="tag"># 经验总结</a>
           
         </div>
       
@@ -677,8 +634,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/25/AndroidStudio导入Eclipse项目-填坑记录/" rel="next" title="AndroidStudio导入Eclipse项目-填坑记录">
-                <i class="fa fa-chevron-left"></i> AndroidStudio导入Eclipse项目-填坑记录
+              <a href="/2017/09/14/Done-is-better-than-perfect/" rel="next" title="Done is better than perfect">
+                <i class="fa fa-chevron-left"></i> Done is better than perfect
               </a>
             
           </div>
@@ -686,10 +643,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/01/最近面试的一些感悟/" rel="prev" title="最近面试的一些感悟">
-                最近面试的一些感悟 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -855,7 +808,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-7-0-文件权限的变化"><span class="nav-number">1.</span> <span class="nav-text">Android 7.0 文件权限的变化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FileProvider简介"><span class="nav-number">2.</span> <span class="nav-text">FileProvider简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-定义一个FileProvider"><span class="nav-number">2.1.</span> <span class="nav-text">1.定义一个FileProvider</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-指定可访问的文件"><span class="nav-number">2.2.</span> <span class="nav-text">2.指定可访问的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-为文件生成content-URI"><span class="nav-number">2.3.</span> <span class="nav-text">3.为文件生成content URI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-给URI提供临时权限"><span class="nav-number">2.4.</span> <span class="nav-text">4.给URI提供临时权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-为其他app提供content-URI"><span class="nav-number">2.5.</span> <span class="nav-text">5.为其他app提供content URI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1其他app请求自己app"><span class="nav-number">2.5.1.</span> <span class="nav-text">5.1其他app请求自己app</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2自己app请求其他app"><span class="nav-number">2.5.2.</span> <span class="nav-text">5.2自己app请求其他app</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FileProvider支持的path类型"><span class="nav-number">3.</span> <span class="nav-text">FileProvider支持的path类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FileProvider的使用示例"><span class="nav-number">4.</span> <span class="nav-text">FileProvider的使用示例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-在Manifest文件中定义FileProvider"><span class="nav-number">4.1.</span> <span class="nav-text">1.在Manifest文件中定义FileProvider</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-res-xml-file-paths中指定共享目录"><span class="nav-number">4.2.</span> <span class="nav-text">2.res/xml/file_paths中指定共享目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-通过FileProvider获取ContentUri"><span class="nav-number">4.3.</span> <span class="nav-text">3.通过FileProvider获取ContentUri</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-添加tomcat用户及权限"><span class="nav-number">1.</span> <span class="nav-text">1.添加tomcat用户及权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-配置tomcat允许远程访问"><span class="nav-number">2.</span> <span class="nav-text">2.配置tomcat允许远程访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-为maven添加tomcat管理员账号"><span class="nav-number">3.</span> <span class="nav-text">3.为maven添加tomcat管理员账号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-配置tomcat7插件"><span class="nav-number">4.</span> <span class="nav-text">4.配置tomcat7插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-启动tomcat服务器"><span class="nav-number">5.</span> <span class="nav-text">5.启动tomcat服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-maven命令部署"><span class="nav-number">6.</span> <span class="nav-text">6.maven命令部署</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见问题"><span class="nav-number">7.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Connection-reset-by-peer-socket-write-error"><span class="nav-number">7.1.</span> <span class="nav-text">Connection reset by peer: socket write error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署后的项目404"><span class="nav-number">7.2.</span> <span class="nav-text">部署后的项目404</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tomcat内存泄漏"><span class="nav-number">7.3.</span> <span class="nav-text">tomcat内存泄漏</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">8.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>
