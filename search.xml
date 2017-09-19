@@ -3,6 +3,81 @@
   
     
     <entry>
+      <title><![CDATA[windows系统本地与远程服务器间的文件传输]]></title>
+      <url>/2017/09/19/windows%E7%B3%BB%E7%BB%9F%E6%9C%AC%E5%9C%B0%E4%B8%8E%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%B4%E7%9A%84%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93/</url>
+      <content type="html"><![CDATA[<p>日常开发过程中，有些时候可能会用到本机和远程服务器间的文件传输，本文记录的是两台windows电脑间的文件传输，linux系统以后再说。</p>
+<p>在mstsc成功建立远程桌面连接后，可以通过如下方式进行传输：</p>
+<ul>
+<li>直接粘贴、复制</li>
+<li>第三方软件网络传输：QQ，邮箱附件，网盘……</li>
+<li>本地磁盘共享</li>
+<li>FTP文件传输</li>
+</ul>
+<p>这里主要说下后两者，即：<strong>本地磁盘共享</strong> 和 <strong>FTP文件传输</strong>。</p>
+<h1 id="本地磁盘共享"><a href="#本地磁盘共享" class="headerlink" title="本地磁盘共享"></a>本地磁盘共享</h1><p>在mstsc建立远程桌面连接的时候，点击左下方的 <strong>显示选项</strong><br><img src="http://upload-images.jianshu.io/upload_images/1958298-e4eb38023552eacf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="mstsc.png"></p>
+<p>在弹出的选项卡中选择<code>本地资源 --&gt; 本地设备和资源 --&gt; 详细信息 --&gt; 驱动器 --&gt; 勾选{要共享的磁盘目录} --&gt; 确定</code><br><img src="http://upload-images.jianshu.io/upload_images/1958298-225711674a43ca02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择共享磁盘目录.png"></p>
+<p>打开远程桌面我的电脑，可以看到我们共享的本地磁盘显示在设备列表中，接下来本地和远程电脑就可以通过这个磁盘进行文件传输了。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-210642faf9867d14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="在远程桌面使用共享磁盘.png"></p>
+<h1 id="FTP文件传输"><a href="#FTP文件传输" class="headerlink" title="FTP文件传输"></a>FTP文件传输</h1><p>通过 <strong>FileZilla</strong> 可以在远程服务器快速搭建FTP服务，还是比较简单的。</p>
+<h2 id="FileZilla-Client"><a href="#FileZilla-Client" class="headerlink" title="FileZilla Client"></a>FileZilla Client</h2><p>客户端放在本地电脑，主窗口一目了然</p>
+<ul>
+<li>主机：远程服务器ip地址</li>
+<li>连接状态log信息：成功、异常、失败信息都在这里显示</li>
+<li>用户名、密码：需要在FileZilla Server端创建</li>
+<li>远程share目录：需要在FileZilla Server端创建</li>
+<li>文件传输列表：将需要传输的文件拖入该区域即可 </li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-ca557e4ca30983e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="FileZilla客户端.png"></p>
+<h2 id="FileZilla-Server"><a href="#FileZilla-Server" class="headerlink" title="FileZilla Server"></a>FileZilla Server</h2><p>1、FileZilla 服务端 安装在远程服务器上，登陆后host为本机，port端口保持默认即可</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-b4792c7bd0d1e1ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="FileZilla 服务端.png"></p>
+<p>2、打开窗口<code>Edit --&gt; Users</code> 添加授权账户<br><img src="http://upload-images.jianshu.io/upload_images/1958298-a50b273f6283f8b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>3、打开窗口<code>Edit --&gt; Users</code>，设置远程服务器端共享文件目录</p>
+<ul>
+<li>可以为多个目录，设置不同级别的访问权限</li>
+<li>可以针对不同的目录，设置不同的授权用户</li>
+<li>可以将 <code>Shared folders</code>目录列表中的某个目录设置为<code>home dir</code>，即根目录（单选，只能设置一个，前缀为<strong>H</strong> 标记）。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-1d1bdd43459693d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>1、服务端（远程）启动之后，客户端（本地）通过设置主机ip、用户名、密码等信息建立连接，获取到远程根目录以后，就可以正常传输文件了。</p>
+<p>2、文件传输完毕，会存在服务端指定的<code>shared folders</code>目录下。</p>
+<p>如果遇到异常信息，往下继续看。</p>
+<h2 id="异常解决"><a href="#异常解决" class="headerlink" title="异常解决"></a>异常解决</h2><h3 id="1-连接失败"><a href="#1-连接失败" class="headerlink" title="1.连接失败"></a>1.连接失败</h3><ul>
+<li>公网IP有误</li>
+<li>用户名密码有误（需要在服务端创建）</li>
+<li>端口错误</li>
+</ul>
+<h3 id="2-安全性警告"><a href="#2-安全性警告" class="headerlink" title="2.安全性警告"></a>2.安全性警告</h3><blockquote>
+<p>Warning: FTP over TLS is not enabled, users cannot securely log in.</p>
+</blockquote>
+<p>警告并不影响使用，如果想解决这个警告，可以在<code>Settings</code>中配置</p>
+<h3 id="3-Passive-mode设置"><a href="#3-Passive-mode设置" class="headerlink" title="3.Passive mode设置"></a>3.Passive mode设置</h3><p>如果出现以下异常信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1. You appear to be behind a NAT router. Please configure the passive mode settings and forward a range of ports in your router</div><div class="line"></div><div class="line">2. 425 Can&apos;t open data connection for transfer of &quot;/&quot;</div></pre></td></tr></table></figure>
+<p>需要在 <code>Edit --&gt; Settings</code>中做如下配置：</p>
+<ul>
+<li>使用自定义端口（确保该端口已经开通入网规则）</li>
+<li>设置公网ip</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-573a74ddb93d9aa4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Settings.png"></p>
+<p>当然，以上异常信息，还有可能由其他原因导致，因自己暂未遇到，先不做深究，等遇到时再搜索即可。</p>
+<p>这里只记录了File Zilla的简单使用，至于用户分组、ip过滤、传输限速、安全设置等，可以根据自己需要再研究。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Tool </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 经验总结 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署]]></title>
       <url>/2017/09/17/%E4%BD%BF%E7%94%A8tomcat7%E6%8F%92%E4%BB%B6%E5%B0%86%E9%A1%B9%E7%9B%AE%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E5%88%B0%E8%BF%9C%E7%A8%8Btomcat%E6%9C%8D%E5%8A%A1%E5%99%A8-%E7%83%AD%E9%83%A8%E7%BD%B2/</url>
       <content type="html"><![CDATA[<p>现在用maven管理J2EE项目应该是常态了，在开发阶段我们经常需要经历反复的”修改代码-&gt;部署-&gt;测试”过程。如果每次修改完代码，都通过maven先clean-&gt;package，再手动到输出目录把打好的war包copy到tomcat的webapps下，多次的重复这种无意义的体力活会让人烦躁,而且显得没有程序员精神。</p>
