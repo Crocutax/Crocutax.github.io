@@ -10,11 +10,8 @@ http://www.crocutax.com/2017/07/23/SSM开发Web项目问题解决记录/
 http://www.crocutax.com/2017/07/21/Android支付宝支付之坑/
 http://www.crocutax.com/2017/07/19/Idea使用中的问题记录/
 http://www.crocutax.com/2017/07/04/融云IM踩坑记录/
-http://www.crocutax.com/2017/06/25/成熟的标志/
-http://www.crocutax.com/2017/06/11/笔记-王尚频道/
 http://www.crocutax.com/2017/06/09/技术的价值和定位/
 http://www.crocutax.com/2017/06/01/读书笔记-《程序员修炼之道：从小工到专家》/
-http://www.crocutax.com/2017/05/29/读书笔记-《成龙：还没长大就老了》/
 http://www.crocutax.com/2017/05/26/共享经济的热潮/
 http://www.crocutax.com/2017/05/20/Hexo持续优化-在文章尾部添加版权声明信息/
 http://www.crocutax.com/2017/05/20/Hexo持续优化-创建分类和标签页面/
@@ -28,25 +25,19 @@ http://www.crocutax.com/2017/05/05/Coding+Github双服务器托管个人博客/
 http://www.crocutax.com/2017/05/04/读书笔记-《深入理解Java虚拟机》-GC对象判定算法/
 http://www.crocutax.com/2017/05/04/读书笔记-《深入理解Java虚拟机》-对象探秘/
 http://www.crocutax.com/2017/05/02/读书笔记-《深入理解Java虚拟机》-JVM内存模型/
-http://www.crocutax.com/2017/05/01/自找的压力与焦虑/
 http://www.crocutax.com/2017/05/01/最近面试的一些感悟/
 http://www.crocutax.com/2017/04/25/Android7.0适配之FileProvider的使用/
 http://www.crocutax.com/2017/04/25/AndroidStudio导入Eclipse项目-填坑记录/
 http://www.crocutax.com/2017/04/23/线程池基础知识整理/
 http://www.crocutax.com/2017/04/23/线程池运行原理分析/
 http://www.crocutax.com/2017/04/22/Android开发规范/
-http://www.crocutax.com/2017/02/26/观影随笔-《生化危机-终章》和《刺客信条》/
 http://www.crocutax.com/2017/02/06/笔记-技术人成长百科指南/
-http://www.crocutax.com/2017/02/02/读书笔记-《普京传》/
 http://www.crocutax.com/2017/01/12/笔记-技术小黑屋LIVE-如何写好博客/
 http://www.crocutax.com/2016/12/28/开发中的TextView技巧点整理/
 http://www.crocutax.com/2016/12/23/ViewPager+Fragment组合的预加载和懒加载/
-http://www.crocutax.com/2016/10/06/观影随笔-《百鸟朝凤》/
 http://www.crocutax.com/2016/10/02/笔记-代码家学习经验分享/
 http://www.crocutax.com/2016/06/03/AndroidStudio使用中的问题记录/
 http://www.crocutax.com/2016/05/06/AndroidStudio自定义配置/
 http://www.crocutax.com/2016/04/01/Java基础-位运算符回顾/
 http://www.crocutax.com/2016/03/10/Hexo+Github Pages搭建个人博客/
 http://www.crocutax.com/2016/03/01/为什么一定要捯饬个人网站/
-http://www.crocutax.com/2008/10/08/俞敏洪-励志演讲记录/
-http://www.crocutax.com/2007/09/09/篮球与人生/
