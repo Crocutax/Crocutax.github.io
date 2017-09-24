@@ -99,10 +99,12 @@
 <meta property="og:url" content="http://www.crocutax.com/2017/05/10/Android微信支付流程及返回码-1之坑/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="之前做微信支付的时候，直接是以库形式引入项目的，虽然一直觉得微信支付的开发文档不太理想，但是印象中也没有遇到什么大坑。 今天项目组的一个小伙伴突然告诉我微信支付一直失败，根本调不起来支付页面，onResp() 中的返回码一直是-1，而且他好像已经搞了好几个小时了。于是我pull了一下项目代码开始排查问题。最终发现问题有两个：  微信开放平台上传的签名问题 Manifest文件中WXPayEntry">
-<meta property="og:updated_time" content="2017-05-20T04:15:56.608Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-8febb70e48c18bf6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-09-24T14:50:06.711Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android微信支付流程及返回码-1之坑">
 <meta name="twitter:description" content="之前做微信支付的时候，直接是以库形式引入项目的，虽然一直觉得微信支付的开发文档不太理想，但是印象中也没有遇到什么大坑。 今天项目组的一个小伙伴突然告诉我微信支付一直失败，根本调不起来支付页面，onResp() 中的返回码一直是-1，而且他好像已经搞了好几个小时了。于是我pull了一下项目代码开始排查问题。最终发现问题有两个：  微信开放平台上传的签名问题 Manifest文件中WXPayEntry">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1958298-8febb70e48c18bf6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -420,7 +422,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,976 字
+                  2,075 字
                 </span>
               
 
@@ -436,7 +438,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  7 分钟
+                  8 分钟
                 </span>
               
             </div>
@@ -498,7 +500,11 @@
 <blockquote>
 <p>注意</p>
 </blockquote>
-<p>本地生成签名时，务必注意key的拼写问题，比如必须拼appid而不是appId，必须拼prepayid而不是prepayId，这里跟上面<code>PayReq</code> 对象中字段的命名方式不一样，用错了也是照样返回-1。</p>
+<ul>
+<li>签名工作一般由后台完成，在生成签名时，务必注意key的拼写问题，比如必须拼appid而不是appId，必须拼prepayid而不是prepayId，这里跟上面<code>PayReq</code> 对象中字段的命名方式不一样，用错了也是照样返回-1。自己曾经作为server端忽略了这一点，坑了移动端的同事一把，耽误了好几个小时-_-!</li>
+<li>签名所使用的是 <a href="https://pay.weixin.qq.com" target="_blank" rel="external">微信商户平台</a>的<strong>API密钥</strong>，而不是<a href="https://open.weixin.qq.com/" target="_blank" rel="external">微信开放平台</a> 的 <strong>AppSecret</strong>。 API密钥在商户平台后台–&gt;API安全–&gt;先安装操作证书，后设置密钥。见下图：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-8febb70e48c18bf6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微信支付密钥.png"></p>
 <h2 id="3-WXPayEntryActivity中接收回调"><a href="#3-WXPayEntryActivity中接收回调" class="headerlink" title="3.WXPayEntryActivity中接收回调"></a>3.WXPayEntryActivity中接收回调</h2><p>在该类的<code>onResp()</code> 方法中拿到微信支付的回调，然后去跟服务器再度确认支付结果。官方解释如下：</p>
 <blockquote>
 <p>在WXPayEntryActivity类中实现onResp函数，支付完成后，微信APP会返回到商户APP并回调onResp函数，开发者需要在该函数中接收通知，判断返回错误码，如果支付成功则去后台查询支付结果再展示用户实际支付结果。<strong>注意一定不能以客户端返回作为用户支付的结果，应以服务器端的接收的支付通知或查询API返回的结果为准。</strong></p>
