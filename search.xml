@@ -3,6 +3,248 @@
   
     
     <entry>
+      <title><![CDATA[SpringMVC 入参出参数据类型转换]]></title>
+      <url>/2017/10/31/SpringMVC-%E5%85%A5%E5%8F%82%E5%87%BA%E5%8F%82%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</url>
+      <content type="html"><![CDATA[<h1 id="入参Spring类型转换为Date类型"><a href="#入参Spring类型转换为Date类型" class="headerlink" title="入参Spring类型转换为Date类型"></a>入参Spring类型转换为Date类型</h1><p>如果前端传递的是日期字符串,比如”2017-10-23 19:46:45”,而我们在Controller中直接用Date类型接收,会报出如下异常:</p>
+<blockquote>
+<p>Failed to convert value of type ‘java.lang.String’ to required type ‘java.util.Date’</p>
+</blockquote>
+<p>解决方案:自定义数据类型转换器</p>
+<p>1.自定义DateConverter</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> org.springframework.core.convert.converter.Converter;</div><div class="line"><span class="keyword">import</span> java.text.ParseException;</div><div class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</div><div class="line"><span class="keyword">import</span> java.util.Date;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateConverter</span> <span class="keyword">implements</span> <span class="title">Converter</span>&lt;<span class="title">String</span>, <span class="title">Date</span>&gt; </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Date <span class="title">convert</span><span class="params">(String source)</span> </span>&#123;</div><div class="line">        String pattern = source.length()==<span class="number">10</span> ? <span class="string">"yyyy-MM-dd"</span> : <span class="string">"yyyy-MM-dd HH:mm:ss"</span>;</div><div class="line">        SimpleDateFormat format = <span class="keyword">new</span> SimpleDateFormat(pattern);</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> format.parse(source);</div><div class="line">        &#125; <span class="keyword">catch</span> (ParseException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>2.在Spring MVC配置文件中配置自定义的Converter</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 注解驱动--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">mvc:annotation-driven</span> <span class="attr">conversion-service</span>=<span class="string">"conversionService"</span>/&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 自定义参数绑定--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"conversionService"</span> <span class="attr">class</span>=<span class="string">"org.springframework.format.support.FormattingConversionServiceFactoryBean"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 转换器 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"converters"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">set</span>&gt;</span></div><div class="line">            <span class="comment">&lt;!-- 日期类型转换 --&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"com.longke.watercleanner.converter.CustomDateConverter"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">set</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这样前端传递的日期型字符串如”2017-10-23 19:46:45”,就可以转换为Date类型,在Controller中接收参数时可以使用Date类型接收,会自动转换.</p>
+<h1 id="出参Long类型转换为String类型"><a href="#出参Long类型转换为String类型" class="headerlink" title="出参Long类型转换为String类型"></a>出参Long类型转换为String类型</h1><p>由于在项目中使用了SnowFlake生成long类型ID作为表的主键,这样虽然有利于后台数据库的优化,但是在和前端交互时会出现一些问题.</p>
+<p>Java中的long类型字段在JavaScript的number类型接收时,会存在四舍五入的失真情况,比如:</p>
+<ul>
+<li>后台id为372121275172126720,前端接收到的id为372121275172126700</li>
+<li>后台id为372121602671771648,前端接收到的id为372121602671771650</li>
+</ul>
+<p>这会导致根据id查询某个表时,id不存在导致的查询失败.</p>
+<p>解决方案:@ResponseBody返回json数据时,将long类型的id转换为String类型,供前端使用.</p>
+<p>1.自定义LongToStringMapper,继承ObjectMapper</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</div><div class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.<span class="keyword">module</span>.SimpleModule;</div><div class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ser.std.ToStringSerializer;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 自定义Json转换器,把ResponseBody中Long类型的数据转换为String类型</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LongToStringMapper</span> <span class="keyword">extends</span> <span class="title">ObjectMapper</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">3223645203459453114L</span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LongToStringMapper</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        SimpleModule simpleModule = <span class="keyword">new</span> SimpleModule();</div><div class="line">        simpleModule.addSerializer(Long.class, ToStringSerializer.instance);</div><div class="line">        simpleModule.addSerializer(Long.TYPE, ToStringSerializer.instance);</div><div class="line">        registerModule(simpleModule);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>2.在Spring MVC配置文件中配置自定义的Mapper</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">mvc:annotation-driven</span>&gt;</span></div><div class="line"></div><div class="line">       <span class="comment">&lt;!--返回JavaBean时解析成Json--&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">mvc:message-converters</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.springframework.http.converter.StringHttpMessageConverter"</span>/&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"</span>&gt;</span></div><div class="line">               <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"objectMapper"</span>&gt;</span></div><div class="line">                   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"com.longke.watercleanner.converter.LongToStringMapper"</span>/&gt;</span></div><div class="line">               <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">           <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"></div><div class="line">       <span class="tag">&lt;/<span class="name">mvc:message-converters</span>&gt;</span></div><div class="line"></div><div class="line">   <span class="tag">&lt;/<span class="name">mvc:annotation-driven</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="出参long类型时间戳转换为格式化日期字符串"><a href="#出参long类型时间戳转换为格式化日期字符串" class="headerlink" title="出参long类型时间戳转换为格式化日期字符串"></a>出参long类型时间戳转换为格式化日期字符串</h1><p>正常数据库存储的是时间戳,比如时间为long类型数据1508759205000,如果想返回给前端”2017-10-23 19:46:45”类型的字符串,可以利用Spring框架本身提供给我们的注解工具<code>@DateTimeFormat</code>,在pojo的属性上进行配置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@DateTimeFormat</span>(pattern = <span class="string">"yyyy-MM-dd hh:mm:ss"</span>)</div><div class="line"><span class="keyword">private</span> Date appointmentDate;</div></pre></td></tr></table></figure>
+<p>不过这个还是得看需求,传递时间戳还是比较方便的,比如前端可能有时候需要的只是”2017-10-23”,而不想要后面的时分秒,而有时候又是需要的,所以还是直接传递时间戳,前端按需转换比较好.</p>
+<p>以上只是匆匆记录,后期会再完善,优化写法,并尝试了解源码.<br>(完)</p>
+<p>参考链接:</p>
+<p><a href="https://xtuer.github.io/spring-mvc-to-date/" target="_blank" rel="external">https://xtuer.github.io/spring-mvc-to-date/</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Java </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 经验总结 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[笔记-吴恩达:任何人都能成为机器学习专家]]></title>
+      <url>/2017/10/08/%E7%AC%94%E8%AE%B0-%E5%90%B4%E6%81%A9%E8%BE%BE-%E4%BB%BB%E4%BD%95%E4%BA%BA%E9%83%BD%E8%83%BD%E6%88%90%E4%B8%BA%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%93%E5%AE%B6/</url>
+      <content type="html"><![CDATA[<p>访谈链接:</p>
+<p><a href="https://www.quora.com/session/Andrew-Ng/2?share=ef75ace2#!n=100" target="_blank" rel="external">Quora</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/29323543" target="_blank" rel="external">知乎</a></p>
+<h1 id="自己能否够格成为机器学习从业人员"><a href="#自己能否够格成为机器学习从业人员" class="headerlink" title="自己能否够格成为机器学习从业人员?"></a>自己能否够格成为机器学习从业人员?</h1><ul>
+<li>任何人都可以</li>
+<li>必须持续学习</li>
+</ul>
+<h1 id="高效的AI学习方式"><a href="#高效的AI学习方式" class="headerlink" title="高效的AI学习方式"></a>高效的AI学习方式</h1><ul>
+<li>复现他人发表的结果是一个掌握机器学习非常有效但却被低估的方式,临摹大师作品,在此过程中学习和总结,并创造新的产品或项目.写博客并开源项目,获得反馈</li>
+<li>通过课程进行入门,之后再阅读科研文章,书籍</li>
+<li>关注行业大V,获取最新资讯</li>
+<li>多参加行业交流会,获取行业讯息和反馈</li>
+</ul>
+<h1 id="需要补习哪些数学知识"><a href="#需要补习哪些数学知识" class="headerlink" title="需要补习哪些数学知识"></a>需要补习哪些数学知识</h1><p>重要性依次递减:</p>
+<ul>
+<li>线性代数</li>
+<li>概率和统计</li>
+<li>微积分（包括多变量微积分）</li>
+<li>优化</li>
+</ul>
+<h1 id="如何应对未来的AI世界"><a href="#如何应对未来的AI世界" class="headerlink" title="如何应对未来的AI世界"></a>如何应对未来的AI世界</h1><ul>
+<li>拥有持续学习的能力</li>
+<li>学会编程</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Note </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[2017观影记录]]></title>
+      <url>/2017/10/07/2017%E8%A7%82%E5%BD%B1%E8%AE%B0%E5%BD%95/</url>
+      <content type="html"><![CDATA[<h1 id="明月几时有"><a href="#明月几时有" class="headerlink" title="明月几时有"></a>明月几时有</h1><blockquote>
+<p>Introduction</p>
+</blockquote>
+<p>1941年末，香港沦陷。日军侵占香港疯狂抢掠，搜捕滞留在香港的中国文化人士，强令他们合作。香港东江游击队接到上级指示，紧急营救躲避在香港、九龙的文化人士，并在香港人民的掩护救助下，全部安全撤离香港。之后通过枪战、巷战、炸药、硝烟、鲜血和牺牲，讲述在香港沦陷的三年零八个月日子里，一群地道的香港小人物为保卫香港与凶残的日军抗争，奉献出青春和生命的真实故事</p>
+<blockquote>
+<p>Note</p>
+</blockquote>
+<ul>
+<li>根据真人真事改编</li>
+<li>方兰从一个喜欢文学的小学老师转变为直面生死的市队游击队长,从一个对爱情充满向往的小女生转变成一个为了更多人的生命安危和革命事业而放弃了营救亲人的战士.就像电影里说的,环境可以改变人.</li>
+<li>无论是方兰,还是他身边的一男一女两个战友,诸多细节都展现出了他们还都只是小孩子.</li>
+<li>方兰,李锦荣,刘黑仔,在战争的时代背景下,对感情是向往的,但是都在理性的克制.都在期望,胜利后再见,虽然谁也不知道胜利何时到来,以及自己能否活到胜利之时.</li>
+</ul>
+<h1 id="游戏规则"><a href="#游戏规则" class="headerlink" title="游戏规则"></a>游戏规则</h1><blockquote>
+<p>Introduction</p>
+</blockquote>
+<p>二战时期内忧外患的背景下，各方势力都想颠覆游戏规则挣脱宿命牢笼的故事.</p>
+<blockquote>
+<p>Note</p>
+</blockquote>
+<ul>
+<li>了解规则–&gt;熟悉规则–&gt;企图颠覆规则 , 想必是野心家的必经路线,然而之所以称之为”游戏规则”,是因为每个人,包括企图颠覆者,其实都只是规则中的一员,这种行为本身就在规则之内,所以是注定失败的.</li>
+<li>唐先生还是太狠了,为了活下来不择手段不信任任何人,谁愿意跟他一起打江山?</li>
+<li>游戏里还是个人英雄主义严重,不太真实,李子豪(何润东饰演)太能打了,独挑青帮老巢,开玩笑呢.而且何润东依然以《风云-雄霸天下》中步惊云的形象和行为方式登场,改不了这个毛病了是吗?</li>
+</ul>
+<h1 id="破局"><a href="#破局" class="headerlink" title="破局"></a>破局</h1><blockquote>
+<p>Introduction</p>
+</blockquote>
+<p>这是高见翔警官生命中最艰难的一天：老母亲去世，疑似受贿被要求配合调查取证。在奔丧的路上，他又意外撞死了人。手忙脚乱的“毁尸灭迹”，他以为生活可以回归到波澜不惊。却不料，他撞死的其实是一名通缉犯，而驾车逃逸的他也同样被警方盯上。与此同时，一个神秘电话打来，高警官惊觉，这一切竟然是个阴谋，而他已经深陷迷局</p>
+<blockquote>
+<p>Note</p>
+</blockquote>
+<ul>
+<li>母亲去世,灰色收入被查,交通肇事,开头的布局非常应景的交代了电影的主题《破局》,简直是无路可逃.</li>
+<li>不同于以往的高级警官形象,郭富城在这里面扮演的只是一个普通小警察,但是即便如此,也不应该被编剧写成一个见到陈建昌就立马爬着走,各种屁滚尿流鼻涕四溢,连一个被炸弹炸过的人都不敢pk这种软蛋形象.这好像连普通人都不如.</li>
+<li>头可断,郭天王发型永远不能乱.</li>
+<li>最后一幕是高见翔把大量的财富充公了,这一镜头是后加的吧?从剧情上来讲根本不通,可能是为了能顺利通过有关部门的审批吧.</li>
+</ul>
+<h1 id="辑枪"><a href="#辑枪" class="headerlink" title="辑枪"></a>辑枪</h1><blockquote>
+<p>Introduction</p>
+</blockquote>
+<p>一次普通的车辆剐蹭事故里，俞苗老公刘明义拿枪打死了徐天（白举纲饰）的女朋友，被警察当场击毙。徐天找俞苗（热依扎饰）赔钱，二人去找卖枪给刘明义（任东霖饰）的枪贩子马三叹（洪剑涛饰），却遇上了马三叹被警察连广阔抄了老窝。马三叹跳桥重伤，俞苗和徐天被马三叹的弟弟小马（王泷正饰）绑架，小马用徐天的生命要挟俞苗，要她去医院杀马三叹灭口。俞苗到医院，在连广阔的帮助下蒙混过关，警方根据俞苗的线索追查小马下落，警方设卡在山路围捕抢匪，双方展开了最后的较量。</p>
+<blockquote>
+<p>Note</p>
+</blockquote>
+<ul>
+<li>多亏了美女热依扎称场面,否则整场电影会更加的枯燥乏味.</li>
+<li>外卖小哥徐天为什么能买公墓?有钱吗?死者的假身份证也可以审核通过吗?为什么他在知道女友只把女友当提款机的情况下,还要全程追着要15万?</li>
+<li>为什么警察连广阔在中枪后,一直盯着俞苗看,没明白.</li>
+<li>一切事情,只要讲规矩,都好办.</li>
+<li>中美国情差距大,在中国开放枪支还是相当危险的,社会治安和政局都会陷入巨大的混乱.</li>
+</ul>
+<h1 id="师父"><a href="#师父" class="headerlink" title="师父"></a>师父</h1><p>武馆林立的江湖,沉闷、腐朽、固若金汤的江湖规矩让一切有序运行,也让整个江湖失去未来.相当不错的电影,9分.</p>
+<p>不错的影评: <a href="https://www.zhihu.com/question/37927520" target="_blank" rel="external">https://www.zhihu.com/question/37927520</a></p>
+<h1 id="猩球崛起-终极之战"><a href="#猩球崛起-终极之战" class="headerlink" title="猩球崛起:终极之战"></a>猩球崛起:终极之战</h1><p>决定去豆瓣打2分,剧情不好,由人类和猿族的大战,瞬间缩小冲突范围变成了猿族和部分武装极端份子的大战,而且凯撒全程无所作为+一张受委屈的脸,本部影片没有达到期望值.</p>
+<h1 id="羞羞的铁拳"><a href="#羞羞的铁拳" class="headerlink" title="羞羞的铁拳"></a>羞羞的铁拳</h1><p>开心麻花作品</p>
+<p>你都没打,怎么知道打不过啊,我可好打了….唯一的笑点.</p>
+<h1 id="电锯惊魂系列"><a href="#电锯惊魂系列" class="headerlink" title="电锯惊魂系列"></a>电锯惊魂系列</h1><p>重温经典</p>
+<h1 id="雏妓"><a href="#雏妓" class="headerlink" title="雏妓"></a>雏妓</h1><p>拯救不了泰国80万的雏妓,也拯救不了280万的泰国性工作者,毕竟占据了国家17%的GDP,但是让更多的人了解,关注这一现状和群体,本身就具有意义.</p>
+<h1 id="心理罪"><a href="#心理罪" class="headerlink" title="心理罪"></a>心理罪</h1>]]></content>
+      
+        <categories>
+            
+            <category> Movie </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[mac系统生成SSH公钥]]></title>
+      <url>/2017/10/06/mac%E7%B3%BB%E7%BB%9F%E7%94%9F%E6%88%90SSH%E5%85%AC%E9%92%A5/</url>
+      <content type="html"><![CDATA[<p>使用SSH方式建立Git远程连接可以免除每次提交时的用户名和密码验证,可谓一劳永逸.可以直接参考 <a href="https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E7%94%9F%E6%88%90-SSH-%E5%85%AC%E9%92%A5" target="_blank" rel="external">服务器上的 Git - 生成 SSH 公钥</a></p>
+<h1 id="定位公钥文件"><a href="#定位公钥文件" class="headerlink" title="定位公钥文件"></a>定位公钥文件</h1><p>打开终端输入指令:<code>cd ~/.ssh</code>和<code>ls</code>查看文件列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">MacdeMacBook-Air:blog crocutax$ cd ~/.ssh</div><div class="line">MacdeMacBook-Air:.ssh crocutax$ ls</div><div class="line">known_hosts</div></pre></td></tr></table></figure>
+<p>我们需要一对id_dsa 或 id_rsa 命名的文件，其中一个带有 .pub 扩展名。 <code>.pub</code> 文件就是需要上传到Git服务器的公钥，另一个则是私钥。 如果找不到这样的文件（或者根本没有 .ssh 目录），如果没有找到,则通过<code>ssh-keygen</code>指令来创建该文件.</p>
+<h1 id="创建公钥私钥"><a href="#创建公钥私钥" class="headerlink" title="创建公钥私钥"></a>创建公钥私钥</h1><p>打开终端输入指令:<code>ssh-keygen</code></p>
+<p>这里会提示让输入key的存储路径(默认是:/Users/mac/.ssh/id_rsa),以及密钥口令(输入两次),如果没有特殊指定,直接全部<code>Enter</code>即可.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">MacdeMacBook-Air:.ssh crocutax$ ssh-keygen</div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file in which to save the key (/Users/mac/.ssh/id_rsa): </div><div class="line">Enter passphrase (empty for no passphrase): </div><div class="line">Enter same passphrase again: </div><div class="line">Your identification has been saved in /Users/mac/.ssh/id_rsa.</div><div class="line">Your public key has been saved in /Users/mac/.ssh/id_rsa.pub.</div><div class="line">The key fingerprint is:</div><div class="line">SHA256:LNg7AMZJyNIu0JxfKsCvkvwiALzmG4UuCRF3snIkNRk crocutax@MacdeMacBook-Air.local</div><div class="line">The key&apos;s randomart image is:</div><div class="line">+---[RSA 2048]----+</div><div class="line">|=*E+.            |</div><div class="line">|=X**  .          |</div><div class="line">|*oO. o           |</div><div class="line">|o*+ooo .         |</div><div class="line">|++ooo o S        |</div><div class="line">|**.  . o         |</div><div class="line">|Bo.   o          |</div><div class="line">|oo..   .         |</div><div class="line">|..o              |</div><div class="line">+----[SHA256]-----+</div></pre></td></tr></table></figure>
+<h1 id="查看公钥"><a href="#查看公钥" class="headerlink" title="查看公钥"></a>查看公钥</h1><p>此时再查看文件目录,发现我们需要的<code>id_rsa</code>和<code>id_rsa.pub</code>文件已经有了.输入指令<code>cat ~/.ssh/id_rsa.pub</code>查看公钥内容,并在Git服务器端配置即可.如果是Github或者码云等Git服务器,那么在个人中心的设置页面,配置SSH列表即可.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">MacdeMacBook-Air:.ssh crocutax$ ls</div><div class="line">id_rsa		id_rsa.pub	known_hosts</div><div class="line">MacdeMacBook-Air:.ssh crocutax$ cat ~/.ssh/id_rsa.pub</div><div class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCxH7NqCzjO5D+ygwd1llaJoq1sJw0RJSCU/GLArSthCNZx....此处省略....arrL2mF5VAJr40fAyNgrXU5dSYBLgQTRDnFVeDrwGcL0agoveB5Df2wFLlVt6a5xwrIJ0GhqRWwSKtcB crocutax@MacdeMacBook-Air.local</div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> Other </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[mac系统搭建hexo环境]]></title>
+      <url>/2017/10/06/mac%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BAhexo%E7%8E%AF%E5%A2%83/</url>
+      <content type="html"><![CDATA[<p><a href="https://hexo.io/docs/" target="_blank" rel="external">Hexo官网</a>有详细的安装步骤</p>
+<h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h1><p><a href="https://git-scm.com/downloads" target="_blank" rel="external">Git官网下载</a></p>
+<p>测试git是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">MacdeMacBook-Air:~ crocutax$ git --version</div><div class="line">git version 2.14.1</div></pre></td></tr></table></figure>
+<h1 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h1><blockquote>
+<p>1.先安装nvm <a href="https://github.com/creationix/nvm" target="_blank" rel="external">Node Version Manager</a></p>
+</blockquote>
+<p>打开终端,输入:</p>
+<p>cURL:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash</div></pre></td></tr></table></figure></p>
+<p>Wget:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash</div></pre></td></tr></table></figure></p>
+<p>通过如下指令测试nvm是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">MacdeMacBook-Air:~ crocutax$ command -v nvm</div><div class="line">nvm</div></pre></td></tr></table></figure>
+<p>如果出现Comman not found提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-bash: nvm: command not found</div></pre></td></tr></table></figure></p>
+<p>则尝试</p>
+<ul>
+<li>重新打开终端</li>
+<li>输入指令:source ~/.bashrc</li>
+</ul>
+<blockquote>
+<p>2.nvm安装完毕后,通过nvm安装node.js</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nvm install stable</div></pre></td></tr></table></figure>
+<p>如下指令代表安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">MacdeMacBook-Air:~ crocutax$ nvm install stable</div><div class="line">Downloading and installing node v8.6.0...</div><div class="line">Downloading https://nodejs.org/dist/v8.6.0/node-v8.6.0-darwin-x64.tar.gz...</div><div class="line">######################################################################## 100.0%</div><div class="line">Computing checksum with shasum -a 256</div><div class="line">Checksums matched!</div><div class="line">Now using node v8.6.0 (npm v5.3.0)</div><div class="line">Creating default alias: default -&gt; stable (-&gt; v8.6.0)</div></pre></td></tr></table></figure>
+<h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">MacdeMacBook-Air:~ crocutax$ sudo npm install -g hexo</div><div class="line">/Users/mac/.nvm/versions/node/v8.6.0/bin/hexo -&gt; /Users/mac/.nvm/versions/node/v8.6.0/lib/node_modules/hexo-cli/bin/hexo</div><div class="line"></div><div class="line">&gt; dtrace-provider@0.8.5 install /Users/mac/.nvm/versions/node/v8.6.0/lib/node_modules/hexo-cli/node_modules/dtrace-provider</div><div class="line">&gt; node scripts/install.js</div><div class="line"></div><div class="line"></div><div class="line">&gt; fsevents@1.1.2 install /Users/mac/.nvm/versions/node/v8.6.0/lib/node_modules/hexo-cli/node_modules/fsevents</div><div class="line">&gt; node install</div><div class="line"></div><div class="line">[fsevents] Success: &quot;/Users/mac/.nvm/versions/node/v8.6.0/lib/node_modules/hexo-cli/node_modules/fsevents/lib/binding/Release/node-v57-darwin-x64/fse.node&quot; already installed</div><div class="line">Pass --update-binary to reinstall or --build-from-source to recompile</div><div class="line"></div><div class="line">&gt; hexo-util@0.6.1 postinstall /Users/mac/.nvm/versions/node/v8.6.0/lib/node_modules/hexo-cli/node_modules/hexo-util</div><div class="line">&gt; npm run build:highlight</div><div class="line"></div><div class="line"></div><div class="line">&gt; hexo-util@0.6.1 build:highlight /Users/mac/.nvm/versions/node/v8.6.0/lib/node_modules/hexo-cli/node_modules/hexo-util</div><div class="line">&gt; node scripts/build_highlight_alias.js &gt; highlight_alias.json</div><div class="line"></div><div class="line">+ hexo-cli@1.0.3</div><div class="line">added 217 packages in 72.766s</div><div class="line">MacdeMacBook-Air:~ crocutax$</div></pre></td></tr></table></figure>
+<p>使用<code>hexo -version</code>指令测试hexo是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">MacdeMacBook-Air:~ crocutax$ hexo -version</div><div class="line">hexo-cli: 1.0.3</div><div class="line">os: Darwin 16.6.0 darwin x64</div><div class="line">http_parser: 2.7.0</div><div class="line">node: 6.10.2</div><div class="line">v8: 5.1.281.98</div><div class="line">uv: 1.9.1</div><div class="line">zlib: 1.2.11</div><div class="line">ares: 1.10.1-DEV</div><div class="line">icu: 58.2</div><div class="line">modules: 48</div><div class="line">openssl: 1.0.2k</div></pre></td></tr></table></figure>
+<h1 id="初始化Hexo目录"><a href="#初始化Hexo目录" class="headerlink" title="初始化Hexo目录"></a>初始化Hexo目录</h1><p>创建自己的博客文件夹,然后cd到该目录下</p>
+<blockquote>
+<p>1.执行指令<code>hexo init</code>初始化hexo</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">MacdeMacBook-Air:~ crocutax$ cd /Users/mac/Desktop/crocutax/blog</div><div class="line">MacdeMacBook-Air:blog crocutax$ hexo init</div><div class="line">INFO  Cloning hexo-starter to ~/Desktop/crocutax/blog</div><div class="line">Cloning into &apos;/Users/mac/Desktop/crocutax/blog&apos;...</div><div class="line">remote: Counting objects: 59, done.</div><div class="line">remote: Total 59 (delta 0), reused 0 (delta 0), pack-reused 59</div><div class="line">Unpacking objects: 100% (59/59), done.</div><div class="line">Submodule &apos;themes/landscape&apos; (https://github.com/hexojs/hexo-theme-landscape.git) registered for path &apos;themes/landscape&apos;</div><div class="line">Cloning into &apos;/Users/mac/Desktop/crocutax/blog/themes/landscape&apos;...</div><div class="line">remote: Counting objects: 785, done.        </div><div class="line">remote: Total 785 (delta 0), reused 0 (delta 0), pack-reused 784        </div><div class="line">Receiving objects: 100% (785/785), 2.54 MiB | 142.00 KiB/s, done.</div><div class="line">Resolving deltas: 100% (403/403), done.</div><div class="line">Submodule path &apos;themes/landscape&apos;: checked out &apos;decdc2d9956776cbe95420ae94bac87e22468d38&apos;</div><div class="line">INFO  Install dependencies</div><div class="line">npm WARN deprecated swig@1.4.2: This package is no longer maintained</div><div class="line"></div><div class="line">&gt; dtrace-provider@0.8.5 install /Users/mac/Desktop/crocutax/blog/node_modules/dtrace-provider</div><div class="line">&gt; node scripts/install.js</div><div class="line"></div><div class="line"></div><div class="line">&gt; fsevents@1.1.2 install /Users/mac/Desktop/crocutax/blog/node_modules/fsevents</div><div class="line">&gt; node install</div><div class="line"></div><div class="line">[fsevents] Success: &quot;/Users/mac/Desktop/crocutax/blog/node_modules/fsevents/lib/binding/Release/node-v57-darwin-x64/fse.node&quot; already installed</div><div class="line">Pass --update-binary to reinstall or --build-from-source to recompile</div><div class="line"></div><div class="line">&gt; hexo-util@0.6.1 postinstall /Users/mac/Desktop/crocutax/blog/node_modules/hexo-util</div><div class="line">&gt; npm run build:highlight</div><div class="line"></div><div class="line"></div><div class="line">&gt; hexo-util@0.6.1 build:highlight /Users/mac/Desktop/crocutax/blog/node_modules/hexo-util</div><div class="line">&gt; node scripts/build_highlight_alias.js &gt; highlight_alias.json</div><div class="line"></div><div class="line">npm notice created a lockfile as package-lock.json. You should commit this file.</div><div class="line">added 429 packages in 30.513s</div><div class="line">INFO  Start blogging with Hexo!</div><div class="line">MacdeMacBook-Air:blog crocutax$</div></pre></td></tr></table></figure>
+<blockquote>
+<p>2.安装npm</p>
+</blockquote>
+<p>输入指令:<code>npm install</code></p>
+<blockquote>
+<p>3.启动hexo本地服务</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">MacdeMacBook-Air:blog crocutax$ hexo s</div><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure>
+<p>此时,打开<code>http://localhost:4000/</code>就可以看到hexo的默认首页了,hexo搭建完毕!</p>
+<blockquote>
+<p>注意事项</p>
+</blockquote>
+<p>hexo初始化的目录必须是空目录,所以如果是文件迁移,那么先hexo初始化空目录,然后再文件覆盖即可.</p>
+<p>其他配置请参考:</p>
+<p><a href="http://www.crocutax.com/2016/03/10/Hexo+Github%20Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">Hexo+Github Pages搭建个人博客</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[windows系统本地与远程服务器间的文件传输]]></title>
       <url>/2017/09/19/windows%E7%B3%BB%E7%BB%9F%E6%9C%AC%E5%9C%B0%E4%B8%8E%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%B4%E7%9A%84%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93/</url>
       <content type="html"><![CDATA[<p>日常开发过程中，有些时候可能会用到本机和远程服务器间的文件传输，本文记录的是两台windows电脑间的文件传输，linux系统以后再说。</p>
@@ -209,7 +451,7 @@ com.sun.org.apache.xerces.internal.impl.io.MalformedByteSequenceException: 1 字
       
         <categories>
             
-            <category> other </category>
+            <category> Other </category>
             
         </categories>
         
@@ -641,6 +883,16 @@ resolve 让系统自动解决冲突(合并两者的代码,有点麻烦)
 <h1 id="mybatis的Mapper和xml关联失败-找不到xml文件"><a href="#mybatis的Mapper和xml关联失败-找不到xml文件" class="headerlink" title="mybatis的Mapper和xml关联失败,找不到xml文件"></a>mybatis的Mapper和xml关联失败,找不到xml文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.crocutax.mybatisdemo.mapper.UserMapper.findUserList</div><div class="line"></div><div class="line">	at org.apache.ibatis.binding.MapperMethod$SqlCommand.&lt;init&gt;(MapperMethod.java:225)</div><div class="line">	at org.apache.ibatis.binding.MapperMethod.&lt;init&gt;(MapperMethod.java:48)</div></pre></td></tr></table></figure>
 <p>解决方案:在pom.xml中配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;build&gt;</div><div class="line">    &lt;resources&gt;</div><div class="line">        &lt;resource&gt;</div><div class="line">            &lt;directory&gt;src/main/java&lt;/directory&gt;</div><div class="line">            &lt;includes&gt;</div><div class="line">                &lt;include&gt;**/*.xml&lt;/include&gt;</div><div class="line">            &lt;/includes&gt;</div><div class="line">        &lt;/resource&gt;</div><div class="line">    &lt;/resources&gt;</div><div class="line">&lt;/build&gt;</div></pre></td></tr></table></figure></p>
 <p>参考 <a href="http://blog.csdn.net/shifangwannian/article/details/48882201" target="_blank" rel="external">http://blog.csdn.net/shifangwannian/article/details/48882201</a></p>
+<h1 id="webxml-attribute-is-required"><a href="#webxml-attribute-is-required" class="headerlink" title="webxml attribute is required"></a>webxml attribute is required</h1><p>maven构建时报异常,信息如下:</p>
+<blockquote>
+<p>webxml attribute is required (or pre-e xisting WEB-INF/web.xml if executing in update mode</p>
+</blockquote>
+<p>原因:maven管理的web项目,默认会去src/main/webapp目录下寻找WEB-INF/web.xml文件,因此web项目的文件转移到该目录即可.</p>
+<p>参考:<a href="http://blog.csdn.net/lizhitao/article/details/25213669" target="_blank" rel="external">http://blog.csdn.net/lizhitao/article/details/25213669</a></p>
+<h1 id="java-lang-NoClassDefFoundError-javax-el-ELManager"><a href="#java-lang-NoClassDefFoundError-javax-el-ELManager" class="headerlink" title="java.lang.NoClassDefFoundError: javax/el/ELManager"></a>java.lang.NoClassDefFoundError: javax/el/ELManager</h1><p>原因:缺少javax.el-api仓库依赖</p>
+<p>解决:在pom.xml中添加javax.el依赖即可</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.el<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.el-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>参考链接:<a href="https://stackoverflow.com/questions/45841464/java-lang-noclassdeffounderror-javax-el-elmanager" target="_blank" rel="external">https://stackoverflow.com/questions/45841464/java-lang-noclassdeffounderror-javax-el-elmanager</a></p>
 ]]></content>
       
         <categories>
@@ -860,8 +1112,6 @@ resolve 让系统自动解决冲突(合并两者的代码,有点麻烦)
       
         <categories>
             
-            <category> Note </category>
-            
             <category> Book </category>
             
         </categories>
@@ -954,16 +1204,10 @@ post_copyright:
       
         <categories>
             
-            <category> Other </category>
+            <category> Hexo </category>
             
         </categories>
         
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
         
     </entry>
     
@@ -998,16 +1242,10 @@ comments: false
       
         <categories>
             
-            <category> Other </category>
+            <category> Hexo </category>
             
         </categories>
         
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
         
     </entry>
     
@@ -1202,16 +1440,10 @@ comments: false
       
         <categories>
             
-            <category> Other </category>
+            <category> Hexo </category>
             
         </categories>
         
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
         
     </entry>
     
@@ -1397,8 +1629,6 @@ comments: false
       
         <categories>
             
-            <category> Note </category>
-            
             <category> Book </category>
             
         </categories>
@@ -1467,8 +1697,6 @@ comments: false
       
         <categories>
             
-            <category> Note </category>
-            
             <category> Book </category>
             
         </categories>
@@ -1534,8 +1762,6 @@ comments: false
 ]]></content>
       
         <categories>
-            
-            <category> Note </category>
             
             <category> Book </category>
             
@@ -2379,8 +2605,6 @@ shrink_to_middle    中间缩小
             
             <category> Note </category>
             
-            <category> Study </category>
-            
         </categories>
         
         
@@ -2474,8 +2698,6 @@ shrink_to_middle    中间缩小
         <categories>
             
             <category> Note </category>
-            
-            <category> Study </category>
             
         </categories>
         
@@ -2809,8 +3031,6 @@ public void setUserVisibleHint(boolean isVisibleToUser) {
             
             <category> Note </category>
             
-            <category> Study </category>
-            
         </categories>
         
         
@@ -2836,8 +3056,10 @@ public void setUserVisibleHint(boolean isVisibleToUser) {
 <li>Android Studio 重新Build即可</li>
 </ol>
 <h1 id="gradle-project-refresh-failed-Error：-“Invalid-argument”"><a href="#gradle-project-refresh-failed-Error：-“Invalid-argument”" class="headerlink" title="gradle project refresh failed Error： “Invalid argument”"></a>gradle project refresh failed Error： “Invalid argument”</h1><p>app/build.gradle里dependencies有错误 , 看看是不是小手一抖,把某个依赖的名字改错了.</p>
-<h1 id="Plugin-with-id-‘android-library’-not-found"><a href="#Plugin-with-id-‘android-library’-not-found" class="headerlink" title="Plugin with id ‘android-library’ not found"></a>Plugin with id ‘android-library’ not found</h1><p>在项目的build.gradle中添加如下代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    dependencies &#123;</div><div class="line">        classpath <span class="string">'com.android.tools.build:gradle:2.3.1'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Failed-to-resolve-dependencies"><a href="#Failed-to-resolve-dependencies" class="headerlink" title="Failed to resolve dependencies"></a>Failed to resolve dependencies</h1><p>gradle添加远程依赖时,出现</p>
+<p><code>Failed to resolve dependencies xxx</code></p>
+<p>1.看看是不是网络不行,看github能否访问,用vpn试试</p>
+<p>2.在project/build.gradle中添加仓库地址<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">allprojects &#123;</div><div class="line">    repositories &#123;</div><div class="line">        jcenter()</div><div class="line">        maven &#123; url 'https://jitpack.io' &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">``` </div><div class="line"> </div><div class="line"># Plugin with id 'android-library' not found</div><div class="line">在项目的build.gradle中添加如下代码</div><div class="line"></div><div class="line">```java</div><div class="line"> buildscript &#123;</div><div class="line">     repositories &#123;</div><div class="line">         jcenter()</div><div class="line">     &#125;</div><div class="line"></div><div class="line">     dependencies &#123;</div><div class="line">         classpath 'com.android.tools.build:gradle:2.3.1'</div><div class="line">     &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
 <h1 id="OutOfMemoryError"><a href="#OutOfMemoryError" class="headerlink" title="OutOfMemoryError"></a>OutOfMemoryError</h1><blockquote>
 <p>Error:UNEXPECTED TOP-LEVEL ERROR:<br>Error:java.lang.OutOfMemoryError: GC overhead limit exceeded</p>
 </blockquote>
@@ -2852,7 +3074,9 @@ public void setUserVisibleHint(boolean isVisibleToUser) {
 <li>设置sdk的目录位置为你Android studio使用的sdk的目录 , 例如 <code>D:\Dev\Android\sdk</code></li>
 <li>将Genymotion Device和AndroidStudio 都重启</li>
 </ol>
-<h1 id="Error-Execution-failed-for-task-‘-app-packageDebug’-gt-zip-isFile"><a href="#Error-Execution-failed-for-task-‘-app-packageDebug’-gt-zip-isFile" class="headerlink" title="Error:Execution failed for task ‘:app:packageDebug’. &gt; !zip.isFile()"></a>Error:Execution failed for task ‘:app:packageDebug’. &gt; !zip.isFile()</h1><p>顶部工具栏 Clean and Rebuild project 完事</p>
+<h1 id="zip-isFile"><a href="#zip-isFile" class="headerlink" title="!zip.isFile()"></a>!zip.isFile()</h1><p>gradle编译时报如下异常</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Error:Execution failed for task &apos;:app:packageDebug&apos;. &gt; !zip.isFile()</div></pre></td></tr></table></figure>
+<p>顶部工具栏 Clean and Rebuild project 完事</p>
 <h1 id="Find-in-Path全局搜索失败"><a href="#Find-in-Path全局搜索失败" class="headerlink" title="Find in Path全局搜索失败"></a>Find in Path全局搜索失败</h1><p>Ctrl+Shift+F 调出Find in path全局搜索页面,输入关键字搜索时,发现明明项目里有这个内容,但是却在Preview界面没有任何结果展示.</p>
 <p><strong>解决方案:</strong></p>
 <p>Find in path-&gt;Options-&gt;File name filter,把File masks的对勾去掉.就可以正常使用了.</p>
@@ -3109,16 +3333,10 @@ idea.system.path=D:\cache\.AndroidStudio2.3\system
       
         <categories>
             
-            <category> Other </category>
+            <category> Hexo </category>
             
         </categories>
         
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
         
     </entry>
     

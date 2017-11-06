@@ -101,7 +101,7 @@
 <meta property="og:description" content="idea配置Tomcat,启动Web项目 Run-&amp;gt;Edit Configuration 添加TomcatServer-&amp;gt;Local Server,在Server选项卡中选择Tomcat服务器,并进行Tomcat名称,默认部署后启动的浏览器等信息 编辑器已有默认配置   选择Deployment选项卡,按绿色+号 添加需要部署的项目,右侧Application context为项目名称">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-ccc803345608b589.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-977114780653c53d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-09-14T12:53:16.093Z">
+<meta property="og:updated_time" content="2017-11-05T06:42:38.666Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Idea使用中的问题记录">
 <meta name="twitter:description" content="idea配置Tomcat,启动Web项目 Run-&amp;gt;Edit Configuration 添加TomcatServer-&amp;gt;Local Server,在Server选项卡中选择Tomcat服务器,并进行Tomcat名称,默认部署后启动的浏览器等信息 编辑器已有默认配置   选择Deployment选项卡,按绿色+号 添加需要部署的项目,右侧Application context为项目名称">
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  918 字
+                  1,063 字
                 </span>
               
 
@@ -439,7 +439,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -524,6 +524,16 @@
 <h1 id="mybatis的Mapper和xml关联失败-找不到xml文件"><a href="#mybatis的Mapper和xml关联失败-找不到xml文件" class="headerlink" title="mybatis的Mapper和xml关联失败,找不到xml文件"></a>mybatis的Mapper和xml关联失败,找不到xml文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.crocutax.mybatisdemo.mapper.UserMapper.findUserList</div><div class="line"></div><div class="line">	at org.apache.ibatis.binding.MapperMethod$SqlCommand.&lt;init&gt;(MapperMethod.java:225)</div><div class="line">	at org.apache.ibatis.binding.MapperMethod.&lt;init&gt;(MapperMethod.java:48)</div></pre></td></tr></table></figure>
 <p>解决方案:在pom.xml中配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;build&gt;</div><div class="line">    &lt;resources&gt;</div><div class="line">        &lt;resource&gt;</div><div class="line">            &lt;directory&gt;src/main/java&lt;/directory&gt;</div><div class="line">            &lt;includes&gt;</div><div class="line">                &lt;include&gt;**/*.xml&lt;/include&gt;</div><div class="line">            &lt;/includes&gt;</div><div class="line">        &lt;/resource&gt;</div><div class="line">    &lt;/resources&gt;</div><div class="line">&lt;/build&gt;</div></pre></td></tr></table></figure></p>
 <p>参考 <a href="http://blog.csdn.net/shifangwannian/article/details/48882201" target="_blank" rel="external">http://blog.csdn.net/shifangwannian/article/details/48882201</a></p>
+<h1 id="webxml-attribute-is-required"><a href="#webxml-attribute-is-required" class="headerlink" title="webxml attribute is required"></a>webxml attribute is required</h1><p>maven构建时报异常,信息如下:</p>
+<blockquote>
+<p>webxml attribute is required (or pre-e xisting WEB-INF/web.xml if executing in update mode</p>
+</blockquote>
+<p>原因:maven管理的web项目,默认会去src/main/webapp目录下寻找WEB-INF/web.xml文件,因此web项目的文件转移到该目录即可.</p>
+<p>参考:<a href="http://blog.csdn.net/lizhitao/article/details/25213669" target="_blank" rel="external">http://blog.csdn.net/lizhitao/article/details/25213669</a></p>
+<h1 id="java-lang-NoClassDefFoundError-javax-el-ELManager"><a href="#java-lang-NoClassDefFoundError-javax-el-ELManager" class="headerlink" title="java.lang.NoClassDefFoundError: javax/el/ELManager"></a>java.lang.NoClassDefFoundError: javax/el/ELManager</h1><p>原因:缺少javax.el-api仓库依赖</p>
+<p>解决:在pom.xml中添加javax.el依赖即可</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.el<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.el-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>参考链接:<a href="https://stackoverflow.com/questions/45841464/java-lang-noclassdeffounderror-javax-el-elmanager" target="_blank" rel="external">https://stackoverflow.com/questions/45841464/java-lang-noclassdeffounderror-javax-el-elmanager</a></p>
 
       
     </div>
@@ -709,7 +719,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -798,7 +808,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#idea配置Tomcat-启动Web项目"><span class="nav-number">1.</span> <span class="nav-text">idea配置Tomcat,启动Web项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误-找不到或无法加载主类"><span class="nav-number">2.</span> <span class="nav-text">错误:找不到或无法加载主类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现接口方法报错"><span class="nav-number">3.</span> <span class="nav-text">实现接口方法报错</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pom-xml中配置的依赖库提示not-found"><span class="nav-number">4.</span> <span class="nav-text">pom.xml中配置的依赖库提示not found</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mybatis的Mapper和xml关联失败-找不到xml文件"><span class="nav-number">5.</span> <span class="nav-text">mybatis的Mapper和xml关联失败,找不到xml文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#idea配置Tomcat-启动Web项目"><span class="nav-number">1.</span> <span class="nav-text">idea配置Tomcat,启动Web项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误-找不到或无法加载主类"><span class="nav-number">2.</span> <span class="nav-text">错误:找不到或无法加载主类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现接口方法报错"><span class="nav-number">3.</span> <span class="nav-text">实现接口方法报错</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pom-xml中配置的依赖库提示not-found"><span class="nav-number">4.</span> <span class="nav-text">pom.xml中配置的依赖库提示not found</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mybatis的Mapper和xml关联失败-找不到xml文件"><span class="nav-number">5.</span> <span class="nav-text">mybatis的Mapper和xml关联失败,找不到xml文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webxml-attribute-is-required"><span class="nav-number">6.</span> <span class="nav-text">webxml attribute is required</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java-lang-NoClassDefFoundError-javax-el-ELManager"><span class="nav-number">7.</span> <span class="nav-text">java.lang.NoClassDefFoundError: javax/el/ELManager</span></a></li></ol></div>
             
 
           </div>

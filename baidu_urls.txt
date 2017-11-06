@@ -1,3 +1,8 @@
+http://www.crocutax.com/2017/10/31/SpringMVC-入参出参数据类型转换/
+http://www.crocutax.com/2017/10/08/笔记-吴恩达-任何人都能成为机器学习专家/
+http://www.crocutax.com/2017/10/07/2017观影记录/
+http://www.crocutax.com/2017/10/06/mac系统生成SSH公钥/
+http://www.crocutax.com/2017/10/06/mac系统搭建hexo环境/
 http://www.crocutax.com/2017/09/19/windows系统本地与远程服务器间的文件传输/
 http://www.crocutax.com/2017/09/17/使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署/
 http://www.crocutax.com/2017/09/14/Done-is-better-than-perfect/
