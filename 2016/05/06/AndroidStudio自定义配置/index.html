@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://www.crocutax.com/2016/05/06/AndroidStudio自定义配置/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="AndroidStudio主题官方主题站,另外还有一个 国内站点   ,下载速度会快一些. 将主题jar包下载下来 , AS中点击左上角File–&amp;gt;,import settings,导入jar包即可. AS项目中哪些文件需要保留,哪些是自动生成的?需要保留的有:   Project下,3个   app build.gradle settings.gradle   Module下 , 4个">
-<meta property="og:updated_time" content="2017-05-29T08:05:35.788Z">
+<meta property="og:updated_time" content="2017-11-16T14:50:45.008Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AndroidStudio自定义配置">
 <meta name="twitter:description" content="AndroidStudio主题官方主题站,另外还有一个 国内站点   ,下载速度会快一些. 将主题jar包下载下来 , AS中点击左上角File–&amp;gt;,import settings,导入jar包即可. AS项目中哪些文件需要保留,哪些是自动生成的?需要保留的有:   Project下,3个   app build.gradle settings.gradle   Module下 , 4个">
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  916 字
+                  996 字
                 </span>
               
 
@@ -519,6 +519,11 @@
 <p>那么每当新创建一个类时,就会带上这个文件头<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by wangxiwen on 2017/4/15 06:44.</div><div class="line"> * E-mail : wangxw725@gmail.com</div><div class="line"> * Function :</div><div class="line"> */</div></pre></td></tr></table></figure></p>
 <h1 id="全屏编辑代码"><a href="#全屏编辑代码" class="headerlink" title="全屏编辑代码"></a>全屏编辑代码</h1><p>View–&gt;Enter Presentation Mode</p>
 <h1 id="恢复已删除的文件"><a href="#恢复已删除的文件" class="headerlink" title="恢复已删除的文件"></a>恢复已删除的文件</h1><p>VCS–&gt;Local History–&gt;Show History</p>
+<h1 id="修改缓存文件目录"><a href="#修改缓存文件目录" class="headerlink" title="修改缓存文件目录"></a>修改缓存文件目录</h1><h2 id="gradle"><a href="#gradle" class="headerlink" title=".gradle"></a>.gradle</h2><p>File–&gt;Settings–&gt;Build,Execution,Deployment–&gt;Gradle–&gt;Service directory path , 这里设置指定的缓存目录即可.</p>
+<h2 id="AndroidStudio2-3"><a href="#AndroidStudio2-3" class="headerlink" title=".AndroidStudio2.3"></a>.AndroidStudio2.3</h2><p>定位到AndroidStudio/bin/idea.properties文件,找到如下内容</p>
+<pre><code># idea.config.path=${user.home}/.AndroidStudio/config
+# idea.system.path=${user.home}/.AndroidStudio/system
+</code></pre><p>去掉注释,将路径修改到自定义的目录即可.</p>
 
       
     </div>
@@ -704,7 +709,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">49</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -793,7 +798,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AndroidStudio主题"><span class="nav-number">1.</span> <span class="nav-text">AndroidStudio主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AS项目中哪些文件需要保留-哪些是自动生成的"><span class="nav-number">2.</span> <span class="nav-text">AS项目中哪些文件需要保留,哪些是自动生成的?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取消Android-Studio启动时自动打开上次关闭时的界面"><span class="nav-number">3.</span> <span class="nav-text">取消Android Studio启动时自动打开上次关闭时的界面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#格式化代码不换行"><span class="nav-number">4.</span> <span class="nav-text">格式化代码不换行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Offline离线模式"><span class="nav-number">5.</span> <span class="nav-text">Offline离线模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改字体大小"><span class="nav-number">6.</span> <span class="nav-text">修改字体大小</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加-更换字体"><span class="nav-number">7.</span> <span class="nav-text">添加/更换字体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码块-方法分割线"><span class="nav-number">8.</span> <span class="nav-text">代码块/方法分割线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#每行代码最大容量"><span class="nav-number">9.</span> <span class="nav-text">每行代码最大容量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码提示时忽略大小写"><span class="nav-number">10.</span> <span class="nav-text">代码提示时忽略大小写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义字体颜色"><span class="nav-number">11.</span> <span class="nav-text">自定义字体颜色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改代码区背景色"><span class="nav-number">12.</span> <span class="nav-text">修改代码区背景色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改控制台Logcat颜色"><span class="nav-number">13.</span> <span class="nav-text">修改控制台Logcat颜色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义文件注释模板"><span class="nav-number">14.</span> <span class="nav-text">自定义文件注释模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全屏编辑代码"><span class="nav-number">15.</span> <span class="nav-text">全屏编辑代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#恢复已删除的文件"><span class="nav-number">16.</span> <span class="nav-text">恢复已删除的文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AndroidStudio主题"><span class="nav-number">1.</span> <span class="nav-text">AndroidStudio主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AS项目中哪些文件需要保留-哪些是自动生成的"><span class="nav-number">2.</span> <span class="nav-text">AS项目中哪些文件需要保留,哪些是自动生成的?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取消Android-Studio启动时自动打开上次关闭时的界面"><span class="nav-number">3.</span> <span class="nav-text">取消Android Studio启动时自动打开上次关闭时的界面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#格式化代码不换行"><span class="nav-number">4.</span> <span class="nav-text">格式化代码不换行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Offline离线模式"><span class="nav-number">5.</span> <span class="nav-text">Offline离线模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改字体大小"><span class="nav-number">6.</span> <span class="nav-text">修改字体大小</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加-更换字体"><span class="nav-number">7.</span> <span class="nav-text">添加/更换字体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码块-方法分割线"><span class="nav-number">8.</span> <span class="nav-text">代码块/方法分割线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#每行代码最大容量"><span class="nav-number">9.</span> <span class="nav-text">每行代码最大容量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码提示时忽略大小写"><span class="nav-number">10.</span> <span class="nav-text">代码提示时忽略大小写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义字体颜色"><span class="nav-number">11.</span> <span class="nav-text">自定义字体颜色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改代码区背景色"><span class="nav-number">12.</span> <span class="nav-text">修改代码区背景色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改控制台Logcat颜色"><span class="nav-number">13.</span> <span class="nav-text">修改控制台Logcat颜色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义文件注释模板"><span class="nav-number">14.</span> <span class="nav-text">自定义文件注释模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全屏编辑代码"><span class="nav-number">15.</span> <span class="nav-text">全屏编辑代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#恢复已删除的文件"><span class="nav-number">16.</span> <span class="nav-text">恢复已删除的文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改缓存文件目录"><span class="nav-number">17.</span> <span class="nav-text">修改缓存文件目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#gradle"><span class="nav-number">17.1.</span> <span class="nav-text">.gradle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AndroidStudio2-3"><span class="nav-number">17.2.</span> <span class="nav-text">.AndroidStudio2.3</span></a></li></ol></li></ol></div>
             
 
           </div>
