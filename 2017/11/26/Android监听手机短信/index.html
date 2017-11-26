@@ -92,19 +92,17 @@
 
 
 
-<meta name="description" content="今天项目中又用到了RatingBar，于是翻出来之前踩坑的一篇笔记，快速解决问题，顺便把笔记内容整理在此，方便以后查阅。 当项目中遇到【评分】需求的时候，一般情况下都会使用RatingBar用于UI展示，而且很多时候都不会使用原生样式。原因有两个：  Android和iOS样式的统一 系统原生样式的版本兼容性问题  所以适当的自定义RatingBar样式就显得很有必要了。 RatingBar基本使">
+<meta name="description" content="有两种实现方式,监听短信和监听短信数据库. 方式一:短信监听以下情况可能会导致短信拦截失败:  小米,360等品牌手机拦截短信,短信的优先级给了系统 用户禁用短信权限 手机连接电脑,被电脑端的手机助手类软件截获 手机内装有QQ通讯录之类的管理联系人,短信的应用,被截获.  定义短信广播接收者123456789101112131415161718192021222324252627282930313">
 <meta name="keywords" content="经验总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RatingBar的基本使用和自定义样式">
-<meta property="og:url" content="http://www.crocutax.com/2017/05/18/RatingBar的基本使用和自定义样式/index.html">
+<meta property="og:title" content="Android监听手机短信">
+<meta property="og:url" content="http://www.crocutax.com/2017/11/26/Android监听手机短信/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
-<meta property="og:description" content="今天项目中又用到了RatingBar，于是翻出来之前踩坑的一篇笔记，快速解决问题，顺便把笔记内容整理在此，方便以后查阅。 当项目中遇到【评分】需求的时候，一般情况下都会使用RatingBar用于UI展示，而且很多时候都不会使用原生样式。原因有两个：  Android和iOS样式的统一 系统原生样式的版本兼容性问题  所以适当的自定义RatingBar样式就显得很有必要了。 RatingBar基本使">
-<meta property="og:image" content="http://opfgq15e3.bkt.clouddn.com/2017-05-18%20%E8%87%AA%E5%AE%9A%E4%B9%89RatingBar%E6%A0%B7%E5%BC%8F.png">
-<meta property="og:updated_time" content="2017-05-20T04:16:18.649Z">
+<meta property="og:description" content="有两种实现方式,监听短信和监听短信数据库. 方式一:短信监听以下情况可能会导致短信拦截失败:  小米,360等品牌手机拦截短信,短信的优先级给了系统 用户禁用短信权限 手机连接电脑,被电脑端的手机助手类软件截获 手机内装有QQ通讯录之类的管理联系人,短信的应用,被截获.  定义短信广播接收者123456789101112131415161718192021222324252627282930313">
+<meta property="og:updated_time" content="2017-11-26T15:03:24.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RatingBar的基本使用和自定义样式">
-<meta name="twitter:description" content="今天项目中又用到了RatingBar，于是翻出来之前踩坑的一篇笔记，快速解决问题，顺便把笔记内容整理在此，方便以后查阅。 当项目中遇到【评分】需求的时候，一般情况下都会使用RatingBar用于UI展示，而且很多时候都不会使用原生样式。原因有两个：  Android和iOS样式的统一 系统原生样式的版本兼容性问题  所以适当的自定义RatingBar样式就显得很有必要了。 RatingBar基本使">
-<meta name="twitter:image" content="http://opfgq15e3.bkt.clouddn.com/2017-05-18%20%E8%87%AA%E5%AE%9A%E4%B9%89RatingBar%E6%A0%B7%E5%BC%8F.png">
+<meta name="twitter:title" content="Android监听手机短信">
+<meta name="twitter:description" content="有两种实现方式,监听短信和监听短信数据库. 方式一:短信监听以下情况可能会导致短信拦截失败:  小米,360等品牌手机拦截短信,短信的优先级给了系统 用户禁用短信权限 手机连接电脑,被电脑端的手机助手类软件截获 手机内装有QQ通讯录之类的管理联系人,短信的应用,被截获.  定义短信广播接收者123456789101112131415161718192021222324252627282930313">
 
 
 
@@ -132,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://www.crocutax.com/2017/05/18/RatingBar的基本使用和自定义样式/"/>
+  <link rel="canonical" href="http://www.crocutax.com/2017/11/26/Android监听手机短信/"/>
 
 
 
 
 
-  <title>RatingBar的基本使用和自定义样式 | Crocutax's Blog</title>
+  <title>Android监听手机短信 | Crocutax's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -311,7 +309,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2017/05/18/RatingBar的基本使用和自定义样式/">
+    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2017/11/26/Android监听手机短信/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Crocutax">
@@ -332,7 +330,7 @@
             
             
               
-                RatingBar的基本使用和自定义样式
+                Android监听手机短信
               
             
           </h1>
@@ -347,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-18T22:31:18+08:00">
-                2017-05-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-26T22:55:35+08:00">
+                2017-11-26
               </time>
             
 
@@ -388,7 +386,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/05/18/RatingBar的基本使用和自定义样式/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/11/26/Android监听手机短信/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -397,7 +395,7 @@
 
           
           
-             <span id="/2017/05/18/RatingBar的基本使用和自定义样式/" class="leancloud_visitors" data-flag-title="RatingBar的基本使用和自定义样式">
+             <span id="/2017/11/26/Android监听手机短信/" class="leancloud_visitors" data-flag-title="Android监听手机短信">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -422,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  916 字
+                  958 字
                 </span>
               
 
@@ -438,7 +436,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -456,62 +454,45 @@
       
 
       
-        <p>今天项目中又用到了RatingBar，于是翻出来之前踩坑的一篇笔记，快速解决问题，顺便把笔记内容整理在此，方便以后查阅。</p>
-<p>当项目中遇到【评分】需求的时候，一般情况下都会使用RatingBar用于UI展示，而且很多时候都不会使用原生样式。原因有两个：</p>
+        <p>有两种实现方式,监听短信和监听短信数据库.</p>
+<h1 id="方式一-短信监听"><a href="#方式一-短信监听" class="headerlink" title="方式一:短信监听"></a>方式一:短信监听</h1><p>以下情况可能会导致短信拦截失败:</p>
 <ul>
-<li>Android和iOS样式的统一</li>
-<li>系统原生样式的版本兼容性问题</li>
+<li>小米,360等品牌手机拦截短信,短信的优先级给了系统</li>
+<li>用户禁用短信权限</li>
+<li>手机连接电脑,被电脑端的手机助手类软件截获</li>
+<li>手机内装有QQ通讯录之类的管理联系人,短信的应用,被截获.</li>
 </ul>
-<p>所以适当的自定义RatingBar样式就显得很有必要了。</p>
-<h1 id="RatingBar基本使用"><a href="#RatingBar基本使用" class="headerlink" title="RatingBar基本使用"></a>RatingBar基本使用</h1><p>RatingBar的基本使用比较简单，这里只记录一下几个常用的属性：</p>
+<h2 id="定义短信广播接收者"><a href="#定义短信广播接收者" class="headerlink" title="定义短信广播接收者"></a>定义短信广播接收者</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SMSBroadcastReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> OnReceivedMessageListener mOnReceivedMessageListener;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String SMS_RECEIVED_ACTION = <span class="string">"android.provider.Telephony.SMS_RECEIVED"</span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SMSBroadcastReceiver</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (intent.getAction().equals(SMS_RECEIVED_ACTION)) &#123;</div><div class="line">            Object[] pdus = (Object[]) intent.getExtras().get(<span class="string">"pdus"</span>);</div><div class="line">            <span class="keyword">for</span>(Object pdu:pdus) &#123;</div><div class="line">                SmsMessage smsMessage = SmsMessage.createFromPdu((<span class="keyword">byte</span> [])pdu);</div><div class="line">                String sender = smsMessage.getDisplayOriginatingAddress();</div><div class="line">                String content = smsMessage.getDisplayMessageBody();</div><div class="line">                <span class="keyword">long</span> date = smsMessage.getTimestampMillis();</div><div class="line">                Date tiemDate = <span class="keyword">new</span> Date(date);</div><div class="line">                SimpleDateFormat simpleDateFormat = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</div><div class="line">                String time = simpleDateFormat.format(tiemDate);</div><div class="line">                <span class="comment">//过滤不需要读取的短信的发送号码</span></div><div class="line">                <span class="keyword">if</span> (<span class="string">"106902780116481"</span>.equals(sender)) &#123;</div><div class="line">                    mOnReceivedMessageListener.onReceived(getDynamicPassword(content));</div><div class="line">                    abortBroadcast();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">OnReceivedMessageListener</span> </span>&#123;</div><div class="line">        <span class="function"><span class="keyword">void</span> <span class="title">onReceived</span><span class="params">(String message)</span></span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOnReceivedMessageListener</span><span class="params">(OnReceivedMessageListener onReceivedMessageListener)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.mOnReceivedMessageListener = onReceivedMessageListener;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 从字符串中截取连续6位数字组合 ([0-9]&#123;" + 6 + "&#125;)截取六位数字 进行前后断言不能出现数字 用于从短信中获取动态密码</div><div class="line">     * <span class="doctag">@param</span> str 短信内容</div><div class="line">     * <span class="doctag">@return</span> 截取得到的6位动态密码</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDynamicPassword</span><span class="params">(String str)</span> </span>&#123;</div><div class="line">        <span class="comment">// 6是验证码的位数,一般为六位</span></div><div class="line">        Pattern continuousNumberPattern = Pattern.compile(<span class="string">"(?&lt;![0-9])([0-9]&#123;"</span> + <span class="number">6</span> + <span class="string">"&#125;)(?![0-9])"</span>);</div><div class="line">        Matcher m = continuousNumberPattern.matcher(str);</div><div class="line">        String dynamicPassword = <span class="string">""</span>;</div><div class="line">        <span class="keyword">while</span> (m.find()) &#123;</div><div class="line">            dynamicPassword = m.group();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> dynamicPassword;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="注册广播"><a href="#注册广播" class="headerlink" title="注册广播"></a>注册广播</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">SMSBroadcastReceiver = mSMSBroadcastReceiver = <span class="keyword">new</span> SMSBroadcastReceiver();</div><div class="line">IntentFilter intentFilter = <span class="keyword">new</span> IntentFilter(SMSBroadcastReceiver.SMS_RECEIVED_ACTION);</div><div class="line">intentFilter.setPriority(Integer.MAX_VALUE);</div><div class="line"><span class="keyword">this</span>.registerReceiver(mSMSBroadcastReceiver, intentFilter);</div><div class="line">ToastManager.getInstance().showLongToast(<span class="string">"注册短信监听"</span>);</div><div class="line"></div><div class="line">mSMSBroadcastReceiver.setOnReceivedMessageListener(<span class="keyword">new</span> SMSBroadcastReceiver.OnReceivedMessageListener() &#123;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceived</span><span class="params">(String message)</span> </span>&#123;</div><div class="line">		<span class="comment">//do something</span></div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h1 id="方式二-监听短信数据库"><a href="#方式二-监听短信数据库" class="headerlink" title="方式二:监听短信数据库"></a>方式二:监听短信数据库</h1><p>内容提供者中对外通信方式有3种:</p>
+<blockquote>
+<p><strong>方式1:</strong>定义为Activity的内部类,直接在onChang()方法中处理业务逻辑,比如收到短信之后设置给EditText</p>
+</blockquote>
 <ul>
-<li><strong>isIndicator</strong> 是否是指示器，如果设置为true,则不可以通过点击来改变进度；如果设置为false，则可点击</li>
-<li><strong>numStars</strong> 一共有几个星星，默认是5个。</li>
-<li><strong>rating</strong> 表示进度 </li>
+<li>优点:方便</li>
+<li>缺点:耦合度高,复用性差</li>
 </ul>
-<h1 id="RatingBar-样式展示"><a href="#RatingBar-样式展示" class="headerlink" title="RatingBar 样式展示"></a>RatingBar 样式展示</h1><p>之前项目中一共碰到过四种RatingBar样式，各自效果图整理如下：</p>
-<p><img src="http://opfgq15e3.bkt.clouddn.com/2017-05-18%20%E8%87%AA%E5%AE%9A%E4%B9%89RatingBar%E6%A0%B7%E5%BC%8F.png" alt="自定义RatingBar样式"></p>
-<p>说明：</p>
+<blockquote>
+<p><strong>方式2:</strong>定义接口,Activity实现这个接口,拿到回调,处理业务逻辑</p>
+</blockquote>
 <ul>
-<li>第一个：原生普通样式（随着主题不同，样式会变）</li>
-<li>第二个：原生普通样式-小icon</li>
-<li>第三个：自定义RatingBar 颜色</li>
-<li>第四个：自定义RatingBar Drawable</li>
+<li>优点:耦合度低,复用性高</li>
+<li>缺点没用充分利用Handler资源</li>
 </ul>
-<h1 id="RatingBar-各样式实现"><a href="#RatingBar-各样式实现" class="headerlink" title="RatingBar 各样式实现"></a>RatingBar 各样式实现</h1><h2 id="原生样式"><a href="#原生样式" class="headerlink" title="原生样式"></a>原生样式</h2><p>原生样式其实没什么好说的，使用系统提供的<code>style</code> 即可</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--第一个：原生主题样式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">RatingBar</span></span></div><div class="line">    <span class="attr">style</span>=<span class="string">"?android:attr/ratingBarStyleIndicator"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:rating</span>=<span class="string">"3"</span>/&gt;</div><div class="line"></div><div class="line"><span class="comment">&lt;!--第二个：原生主题样式：小--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">RatingBar</span></span></div><div class="line">    <span class="attr">style</span>=<span class="string">"?android:attr/ratingBarStyleSmall"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:rating</span>=<span class="string">"3"</span>/&gt;</div></pre></td></tr></table></figure>
-<h2 id="自定义颜色"><a href="#自定义颜色" class="headerlink" title="自定义颜色"></a>自定义颜色</h2><p>这种方式也很简单，只需要要定义一个样式即可，两步完成。</p>
+<p>代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by wxw on 2016/9/24 10:34</div><div class="line"> * function: 监听短信数据库</div><div class="line"> * e-mail:wangxw725@163.com</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SmsContentObserver</span> <span class="keyword">extends</span> <span class="title">ContentObserver</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Cursor cursor = <span class="keyword">null</span>;</div><div class="line">    <span class="keyword">private</span> Context mContext;</div><div class="line">    <span class="keyword">private</span> String[] projection = <span class="keyword">new</span> String[]&#123;<span class="string">"_id"</span>,<span class="string">"body"</span>&#125;;</div><div class="line">    <span class="keyword">private</span> OnMessageObservedListener mOnMessageObservedListener;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SmsContentObserver</span><span class="params">(Context context,Handler handler)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(handler);</div><div class="line">        <span class="keyword">this</span>.mContext = context;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">OnMessageObservedListener</span> </span>&#123;</div><div class="line">        <span class="function"><span class="keyword">void</span> <span class="title">onObservedMessage</span><span class="params">(String message)</span></span>;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOnMessageObservedListener</span><span class="params">(OnMessageObservedListener onMessageObservedListener)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.mOnMessageObservedListener = onMessageObservedListener;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onChange</span><span class="params">(<span class="keyword">boolean</span> selfChange)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onChange(selfChange);</div><div class="line"></div><div class="line">        cursor = mContext.getContentResolver().query(Uri.parse(<span class="string">"content://sms/inbox"</span>), projection,<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="string">"_id desc"</span>);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (cursor != <span class="keyword">null</span> &amp;&amp; cursor.getCount() &gt; <span class="number">0</span>) &#123;</div><div class="line">            cursor.moveToNext();</div><div class="line">            <span class="keyword">int</span> smsbodyColumn = cursor.getColumnIndex(<span class="string">"body"</span>);</div><div class="line">            String smsBody = cursor.getString(smsbodyColumn);</div><div class="line">            mOnMessageObservedListener.onObservedMessage(getDynamicPassword(smsBody));</div><div class="line">        &#125;</div><div class="line">        cursor.close();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getDynamicPassword</span><span class="params">(String str)</span> </span>&#123;</div><div class="line">        Pattern continuousNumberPattern = Pattern.compile(<span class="string">"(?&lt;![0-9])([0-9]&#123;"</span> + <span class="number">6</span> + <span class="string">"&#125;)(?![0-9])"</span>);</div><div class="line">        Matcher m = continuousNumberPattern.matcher(str);</div><div class="line">        String dynamicPassword = <span class="string">""</span>;</div><div class="line">        <span class="keyword">while</span> (m.find()) &#123;</div><div class="line">            dynamicPassword = m.group();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> dynamicPassword;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
-<p>第一步，定义样式，指定背景色 和 进度色</p>
+<p><strong>方式3:</strong>通过Handler发送消息,在Activity中进行业务逻辑处理</p>
 </blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--自定义RatingBar Color--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"RatingBar_CustomColor"</span> <span class="attr">parent</span>=<span class="string">"@android:style/Widget.Holo.RatingBar.Indicator"</span>&gt;</span><span class="xml"></span></div><div class="line">    <span class="comment">&lt;!--Background Color--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlNormal"</span>&gt;</span>#D7D7D7<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--Progress Color--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlActivated"</span>&gt;</span>#F49800<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>第二步，XML中使用该主题</p>
-</blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--自定义 Color--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">RatingBar</span></span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/go_rating"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:isIndicator</span>=<span class="string">"true"</span></div><div class="line">    <span class="attr">style</span>=<span class="string">"?android:attr/ratingBarStyleSmall"</span></div><div class="line">    <span class="attr">android:theme</span>=<span class="string">"@style/RatingBar_CustomColor"</span></div><div class="line">    <span class="attr">android:rating</span>=<span class="string">"3"</span>/&gt;</div></pre></td></tr></table></figure>
-<h2 id="自定义Drawable"><a href="#自定义Drawable" class="headerlink" title="自定义Drawable"></a>自定义Drawable</h2><p>这种方式相对于前面几种，算是稍微麻烦一点的方式了，而且还存在图片拉伸的坑（图片底部被垂直拉伸成一条直线，跟哭了似的-_-!，就不贴图了）。先说具体实现方法，再说坑。</p>
-<blockquote>
-<p>第一步，定义层叠布局layerlist</p>
-</blockquote>
-<p>自定义过ProgressBar的同学，相信对下面的background，secondProgress，progress属性都不会陌生。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">layer-list</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></div><div class="line">	</div><div class="line">	<span class="tag">&lt;<span class="name">item</span> <span class="attr">android:id</span>=<span class="string">"@android:id/background"</span></span></div><div class="line">		<span class="attr">android:drawable</span>=<span class="string">"@drawable/star"</span>/&gt;</div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">item</span> <span class="attr">android:id</span>=<span class="string">"@android:id/secondaryProgress"</span></span></div><div class="line">		<span class="attr">android:drawable</span>=<span class="string">"@drawable/star"</span>/&gt;</div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">item</span> <span class="attr">android:id</span>=<span class="string">"@android:id/progress"</span></span></div><div class="line">		<span class="attr">android:drawable</span>=<span class="string">"@drawable/star_solid"</span>/&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">layer-list</span>&gt;</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>第二步，自定义样式，指定ProgressDrawable</p>
-</blockquote>
-<p>注意这里指定minHeight和maxHeight，根据项目中的UI需求而定，定死高度的其中一个作用就是防止drawable图片被垂直拉伸。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--自定义RatingBar Drawable--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"RatingBar_CustomDrawable"</span> <span class="attr">parent</span>=<span class="string">"@android:style/Widget.Holo.RatingBar.Indicator"</span>&gt;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:progressDrawable"</span>&gt;</span>@drawable/custom_rating_bar<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:minHeight"</span>&gt;</span>15dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:maxHeight"</span>&gt;</span>15dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>第三步，在xml中使用刚才定义好的样式</p>
-</blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--自定义Drawable样式--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">RatingBar</span></span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/room_ratingbar"</span></div><div class="line">    <span class="attr">style</span>=<span class="string">"@style/RatingBar_CustomDrawable"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:rating</span>=<span class="string">"3"</span>/&gt;</div></pre></td></tr></table></figure>
-<p>最后说下图片垂直拉伸的解决方案：</p>
-<ol>
-<li>设置minHeight和maxHeight，写死像素值。</li>
-<li>让UI帮忙切一张底部留有空隙的star图标，比如有1px的空隙</li>
-<li>使用略大于当前控件空间的icon，比如整个UI切图是按照drawable-xxhdpi来切的，那么使用高一级的drawable目录下比如drawable-xxxhdpi的icon，这样在运行的时候，icon会进行相应比例的缩放。</li>
-</ol>
-<p>图片拉伸问题，还可以参考以下链接：<br>  <a href="http://shikezhi.com/html/2015/android_0920/375199.html" target="_blank" rel="external">http://shikezhi.com/html/2015/android_0920/375199.html</a><br><a href="http://blog.csdn.net/QMLN31821007/article/details/41121891" target="_blank" rel="external">http://blog.csdn.net/QMLN31821007/article/details/41121891</a> </p>
-<p>（完）</p>
+<p>代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by wxw on 2016/9/24 10:34</div><div class="line"> * function: 监听短信数据库</div><div class="line"> * e-mail:wangxw725@163.com</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SmsContentObserver</span> <span class="keyword">extends</span> <span class="title">ContentObserver</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Cursor cursor = <span class="keyword">null</span>;</div><div class="line">    <span class="keyword">private</span> Context mContext;</div><div class="line">    <span class="keyword">private</span> Handler mHandler;</div><div class="line">    <span class="keyword">private</span> String[] projection = <span class="keyword">new</span> String[]&#123;<span class="string">"_id"</span>,<span class="string">"body"</span>&#125;;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SmsContentObserver</span><span class="params">(Context context,Handler handler)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(handler);</div><div class="line">        <span class="keyword">this</span>.mContext = context;</div><div class="line">        <span class="keyword">this</span>.mHandler = handler;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onChange</span><span class="params">(<span class="keyword">boolean</span> selfChange)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onChange(selfChange);</div><div class="line">        cursor = mContext.getContentResolver().query(Uri.parse(<span class="string">"content://sms/inbox"</span>), projection,<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="string">"_id desc"</span>);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (cursor != <span class="keyword">null</span> &amp;&amp; cursor.getCount() &gt; <span class="number">0</span>) &#123;</div><div class="line">            cursor.moveToNext();</div><div class="line">            <span class="keyword">int</span> smsbodyColumn = cursor.getColumnIndex(<span class="string">"body"</span>);</div><div class="line">            String smsBody = cursor.getString(smsbodyColumn);</div><div class="line">            mHandler.obtainMessage(<span class="number">1</span>,getDynamicPassword(smsBody)).sendToTarget();</div><div class="line">        &#125;</div><div class="line">        cursor.close();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getDynamicPassword</span><span class="params">(String str)</span> </span>&#123;</div><div class="line">        Pattern continuousNumberPattern = Pattern.compile(<span class="string">"(?&lt;![0-9])([0-9]&#123;"</span> + <span class="number">6</span> + <span class="string">"&#125;)(?![0-9])"</span>);</div><div class="line">        Matcher m = continuousNumberPattern.matcher(str);</div><div class="line">        String dynamicPassword = <span class="string">""</span>;</div><div class="line">        <span class="keyword">while</span> (m.find()) &#123;</div><div class="line">            dynamicPassword = m.group();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> dynamicPassword;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="注册观察者"><a href="#注册观察者" class="headerlink" title="注册观察者"></a>注册观察者</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">smsContentObserver = <span class="keyword">new</span> SmsContentObserver(<span class="keyword">this</span>, smsHandler);</div><div class="line">getContentResolver().registerContentObserver(Uri.parse(<span class="string">"content://sms/"</span>), <span class="keyword">true</span>, smsContentObserver);</div></pre></td></tr></table></figure>
+<h2 id="handler中处理消息"><a href="#handler中处理消息" class="headerlink" title="handler中处理消息"></a>handler中处理消息</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Handler smsHandler = <span class="keyword">new</span> Handler()&#123;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line"></div><div class="line">		<span class="keyword">switch</span> (msg.what)&#123;</div><div class="line">			<span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">				......</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">				LogUtils.x(<span class="string">"Activity收到了短息码:"</span>+(String)msg.obj);</div><div class="line">				lf.mEtPassword.setText((String)msg.obj);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="注销观察者"><a href="#注销观察者" class="headerlink" title="注销观察者"></a>注销观察者</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">super</span>.onDestroy();</div><div class="line">	......</div><div class="line">	<span class="keyword">if</span>(smsContentObserver!=<span class="keyword">null</span>)&#123;</div><div class="line">		getContentResolver().unregisterContentObserver(smsContentObserver);</div><div class="line">		smsContentObserver = <span class="keyword">null</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="遗留问题"><a href="#遗留问题" class="headerlink" title="遗留问题"></a>遗留问题</h2><p>观察者会多次回调onChang方法()</p>
+<p>参考博客:</p>
+<p><a href="http://blog.csdn.net/qinjuning/article/details/7047607" target="_blank" rel="external">http://blog.csdn.net/qinjuning/article/details/7047607</a></p>
+<p><a href="http://blog.csdn.net/u014452224/article/details/53910230" target="_blank" rel="external">http://blog.csdn.net/u014452224/article/details/53910230</a></p>
 
       
     </div>
@@ -571,16 +552,16 @@
 
             <li class="post-copyright-link">
               <strong>本文标题：</strong>
-              <a href="http://www.crocutax.com/2017/05/18/RatingBar的基本使用和自定义样式/" title="RatingBar的基本使用和自定义样式">RatingBar的基本使用和自定义样式</a>
+              <a href="http://www.crocutax.com/2017/11/26/Android监听手机短信/" title="Android监听手机短信">Android监听手机短信</a>
             </li>
 
             <li class="post-copyright-link">
               <strong>本文链接：</strong>
-              <a href="http://www.crocutax.com/2017/05/18/RatingBar的基本使用和自定义样式/" title="RatingBar的基本使用和自定义样式">http://www.crocutax.com/2017/05/18/RatingBar的基本使用和自定义样式/</a>
+              <a href="http://www.crocutax.com/2017/11/26/Android监听手机短信/" title="Android监听手机短信">http://www.crocutax.com/2017/11/26/Android监听手机短信/</a>
             </li>
 
             <li class="post-copyright-date">
-                <strong>发布时间：</strong>2017年5月18日 - 22时05分
+                <strong>发布时间：</strong>2017年11月26日 - 22时11分
             </li>  
 
             <li class="post-copyright-license">
@@ -608,8 +589,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/18/GoogleDrive云盘同步本地博客文件/" rel="next" title="GoogleDrive云盘同步本地博客文件">
-                <i class="fa fa-chevron-left"></i> GoogleDrive云盘同步本地博客文件
+              <a href="/2017/11/16/换电脑了/" rel="next" title="换电脑了">
+                <i class="fa fa-chevron-left"></i> 换电脑了
               </a>
             
           </div>
@@ -617,10 +598,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/20/Hexo持续优化-创建分类和标签页面/" rel="prev" title="Hexo持续优化-创建分类和标签页面">
-                Hexo持续优化-创建分类和标签页面 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -786,7 +763,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RatingBar基本使用"><span class="nav-number">1.</span> <span class="nav-text">RatingBar基本使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RatingBar-样式展示"><span class="nav-number">2.</span> <span class="nav-text">RatingBar 样式展示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RatingBar-各样式实现"><span class="nav-number">3.</span> <span class="nav-text">RatingBar 各样式实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原生样式"><span class="nav-number">3.1.</span> <span class="nav-text">原生样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义颜色"><span class="nav-number">3.2.</span> <span class="nav-text">自定义颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义Drawable"><span class="nav-number">3.3.</span> <span class="nav-text">自定义Drawable</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#方式一-短信监听"><span class="nav-number">1.</span> <span class="nav-text">方式一:短信监听</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义短信广播接收者"><span class="nav-number">1.1.</span> <span class="nav-text">定义短信广播接收者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册广播"><span class="nav-number">1.2.</span> <span class="nav-text">注册广播</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方式二-监听短信数据库"><span class="nav-number">2.</span> <span class="nav-text">方式二:监听短信数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注册观察者"><span class="nav-number">2.1.</span> <span class="nav-text">注册观察者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#handler中处理消息"><span class="nav-number">2.2.</span> <span class="nav-text">handler中处理消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注销观察者"><span class="nav-number">2.3.</span> <span class="nav-text">注销观察者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遗留问题"><span class="nav-number">2.4.</span> <span class="nav-text">遗留问题</span></a></li></ol></li></ol></div>
             
 
           </div>
