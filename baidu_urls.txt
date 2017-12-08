@@ -1,5 +1,5 @@
 http://www.crocutax.com/2017/12/07/使用hexo-qiniu-sync插件配合七牛云实现博客图床管理/
-http://www.crocutax.com/2017/12/07/TortoiseSVN-bin目录下没有svn-exe文件/
+http://www.crocutax.com/2017/12/07/bin目录下没有svn.exe文件/
 http://www.crocutax.com/2017/11/26/Idea编码设置/
 http://www.crocutax.com/2017/11/26/Android获取手机联系人/
 http://www.crocutax.com/2017/11/26/Android监听手机短信/

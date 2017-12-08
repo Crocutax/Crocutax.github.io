@@ -109,7 +109,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-37d605ab006c0cb6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-67b72d43df1b35c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-ea2a2542d1cea24b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-11-16T14:40:54.384Z">
+<meta property="og:updated_time" content="2017-12-08T08:08:21.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+Github Pages搭建个人博客">
 <meta name="twitter:description" content="Github Pages仓库创建官方教程：Github Pages官方教程里已经有很详细的步骤了，这里只是把几个需要注意的地方记录一下。  首先必须得有Github账号，作为世界上最大的同性交友网站，越早注册越好，带你进入一个全新的世界！ New Repository时，必须以username.github.io命名，username就是指自己的用户名，例如crocutax.github.io，注">
@@ -431,7 +431,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,776 字
+                  1,901 字
                 </span>
               
 
@@ -502,6 +502,10 @@
 <p>如下图：<br><img src="http://upload-images.jianshu.io/upload_images/1958298-37d605ab006c0cb6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="This package is no longer maintained.png"></p>
 <p>起初以为是报了个错误，于是网上一顿搜，各种更新各种折腾。后来发现，其实一直是在安装中，只是速度慢而已，导致我认为出了错误。通过google，通过<code>npm config set registry &quot;https://registry.npm.taobao.org&quot;</code>设置淘宝镜像源后，很快就安装完毕了，弹出了如下界面</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1958298-67b72d43df1b35c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Hexo install succeed.png"></p>
+<blockquote>
+<p>安装hexo插件</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-index --save #索引生成器</span><br><span class="line">$ npm install hexo-generator-archive --save #归档生成器</span><br><span class="line">$ npm install hexo-generator-category --save #分类生成器</span><br><span class="line">$ npm install hexo-generator-tag --save #标签生成器</span><br><span class="line">$ npm install hexo-server --save #本地服务,4000端口</span><br><span class="line">$ npm install hexo-deployer-git --save #hexo通过git发布（必装）</span><br><span class="line">$ npm install hexo-baidu-url-submit --save # 百度搜索主动推送</span><br><span class="line">$ npm install hexo-renderer-stylus@0.3.0 --save #渲染器</span><br><span class="line">$ npm install hexo-wordcount --save # 字数,阅读时长统计工具</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>$  hexo init</p>
 </blockquote>
