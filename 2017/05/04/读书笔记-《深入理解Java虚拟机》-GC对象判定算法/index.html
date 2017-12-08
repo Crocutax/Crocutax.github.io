@@ -99,6 +99,7 @@
 <meta property="og:url" content="http://www.crocutax.com/2017/05/04/读书笔记-《深入理解Java虚拟机》-GC对象判定算法/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="在 JVM内存模型 中，程序计数器、虚拟机栈、本地方法栈3个区域生命周期与所在的线程同步，栈中的每个栈帧分配多少内存基本上在类结构确定下来时就是已知的，因此这几个区域的内存分配和回收具有确定性，不需要考虑太多内存回收的问题。 而Java堆和方法区则不一样，一个接口中多个实现类需要的内存可能不一样，一个方法中多个分支小的内存也可能不一样，只有程序处于运行期间时才能知道会创建哪些对象，这部分内存的分配">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-6a4d37285b7ee693.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2017-11-02T14:09:30.023Z">
 <meta name="twitter:card" content="summary">
@@ -422,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                   字
+                  656 字
                 </span>
               
 
@@ -438,7 +439,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -663,7 +664,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">54</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -752,7 +753,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引用计数算法"><span class="nav-number">1.</span> <span class="nav-text">引用计数算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可达性分析算法"><span class="nav-number">2.</span> <span class="nav-text">可达性分析算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引用计数算法"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x7B97;&#x6CD5;" class="headerlink" title="&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x7B97;&#x6CD5;"></a>&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x7B97;&#x6CD5;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可达性分析算法"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x53EF;&#x8FBE;&#x6027;&#x5206;&#x6790;&#x7B97;&#x6CD5;" class="headerlink" title="&#x53EF;&#x8FBE;&#x6027;&#x5206;&#x6790;&#x7B97;&#x6CD5;"></a>&#x53EF;&#x8FBE;&#x6027;&#x5206;&#x6790;&#x7B97;&#x6CD5;</span></a></li></ol></div>
             
 
           </div>

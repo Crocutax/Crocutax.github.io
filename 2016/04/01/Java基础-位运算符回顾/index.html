@@ -99,6 +99,7 @@
 <meta property="og:url" content="http://www.crocutax.com/2016/04/01/Java基础-位运算符回顾/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="撸代码时间越长，越体会到的基础知识的重要性，研究原理越多，越感觉到数据结构和算法的重要性。这些东西在日常的业务代码中体会不是很明显，但是一旦稍微往深了研究，立刻就能发现自己不足。 今天在看源码的时候，发现居然忘记了位运算符是怎么玩的了，赶紧回顾了一下，顺便写个笔记记录一下，加深下印象。 位运算符主要针对二进制数，包括以下几种：  &amp;amp; 与运算符 | 或运算符 ^ 异或运算符 ~ 非运算符">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-05-20T04:19:28.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基础-位运算符回顾">
@@ -420,7 +421,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                   字
+                  572 字
                 </span>
               
 
@@ -436,7 +437,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -485,8 +486,8 @@
 <p>例如:<br>129的二进制表示:00000000 00000000 00000000 10000001<br>~129的计算结果 :11111111 11111111 11111111 01111110 (注意此时仍为补码)<br>根据补码求反码 : 11111111 11111111 11111111 01111101<br>根据反码求原码 : 10000000 00000000 00000000 10000010 (十进制值为 -130)</p>
 <p><strong>取反公式:</strong> <code>~(x) = -1*(x+1);</code> </p>
 <p>例: 6取反=-7 ; 9取反=-10 ; 129取反=-130</p>
-<p><strong>代码测试</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> a = <span class="number">128</span>;</div><div class="line">		<span class="keyword">int</span> b = <span class="number">129</span>;</div><div class="line">		System.out.println(<span class="string">"128 &amp; 129: "</span>+(<span class="number">128</span> &amp; <span class="number">129</span>));</div><div class="line">		System.out.println(<span class="string">"128 | 129: "</span>+(<span class="number">128</span> | <span class="number">129</span>));</div><div class="line">		System.out.println(<span class="string">"128 ^ 129: "</span>+(<span class="number">128</span> ^ <span class="number">129</span>));</div><div class="line">		System.out.println(<span class="string">"~129 : "</span>+(~<span class="number">129</span>));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Log输出:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">128</span> &amp; <span class="number">129</span>: <span class="number">128</span></div><div class="line"><span class="number">128</span> | <span class="number">129</span>: <span class="number">129</span></div><div class="line"><span class="number">128</span> ^ <span class="number">129</span>: <span class="number">1</span></div><div class="line">~<span class="number">129</span> : -<span class="number">130</span></div></pre></td></tr></table></figure></p>
+<p><strong>代码测试</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">128</span>;</span><br><span class="line">		<span class="keyword">int</span> b = <span class="number">129</span>;</span><br><span class="line">		System.out.println(<span class="string">"128 &amp; 129: "</span>+(<span class="number">128</span> &amp; <span class="number">129</span>));</span><br><span class="line">		System.out.println(<span class="string">"128 | 129: "</span>+(<span class="number">128</span> | <span class="number">129</span>));</span><br><span class="line">		System.out.println(<span class="string">"128 ^ 129: "</span>+(<span class="number">128</span> ^ <span class="number">129</span>));</span><br><span class="line">		System.out.println(<span class="string">"~129 : "</span>+(~<span class="number">129</span>));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Log输出:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">128</span> &amp; <span class="number">129</span>: <span class="number">128</span></span><br><span class="line"><span class="number">128</span> | <span class="number">129</span>: <span class="number">129</span></span><br><span class="line"><span class="number">128</span> ^ <span class="number">129</span>: <span class="number">1</span></span><br><span class="line">~<span class="number">129</span> : -<span class="number">130</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -663,7 +664,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">54</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

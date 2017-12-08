@@ -99,6 +99,7 @@
 <meta property="og:url" content="http://www.crocutax.com/2017/05/09/DrawerLayout-空白区域点击穿透问题/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="最近的项目里需要使用到侧滑布局，SlidingMenu 、自定义侧滑布局、 DrawerLayout都可以实现，前两种都已经尝试过了，最近1年多时间做项目都是使用底部导航栏，没有用到侧滑布局，DrawerLayout也一直没有去尝试，正好借此机会用一下。 mainlayout 和 drawerlayout如下图：  可以发现，drawerlayout打开时，drawerlayout的A区域（空白区">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-0e87c341009a4b96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2017-05-20T04:15:45.274Z">
 <meta name="twitter:card" content="summary">
@@ -422,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                   字
+                  604 字
                 </span>
               
 
@@ -438,7 +439,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -466,8 +467,8 @@
 <p>那么除了B区域的RecyclerView以外，这些drawerlayout的空白区域本来就没控件来处理点击事件，注定要向下传递，怎么办呢？再自己定义DrawerLayout吗？</p>
 <h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>当drawerlayout处于打开状态时，让drawerlayout整体可以处理点击事件即可，也就是说先把事件拦截下来，具体如何处理，由drawerlayout里的具体控件来定。</p>
 <p>具体步骤也非常简单，就是设置一个监听：</p>
-<h2 id="定义DrawLayout监听"><a href="#定义DrawLayout监听" class="headerlink" title="定义DrawLayout监听"></a>定义DrawLayout监听</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> DrawerLayout.SimpleDrawerListener mSimpleDrawerListener = <span class="keyword">new</span> DrawerLayout.SimpleDrawerListener()&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerOpened</span><span class="params">(View drawerView)</span> </span>&#123;</div><div class="line">	    <span class="comment">//档DrawerLayout打开时，让整体DrawerLayout布局可以响应点击事件</span></div><div class="line">        drawerView.setClickable(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerClosed</span><span class="params">(View drawerView)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDrawerClosed(drawerView);</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h2 id="在相应位置添加和移除监听"><a href="#在相应位置添加和移除监听" class="headerlink" title="在相应位置添加和移除监听"></a>在相应位置添加和移除监听</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">initListener</span><span class="params">()</span> </span>&#123;</div><div class="line">    mDrawerLayout.addDrawerListener(mSimpleDrawerListener);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onDestroy();</div><div class="line">    mDrawerLayout.removeDrawerListener(mSimpleDrawerListener);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="定义DrawLayout监听"><a href="#定义DrawLayout监听" class="headerlink" title="定义DrawLayout监听"></a>定义DrawLayout监听</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> DrawerLayout.SimpleDrawerListener mSimpleDrawerListener = <span class="keyword">new</span> DrawerLayout.SimpleDrawerListener()&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerOpened</span><span class="params">(View drawerView)</span> </span>&#123;</span><br><span class="line">	    <span class="comment">//档DrawerLayout打开时，让整体DrawerLayout布局可以响应点击事件</span></span><br><span class="line">        drawerView.setClickable(<span class="keyword">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerClosed</span><span class="params">(View drawerView)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onDrawerClosed(drawerView);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="在相应位置添加和移除监听"><a href="#在相应位置添加和移除监听" class="headerlink" title="在相应位置添加和移除监听"></a>在相应位置添加和移除监听</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">initListener</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    mDrawerLayout.addDrawerListener(mSimpleDrawerListener);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.onDestroy();</span><br><span class="line">    mDrawerLayout.removeDrawerListener(mSimpleDrawerListener);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>再运行，就不会出现穿透问题了，完事！</p>
 
       
@@ -654,7 +655,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">54</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -743,7 +744,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原因分析"><span class="nav-number">2.</span> <span class="nav-text">原因分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决方案"><span class="nav-number">3.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义DrawLayout监听"><span class="nav-number">3.1.</span> <span class="nav-text">定义DrawLayout监听</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在相应位置添加和移除监听"><span class="nav-number">3.2.</span> <span class="nav-text">在相应位置添加和移除监听</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x95EE;&#x9898;" class="headerlink" title="&#x95EE;&#x9898;"></a>&#x95EE;&#x9898;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原因分析"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x539F;&#x56E0;&#x5206;&#x6790;" class="headerlink" title="&#x539F;&#x56E0;&#x5206;&#x6790;"></a>&#x539F;&#x56E0;&#x5206;&#x6790;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决方案"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="headerlink" title="&#x89E3;&#x51B3;&#x65B9;&#x6848;"></a>&#x89E3;&#x51B3;&#x65B9;&#x6848;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义DrawLayout监听"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#&#x5B9A;&#x4E49;DrawLayout&#x76D1;&#x542C;" class="headerlink" title="&#x5B9A;&#x4E49;DrawLayout&#x76D1;&#x542C;"></a>&#x5B9A;&#x4E49;DrawLayout&#x76D1;&#x542C;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在相应位置添加和移除监听"><span class="nav-number">3.2.</span> <span class="nav-text"><a href="#&#x5728;&#x76F8;&#x5E94;&#x4F4D;&#x7F6E;&#x6DFB;&#x52A0;&#x548C;&#x79FB;&#x9664;&#x76D1;&#x542C;" class="headerlink" title="&#x5728;&#x76F8;&#x5E94;&#x4F4D;&#x7F6E;&#x6DFB;&#x52A0;&#x548C;&#x79FB;&#x9664;&#x76D1;&#x542C;"></a>&#x5728;&#x76F8;&#x5E94;&#x4F4D;&#x7F6E;&#x6DFB;&#x52A0;&#x548C;&#x79FB;&#x9664;&#x76D1;&#x542C;</span></a></li></ol></li></ol></div>
             
 
           </div>

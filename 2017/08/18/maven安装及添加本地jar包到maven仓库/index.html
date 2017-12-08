@@ -99,6 +99,7 @@
 <meta property="og:url" content="http://www.crocutax.com/2017/08/18/maven安装及添加本地jar包到maven仓库/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="配置maven环境首先,下载插件,解压 http://maven.apache.org/download.cgi然后开始配置环境变量,  新建系统变量 MAVEN_HOME 变量值：D:\Dev\apache-maven-3.5.0 (即maven的安装目录) 编辑系统变量 Path 添加变量值：;%MAVEN_HOME%\bin 测试:mcd打开dos窗口 ,输入 mvn --version">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-393d7084c1b00d12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-5932c0721980be94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2017-11-16T14:39:56.536Z">
@@ -423,7 +424,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                   字
+                  461 字
                 </span>
               
 
@@ -439,7 +440,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -457,7 +458,7 @@
       
 
       
-        <h1 id="配置maven环境"><a href="#配置maven环境" class="headerlink" title="配置maven环境"></a>配置maven环境</h1><p>首先,下载插件,解压 <a href="http://maven.apache.org/download.cgi" target="_blank" rel="external">http://maven.apache.org/download.cgi</a><br>然后开始配置环境变量,</p>
+        <h1 id="配置maven环境"><a href="#配置maven环境" class="headerlink" title="配置maven环境"></a>配置maven环境</h1><p>首先,下载插件,解压 <a href="http://maven.apache.org/download.cgi" target="_blank" rel="noopener">http://maven.apache.org/download.cgi</a><br>然后开始配置环境变量,</p>
 <ol>
 <li>新建系统变量 <code>MAVEN_HOME</code> 变量值：<code>D:\Dev\apache-maven-3.5.0</code> (即maven的安装目录)</li>
 <li>编辑系统变量 Path 添加变量值：<code>;%MAVEN_HOME%\bin</code></li>
@@ -466,16 +467,16 @@
 <p>显示如下界面代表maven安装成功<br><img src="http://upload-images.jianshu.io/upload_images/1958298-393d7084c1b00d12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="maven安装成功测试.png"></p>
 <h1 id="添加本地jar包到maven仓库"><a href="#添加本地jar包到maven仓库" class="headerlink" title="添加本地jar包到maven仓库"></a>添加本地jar包到maven仓库</h1><p>安装非开源插件进行maven管理时需要添加本地jar包到maven仓库</p>
 <p>在jar包所在目录打开dos窗口,进行maven安装.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn install:install-file -DgroupId=com.alipay -DartifactId=sdk-java -Dversion=<span class="number">20170725114550</span> -Dpackaging=jar -Dfile=alipay-sdk-java20170725114550.jar</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -DgroupId=com.alipay -DartifactId=sdk-java -Dversion=<span class="number">20170725114550</span> -Dpackaging=jar -Dfile=alipay-sdk-java20170725114550.jar</span><br></pre></td></tr></table></figure>
 <p>出现如下界面,说明成功安装到了maven本地仓库</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1958298-5932c0721980be94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="添加jar包到maven本地仓库成功.png"></p>
 <p>可以在<code>C:\Users\用户名\.m2\repository</code> 目录下查看该仓库</p>
 <p>再在pom.xml中添加依赖,就OK了</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alipay<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>sdk-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>20170725114550<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alipay<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>sdk-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>20170725114550<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="mvn命令行打包出现中文乱码"><a href="#mvn命令行打包出现中文乱码" class="headerlink" title="mvn命令行打包出现中文乱码"></a>mvn命令行打包出现中文乱码</h1><p>DOS命令行默认是GBK编码，如果编辑器、项目、tomcat等都设置的是UTF-8格式编码，那么使用mvn命令打包的项目部署后会出现中文乱码问题。</p>
 <p>解决：在pom.xml中指定mvn打包时的编码格式为UTF-8</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--maven编辑插件--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>3.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">source</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">target</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!-- 指定编码格式，否则在DOS下运行mvn compile命令打包后会出现中文乱码，因为系统默认使用GBK编码 --&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">encoding</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="不是内部或外部命令"><a href="#不是内部或外部命令" class="headerlink" title="不是内部或外部命令"></a>不是内部或外部命令</h1><p>maven配置环境变量后依然提示”不是内部或外部命令,也不是可运行的程序”,参考 <a href="http://blog.csdn.net/u014079773/article/details/49718207" target="_blank" rel="external">http://blog.csdn.net/u014079773/article/details/49718207</a> ,在Path中配置文中提到的路径即可解决.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--maven编辑插件--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>3.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 指定编码格式，否则在DOS下运行mvn compile命令打包后会出现中文乱码，因为系统默认使用GBK编码 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">encoding</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="不是内部或外部命令"><a href="#不是内部或外部命令" class="headerlink" title="不是内部或外部命令"></a>不是内部或外部命令</h1><p>maven配置环境变量后依然提示”不是内部或外部命令,也不是可运行的程序”,参考 <a href="http://blog.csdn.net/u014079773/article/details/49718207" target="_blank" rel="noopener">http://blog.csdn.net/u014079773/article/details/49718207</a> ,在Path中配置文中提到的路径即可解决.</p>
 
       
     </div>
@@ -661,7 +662,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">54</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -750,7 +751,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置maven环境"><span class="nav-number">1.</span> <span class="nav-text">配置maven环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加本地jar包到maven仓库"><span class="nav-number">2.</span> <span class="nav-text">添加本地jar包到maven仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mvn命令行打包出现中文乱码"><span class="nav-number">3.</span> <span class="nav-text">mvn命令行打包出现中文乱码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不是内部或外部命令"><span class="nav-number">4.</span> <span class="nav-text">不是内部或外部命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置maven环境"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;maven&#x73AF;&#x5883;" class="headerlink" title="&#x914D;&#x7F6E;maven&#x73AF;&#x5883;"></a>&#x914D;&#x7F6E;maven&#x73AF;&#x5883;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加本地jar包到maven仓库"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x6DFB;&#x52A0;&#x672C;&#x5730;jar&#x5305;&#x5230;maven&#x4ED3;&#x5E93;" class="headerlink" title="&#x6DFB;&#x52A0;&#x672C;&#x5730;jar&#x5305;&#x5230;maven&#x4ED3;&#x5E93;"></a>&#x6DFB;&#x52A0;&#x672C;&#x5730;jar&#x5305;&#x5230;maven&#x4ED3;&#x5E93;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mvn命令行打包出现中文乱码"><span class="nav-number">3.</span> <span class="nav-text"><a href="#mvn&#x547D;&#x4EE4;&#x884C;&#x6253;&#x5305;&#x51FA;&#x73B0;&#x4E2D;&#x6587;&#x4E71;&#x7801;" class="headerlink" title="mvn&#x547D;&#x4EE4;&#x884C;&#x6253;&#x5305;&#x51FA;&#x73B0;&#x4E2D;&#x6587;&#x4E71;&#x7801;"></a>mvn&#x547D;&#x4EE4;&#x884C;&#x6253;&#x5305;&#x51FA;&#x73B0;&#x4E2D;&#x6587;&#x4E71;&#x7801;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不是内部或外部命令"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x4E0D;&#x662F;&#x5185;&#x90E8;&#x6216;&#x5916;&#x90E8;&#x547D;&#x4EE4;" class="headerlink" title="&#x4E0D;&#x662F;&#x5185;&#x90E8;&#x6216;&#x5916;&#x90E8;&#x547D;&#x4EE4;"></a>&#x4E0D;&#x662F;&#x5185;&#x90E8;&#x6216;&#x5916;&#x90E8;&#x547D;&#x4EE4;</span></a></li></ol></div>
             
 
           </div>

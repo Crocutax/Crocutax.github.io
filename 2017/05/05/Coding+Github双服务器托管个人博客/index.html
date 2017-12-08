@@ -99,6 +99,7 @@
 <meta property="og:url" content="http://www.crocutax.com/2017/05/05/Coding+Github双服务器托管个人博客/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="自从想认认真真写博客以来，会经常更新一些文章，无论是经验总结，还是读书笔记，还是纯扯扯淡。早就听说Github屏蔽了百度蜘蛛，也就是说百度搜不到我托管在Github上的博客，一直想找个空闲时间解决下这个事，于是今天就搞了一下：把博客分别托管在码云 Pages 和 Github Pages上，再通过DNS解析进行访问优化。  特殊说明  由于最后没有找到码云Pages 的绑定自定义域名在哪，所以没法">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-015cbc011f120bb0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-251a136b041e283b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-189b6ef047f3068d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -424,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                   字
+                  841 字
                 </span>
               
 
@@ -440,7 +441,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -462,13 +463,13 @@
 <blockquote>
 <p>特殊说明</p>
 </blockquote>
-<p>由于最后没有找到码云Pages 的绑定自定义域名在哪，所以没法通过<a href="http://www.crocutax.com/">http://www.crocutax.com/</a> 来访问部署到码云Pages上的博客，最终选择了 <a href="https://coding.net" target="_blank" rel="external">Coding Pages</a> 作为国内的部署服务器，流程都是完全一样的，只是在Coding Pages页面有绑定自定义域名的操作而已，所以在此不再累述，本文仅作记录。开始！</p>
-<p>由于在Github上部署过了，所以整体在oschina上就非常熟练了。<br>官方也有 <a href="http://git.mydoc.io/?t=154714" target="_blank" rel="external">码云 Pages</a> 介绍，按照步骤来即可，无论是重新创建仓库+push，还是从Github导入都很简单，如果中间没有遇到坑的话，也就一两分钟的事。这里 把重点记录下。</p>
+<p>由于最后没有找到码云Pages 的绑定自定义域名在哪，所以没法通过<a href="http://www.crocutax.com/">http://www.crocutax.com/</a> 来访问部署到码云Pages上的博客，最终选择了 <a href="https://coding.net" target="_blank" rel="noopener">Coding Pages</a> 作为国内的部署服务器，流程都是完全一样的，只是在Coding Pages页面有绑定自定义域名的操作而已，所以在此不再累述，本文仅作记录。开始！</p>
+<p>由于在Github上部署过了，所以整体在oschina上就非常熟练了。<br>官方也有 <a href="http://git.mydoc.io/?t=154714" target="_blank" rel="noopener">码云 Pages</a> 介绍，按照步骤来即可，无论是重新创建仓库+push，还是从Github导入都很简单，如果中间没有遇到坑的话，也就一两分钟的事。这里 把重点记录下。</p>
 <h1 id="添加公匙"><a href="#添加公匙" class="headerlink" title="添加公匙"></a>添加公匙</h1><p>oschina的公匙分为 <strong>项目公匙</strong> 和 <strong>用户公匙</strong></p>
 <p>官方文档说明如下：<br>项目的 SSH key只针对项目,且我们仅对项目提供了部署公钥,即项目下的公钥仅能拉取项目,这通常用于生产服务器拉取仓库的代码。</p>
 <p>而用户的 key 则是针对用户的,用户添加了 key 就对用户名下的项目和用户参加了的项目具有权限,一般而言,<strong>用户的 key 具有推送和拉取的权限 , 而项目的 key 则只具有拉取权限</strong></p>
-<p>具体的添加步骤，按照 <a href="http://git.mydoc.io/?t=154712" target="_blank" rel="external">生成并部署SSH key</a> 来即可，一开始自己只是把之前生成好的公匙直接添加进用户公匙中，结果push的时候报出日下异常：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Could not read from remote repository.</div><div class="line">Please make sure you have the correct access rights</div><div class="line">and the repository exists.</div></pre></td></tr></table></figure>
+<p>具体的添加步骤，按照 <a href="http://git.mydoc.io/?t=154712" target="_blank" rel="noopener">生成并部署SSH key</a> 来即可，一开始自己只是把之前生成好的公匙直接添加进用户公匙中，结果push的时候报出日下异常：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Could not read from remote repository.</span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br></pre></td></tr></table></figure>
 <p>最终通过在terminal终端输入<code>ssh -T git@git.oschina.net</code>来添加到 Git @ OSC，解决了此问题，报出·Welcome to Git@OSC, Crocutax(yourname)！·表明添加成功，之后就可以通过SSH方式正常的往仓库push了。</p>
 <h1 id="静态资源加载失败，网页样式丢失"><a href="#静态资源加载失败，网页样式丢失" class="headerlink" title="静态资源加载失败，网页样式丢失"></a>静态资源加载失败，网页样式丢失</h1><p>在新建立仓库的时候，<strong>项目名称</strong> 必须和 <strong>用户名称</strong> 完全一致，注意不是 <strong>昵称</strong>，否则之后部署Pages服务时就会出现静态资源加载失败，网页样式丢失的情况。</p>
 <p>按照我部署时踩坑的情况，如果部署完毕，网站地址样式为：<br><code>http://uesername.oschina.io/projectname</code>，比如<code>http://wangxw725.oschina.io/myblog</code>，那么这个静态资源一定加载失败了，进去看到的就是简陋的博客目录。</p>
@@ -662,7 +663,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">54</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -751,7 +752,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#添加公匙"><span class="nav-number">1.</span> <span class="nav-text">添加公匙</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#静态资源加载失败，网页样式丢失"><span class="nav-number">2.</span> <span class="nav-text">静态资源加载失败，网页样式丢失</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#deploy部署配置"><span class="nav-number">3.</span> <span class="nav-text">deploy部署配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DNS解析优化"><span class="nav-number">4.</span> <span class="nav-text">DNS解析优化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#添加公匙"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6DFB;&#x52A0;&#x516C;&#x5319;" class="headerlink" title="&#x6DFB;&#x52A0;&#x516C;&#x5319;"></a>&#x6DFB;&#x52A0;&#x516C;&#x5319;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#静态资源加载失败，网页样式丢失"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x9759;&#x6001;&#x8D44;&#x6E90;&#x52A0;&#x8F7D;&#x5931;&#x8D25;&#xFF0C;&#x7F51;&#x9875;&#x6837;&#x5F0F;&#x4E22;&#x5931;" class="headerlink" title="&#x9759;&#x6001;&#x8D44;&#x6E90;&#x52A0;&#x8F7D;&#x5931;&#x8D25;&#xFF0C;&#x7F51;&#x9875;&#x6837;&#x5F0F;&#x4E22;&#x5931;"></a>&#x9759;&#x6001;&#x8D44;&#x6E90;&#x52A0;&#x8F7D;&#x5931;&#x8D25;&#xFF0C;&#x7F51;&#x9875;&#x6837;&#x5F0F;&#x4E22;&#x5931;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#deploy部署配置"><span class="nav-number">3.</span> <span class="nav-text"><a href="#deploy&#x90E8;&#x7F72;&#x914D;&#x7F6E;" class="headerlink" title="deploy&#x90E8;&#x7F72;&#x914D;&#x7F6E;"></a>deploy&#x90E8;&#x7F72;&#x914D;&#x7F6E;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DNS解析优化"><span class="nav-number">4.</span> <span class="nav-text"><a href="#DNS&#x89E3;&#x6790;&#x4F18;&#x5316;" class="headerlink" title="DNS&#x89E3;&#x6790;&#x4F18;&#x5316;"></a>DNS&#x89E3;&#x6790;&#x4F18;&#x5316;</span></a></li></ol></div>
             
 
           </div>

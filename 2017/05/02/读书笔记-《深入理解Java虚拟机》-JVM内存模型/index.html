@@ -99,6 +99,7 @@
 <meta property="og:url" content="http://www.crocutax.com/2017/05/02/读书笔记-《深入理解Java虚拟机》-JVM内存模型/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域，这些区域都有各自不同的用途：  程序计数器程序计数器（Program Counter Register）是一块较小的内存空间，属于线程私有区域，此区域是唯一一个在Java虚拟机规范中没有规定任何OutOfMemoryError情况的区域。 作用：当前线程所执行的字节码的行号指示器。 在虚拟机概念模型中，字节码解释">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-94fef5834e5f47ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2017-11-02T14:09:30.022Z">
 <meta name="twitter:card" content="summary">
@@ -422,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                   字
+                  1,368 字
                 </span>
               
 
@@ -438,7 +439,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -687,7 +688,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">54</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -776,7 +777,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#程序计数器"><span class="nav-number">1.</span> <span class="nav-text">程序计数器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java虚拟机栈"><span class="nav-number">2.</span> <span class="nav-text">Java虚拟机栈</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地方法栈"><span class="nav-number">3.</span> <span class="nav-text">本地方法栈</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java堆"><span class="nav-number">4.</span> <span class="nav-text">Java堆</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法区"><span class="nav-number">5.</span> <span class="nav-text">方法区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行时常量池"><span class="nav-number">6.</span> <span class="nav-text">运行时常量池</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#直接内存"><span class="nav-number">7.</span> <span class="nav-text">直接内存</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#程序计数器"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;" class="headerlink" title="&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;"></a>&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java虚拟机栈"><span class="nav-number">2.</span> <span class="nav-text"><a href="#Java&#x865A;&#x62DF;&#x673A;&#x6808;" class="headerlink" title="Java&#x865A;&#x62DF;&#x673A;&#x6808;"></a>Java&#x865A;&#x62DF;&#x673A;&#x6808;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地方法栈"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;" class="headerlink" title="&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;"></a>&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java堆"><span class="nav-number">4.</span> <span class="nav-text"><a href="#Java&#x5806;" class="headerlink" title="Java&#x5806;"></a>Java&#x5806;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法区"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x65B9;&#x6CD5;&#x533A;" class="headerlink" title="&#x65B9;&#x6CD5;&#x533A;"></a>&#x65B9;&#x6CD5;&#x533A;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行时常量池"><span class="nav-number">6.</span> <span class="nav-text"><a href="#&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;" class="headerlink" title="&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;"></a>&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#直接内存"><span class="nav-number">7.</span> <span class="nav-text"><a href="#&#x76F4;&#x63A5;&#x5185;&#x5B58;" class="headerlink" title="&#x76F4;&#x63A5;&#x5185;&#x5B58;"></a>&#x76F4;&#x63A5;&#x5185;&#x5B58;</span></a></li></ol></div>
             
 
           </div>

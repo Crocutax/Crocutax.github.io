@@ -99,6 +99,7 @@
 <meta property="og:url" content="http://www.crocutax.com/2017/04/25/AndroidStudio导入Eclipse项目-填坑记录/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="最早开始使用AndroidStudio的时候 , 导入Eclipse项目 , 填了很多坑 , 当时也没想着记录下来 . 最近公司做一个视频监控的项目 , down下来硬件厂商提供的Android SDK之后 , 发现竟然是Eclipse写的!!! 这已经是2017年了!!! Eclipse !!! 导入的过程中,再次填坑2个,在此记录.以后再遇到此类问题,都会补充在这篇文章里,不过考虑到Eclip">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-3c58b10cf5ec4f79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-9708a77ecf34472a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-caaf240e493a2ae1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -424,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                   字
+                  388 字
                 </span>
               
 
@@ -440,7 +441,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -463,11 +464,11 @@
 <h1 id="Could-not-determine-the-class-path-for-interface"><a href="#Could-not-determine-the-class-path-for-interface" class="headerlink" title="Could not determine the class-path for interface"></a>Could not determine the class-path for interface</h1><p><strong>错误信息:</strong><br><code>Error:Could not determine the class-path for interface com.android.builder.model.AndroidProject.</code><br><img src="http://upload-images.jianshu.io/upload_images/1958298-3c58b10cf5ec4f79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="异常信.png"></p>
 <p><strong>原因</strong><br>Gradle配置错误</p>
 <p><strong>解决方案:</strong><br><strong>第一步:</strong><br>将 项目根目录下的build.gradle文件中gradle的classpath修改成一个本地已有的gradle版本,比如</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">    classpath <span class="string">'com.android.tools.build:gradle:2.3.1'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    classpath <span class="string">'com.android.tools.build:gradle:2.3.1'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>第二步:</strong><br>将gradle目录下gradle-wrapper.properties文件中distributionUrl修改为对应的gradle包,比如</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">distributionUrl=https\:<span class="comment">//services.gradle.org/distributions/gradle-3.3-all.zip</span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">distributionUrl=https\:<span class="comment">//services.gradle.org/distributions/gradle-3.3-all.zip</span></span><br></pre></td></tr></table></figure>
 <p><strong>第三步:</strong><br>rebuild</p>
-<p>参考地址: <a href="https://stackoverflow.com/questions/42777321/could-not-determine-the-class-path-for-interface-com-android-builder-model-andro/42993473#42993473" target="_blank" rel="external">stackoverflow 链接直达</a></p>
+<p>参考地址: <a href="https://stackoverflow.com/questions/42777321/could-not-determine-the-class-path-for-interface-com-android-builder-model-andro/42993473#42993473" target="_blank" rel="noopener">stackoverflow 链接直达</a></p>
 <h1 id="非法字符-‘-ufeff’-错误-需要class-interface或enum"><a href="#非法字符-‘-ufeff’-错误-需要class-interface或enum" class="headerlink" title="非法字符: ‘\ufeff’ 错误: 需要class, interface或enum"></a>非法字符: ‘\ufeff’ 错误: 需要class, interface或enum</h1><p><strong>错误信息:</strong><br><img src="http://upload-images.jianshu.io/upload_images/1958298-9708a77ecf34472a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="非法字符 &#39;\ufeff&#39;.png"></p>
 <p><strong>原因</strong><br>该文件非UTF-8 无 BOM 格式，具体原因未知,可能是Android Studio检测更加严格了?(就像当初很多Eclipse中的.9图放在AndroidStudio就报错一样) 这里只是猜测.</p>
 <p><strong>解决方案:</strong><br>手动把该文件转换为UTF-8 无 BOM格式编码, 我使用的时Notepad++,打开该文件后,直接编码转换即可</p>
@@ -658,7 +659,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">54</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -747,7 +748,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Could-not-determine-the-class-path-for-interface"><span class="nav-number">1.</span> <span class="nav-text">Could not determine the class-path for interface</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#非法字符-‘-ufeff’-错误-需要class-interface或enum"><span class="nav-number">2.</span> <span class="nav-text">非法字符: ‘\ufeff’ 错误: 需要class, interface或enum</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Could-not-determine-the-class-path-for-interface"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Could-not-determine-the-class-path-for-interface" class="headerlink" title="Could not determine the class-path for interface"></a>Could not determine the class-path for interface</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#非法字符-‘-ufeff’-错误-需要class-interface或enum"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x975E;&#x6CD5;&#x5B57;&#x7B26;-&#x2018;-ufeff&#x2019;-&#x9519;&#x8BEF;-&#x9700;&#x8981;class-interface&#x6216;enum" class="headerlink" title="&#x975E;&#x6CD5;&#x5B57;&#x7B26;: &#x2018;\ufeff&#x2019; &#x9519;&#x8BEF;: &#x9700;&#x8981;class, interface&#x6216;enum"></a>&#x975E;&#x6CD5;&#x5B57;&#x7B26;: &#x2018;\ufeff&#x2019; &#x9519;&#x8BEF;: &#x9700;&#x8981;class, interface&#x6216;enum</span></a></li></ol></div>
             
 
           </div>

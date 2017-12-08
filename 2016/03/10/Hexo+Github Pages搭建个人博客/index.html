@@ -98,6 +98,7 @@
 <meta property="og:url" content="http://www.crocutax.com/2016/03/10/Hexo+Github Pages搭建个人博客/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="Github Pages仓库创建官方教程：Github Pages官方教程里已经有很详细的步骤了，这里只是把几个需要注意的地方记录一下。  首先必须得有Github账号，作为世界上最大的同性交友网站，越早注册越好，带你进入一个全新的世界！ New Repository时，必须以username.github.io命名，username就是指自己的用户名，例如crocutax.github.io，注">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-ed5214825a1bdcbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-cacbc72488139fcc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-3221daef1d84fcff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -430,7 +431,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                   字
+                  1,776 字
                 </span>
               
 
@@ -446,7 +447,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                   分钟
+                  7 分钟
                 </span>
               
             </div>
@@ -464,7 +465,7 @@
       
 
       
-        <h1 id="Github-Pages仓库创建"><a href="#Github-Pages仓库创建" class="headerlink" title="Github Pages仓库创建"></a>Github Pages仓库创建</h1><p>官方教程：<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a><br>官方教程里已经有很详细的步骤了，这里只是把几个需要注意的地方记录一下。</p>
+        <h1 id="Github-Pages仓库创建"><a href="#Github-Pages仓库创建" class="headerlink" title="Github Pages仓库创建"></a>Github Pages仓库创建</h1><p>官方教程：<a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a><br>官方教程里已经有很详细的步骤了，这里只是把几个需要注意的地方记录一下。</p>
 <ol>
 <li>首先必须得有Github账号，作为世界上最大的同性交友网站，越早注册越好，带你进入一个全新的世界！</li>
 <li>New Repository时，必须以username.github.io命名，username就是指自己的用户名，例如crocutax.github.io，注意必须严格按照这个格式来命名，否则无效.官网给出的警告是:</li>
@@ -473,7 +474,7 @@
 <p>If the first part of the repository doesn’t exactly match your username, it won’t work, so make sure to get it right.</p>
 </blockquote>
 <p>3.为仓库配置SSH keys,后期以更加安全的SSH方式管理远程仓库(毕竟是个人博客,还是SSH方式好些)</p>
-<p>在电脑任意位置右键打开Git bash窗口（必须已安装<a href="https://git-scm.com/downloads" target="_blank" rel="external">Git</a>），输入<code>ssh-keygen -t rsa -C &quot;youremailAddress（你的邮箱地址）&quot;</code>，</p>
+<p>在电脑任意位置右键打开Git bash窗口（必须已安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>），输入<code>ssh-keygen -t rsa -C &quot;youremailAddress（你的邮箱地址）&quot;</code>，</p>
 <p>此时会提示创建密码，此密码会在之后向仓库push时使用，如果为空的话之后push时就不用输入。</p>
 <p>如下图：<br><img src="http://upload-images.jianshu.io/upload_images/1958298-ed5214825a1bdcbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="SSH keys"></p>
 <p>生成好之后，第二个红圈表示SSH keys生成的位置，在C盘的用户目录下，比如我的是<code>C:\Users\Crocutax\.ssh\</code>，找到该文件夹的位置</p>
@@ -487,10 +488,10 @@
 <p><img src="http://upload-images.jianshu.io/upload_images/1958298-171f8a1ef49d19b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="添加主机IP.png"></p>
 <p>添加完毕后，如下图所示：</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1958298-e6b65bdabb917389.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="域名解析设置完毕.png"></p>
-<p>除了这里进行域名解析的设置，要想正常通过<a href="http://www.crocutax.com">http://www.crocutax.com</a> 来访问<a href="http://crocutax.github.io" target="_blank" rel="external">http://crocutax.github.io</a> 的内容，还需要在Repository–&gt;Settings–&gt;Options–&gt;GitHub Pages-Custom domain中进行配置</p>
+<p>除了这里进行域名解析的设置，要想正常通过<a href="http://www.crocutax.com">http://www.crocutax.com</a> 来访问<a href="http://crocutax.github.io" target="_blank" rel="noopener">http://crocutax.github.io</a> 的内容，还需要在Repository–&gt;Settings–&gt;Options–&gt;GitHub Pages-Custom domain中进行配置</p>
 <p>如图：<br><img src="http://upload-images.jianshu.io/upload_images/1958298-9b9246b991bda866.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="将自己的域名指向github pages域名.png"></p>
-<p>这样配置之后，后面等到Hexo初始化完毕后，再完成最后一步：在source/目录下创建一个CNAME文件（后面再说），就可以直接通过<a href="http://www.crocutax.com">http://www.crocutax.com</a> 来访问<a href="http://crocutax.github.io" target="_blank" rel="external">http://crocutax.github.io</a> 的内容了。不过现在我们github仓库里是空的，接下来就开始搭建Hexo环境了。</p>
-<h1 id="搭建Hexo环境"><a href="#搭建Hexo环境" class="headerlink" title="搭建Hexo环境"></a>搭建Hexo环境</h1><p>Hexo的运行依靠Node.js，因此需要先 <a href="https://nodejs.org/en/download/" target="_blank" rel="external">安装Node.js</a> 。</p>
+<p>这样配置之后，后面等到Hexo初始化完毕后，再完成最后一步：在source/目录下创建一个CNAME文件（后面再说），就可以直接通过<a href="http://www.crocutax.com">http://www.crocutax.com</a> 来访问<a href="http://crocutax.github.io" target="_blank" rel="noopener">http://crocutax.github.io</a> 的内容了。不过现在我们github仓库里是空的，接下来就开始搭建Hexo环境了。</p>
+<h1 id="搭建Hexo环境"><a href="#搭建Hexo环境" class="headerlink" title="搭建Hexo环境"></a>搭建Hexo环境</h1><p>Hexo的运行依靠Node.js，因此需要先 <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">安装Node.js</a> 。</p>
 <blockquote>
 <p>$ npm install -g hexo</p>
 </blockquote>
@@ -506,7 +507,7 @@
 </blockquote>
 <p>Hexo安装完毕后，创建一个想要在此创建网站目录的文件夹，比如我的是D:\Blog，在此处打开Git bash窗口，输入<code>hexo init</code> 进行初始化。</p>
 <p>输出以下两个命令<br>$ hexo g<br>$ hexo s</p>
-<p>第一个命令用于生成静态文件，第二个命令用于启动本地服务器，此时用浏览器打开<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> ，就可以看到hexo内置样式的Blog了。</p>
+<p>第一个命令用于生成静态文件，第二个命令用于启动本地服务器，此时用浏览器打开<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> ，就可以看到hexo内置样式的Blog了。</p>
 <blockquote>
 <p>创建CNAME文件</p>
 </blockquote>
@@ -517,10 +518,10 @@
 <li>文件内容为你的域名，不带<code>http://</code>，比如<code>www.crocutax.com</code>即可</li>
 </ul>
 <p>其实此时整个基础环境已经搭建完毕了，新建文章，deploy到远程仓库就可以了，但是一般我们都不会满足于hexo默认提供的主题样式，所以接下来开始选择主题。</p>
-<h1 id="选择主题"><a href="#选择主题" class="headerlink" title="选择主题"></a>选择主题</h1><p>如果要自定义主题，还是需要耗点时间的，所以为了快速的先把环境搭建起来，最好的方式是用前辈们创建好的主题，有很多<a href="https://hexo.io/themes/" target="_blank" rel="external">官网主题</a>都有漂亮，自己选一个吧！</p>
+<h1 id="选择主题"><a href="#选择主题" class="headerlink" title="选择主题"></a>选择主题</h1><p>如果要自定义主题，还是需要耗点时间的，所以为了快速的先把环境搭建起来，最好的方式是用前辈们创建好的主题，有很多<a href="https://hexo.io/themes/" target="_blank" rel="noopener">官网主题</a>都有漂亮，自己选一个吧！</p>
 <p>根据主题提供者的安装，配置步骤，一步一步来就行了。</p>
-<p>由于自己长期做Android开发，所以对Material Design风格情有独钟，就选用了<a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external">indigo</a>主题，感谢前辈的付出。</p>
-<h1 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h1><p>可以在官网学习<a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="external">Hexo 指令</a>,常用的有</p>
+<p>由于自己长期做Android开发，所以对Material Design风格情有独钟，就选用了<a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="noopener">indigo</a>主题，感谢前辈的付出。</p>
+<h1 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h1><p>可以在官网学习<a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="noopener">Hexo 指令</a>,常用的有</p>
 <ul>
 <li>hexo clean (清除缓存文件 (db.json) 和已生成的public目录下的静态文件，在某些情况下，尤其是更换主题后，如果发现对站点的更改无论如何也不生效，可能需要运行该命令)</li>
 <li>hexo g  (hexo generate的简化命令，用于生成静态文件)</li>
@@ -531,15 +532,15 @@
 <li>在_config.yml 文件的配置中,必须注意yml文件的语法格式 :　字段＋冒号＋<strong>空格</strong>＋内容，比如<code>url: http://www.crocutax.com/</code> ,这个空格一定不能省,否则会报错</li>
 <li>通过<code>hexo s</code> 运行起本地服务之后 ,git bash会显示如下内容<code>INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</code> ,此时按Ctrl+C 是停止运行的作用,而不是我们常用的复制,在这里可以再git bash窗口中通过鼠标右键+copy来复制.</li>
 </ul>
-<h1 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a>踩坑记录</h1><h3 id="Github-pages-的custom-domain重置问题"><a href="#Github-pages-的custom-domain重置问题" class="headerlink" title="Github pages 的custom domain重置问题"></a>Github pages 的custom domain重置问题</h3><p>为了使用<a href="http://www.corcutax.com替代http://corcutax.github.io来访问我们的博客,除了需要设置DNS解析之外,还需要在Github" target="_blank" rel="external">http://www.corcutax.com替代http://corcutax.github.io来访问我们的博客,除了需要设置DNS解析之外,还需要在Github</a> pages–&gt;Settings–&gt;Custom domain中设置.</p>
-<p>但是在使用过程中发现 , 每次<code>hexo deploy</code> 之后 , <a href="http://www.corcutax.com" target="_blank" rel="external">http://www.corcutax.com</a> 都会出现404,而<a href="http://corcutax.github.io" target="_blank" rel="external">http://corcutax.github.io</a> 则访问正常.再次来到Github pages–&gt;Settings–&gt;Custom domain , 发现Custom domain已经重置了 . 需要手动再次重新关联.</p>
-<p>google了一下 , 网上小伙伴们遇到了同样的问题 , 比如:<br><a href="https://github.com/hexojs/hexo/issues/2446" target="_blank" rel="external">https://github.com/hexojs/hexo/issues/2446</a><br><a href="https://www.zhihu.com/question/28814437" target="_blank" rel="external">https://www.zhihu.com/question/28814437</a></p>
+<h1 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a>踩坑记录</h1><h3 id="Github-pages-的custom-domain重置问题"><a href="#Github-pages-的custom-domain重置问题" class="headerlink" title="Github pages 的custom domain重置问题"></a>Github pages 的custom domain重置问题</h3><p>为了使用<a href="http://www.corcutax.com替代http://corcutax.github.io来访问我们的博客,除了需要设置DNS解析之外,还需要在Github" target="_blank" rel="noopener">http://www.corcutax.com替代http://corcutax.github.io来访问我们的博客,除了需要设置DNS解析之外,还需要在Github</a> pages–&gt;Settings–&gt;Custom domain中设置.</p>
+<p>但是在使用过程中发现 , 每次<code>hexo deploy</code> 之后 , <a href="http://www.corcutax.com" target="_blank" rel="noopener">http://www.corcutax.com</a> 都会出现404,而<a href="http://corcutax.github.io" target="_blank" rel="noopener">http://corcutax.github.io</a> 则访问正常.再次来到Github pages–&gt;Settings–&gt;Custom domain , 发现Custom domain已经重置了 . 需要手动再次重新关联.</p>
+<p>google了一下 , 网上小伙伴们遇到了同样的问题 , 比如:<br><a href="https://github.com/hexojs/hexo/issues/2446" target="_blank" rel="noopener">https://github.com/hexojs/hexo/issues/2446</a><br><a href="https://www.zhihu.com/question/28814437" target="_blank" rel="noopener">https://www.zhihu.com/question/28814437</a></p>
 <p>问题原因 : CNAME文件每次部署都被自动删除.<br>解决方案 : 将CNAME文件放在source目录下.</p>
 <p>如图:<br><img src="http://upload-images.jianshu.io/upload_images/1958298-ea2a2542d1cea24b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="CNAME文件.png"></p>
 <p>CNAME文件内容为 : <code>www.crocutax.com</code><br>完事!</p>
-<h3 id="npm-comman-not-found"><a href="#npm-comman-not-found" class="headerlink" title="npm comman not found"></a>npm comman not found</h3><p>环境变量问题,参考 <a href="http://caibaojian.com/nodejs-roll-back.html" target="_blank" rel="external">http://caibaojian.com/nodejs-roll-back.html</a></p>
-<p>部署过程中参考到的网址有：<br><a href="http://www.cnblogs.com/olddoublemoon/p/6629398.html" target="_blank" rel="external">设置DNS解析</a><br><a href="http://www.jianshu.com/p/3bb5f1eac51b" target="_blank" rel="external">CNAME</a><br><a href="http://www.jianshu.com/p/017e01718d41" target="_blank" rel="external">记录第一次搭建Hexo</a><br><a href="https://jingyan.baidu.com/article/d8072ac47aca0fec95cefd2d.html" target="_blank" rel="external">搭建Hexo博客</a><br><a href="http://www.jianshu.com/p/a2fe56d11c4f" target="_blank" rel="external">搭建Hexo博客中碰到的坑</a></p>
-<p>还有一些后期在性能优化上可能会用到，先在此记录：<br><a href="http://login926.github.io/2017/01/19/MomentjsLiveTime/" target="_blank" rel="external">为博客添加运行时间</a><br><a href="https://github.com/wuhaoworld/github-issues-blog" target="_blank" rel="external">解决访问次数限制</a><br><a href="http://baixin.io/2016/06/HEXO_Advanced/" target="_blank" rel="external">Hexo进阶</a><br><a href="http://fezvrasta.github.io/bootstrap-material-design/#about" target="_blank" rel="external">MD插件库</a><br><a href="http://blog.geekaholic.cn/2017/02/22/%E5%88%B6%E4%BD%9CHexo%E4%B8%BB%E9%A2%98%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B%EF%BC%881%EF%BC%89/" target="_blank" rel="external">如何自己制作主题</a></p>
+<h3 id="npm-comman-not-found"><a href="#npm-comman-not-found" class="headerlink" title="npm comman not found"></a>npm comman not found</h3><p>环境变量问题,参考 <a href="http://caibaojian.com/nodejs-roll-back.html" target="_blank" rel="noopener">http://caibaojian.com/nodejs-roll-back.html</a></p>
+<p>部署过程中参考到的网址有：<br><a href="http://www.cnblogs.com/olddoublemoon/p/6629398.html" target="_blank" rel="noopener">设置DNS解析</a><br><a href="http://www.jianshu.com/p/3bb5f1eac51b" target="_blank" rel="noopener">CNAME</a><br><a href="http://www.jianshu.com/p/017e01718d41" target="_blank" rel="noopener">记录第一次搭建Hexo</a><br><a href="https://jingyan.baidu.com/article/d8072ac47aca0fec95cefd2d.html" target="_blank" rel="noopener">搭建Hexo博客</a><br><a href="http://www.jianshu.com/p/a2fe56d11c4f" target="_blank" rel="noopener">搭建Hexo博客中碰到的坑</a></p>
+<p>还有一些后期在性能优化上可能会用到，先在此记录：<br><a href="http://login926.github.io/2017/01/19/MomentjsLiveTime/" target="_blank" rel="noopener">为博客添加运行时间</a><br><a href="https://github.com/wuhaoworld/github-issues-blog" target="_blank" rel="noopener">解决访问次数限制</a><br><a href="http://baixin.io/2016/06/HEXO_Advanced/" target="_blank" rel="noopener">Hexo进阶</a><br><a href="http://fezvrasta.github.io/bootstrap-material-design/#about" target="_blank" rel="noopener">MD插件库</a><br><a href="http://blog.geekaholic.cn/2017/02/22/%E5%88%B6%E4%BD%9CHexo%E4%B8%BB%E9%A2%98%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B%EF%BC%881%EF%BC%89/" target="_blank" rel="noopener">如何自己制作主题</a></p>
 
       
     </div>
@@ -719,7 +720,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">54</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -808,7 +809,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Github-Pages仓库创建"><span class="nav-number">1.</span> <span class="nav-text">Github Pages仓库创建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#个人域名解析"><span class="nav-number">2.</span> <span class="nav-text">个人域名解析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建Hexo环境"><span class="nav-number">3.</span> <span class="nav-text">搭建Hexo环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择主题"><span class="nav-number">4.</span> <span class="nav-text">选择主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo常用命令"><span class="nav-number">5.</span> <span class="nav-text">Hexo常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项"><span class="nav-number">6.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑记录"><span class="nav-number">7.</span> <span class="nav-text">踩坑记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Github-pages-的custom-domain重置问题"><span class="nav-number">7.0.1.</span> <span class="nav-text">Github pages 的custom domain重置问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-comman-not-found"><span class="nav-number">7.0.2.</span> <span class="nav-text">npm comman not found</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Github-Pages仓库创建"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Github-Pages&#x4ED3;&#x5E93;&#x521B;&#x5EFA;" class="headerlink" title="Github Pages&#x4ED3;&#x5E93;&#x521B;&#x5EFA;"></a>Github Pages&#x4ED3;&#x5E93;&#x521B;&#x5EFA;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#个人域名解析"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x4E2A;&#x4EBA;&#x57DF;&#x540D;&#x89E3;&#x6790;" class="headerlink" title="&#x4E2A;&#x4EBA;&#x57DF;&#x540D;&#x89E3;&#x6790;"></a>&#x4E2A;&#x4EBA;&#x57DF;&#x540D;&#x89E3;&#x6790;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建Hexo环境"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x642D;&#x5EFA;Hexo&#x73AF;&#x5883;" class="headerlink" title="&#x642D;&#x5EFA;Hexo&#x73AF;&#x5883;"></a>&#x642D;&#x5EFA;Hexo&#x73AF;&#x5883;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择主题"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x9009;&#x62E9;&#x4E3B;&#x9898;" class="headerlink" title="&#x9009;&#x62E9;&#x4E3B;&#x9898;"></a>&#x9009;&#x62E9;&#x4E3B;&#x9898;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo常用命令"><span class="nav-number">5.</span> <span class="nav-text"><a href="#Hexo&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="headerlink" title="Hexo&#x5E38;&#x7528;&#x547D;&#x4EE4;"></a>Hexo&#x5E38;&#x7528;&#x547D;&#x4EE4;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项"><span class="nav-number">6.</span> <span class="nav-text"><a href="#&#x6CE8;&#x610F;&#x4E8B;&#x9879;" class="headerlink" title="&#x6CE8;&#x610F;&#x4E8B;&#x9879;"></a>&#x6CE8;&#x610F;&#x4E8B;&#x9879;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑记录"><span class="nav-number">7.</span> <span class="nav-text"><a href="#&#x8E29;&#x5751;&#x8BB0;&#x5F55;" class="headerlink" title="&#x8E29;&#x5751;&#x8BB0;&#x5F55;"></a>&#x8E29;&#x5751;&#x8BB0;&#x5F55;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Github-pages-的custom-domain重置问题"><span class="nav-number">7.0.1.</span> <span class="nav-text"><a href="#Github-pages-&#x7684;custom-domain&#x91CD;&#x7F6E;&#x95EE;&#x9898;" class="headerlink" title="Github pages &#x7684;custom domain&#x91CD;&#x7F6E;&#x95EE;&#x9898;"></a>Github pages &#x7684;custom domain&#x91CD;&#x7F6E;&#x95EE;&#x9898;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-comman-not-found"><span class="nav-number">7.0.2.</span> <span class="nav-text"><a href="#npm-comman-not-found" class="headerlink" title="npm comman not found"></a>npm comman not found</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
