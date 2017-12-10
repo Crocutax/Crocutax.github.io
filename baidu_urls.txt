@@ -1,3 +1,4 @@
+http://www.crocutax.com/2017/12/10/Hexo持续优化-添加本地搜索功能/
 http://www.crocutax.com/2017/12/10/linux下启动tomcat后-浏览器无法访问/
 http://www.crocutax.com/2017/12/07/使用hexo-qiniu-sync插件配合七牛云实现博客图床管理/
 http://www.crocutax.com/2017/12/07/bin目录下没有svn.exe文件/
