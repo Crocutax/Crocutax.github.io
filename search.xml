@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Mysql工作日志]]></title>
+    <url>%2F2017%2F12%2F14%2FMysql%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97%2F</url>
+    <content type="text"><![CDATA[注意mysql关键词异常信息: 1You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;order ...at line 1 解决方案：看看自己定义的sql语句，比如mybatis时的xml文件中，该语句的第1行是否有错误(基本不用怀疑,肯定有错误)。 自己的问题：把mysql的关键字定义为了表的名字，导致sql语句出错。比如order，option等都是关键字，定义表名时应避开这些关键字。]]></content>
+      <categories>
+        <category>Mysql</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[使用Spring Task实现定时任务]]></title>
+    <url>%2F2017%2F12%2F14%2F%E4%BD%BF%E7%94%A8Spring-Task%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%2F</url>
+    <content type="text"><![CDATA[项目中实现定时任务有多种方式，除了TimerTask这种小工具之外，以下两种比较常用： Spring Task Quartz 项目中暂时没有用Quartz，本次使用的是Spring框架封装的定时任务工具，使用起来比较简单。 添加命名空间如果要使用Spring Task，需要在spring配置文件里增加如下内容： 1234567891011&lt;beans xmlns="http://www.springframework.org/schema/beans" ... xmlns:task="http://www.springframework.org/schema/task" xsi:schemaLocation="http://www.springframework.org/schema/beans .... http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd"&gt; ...&lt;/bean&gt; 举例，自己项目中的Spring.xml文件内容如下: 12345678910111213141516&lt;beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:task="http://www.springframework.org/schema/task" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd"&gt; ...&lt;/bean&gt; 配置Task注解扫描在spring.xml文件中配置自动扫描包路径 和 Task注解扫描: 123456&lt;!--扫描标记@Scheduled注解的定时任务--&gt;&lt;task:annotation-driven/&gt;&lt;!--扫描路径--&gt;&lt;context:component-scan base-package="com.crocutax.test.schedule"/&gt; 注意 如果上一步没有配置好，即使这里已经配置了驱动及扫描，运行的时候依然会报如下异常： 1Caused by: org.xml.sax.SAXParseException; lineNumber: 62; columnNumber: 30; cvc-complex-type.2.4.c: 通配符的匹配很全面, 但无法找到元素 'task:annotation-driven' 的声明。 定义定时任务在想要定时执行的方法上添加@Scheduled注解，及Cron表达式即可。 12345678@Componentpublic class TimeoutTask &#123; @Scheduled(cron = "0 0 */1 * * ?") //每1小时执行一次 public void test() &#123; System.out.println("定时任务执行了............."); &#125;&#125; 方法中定义了需要执行的任务，这里只打印了log，项目中则是定时检查数据库中某些表的信息。 标记了@Scheduled注解的方法会被第二步配置的扫描器扫描到，注入Spring容器，执行该方法中的任务。 Cron表达式则定义了执行该任务的周期，频率。 SpringTask和Quartz使用的Cron语法是一样的。 参考链接: http://www.ibloger.net/article/2636.html http://www.jianshu.com/p/13623119cb5b http://www.what21.com/sys/view/java_java-frame_1478840380252.html (完)]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo持续优化-添加本地搜索功能]]></title>
     <url>%2F2017%2F12%2F10%2FHexo%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96-%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%2F</url>
     <content type="text"><![CDATA[Next官网–&gt;第三方服务–&gt;搜索服务 中已经有详细的介绍了,主题内置了4种搜索方式: Swiftype 微搜索 Local Search Algolia 由于自己的博客主要用于工作日志的记录,以及工作时的快速定位查询,因此选择了第三种方式Local Search,即本地搜索. 安装搜索插件在Hexo根目录执行如下命令1$ npm install hexo-generator-searchdb --save 编辑站点配置文件在站点配置文件(Hexo根目录的配置文件)_config.yml中添加 12345search: path: search.xml field: post format: html limit: 10000 编辑主题配置文件,启用本地搜索在主题配置文件(Next主题根目录的配置文件)_config.yml中启用123# Local searchlocal_search: enable: true 注:以上内容在Next官网本地搜索模块有详细介绍,在此只为记录. (完)]]></content>
