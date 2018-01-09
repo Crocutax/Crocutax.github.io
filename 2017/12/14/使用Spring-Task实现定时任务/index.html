@@ -99,7 +99,7 @@
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="项目中实现定时任务有多种方式，除了TimerTask这种小工具之外，以下两种比较常用：  Spring Task Quartz  项目中暂时没有用Quartz，本次使用的是Spring框架封装的定时任务工具，使用起来比较简单。 添加命名空间如果要使用Spring Task，需要在spring配置文件里增加如下内容： 1234567891011&amp;lt;beans xmlns=&quot;http://www.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-14T10:57:09.946Z">
+<meta property="og:updated_time" content="2017-12-14T11:57:30.709Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Spring Task实现定时任务">
 <meta name="twitter:description" content="项目中实现定时任务有多种方式，除了TimerTask这种小工具之外，以下两种比较常用：  Spring Task Quartz  项目中暂时没有用Quartz，本次使用的是Spring框架封装的定时任务工具，使用起来比较简单。 添加命名空间如果要使用Spring Task，需要在spring配置文件里增加如下内容： 1234567891011&amp;lt;beans xmlns=&quot;http://www.">
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  624 字
+                  718 字
                 </span>
               
 
@@ -470,7 +470,9 @@
 <p>注意</p>
 </blockquote>
 <p>如果上一步没有配置好，即使这里已经配置了驱动及扫描，运行的时候依然会报如下异常：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: org.xml.sax.SAXParseException; lineNumber: <span class="number">62</span>; columnNumber: <span class="number">30</span>; cvc-complex-type.2.4.c: 通配符的匹配很全面, 但无法找到元素 <span class="string">'task:annotation-driven'</span> 的声明。</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Caused by: org.xml.sax.SAXParseException; lineNumber: 62; columnNumber: 30; cvc-complex-type.2.4.c: 通配符的匹配很全面, 但无法找到元素 ‘task:annotation-driven’ 的声明。</p>
+</blockquote>
 <h1 id="定义定时任务"><a href="#定义定时任务" class="headerlink" title="定义定时任务"></a>定义定时任务</h1><p>在想要定时执行的方法上添加<code>@Scheduled</code>注解，及<code>Cron表达式</code>即可。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimeoutTask</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Scheduled</span>(cron = <span class="string">"0 0 */1 * * ?"</span>)  <span class="comment">//每1小时执行一次</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"定时任务执行了............."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
@@ -479,6 +481,12 @@
 <li><code>Cron表达式</code>则定义了执行该任务的周期，频率。</li>
 </ul>
 <p>SpringTask和Quartz使用的Cron语法是一样的。</p>
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><p>如果出现如下异常</p>
+<blockquote>
+<p>DEBUG [RMI TCP Connection(5)-127.0.0.1] - Could not find default ScheduledExecutorService beanorg.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type ‘java.util.concurrent.ScheduledExecutorService’ available</p>
+</blockquote>
+<p>是因为没有找到默认的调度器导致的,该异常并不影响程序运行,可以通过调整Log级别来屏蔽这些异常信息,见</p>
+<p><a href="http://blog.csdn.net/chwshuang/article/details/52840539" target="_blank" rel="noopener">http://blog.csdn.net/chwshuang/article/details/52840539</a></p>
 <p>参考链接:</p>
 <p><a href="http://www.ibloger.net/article/2636.html" target="_blank" rel="noopener">http://www.ibloger.net/article/2636.html</a></p>
 <p><a href="http://www.jianshu.com/p/13623119cb5b" target="_blank" rel="noopener">http://www.jianshu.com/p/13623119cb5b</a></p>
@@ -663,7 +671,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-count">58</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -674,7 +682,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -752,7 +760,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#添加命名空间"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6DFB;&#x52A0;&#x547D;&#x540D;&#x7A7A;&#x95F4;" class="headerlink" title="&#x6DFB;&#x52A0;&#x547D;&#x540D;&#x7A7A;&#x95F4;"></a>&#x6DFB;&#x52A0;&#x547D;&#x540D;&#x7A7A;&#x95F4;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置Task注解扫描"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;Task&#x6CE8;&#x89E3;&#x626B;&#x63CF;" class="headerlink" title="&#x914D;&#x7F6E;Task&#x6CE8;&#x89E3;&#x626B;&#x63CF;"></a>&#x914D;&#x7F6E;Task&#x6CE8;&#x89E3;&#x626B;&#x63CF;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义定时任务"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x5B9A;&#x4E49;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;" class="headerlink" title="&#x5B9A;&#x4E49;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;"></a>&#x5B9A;&#x4E49;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#添加命名空间"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6DFB;&#x52A0;&#x547D;&#x540D;&#x7A7A;&#x95F4;" class="headerlink" title="&#x6DFB;&#x52A0;&#x547D;&#x540D;&#x7A7A;&#x95F4;"></a>&#x6DFB;&#x52A0;&#x547D;&#x540D;&#x7A7A;&#x95F4;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置Task注解扫描"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;Task&#x6CE8;&#x89E3;&#x626B;&#x63CF;" class="headerlink" title="&#x914D;&#x7F6E;Task&#x6CE8;&#x89E3;&#x626B;&#x63CF;"></a>&#x914D;&#x7F6E;Task&#x6CE8;&#x89E3;&#x626B;&#x63CF;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义定时任务"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x5B9A;&#x4E49;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;" class="headerlink" title="&#x5B9A;&#x4E49;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;"></a>&#x5B9A;&#x4E49;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常处理"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x5F02;&#x5E38;&#x5904;&#x7406;" class="headerlink" title="&#x5F02;&#x5E38;&#x5904;&#x7406;"></a>&#x5F02;&#x5E38;&#x5904;&#x7406;</span></a></li></ol></div>
             
 
           </div>
@@ -775,7 +783,7 @@
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
