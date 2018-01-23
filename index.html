@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  3,030 字
+                  7,287 字
                 </span>
               
 
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  16 分钟
+                  41 分钟
                 </span>
               
             </div>
@@ -1026,7 +1026,7 @@ PHP有很多集成开发环境,比如Wamp,Appserv等.但是自己电脑上运行
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  134 字
+                  190 字
                 </span>
               
 
@@ -1062,9 +1062,15 @@ PHP有很多集成开发环境,比如Wamp,Appserv等.但是自己电脑上运行
       
         
           
-          注意mysql关键词异常信息:
-1You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;order ...at line 1
-解决方案：看看自己定义的sql语句，比如myba
+          MySQL连接数当前连接数
+mysql &gt; show status like &apos;Threads%&apos;;
+
+最大连接数:
+mysql &gt; show global variables like &apos;max_conn%&apos;;
+
+设置连接数:
+mysql &gt; set global max_connections=1000;
+mysql &gt; set 
           ...
           <!--noindex-->
           <div class="post-button text-center">

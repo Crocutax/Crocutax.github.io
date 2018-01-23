@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="注意mysql关键词异常信息: 1You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &amp;apos;order ...at line 1 解决方案：看看自己定义的sql语句，比如myba">
+<meta name="description" content="MySQL连接数当前连接数 mysql &amp;gt; show status like &amp;apos;Threads%&amp;apos;;  最大连接数: mysql &amp;gt; show global variables like &amp;apos;max_conn%&amp;apos;;  设置连接数: mysql &amp;gt; set global max_connections=1000; mysql &amp;gt; set">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mysql工作日志">
 <meta property="og:url" content="http://www.crocutax.com/2017/12/14/Mysql工作日志/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
-<meta property="og:description" content="注意mysql关键词异常信息: 1You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &amp;apos;order ...at line 1 解决方案：看看自己定义的sql语句，比如myba">
+<meta property="og:description" content="MySQL连接数当前连接数 mysql &amp;gt; show status like &amp;apos;Threads%&amp;apos;;  最大连接数: mysql &amp;gt; show global variables like &amp;apos;max_conn%&amp;apos;;  设置连接数: mysql &amp;gt; set global max_connections=1000; mysql &amp;gt; set">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-14T10:55:59.037Z">
+<meta property="og:updated_time" content="2018-01-16T01:25:26.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql工作日志">
-<meta name="twitter:description" content="注意mysql关键词异常信息: 1You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &amp;apos;order ...at line 1 解决方案：看看自己定义的sql语句，比如myba">
+<meta name="twitter:description" content="MySQL连接数当前连接数 mysql &amp;gt; show status like &amp;apos;Threads%&amp;apos;;  最大连接数: mysql &amp;gt; show global variables like &amp;apos;max_conn%&amp;apos;;  设置连接数: mysql &amp;gt; set global max_connections=1000; mysql &amp;gt; set">
 
 
 
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  134 字
+                  190 字
                 </span>
               
 
@@ -454,11 +454,22 @@
       
 
       
-        <h1 id="注意mysql关键词"><a href="#注意mysql关键词" class="headerlink" title="注意mysql关键词"></a>注意mysql关键词</h1><p>异常信息:</p>
+        <h1 id="MySQL连接数"><a href="#MySQL连接数" class="headerlink" title="MySQL连接数"></a>MySQL连接数</h1><pre><code>当前连接数
+mysql &gt; show status like &apos;Threads%&apos;;
+
+最大连接数:
+mysql &gt; show global variables like &apos;max_conn%&apos;;
+
+设置连接数:
+mysql &gt; set global max_connections=1000;
+mysql &gt; set global max_connect_errors=1000;
+</code></pre><h1 id="注意mysql关键词"><a href="#注意mysql关键词" class="headerlink" title="注意mysql关键词"></a>注意mysql关键词</h1><p>异常信息:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;order ...at line 1</span><br></pre></td></tr></table></figure>
 <p>解决方案：看看自己定义的sql语句，比如mybatis时的xml文件中，该语句的第1行是否有错误(基本不用怀疑,肯定有错误)。</p>
 <p>自己的问题：把mysql的关键字定义为了表的名字，导致sql语句出错。比如order，option等都是关键字，定义表名时应避开这些关键字。</p>
-
+<h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><pre><code>查看是否启用了日志 
+mysql&gt;show variables like &apos;log_%&apos;;
+</code></pre>
       
     </div>
 
@@ -726,7 +737,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#注意mysql关键词"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6CE8;&#x610F;mysql&#x5173;&#x952E;&#x8BCD;" class="headerlink" title="&#x6CE8;&#x610F;mysql&#x5173;&#x952E;&#x8BCD;"></a>&#x6CE8;&#x610F;mysql&#x5173;&#x952E;&#x8BCD;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL连接数"><span class="nav-number">1.</span> <span class="nav-text"><a href="#MySQL&#x8FDE;&#x63A5;&#x6570;" class="headerlink" title="MySQL&#x8FDE;&#x63A5;&#x6570;"></a>MySQL&#x8FDE;&#x63A5;&#x6570;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意mysql关键词"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x6CE8;&#x610F;mysql&#x5173;&#x952E;&#x8BCD;" class="headerlink" title="&#x6CE8;&#x610F;mysql&#x5173;&#x952E;&#x8BCD;"></a>&#x6CE8;&#x610F;mysql&#x5173;&#x952E;&#x8BCD;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#日志"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x65E5;&#x5FD7;" class="headerlink" title="&#x65E5;&#x5FD7;"></a>&#x65E5;&#x5FD7;</span></a></li></ol></div>
             
 
           </div>
