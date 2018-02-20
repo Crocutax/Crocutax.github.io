@@ -1,3 +1,4 @@
+http://www.crocutax.com/2018/02/20/Composer/
 http://www.crocutax.com/2018/02/20/win10修改host/
 http://www.crocutax.com/2018/01/15/阿里云Centos7服务器-JavaWeb正式环境搭建/
 http://www.crocutax.com/2018/01/14/Linux-Centos7系统解决端口占用问题/
@@ -49,10 +50,12 @@ http://www.crocutax.com/2017/04/25/AndroidStudio导入Eclipse项目-填坑记录
 http://www.crocutax.com/2017/04/23/线程池基础知识整理/
 http://www.crocutax.com/2017/04/23/线程池运行原理分析/
 http://www.crocutax.com/2017/04/22/Android开发规范/
+http://www.crocutax.com/2017/03/17/快速运行Github上的Android开源项目/
 http://www.crocutax.com/2017/02/06/笔记-技术人成长百科指南/
 http://www.crocutax.com/2017/01/12/笔记-技术小黑屋LIVE-如何写好博客/
 http://www.crocutax.com/2016/12/28/开发中的TextView技巧点整理/
 http://www.crocutax.com/2016/12/23/ViewPager+Fragment组合的预加载和懒加载/
+http://www.crocutax.com/2016/11/23/AndroidStudio的Gradle配置/
 http://www.crocutax.com/2016/10/02/笔记-代码家学习经验分享/
 http://www.crocutax.com/2016/06/03/AndroidStudio使用中的问题记录/
 http://www.crocutax.com/2016/05/06/AndroidStudio自定义配置/
