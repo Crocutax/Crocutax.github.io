@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -93,14 +93,13 @@
 
 
 <meta name="description" content="简介对于为什么选择七牛云作为博客图床就不说了,直接记录过程. 之前管理博客中的图片,流程如下:  将图片保存在本地 本地图片上传七牛云 复制图片外链 md文件中引入图片外链 删除本地图片  使用了hexo-qiniu-sync插件之后,流程如下:  将图片保存在指定目录下  在md中引用图片即可   其他优点:  本地统一管理博客图片 自动上传七牛云 七牛高级图片处理功能扩展使用   配置注册七牛">
-<meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用hexo-qiniu-sync插件配合七牛云实现博客图床管理">
 <meta property="og:url" content="http://www.crocutax.com/2017/12/07/使用hexo-qiniu-sync插件配合七牛云实现博客图床管理/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="简介对于为什么选择七牛云作为博客图床就不说了,直接记录过程. 之前管理博客中的图片,流程如下:  将图片保存在本地 本地图片上传七牛云 复制图片外链 md文件中引入图片外链 删除本地图片  使用了hexo-qiniu-sync插件之后,流程如下:  将图片保存在指定目录下  在md中引用图片即可   其他优点:  本地统一管理博客图片 自动上传七牛云 七牛高级图片处理功能扩展使用   配置注册七牛">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-08T02:45:53.588Z">
+<meta property="og:updated_time" content="2018-02-20T03:40:59.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用hexo-qiniu-sync插件配合七牛云实现博客图床管理">
 <meta name="twitter:description" content="简介对于为什么选择七牛云作为博客图床就不说了,直接记录过程. 之前管理博客中的图片,流程如下:  将图片保存在本地 本地图片上传七牛云 复制图片外链 md文件中引入图片外链 删除本地图片  使用了hexo-qiniu-sync插件之后,流程如下:  将图片保存在指定目录下  在md中引用图片即可   其他优点:  本地统一管理博客图片 自动上传七牛云 七牛高级图片处理功能扩展使用   配置注册七牛">
@@ -369,8 +368,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Note/" itemprop="url" rel="index">
-                    <span itemprop="name">Note</span>
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
                   </a>
                 </span>
 
@@ -496,7 +495,7 @@
 <p>虽然官方文档已经提示了这一点,但是自己大意了,还是掉坑里了.</p>
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>上一步配置好以后,执行<code>hexo s</code>命令,会自动在hexo主目录创建如下目录结构:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">node_modules</span><br><span class="line"><span class="keyword">public</span></span><br><span class="line"><span class="keyword">static</span> <span class="comment">// 静态资源目录</span></span><br><span class="line">	- css		<span class="comment">//css文件存储目录</span></span><br><span class="line">	- images	<span class="comment">//图片存储目录	</span></span><br><span class="line">	- js		<span class="comment">//js文件存储目录</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>将本地图片放在<code>images</code>目录下,在md文件中以如下方式引入文件即可:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% qnimg &#123;图片名称.jpg&#125; %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>将本地图片放在<code>images</code>目录下,在md文件中以如下方式引入文件即可:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% qnimg 图片名称.jpg %&#125;</span><br></pre></td></tr></table></figure></p>
 <p>在部署过程中,会出现如下命令:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INFO  Now start qiniu sync.</span><br><span class="line">INFO  Need upload file num: <span class="number">4</span></span><br><span class="line">Please run `hexo qiniu sync` to sync.</span><br></pre></td></tr></table></figure>
 <p>提示有待上传的文件,让运行<code>hexo qiniu sync</code>命令进行文件上传,但是我发现其实他已经自动上传了.在4000端口的本地服务上可以正常预览,并且在七牛云空间里已经可以看到了.感谢开源的前辈们!</p>
@@ -585,12 +584,6 @@
       </div>
 
        
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
-          
-        </div>
       
 
       
@@ -690,7 +683,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">61</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -712,7 +705,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
