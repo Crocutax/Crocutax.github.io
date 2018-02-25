@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="微信公众号开发，获取到的用户昵称为乱码，排查结果为Mysql数据库的默认字符集编码问题，要解决中文乱码，必须设置默认字符集为UTF-8。 登录mysql，通过命令查看字符集编码： mysql&amp;gt; show variables like &amp;quot;char%&amp;quot;; 结果如下： +--------------------------+---------------------------">
+<meta name="description" content="单体服务器的业务承载量有限，所以应用服务器和数据库服务器分开部署数据常规操作，这里记录下一些需要注意的点。 业务场景： A为应用服务器，Linux系统，有公网IP B为数据库服务器，Linux系统，只有内网IP 需要通过A服务器的公网IP连接A服务器，然后来管理B服务器上的数据库。     下载安装phpMyAdmin开源PHP数据库管理工具，官网下载链接： https://www.phpmyad">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql设置编码为UTF-8">
-<meta property="og:url" content="http://www.crocutax.com/2018/02/25/mysql设置编码为UTF-8/index.html">
+<meta property="og:title" content="Linux连接局域网数据库服务器">
+<meta property="og:url" content="http://www.crocutax.com/2018/02/25/Linux连接局域网数据库服务器/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
-<meta property="og:description" content="微信公众号开发，获取到的用户昵称为乱码，排查结果为Mysql数据库的默认字符集编码问题，要解决中文乱码，必须设置默认字符集为UTF-8。 登录mysql，通过命令查看字符集编码： mysql&amp;gt; show variables like &amp;quot;char%&amp;quot;; 结果如下： +--------------------------+---------------------------">
+<meta property="og:description" content="单体服务器的业务承载量有限，所以应用服务器和数据库服务器分开部署数据常规操作，这里记录下一些需要注意的点。 业务场景： A为应用服务器，Linux系统，有公网IP B为数据库服务器，Linux系统，只有内网IP 需要通过A服务器的公网IP连接A服务器，然后来管理B服务器上的数据库。     下载安装phpMyAdmin开源PHP数据库管理工具，官网下载链接： https://www.phpmyad">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-25T07:55:30.053Z">
+<meta property="og:updated_time" content="2018-02-25T13:04:20.710Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql设置编码为UTF-8">
-<meta name="twitter:description" content="微信公众号开发，获取到的用户昵称为乱码，排查结果为Mysql数据库的默认字符集编码问题，要解决中文乱码，必须设置默认字符集为UTF-8。 登录mysql，通过命令查看字符集编码： mysql&amp;gt; show variables like &amp;quot;char%&amp;quot;; 结果如下： +--------------------------+---------------------------">
+<meta name="twitter:title" content="Linux连接局域网数据库服务器">
+<meta name="twitter:description" content="单体服务器的业务承载量有限，所以应用服务器和数据库服务器分开部署数据常规操作，这里记录下一些需要注意的点。 业务场景： A为应用服务器，Linux系统，有公网IP B为数据库服务器，Linux系统，只有内网IP 需要通过A服务器的公网IP连接A服务器，然后来管理B服务器上的数据库。     下载安装phpMyAdmin开源PHP数据库管理工具，官网下载链接： https://www.phpmyad">
 
 
 
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://www.crocutax.com/2018/02/25/mysql设置编码为UTF-8/"/>
+  <link rel="canonical" href="http://www.crocutax.com/2018/02/25/Linux连接局域网数据库服务器/"/>
 
 
 
 
 
-  <title>mysql设置编码为UTF-8 | Crocutax's Blog</title>
+  <title>Linux连接局域网数据库服务器 | Crocutax's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -309,7 +309,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2018/02/25/mysql设置编码为UTF-8/">
+    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2018/02/25/Linux连接局域网数据库服务器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Crocutax">
@@ -330,7 +330,7 @@
             
             
               
-                mysql设置编码为UTF-8
+                Linux连接局域网数据库服务器
               
             
           </h1>
@@ -345,7 +345,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-25T15:46:38+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-25T20:26:48+08:00">
                 2018-02-25
               </time>
             
@@ -368,8 +368,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mysql/" itemprop="url" rel="index">
-                    <span itemprop="name">Mysql</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -386,7 +386,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2018/02/25/mysql设置编码为UTF-8/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2018/02/25/Linux连接局域网数据库服务器/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -395,7 +395,7 @@
 
           
           
-             <span id="/2018/02/25/mysql设置编码为UTF-8/" class="leancloud_visitors" data-flag-title="mysql设置编码为UTF-8">
+             <span id="/2018/02/25/Linux连接局域网数据库服务器/" class="leancloud_visitors" data-flag-title="Linux连接局域网数据库服务器">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  249 字
+                  681 字
                 </span>
               
 
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -454,52 +454,68 @@
       
 
       
-        <p>微信公众号开发，获取到的用户昵称为乱码，排查结果为Mysql数据库的默认字符集编码问题，要解决中文乱码，必须设置默认字符集为<code>UTF-8</code>。</p>
-<p>登录mysql，通过命令查看字符集编码：</p>
-<pre><code>mysql&gt; show variables like &quot;char%&quot;;
-</code></pre><p>结果如下：</p>
-<pre><code>+--------------------------+----------------------------+
-| Variable_name            | Value                      |
-+--------------------------+----------------------------+
-| character_set_client    | utf8                      |
-| character_set_connection | utf8                      |
-| character_set_database  | latin1                    |
-| character_set_filesystem | binary                    |
-| character_set_results    | utf8                      |
-| character_set_server    | latin1                    |
-| character_set_system    | utf8                      |
-| character_sets_dir      | /usr/share/mysql/charsets/ |
-+--------------------------+----------------------------+
-8 rows in set (0.00 sec)
-</code></pre><p>发现<code>character_set_database</code>和<code>character_set_server</code>的编码默认为<code>latin1</code>，因此需要修改为<code>UTF-8</code>。</p>
-<p>修改Mysql配置文件</p>
-<pre><code>vim /etc/my.cnf
-</code></pre><p>在【mysqld】下方添加<code>character_set_server=utf8</code>，位置如下：</p>
-<pre><code>[mysqld]
-...
-datadir=/var/lib/mysql
-socket=/var/lib/mysql/mysql.sock
+        <p>单体服务器的业务承载量有限，所以应用服务器和数据库服务器分开部署数据常规操作，这里记录下一些需要注意的点。</p>
+<p>业务场景：</p>
+<pre><code>A为应用服务器，Linux系统，有公网IP
+B为数据库服务器，Linux系统，只有内网IP
+需要通过A服务器的公网IP连接A服务器，然后来管理B服务器上的数据库。    
+</code></pre><h1 id="下载安装phpMyAdmin"><a href="#下载安装phpMyAdmin" class="headerlink" title="下载安装phpMyAdmin"></a>下载安装phpMyAdmin</h1><p>开源PHP数据库管理工具，官网下载链接： <a href="https://www.phpmyadmin.net/downloads/" target="_blank" rel="noopener">https://www.phpmyadmin.net/downloads/</a></p>
+<p>用到的命令：</p>
+<pre><code>tar zxvf phpMyAdmin-4.7.8-all-languages.tar.gz
+mv phpMyAdmin-4.7.8-all-languages phpmyadmin
+cp -p config.sample.inc.php config.inc.php
+</code></pre><h1 id="配置Mysql数据库"><a href="#配置Mysql数据库" class="headerlink" title="配置Mysql数据库"></a>配置Mysql数据库</h1><p>phpMyAdmin默认使用的是MySQL的帐户和密码。默认使用的是本机的mysql，默认如下</p>
+<pre><code>$cfg[&apos;Servers&apos;][$i][&apos;host&apos;] = &apos;localhost&apos;;
+$cfg[&apos;Servers&apos;][$i][&apos;user&apos;] = &apos;root&apos;;
+$cfg[&apos;Servers&apos;][$i][&apos;password&apos;] = &apos;&apos;;
+</code></pre><p>MySQL默认用户名是root，密码是空。但是phpMyAdmin不允许空密码登录，所以需要在A服务器内网连接B服务器，然后在数据库服务器B上配置Mysql的密码，再从phpMyAdmin进行登录。 </p>
+<p>linux以ssh方式连接局域网服务器,执行命令<code>ssh root@192.168.3.1</code>,示例如下：</p>
+<pre><code>[root@nginx phpmyadmin]# ssh root@192.168.3.1
+root@192.168.11.7&apos;s password: 
+Last login: Fri Feb 23 21:40:19 2018 from 192.168.3.2
+[root@mysql56 ~]# 
+</code></pre><p>注意需要给Mysql开放远程连接的账号并配置防火墙规则，开放3306端口。</p>
+<p>可以参考：</p>
+<p><a href="http://www.crocutax.com/2018/01/15/阿里云Centos7服务器-JavaWeb正式环境搭建/">阿里云Centos7服务器-JavaWeb正式环境搭建</a> Mysql部分</p>
+<p><a href="http://localhost:4000/2018/02/25/Linux-Centos7%E9%98%B2%E7%81%AB%E5%A2%99%E9%85%8D%E7%BD%AE/" target="_blank" rel="noopener">Linux-Centos7防火墙配置</a> </p>
+<p><a href="https://www.2cto.com/database/201412/359998.html" target="_blank" rel="noopener">https://www.2cto.com/database/201412/359998.html</a></p>
+<p>配置完毕后退出B服务器的SSH连接</p>
+<pre><code>[root@mysql56 ~]# exit
+</code></pre><p>回到A服务器进行局域网连接测试:</p>
+<pre><code>mysql -h 192.168.3.1 -utest -p
+</code></pre><h1 id="配置phpMyAdmin"><a href="#配置phpMyAdmin" class="headerlink" title="配置phpMyAdmin"></a>配置phpMyAdmin</h1><p>可以正常登录后，配置phpMyAdmin，修改phpmyadmin目录中<code>libraries</code>文件夹下的<code>config.default.php</code>文件，设置成刚刚设置的数据库参数即可，比如</p>
+<pre><code>$cfg[&apos;Servers&apos;][$i][&apos;host&apos;] = &apos;192.168.3.1&apos;;
+$cfg[&apos;Servers&apos;][$i][&apos;user&apos;] = &apos;test&apos;;
+$cfg[&apos;Servers&apos;][$i][&apos;password&apos;] = &apos;123456&apos;;
+</code></pre><p>常见异常:</p>
+<blockquote>
+<p>#2002 - 服务器没有响应 (或者本地 MySQL 服务器的套接字没有正确配置)</p>
+</blockquote>
+<p>网上都是说把host的<code>localhost</code>改为<code>127.0.0.1</code>,由于是以局域网IP方式作为host，所以这个方式无效，最终通过去数据库服务器开放远程连接账户和防火墙端口解决。</p>
+<h1 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h1><p>关于PHP环境的搭建可参考 <a href="http://www.crocutax.com/2018/02/25/Centos7%E6%90%AD%E5%BB%BAPHP%E7%8E%AF%E5%A2%83/">Centos7搭建PHP环境</a></p>
+<p>配置完毕的nginx，输入<code>http://yourIpAddress:8081/phpmyadmin</code>可直接访问phpMyAdmin登录页面：</p>
+<pre><code>server {
 
-character_set_server=utf8
-</code></pre><p>设置完成后，<code>:wq</code>保存，并重启mysql服务</p>
-<pre><code>sudo systemctl restart mysqld
-</code></pre><p>再次查看数据库字符集编码，发现已经全部改成UTF-8了：</p>
-<pre><code>mysql&gt; show variables like &apos;character%&apos;;
-+--------------------------+----------------------------+
-| Variable_name            | Value                      |
-+--------------------------+----------------------------+
-| character_set_client    | utf8                      |
-| character_set_connection | utf8                      |
-| character_set_database  | utf8                      |
-| character_set_filesystem | binary                    |
-| character_set_results    | utf8                      |
-| character_set_server    | utf8                      |
-| character_set_system    | utf8                      |
-| character_sets_dir      | /usr/share/mysql/charsets/ |
-+--------------------------+----------------------------+
-8 rows in set (0.01 sec)
+       listen 8081;
+       server_name localhost;
+
+       location /phpmyadmin {
+            root html;
+            index index.php index.html;
+       }    
+
+       location ~* \.php$ {
+            fastcgi_index   index.php;
+            fastcgi_pass    127.0.0.1:9000;
+            include         fastcgi_params;
+            fastcgi_param   SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+            fastcgi_param   SCRIPT_NAME        $fastcgi_script_name;
+       }       
+
+}
 </code></pre><p>（完）</p>
-<p>参考链接：<a href="http://www.2cto.com/database/201311/255324.html" target="_blank" rel="noopener">http://www.2cto.com/database/201311/255324.html</a></p>
+<p>参考链接：</p>
+<p><a href="http://www.osyunwei.com/archives/869.html" target="_blank" rel="noopener">http://www.osyunwei.com/archives/869.html</a></p>
 
       
     </div>
@@ -559,16 +575,16 @@ character_set_server=utf8
 
             <li class="post-copyright-link">
               <strong>本文标题：</strong>
-              <a href="http://www.crocutax.com/2018/02/25/mysql设置编码为UTF-8/" title="mysql设置编码为UTF-8">mysql设置编码为UTF-8</a>
+              <a href="http://www.crocutax.com/2018/02/25/Linux连接局域网数据库服务器/" title="Linux连接局域网数据库服务器">Linux连接局域网数据库服务器</a>
             </li>
 
             <li class="post-copyright-link">
               <strong>本文链接：</strong>
-              <a href="http://www.crocutax.com/2018/02/25/mysql设置编码为UTF-8/" title="mysql设置编码为UTF-8">http://www.crocutax.com/2018/02/25/mysql设置编码为UTF-8/</a>
+              <a href="http://www.crocutax.com/2018/02/25/Linux连接局域网数据库服务器/" title="Linux连接局域网数据库服务器">http://www.crocutax.com/2018/02/25/Linux连接局域网数据库服务器/</a>
             </li>
 
             <li class="post-copyright-date">
-                <strong>发布时间：</strong>2018年2月25日 - 15时02分
+                <strong>发布时间：</strong>2018年2月25日 - 20时02分
             </li>  
 
             <li class="post-copyright-license">
@@ -590,8 +606,8 @@ character_set_server=utf8
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/20/Composer/" rel="next" title="Composer">
-                <i class="fa fa-chevron-left"></i> Composer
+              <a href="/2018/02/25/Linux-Centos7防火墙配置/" rel="next" title="Linux-Centos7防火墙配置">
+                <i class="fa fa-chevron-left"></i> Linux-Centos7防火墙配置
               </a>
             
           </div>
@@ -650,8 +666,17 @@ character_set_server=utf8
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -666,7 +691,7 @@ character_set_server=utf8
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">65</span>
+                <span class="site-state-item-count">70</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -745,6 +770,22 @@ character_set_server=utf8
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下载安装phpMyAdmin"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;phpMyAdmin" class="headerlink" title="&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;phpMyAdmin"></a>&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;phpMyAdmin</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置Mysql数据库"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;Mysql&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x914D;&#x7F6E;Mysql&#x6570;&#x636E;&#x5E93;"></a>&#x914D;&#x7F6E;Mysql&#x6570;&#x636E;&#x5E93;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置phpMyAdmin"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;phpMyAdmin" class="headerlink" title="&#x914D;&#x7F6E;phpMyAdmin"></a>&#x914D;&#x7F6E;phpMyAdmin</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置Nginx"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;Nginx" class="headerlink" title="&#x914D;&#x7F6E;Nginx"></a>&#x914D;&#x7F6E;Nginx</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

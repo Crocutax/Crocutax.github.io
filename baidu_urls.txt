@@ -1,3 +1,4 @@
+http://www.crocutax.com/2018/02/25/Linux连接局域网数据库服务器/
 http://www.crocutax.com/2018/02/25/Linux-Centos7防火墙配置/
 http://www.crocutax.com/2018/02/25/Linux系统版本信息/
 http://www.crocutax.com/2018/02/25/Linux系统用户管理/
