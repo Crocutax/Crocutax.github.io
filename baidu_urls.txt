@@ -1,3 +1,6 @@
+http://www.crocutax.com/2018/02/25/Linux-Centos7防火墙配置/
+http://www.crocutax.com/2018/02/25/Linux系统版本信息/
+http://www.crocutax.com/2018/02/25/Linux系统用户管理/
 http://www.crocutax.com/2018/02/25/Centos7搭建PHP环境/
 http://www.crocutax.com/2018/02/25/设置Mysql字符集编码为UTF-8,解决中文乱码/
 http://www.crocutax.com/2018/02/20/Composer/
