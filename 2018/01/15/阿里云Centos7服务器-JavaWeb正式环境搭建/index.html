@@ -99,7 +99,7 @@
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="服务器系统为阿里云Centos7的linux系统，用于部署JavaWeb项目，记录下搭建步骤:  挂载数据盘 安装MySQL 安装JDK 安装Tomcat Nginx配置  挂载数据盘这部分内容阿里云官方已有详尽的教程，链接直达： Linux 格式化和挂载数据盘 MySQL通过YUM方式安装MySQL5.7版本 1.下载YUM库 命令： wget http://dev.mysql.com/get/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-23T13:51:01.144Z">
+<meta property="og:updated_time" content="2018-02-25T08:08:02.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿里云Centos7服务器-JavaWeb正式环境搭建">
 <meta name="twitter:description" content="服务器系统为阿里云Centos7的linux系统，用于部署JavaWeb项目，记录下搭建步骤:  挂载数据盘 安装MySQL 安装JDK 安装Tomcat Nginx配置  挂载数据盘这部分内容阿里云官方已有详尽的教程，链接直达： Linux 格式化和挂载数据盘 MySQL通过YUM方式安装MySQL5.7版本 1.下载YUM库 命令： wget http://dev.mysql.com/get/">
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  7,287 字
+                  7,313 字
                 </span>
               
 
@@ -560,7 +560,9 @@
 <p>如果发现tomcat已启动，但是外网无法访问tomcat，可参考</p>
 <p><a href="http://www.crocutax.com/2017/12/10/linux下启动tomcat后-浏览器无法访问/">linux下启动tomcat后-浏览器无法访问</a></p>
 <p>参考链接：<br><a href="http://www.cnblogs.com/hanyinglong/p/5024643.html" target="_blank" rel="noopener">http://www.cnblogs.com/hanyinglong/p/5024643.html</a></p>
-<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><h2 id="配置YUM源-下载rpm包"><a href="#配置YUM源-下载rpm包" class="headerlink" title="配置YUM源,下载rpm包"></a>配置YUM源,下载rpm包</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http:<span class="comment">//dl.Fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm </span></span><br><span class="line">rpm -ivh epel-release-latest-<span class="number">7</span>.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><p>这里记录的是yum源安装，编译安装可参考：</p>
+<p><a href="https://www.linuxidc.com/Linux/2016-09/134907.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2016-09/134907.htm</a></p>
+<h2 id="配置YUM源-下载rpm包"><a href="#配置YUM源-下载rpm包" class="headerlink" title="配置YUM源,下载rpm包"></a>配置YUM源,下载rpm包</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http:<span class="comment">//dl.Fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm </span></span><br><span class="line">rpm -ivh epel-release-latest-<span class="number">7</span>.noarch.rpm</span><br></pre></td></tr></table></figure>
 <p>查看下载结果：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@izbp109iqt20o2h63tpcuvz java]# ls</span><br><span class="line">epel-release-latest-<span class="number">7</span>.noarch.rpm</span><br></pre></td></tr></table></figure>
 <h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install nginx -y</span><br></pre></td></tr></table></figure>
@@ -768,7 +770,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">64</span>
+                <span class="site-state-item-count">66</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

@@ -1,3 +1,5 @@
+http://www.crocutax.com/2018/02/25/Centos7搭建PHP环境/
+http://www.crocutax.com/2018/02/25/设置Mysql字符集编码为UTF-8,解决中文乱码/
 http://www.crocutax.com/2018/02/20/Composer/
 http://www.crocutax.com/2018/02/20/win10修改host/
 http://www.crocutax.com/2018/01/15/阿里云Centos7服务器-JavaWeb正式环境搭建/
