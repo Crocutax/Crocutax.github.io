@@ -1,3 +1,6 @@
+http://www.crocutax.com/2018/03/13/Linux安装PHP扩展包冲突/
+http://www.crocutax.com/2018/03/13/Linux日常小问题解决记录/
+http://www.crocutax.com/2018/03/13/Laravel采坑记录/
 http://www.crocutax.com/2018/03/08/PHP-Xdebug远程调试配置/
 http://www.crocutax.com/2018/03/08/Java使用Separator替代符号拼接/
 http://www.crocutax.com/2018/03/08/Windows安装Redis/

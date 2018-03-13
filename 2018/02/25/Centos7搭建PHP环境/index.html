@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="安装PHP下载PHP包PHP官网下载链接： https://secure.php.net/downloads.php 选择最新的tar.gz包，通过FTP上传至linux服务器，解压PHP压缩包 tar zxvf php-7.2.2.tar.gz 编译进入php7文件夹 cd php-7.2.2 输入命令： ./configure --enable-fpm --enable-mbstring 自己">
+<meta name="description" content="安装PHP编译安装下载PHP包PHP官网下载链接： https://secure.php.net/downloads.php 选择最新的tar.gz包，通过FTP上传至linux服务器，解压PHP压缩包 tar zxvf php-7.2.2.tar.gz 编译进入php7文件夹 cd php-7.2.2 输入命令： ./configure --enable-fpm --enable-mbstrin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Centos7搭建PHP环境">
 <meta property="og:url" content="http://www.crocutax.com/2018/02/25/Centos7搭建PHP环境/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
-<meta property="og:description" content="安装PHP下载PHP包PHP官网下载链接： https://secure.php.net/downloads.php 选择最新的tar.gz包，通过FTP上传至linux服务器，解压PHP压缩包 tar zxvf php-7.2.2.tar.gz 编译进入php7文件夹 cd php-7.2.2 输入命令： ./configure --enable-fpm --enable-mbstring 自己">
+<meta property="og:description" content="安装PHP编译安装下载PHP包PHP官网下载链接： https://secure.php.net/downloads.php 选择最新的tar.gz包，通过FTP上传至linux服务器，解压PHP压缩包 tar zxvf php-7.2.2.tar.gz 编译进入php7文件夹 cd php-7.2.2 输入命令： ./configure --enable-fpm --enable-mbstrin">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-25T12:18:41.192Z">
+<meta property="og:updated_time" content="2018-03-13T03:22:50.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos7搭建PHP环境">
-<meta name="twitter:description" content="安装PHP下载PHP包PHP官网下载链接： https://secure.php.net/downloads.php 选择最新的tar.gz包，通过FTP上传至linux服务器，解压PHP压缩包 tar zxvf php-7.2.2.tar.gz 编译进入php7文件夹 cd php-7.2.2 输入命令： ./configure --enable-fpm --enable-mbstring 自己">
+<meta name="twitter:description" content="安装PHP编译安装下载PHP包PHP官网下载链接： https://secure.php.net/downloads.php 选择最新的tar.gz包，通过FTP上传至linux服务器，解压PHP压缩包 tar zxvf php-7.2.2.tar.gz 编译进入php7文件夹 cd php-7.2.2 输入命令： ./configure --enable-fpm --enable-mbstrin">
 
 
 
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,160 字
+                  1,298 字
                 </span>
               
 
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  6 分钟
+                  7 分钟
                 </span>
               
             </div>
@@ -454,11 +454,11 @@
       
 
       
-        <h1 id="安装PHP"><a href="#安装PHP" class="headerlink" title="安装PHP"></a>安装PHP</h1><h2 id="下载PHP包"><a href="#下载PHP包" class="headerlink" title="下载PHP包"></a>下载PHP包</h2><p>PHP官网下载链接：</p>
+        <h1 id="安装PHP"><a href="#安装PHP" class="headerlink" title="安装PHP"></a>安装PHP</h1><h2 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h2><h3 id="下载PHP包"><a href="#下载PHP包" class="headerlink" title="下载PHP包"></a>下载PHP包</h3><p>PHP官网下载链接：</p>
 <p><a href="https://secure.php.net/downloads.php" target="_blank" rel="noopener">https://secure.php.net/downloads.php</a></p>
 <p>选择最新的tar.gz包，通过FTP上传至linux服务器，解压PHP压缩包</p>
 <pre><code>tar zxvf php-7.2.2.tar.gz
-</code></pre><h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>进入php7文件夹</p>
+</code></pre><h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>进入php7文件夹</p>
 <pre><code>cd php-7.2.2
 </code></pre><p>输入命令：</p>
 <pre><code>./configure --enable-fpm --enable-mbstring
@@ -546,14 +546,19 @@ creating main/internal_functions_cli.c
 +--------------------------------------------------------------------+
 
 Thank you for using PHP.
-</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>make
+</code></pre><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code>make
 make install
 </code></pre><p>测试安装结果：</p>
 <pre><code>[root@nginx web]# php -v
 PHP 7.2.2 (cli) (built: Feb 24 2018 15:17:15) ( NTS )
 Copyright (c) 1997-2018 The PHP Group
 Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
-</code></pre><h1 id="配置FPM"><a href="#配置FPM" class="headerlink" title="配置FPM"></a>配置FPM</h1><p>只安装了PHP还不能直接访问PHP文件，需要配置PHP-FPM，并启动FPM服务,让FPM和Nginx可以正常通信。</p>
+</code></pre><h2 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h2><p>配置yum源</p>
+<pre><code># rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+# rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+</code></pre><p>安装</p>
+<pre><code># yum install php70w
+</code></pre><h1 id="配置FPM"><a href="#配置FPM" class="headerlink" title="配置FPM"></a>配置FPM</h1><h2 id="编译安装-1"><a href="#编译安装-1" class="headerlink" title="编译安装"></a>编译安装</h2><p>如果是PHP编译安装 , 那么还需要配置PHP-FPM，并启动FPM服务,让FPM和Nginx可以正常通信。</p>
 <p>按照PHP官网的配置说明，创建配置文件</p>
 <pre><code>cp php.ini-development /usr/local/php/php.ini
 cp /usr/local/etc/php-fpm.conf.default /usr/local/etc/php-fpm.conf
@@ -580,7 +585,15 @@ include=etc/php.fpm.d/*.conf    #修改后
 </code></pre><p>再起启动php-fpm服务，通过<code>netstat -tunlp |grep 9000</code>命令，发现启动成功了:</p>
 <pre><code>[root@nginx sbin]# netstat -tunlp |grep 9000
 tcp        0      0 127.0.0.1:9000          0.0.0.0:*              LISTEN      118470/php-fpm: mas 
-</code></pre><h1 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h1><p>这里直接记录已经正常运行phpMyAdmin的Nginx配置，此时phpMyAdmin放在了Nginx的html目录下。</p>
+</code></pre><h2 id="yum安装-1"><a href="#yum安装-1" class="headerlink" title="yum安装"></a>yum安装</h2><p>安装命令,此处指定与PHP对应的fpm版本号</p>
+<pre><code># yum install php70w-fpm
+</code></pre><p>启动,停止,重启命令:</p>
+<pre><code># service php-fpm start
+# service php-fpm stop
+# service php-fpm reload
+</code></pre><p>其他各种扩展可参考</p>
+<p><a href="http://blog.csdn.net/river131/article/details/53838640" target="_blank" rel="noopener">http://blog.csdn.net/river131/article/details/53838640</a></p>
+<h1 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h1><p>这里直接记录已经正常运行phpMyAdmin的Nginx配置，此时phpMyAdmin放在了Nginx的html目录下。</p>
 <pre><code>server {
 
        listen 8081;
@@ -610,12 +623,18 @@ tcp        0      0 127.0.0.1:9000          0.0.0.0:*              LISTEN      1
     index index.php index.html;
 }     
 </code></pre><p>另外，如果报出<code>File not found</code>异常，记得</p>
-<p>(完)</p>
+<h1 id="安装Mysqli扩展"><a href="#安装Mysqli扩展" class="headerlink" title="安装Mysqli扩展"></a>安装Mysqli扩展</h1><pre><code># yum install php-mysqli
+或
+# yum install php70w-mysqli
+</code></pre><p>重启PHP-FPM,查看安装结果</p>
+<pre><code># service php-fpm restart
+</code></pre><p>(完)</p>
 <p>参考链接：</p>
 <p><a href="http://blog.csdn.net/etwo123/article/details/54582088" target="_blank" rel="noopener">http://blog.csdn.net/etwo123/article/details/54582088</a> (重点感谢)</p>
 <p><a href="http://php.net/manual/zh/install.unix.nginx.php" target="_blank" rel="noopener">http://php.net/manual/zh/install.unix.nginx.php</a></p>
 <p><a href="http://blog.csdn.net/u010647316/article/details/56489795" target="_blank" rel="noopener">http://blog.csdn.net/u010647316/article/details/56489795</a></p>
 <p><a href="http://blog.csdn.net/dabao1989/article/details/22898857" target="_blank" rel="noopener">http://blog.csdn.net/dabao1989/article/details/22898857</a></p>
+<p><a href="http://blog.csdn.net/xiao_zhui/article/details/72556781" target="_blank" rel="noopener">http://blog.csdn.net/xiao_zhui/article/details/72556781</a></p>
 
       
     </div>
@@ -795,7 +814,7 @@ tcp        0      0 127.0.0.1:9000          0.0.0.0:*              LISTEN      1
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">73</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -817,7 +836,7 @@ tcp        0      0 127.0.0.1:9000          0.0.0.0:*              LISTEN      1
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -884,7 +903,7 @@ tcp        0      0 127.0.0.1:9000          0.0.0.0:*              LISTEN      1
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装PHP"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;PHP" class="headerlink" title="&#x5B89;&#x88C5;PHP"></a>&#x5B89;&#x88C5;PHP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载PHP包"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x4E0B;&#x8F7D;PHP&#x5305;" class="headerlink" title="&#x4E0B;&#x8F7D;PHP&#x5305;"></a>&#x4E0B;&#x8F7D;PHP&#x5305;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x7F16;&#x8BD1;" class="headerlink" title="&#x7F16;&#x8BD1;"></a>&#x7F16;&#x8BD1;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置FPM"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;FPM" class="headerlink" title="&#x914D;&#x7F6E;FPM"></a>&#x914D;&#x7F6E;FPM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置Nginx"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;Nginx" class="headerlink" title="&#x914D;&#x7F6E;Nginx"></a>&#x914D;&#x7F6E;Nginx</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx常见异常"><span class="nav-number">4.</span> <span class="nav-text"><a href="#Nginx&#x5E38;&#x89C1;&#x5F02;&#x5E38;" class="headerlink" title="Nginx&#x5E38;&#x89C1;&#x5F02;&#x5E38;"></a>Nginx&#x5E38;&#x89C1;&#x5F02;&#x5E38;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#403-Forbidden"><span class="nav-number">4.1.</span> <span class="nav-text"><a href="#403-Forbidden" class="headerlink" title="403 Forbidden"></a>403 Forbidden</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#File-not-found"><span class="nav-number">4.2.</span> <span class="nav-text"><a href="#File-not-found" class="headerlink" title="File not found"></a>File not found</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装PHP"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;PHP" class="headerlink" title="&#x5B89;&#x88C5;PHP"></a>&#x5B89;&#x88C5;PHP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译安装"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x7F16;&#x8BD1;&#x5B89;&#x88C5;" class="headerlink" title="&#x7F16;&#x8BD1;&#x5B89;&#x88C5;"></a>&#x7F16;&#x8BD1;&#x5B89;&#x88C5;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载PHP包"><span class="nav-number">1.1.1.</span> <span class="nav-text"><a href="#&#x4E0B;&#x8F7D;PHP&#x5305;" class="headerlink" title="&#x4E0B;&#x8F7D;PHP&#x5305;"></a>&#x4E0B;&#x8F7D;PHP&#x5305;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译"><span class="nav-number">1.1.2.</span> <span class="nav-text"><a href="#&#x7F16;&#x8BD1;" class="headerlink" title="&#x7F16;&#x8BD1;"></a>&#x7F16;&#x8BD1;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.3.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yum安装"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#yum&#x5B89;&#x88C5;" class="headerlink" title="yum&#x5B89;&#x88C5;"></a>yum&#x5B89;&#x88C5;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置FPM"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;FPM" class="headerlink" title="&#x914D;&#x7F6E;FPM"></a>&#x914D;&#x7F6E;FPM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译安装-1"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x7F16;&#x8BD1;&#x5B89;&#x88C5;-1" class="headerlink" title="&#x7F16;&#x8BD1;&#x5B89;&#x88C5;"></a>&#x7F16;&#x8BD1;&#x5B89;&#x88C5;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yum安装-1"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#yum&#x5B89;&#x88C5;-1" class="headerlink" title="yum&#x5B89;&#x88C5;"></a>yum&#x5B89;&#x88C5;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置Nginx"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;Nginx" class="headerlink" title="&#x914D;&#x7F6E;Nginx"></a>&#x914D;&#x7F6E;Nginx</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx常见异常"><span class="nav-number">4.</span> <span class="nav-text"><a href="#Nginx&#x5E38;&#x89C1;&#x5F02;&#x5E38;" class="headerlink" title="Nginx&#x5E38;&#x89C1;&#x5F02;&#x5E38;"></a>Nginx&#x5E38;&#x89C1;&#x5F02;&#x5E38;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#403-Forbidden"><span class="nav-number">4.1.</span> <span class="nav-text"><a href="#403-Forbidden" class="headerlink" title="403 Forbidden"></a>403 Forbidden</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#File-not-found"><span class="nav-number">4.2.</span> <span class="nav-text"><a href="#File-not-found" class="headerlink" title="File not found"></a>File not found</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Mysqli扩展"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;Mysqli&#x6269;&#x5C55;" class="headerlink" title="&#x5B89;&#x88C5;Mysqli&#x6269;&#x5C55;"></a>&#x5B89;&#x88C5;Mysqli&#x6269;&#x5C55;</span></a></li></ol></div>
             
 
           </div>
