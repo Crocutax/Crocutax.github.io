@@ -618,7 +618,7 @@ Error: php70w-common conflicts with php-common-5.4.16-43.el7_4.1.x86_64
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  317 字
+                  245 字
                 </span>
               
 
@@ -634,7 +634,7 @@ Error: php70w-common conflicts with php-common-5.4.16-43.el7_4.1.x86_64
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  1 分钟
                 </span>
               
             </div>
@@ -654,11 +654,12 @@ Error: php70w-common conflicts with php-common-5.4.16-43.el7_4.1.x86_64
       
         
           
-          cp: omitting directory XXX拷贝文件时报的异常信息,从http://blog.csdn.net/ldl22847/article/details/7731159 得到解决方案.
-原因是 XXX目录下还有其他目录 , 不能直接拷贝 , 解决方案是:递归拷贝.
-cp -r orginDir targetDir
--r 表示递归.
--bash: lsof: command not 
+          connect: network is unreachable安装完Centos 7 虚拟机后,ping 外网时提示
+connect: network is unreachable
+解决方案:
+1.定位到/etc/sysconfig/network-scripts/ifcfg-enp0s3`文件
+vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
+2.将最
           ...
           <!--noindex-->
           <div class="post-button text-center">

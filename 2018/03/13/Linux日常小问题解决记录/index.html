@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="cp: omitting directory XXX拷贝文件时报的异常信息,从http://blog.csdn.net/ldl22847/article/details/7731159 得到解决方案. 原因是 XXX目录下还有其他目录 , 不能直接拷贝 , 解决方案是:递归拷贝. cp -r orginDir targetDir -r 表示递归. -bash: lsof: command not">
+<meta name="description" content="connect: network is unreachable安装完Centos 7 虚拟机后,ping 外网时提示 connect: network is unreachable 解决方案: 1.定位到/etc/sysconfig/network-scripts/ifcfg-enp0s3`文件 vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 2.将最">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux日常小问题解决记录">
 <meta property="og:url" content="http://www.crocutax.com/2018/03/13/Linux日常小问题解决记录/index.html">
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
-<meta property="og:description" content="cp: omitting directory XXX拷贝文件时报的异常信息,从http://blog.csdn.net/ldl22847/article/details/7731159 得到解决方案. 原因是 XXX目录下还有其他目录 , 不能直接拷贝 , 解决方案是:递归拷贝. cp -r orginDir targetDir -r 表示递归. -bash: lsof: command not">
+<meta property="og:description" content="connect: network is unreachable安装完Centos 7 虚拟机后,ping 外网时提示 connect: network is unreachable 解决方案: 1.定位到/etc/sysconfig/network-scripts/ifcfg-enp0s3`文件 vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 2.将最">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-13T02:54:48.970Z">
+<meta property="og:updated_time" content="2018-04-22T02:14:26.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux日常小问题解决记录">
-<meta name="twitter:description" content="cp: omitting directory XXX拷贝文件时报的异常信息,从http://blog.csdn.net/ldl22847/article/details/7731159 得到解决方案. 原因是 XXX目录下还有其他目录 , 不能直接拷贝 , 解决方案是:递归拷贝. cp -r orginDir targetDir -r 表示递归. -bash: lsof: command not">
+<meta name="twitter:description" content="connect: network is unreachable安装完Centos 7 虚拟机后,ping 外网时提示 connect: network is unreachable 解决方案: 1.定位到/etc/sysconfig/network-scripts/ifcfg-enp0s3`文件 vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 2.将最">
 
 
 
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  317 字
+                  245 字
                 </span>
               
 
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  1 分钟
                 </span>
               
             </div>
@@ -454,7 +454,25 @@
       
 
       
-        <h1 id="cp-omitting-directory-XXX"><a href="#cp-omitting-directory-XXX" class="headerlink" title="cp: omitting directory XXX"></a>cp: omitting directory XXX</h1><p>拷贝文件时报的异常信息,从<code>http://blog.csdn.net/ldl22847/article/details/7731159</code> 得到解决方案.</p>
+        <h1 id="connect-network-is-unreachable"><a href="#connect-network-is-unreachable" class="headerlink" title="connect: network is unreachable"></a>connect: network is unreachable</h1><p>安装完Centos 7 虚拟机后,ping 外网时提示</p>
+<pre><code>connect: network is unreachable
+</code></pre><p>解决方案:</p>
+<p>1.<code>定位到</code>/etc/sysconfig/network-scripts/ifcfg-enp0s3`文件</p>
+<pre><code>vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
+</code></pre><p>2.将最后一项 </p>
+<pre><code>ONBOOT=no 
+</code></pre><p>改为 </p>
+<pre><code>ONBOOT=yes
+</code></pre><p>3.重启网络服务</p>
+<pre><code>service network restart
+</code></pre><p>感谢</p>
+<p><a href="https://blog.csdn.net/qq_31382921/article/details/52174626" target="_blank" rel="noopener">https://blog.csdn.net/qq_31382921/article/details/52174626</a></p>
+<h1 id="CentOS7：ifconfig-command-not-found"><a href="#CentOS7：ifconfig-command-not-found" class="headerlink" title="CentOS7：ifconfig command not found"></a>CentOS7：ifconfig command not found</h1><p>在<code>/sbin</code>目录下通过<code>ls</code>查看是否有ifconfig</p>
+<p>如果没有 , 安装 <code>net-tools package</code>即可</p>
+<pre><code>yum install net-tools
+</code></pre><p>感谢</p>
+<p><a href="https://blog.csdn.net/dandelion_drq/article/details/53503487" target="_blank" rel="noopener">https://blog.csdn.net/dandelion_drq/article/details/53503487</a></p>
+<h1 id="cp-omitting-directory-XXX"><a href="#cp-omitting-directory-XXX" class="headerlink" title="cp: omitting directory XXX"></a>cp: omitting directory XXX</h1><p>拷贝文件时报的异常信息,从<code>http://blog.csdn.net/ldl22847/article/details/7731159</code> 得到解决方案.</p>
 <p>原因是 XXX目录下还有其他目录 , 不能直接拷贝 , 解决方案是:递归拷贝.</p>
 <pre><code>cp -r orginDir targetDir
 </code></pre><p><code>-r</code> 表示递归.</p>
@@ -463,8 +481,9 @@
 </code></pre><p>查看端口号占用情况时报的异常,原因是缺少<code>lsof</code>包</p>
 <p>yum安装命令</p>
 <pre><code># yum install lsof -y
-</code></pre><p>全过程记录</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">[root@iZbp109iqt20o2h63tpcuvZ html]# lsof -i:8080</span><br><span class="line">-bash: lsof: command not found</span><br><span class="line">[root@iZbp109iqt20o2h63tpcuvZ html]# yum install lsof -y</span><br><span class="line">Loaded plugins: fastestmirror</span><br><span class="line">Loading mirror speeds <span class="keyword">from</span> cached hostfile</span><br><span class="line"> * webtatic: uk.repo.webtatic.com</span><br><span class="line">Resolving Dependencies</span><br><span class="line">--&gt; Running transaction check</span><br><span class="line">---&gt; Package lsof.x86_64 <span class="number">0</span>:<span class="number">4.87</span><span class="number">-4.</span>el7 will be installed</span><br><span class="line">--&gt; Finished Dependency Resolution</span><br><span class="line"></span><br><span class="line">Dependencies Resolved</span><br><span class="line"></span><br><span class="line">========================================================================================================================================================</span><br><span class="line"> Package                           Arch                                Version                                  Repository                         Size</span><br><span class="line">========================================================================================================================================================</span><br><span class="line">Installing:</span><br><span class="line"> lsof                              x86_64                              <span class="number">4.87</span><span class="number">-4.</span>el7                               base                              <span class="number">331</span> k</span><br><span class="line"></span><br><span class="line">Transaction Summary</span><br><span class="line">========================================================================================================================================================</span><br><span class="line">Install  <span class="number">1</span> Package</span><br><span class="line"></span><br><span class="line">Total download size: <span class="number">331</span> k</span><br><span class="line">Installed size: <span class="number">927</span> k</span><br><span class="line">Downloading packages:</span><br><span class="line">lsof<span class="number">-4.87</span><span class="number">-4.</span>el7.x86_64.rpm                                                                                                       | <span class="number">331</span> kB  <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>     </span><br><span class="line">Running transaction check</span><br><span class="line">Running transaction test</span><br><span class="line">Transaction test succeeded</span><br><span class="line">Running transaction</span><br><span class="line">  Installing : lsof<span class="number">-4.87</span><span class="number">-4.</span>el7.x86_64                                                                                                               <span class="number">1</span>/<span class="number">1</span> </span><br><span class="line">  Verifying  : lsof<span class="number">-4.87</span><span class="number">-4.</span>el7.x86_64                                                                                                               <span class="number">1</span>/<span class="number">1</span> </span><br><span class="line"></span><br><span class="line">Installed:</span><br><span class="line">  lsof.x86_64 <span class="number">0</span>:<span class="number">4.87</span><span class="number">-4.</span>el7                                                                                                                              </span><br><span class="line"></span><br><span class="line">Complete!</span><br><span class="line">[root@iZbp109iqt20o2h63tpcuvZ html]# lsof -i:8080</span><br><span class="line">COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME</span><br><span class="line">java    <span class="number">2211</span> root   <span class="number">49</span>u  IPv4 <span class="number">269796</span>      <span class="number">0</span>t0  TCP *:webcache (LISTEN)</span><br></pre></td></tr></table></figure>
+</code></pre><h1 id="bash-wget-command-not-found"><a href="#bash-wget-command-not-found" class="headerlink" title="-bash: wget: command not found"></a>-bash: wget: command not found</h1><p>安装wget即可</p>
+<pre><code>yum -y install wget
+</code></pre>
       
     </div>
 
@@ -732,7 +751,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#cp-omitting-directory-XXX"><span class="nav-number">1.</span> <span class="nav-text"><a href="#cp-omitting-directory-XXX" class="headerlink" title="cp: omitting directory XXX"></a>cp: omitting directory XXX</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bash-lsof-command-not-found"><span class="nav-number">2.</span> <span class="nav-text"><a href="#bash-lsof-command-not-found" class="headerlink" title="-bash: lsof: command not found"></a>-bash: lsof: command not found</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#connect-network-is-unreachable"><span class="nav-number">1.</span> <span class="nav-text"><a href="#connect-network-is-unreachable" class="headerlink" title="connect: network is unreachable"></a>connect: network is unreachable</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CentOS7：ifconfig-command-not-found"><span class="nav-number">2.</span> <span class="nav-text"><a href="#CentOS7&#xFF1A;ifconfig-command-not-found" class="headerlink" title="CentOS7&#xFF1A;ifconfig command not found"></a>CentOS7&#xFF1A;ifconfig command not found</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cp-omitting-directory-XXX"><span class="nav-number">3.</span> <span class="nav-text"><a href="#cp-omitting-directory-XXX" class="headerlink" title="cp: omitting directory XXX"></a>cp: omitting directory XXX</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bash-lsof-command-not-found"><span class="nav-number">4.</span> <span class="nav-text"><a href="#bash-lsof-command-not-found" class="headerlink" title="-bash: lsof: command not found"></a>-bash: lsof: command not found</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bash-wget-command-not-found"><span class="nav-number">5.</span> <span class="nav-text"><a href="#bash-wget-command-not-found" class="headerlink" title="-bash: wget: command not found"></a>-bash: wget: command not found</span></a></li></ol></div>
             
 
           </div>
