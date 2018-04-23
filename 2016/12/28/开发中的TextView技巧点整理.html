@@ -1,0 +1,1460 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="经验总结," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="王西文的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="本篇文章主要是记录一下日常开发中,对TextView控件的一些使用过的技巧的整理,仅限自己开发中用到的一些点,并不全面,也没有太多技术含量.只是为了方便一些程序员小伙伴用到得时候，搜到之后拿来即用。如发现有错误,烦请帮忙指证,谢谢! 本文主要罗列了以下技巧点：  通过换行符换行 在TextView中引入图片资源 动态变换TextView中的图片资源 设置字体和样式 加载自定义字体 限制TextVi">
+<meta name="keywords" content="经验总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开发中的TextView技巧点整理">
+<meta property="og:url" content="http://www.crocutax.com/2016/12/28/开发中的TextView技巧点整理.html">
+<meta property="og:site_name" content="王西文的博客">
+<meta property="og:description" content="本篇文章主要是记录一下日常开发中,对TextView控件的一些使用过的技巧的整理,仅限自己开发中用到的一些点,并不全面,也没有太多技术含量.只是为了方便一些程序员小伙伴用到得时候，搜到之后拿来即用。如发现有错误,烦请帮忙指证,谢谢! 本文主要罗列了以下技巧点：  通过换行符换行 在TextView中引入图片资源 动态变换TextView中的图片资源 设置字体和样式 加载自定义字体 限制TextVi">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-67bcba0ae2428538?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-cea8c518a93c4142?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-246a3c8dd924bb31?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-3d599082fd5d85f4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-60900bd93c42a911?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-ab88b4a021a9caf5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-4e940bfad705619d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-577aa7faf0d06238?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-e6858e7b656bcbf1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1958298-884bd8d17cfe7c09?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-05-20T04:18:09.963Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="开发中的TextView技巧点整理">
+<meta name="twitter:description" content="本篇文章主要是记录一下日常开发中,对TextView控件的一些使用过的技巧的整理,仅限自己开发中用到的一些点,并不全面,也没有太多技术含量.只是为了方便一些程序员小伙伴用到得时候，搜到之后拿来即用。如发现有错误,烦请帮忙指证,谢谢! 本文主要罗列了以下技巧点：  通过换行符换行 在TextView中引入图片资源 动态变换TextView中的图片资源 设置字体和样式 加载自定义字体 限制TextVi">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1958298-67bcba0ae2428538?imageMogr2/auto-orient/strip">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.crocutax.com/2016/12/28/开发中的TextView技巧点整理.html"/>
+
+
+
+
+
+  <title>开发中的TextView技巧点整理 | 王西文的博客</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c8ec5212608cb68a7a15793303cf28e1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王西文的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2016/12/28/开发中的TextView技巧点整理.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王西文">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王西文的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                开发中的TextView技巧点整理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-28T21:31:12+08:00">
+                2016-12-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2016/12/28/开发中的TextView技巧点整理.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2016/12/28/开发中的TextView技巧点整理.html" class="leancloud_visitors" data-flag-title="开发中的TextView技巧点整理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  2,332 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  10 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本篇文章主要是记录一下日常开发中,对<code>TextView</code>控件的一些使用过的技巧的整理,仅限自己开发中用到的一些点,并不全面,<strong>也没有太多技术含量</strong>.只是为了方便一些程序员小伙伴用到得时候，搜到之后拿来即用。如发现有错误,烦请帮忙指证,谢谢!</p>
+<p>本文主要罗列了以下技巧点：</p>
+<ul>
+<li>通过换行符换行</li>
+<li>在TextView中引入图片资源</li>
+<li>动态变换TextView中的图片资源</li>
+<li>设置字体和样式</li>
+<li>加载自定义字体</li>
+<li>限制TextView字符数</li>
+<li>多文字展示中常见的【显示全部-收起】</li>
+<li>价格标签与下划线</li>
+<li>文字描边与阴影</li>
+<li>跑马灯效果</li>
+<li>设置字间距与行间距</li>
+</ul>
+<p>Demo动态图如下：<br><img src="http://upload-images.jianshu.io/upload_images/1958298-67bcba0ae2428538?imageMogr2/auto-orient/strip" alt="Demo动态图"></p>
+<h1 id="1-通过换行符换行"><a href="#1-通过换行符换行" class="headerlink" title="1.通过换行符换行"></a>1.通过换行符换行</h1><p>非常基础的换行符<code>“\n”</code>的使用，有些时候在一些复杂ItemView中，会有上下两行TextView罗列用来展示内容的情况，如果两行TextView的字体样式一致，并且数据来源固定或统一，此时可以考虑用一个TextView搞定，能少绘制一个TextView，甚至是用来包裹他们的LineaLayout也省了。</p>
+<p>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--普通换行--&gt;</span><br><span class="line"> &lt;TextView</span><br><span class="line">      android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">      android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">      android:background=&quot;@color/colorAccent&quot;</span><br><span class="line">      android:text=&quot;&apos;好好学习\n天天向上&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>效果图：<br><img src="http://upload-images.jianshu.io/upload_images/1958298-cea8c518a93c4142?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="通过换行符换行"></p>
+<h1 id="2-在TextView中引入图片资源"><a href="#2-在TextView中引入图片资源" class="headerlink" title="2.在TextView中引入图片资源"></a>2.在TextView中引入图片资源</h1><p>一个图片+几个文字的的控件搭配在任何项目中都太常见了，比如<br><img src="http://upload-images.jianshu.io/upload_images/1958298-246a3c8dd924bb31?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点赞"></p>
+<p>这个可以用LineaLayout来水平包裹ImageView+TextView，也可以直接通过TextView的drawableXxx属性来将图片资源嵌入TextView中。其中Xxx是指图片摆放的位置，包括</p>
+<ul>
+<li>drawableLeft   左侧</li>
+<li>drawableRight 右侧</li>
+<li>drawableTop  上方</li>
+<li>drawableBottom 下方</li>
+<li>drawableStart  控件空间的起始位置</li>
+<li>drawableEnd  控件空间的末尾</li>
+</ul>
+<p>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;TextView</span><br><span class="line">     android:id=&quot;@+id/tv_drawable&quot;</span><br><span class="line">     android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">     android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">     android:layout_marginTop=&quot;10dp&quot;</span><br><span class="line">     android:drawablePadding=&quot;10dp&quot;</span><br><span class="line">     android:drawableRight=&quot;@drawable/password_hide&quot;</span><br><span class="line">     android:gravity=&quot;center&quot;</span><br><span class="line">     android:text=&quot;点下试试&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>效果图：<br><img src="http://upload-images.jianshu.io/upload_images/1958298-3d599082fd5d85f4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="在TextView中引入图片资源"></p>
+<h1 id="3-动态变换TextView中的图片资源"><a href="#3-动态变换TextView中的图片资源" class="headerlink" title="3.动态变换TextView中的图片资源"></a>3.动态变换TextView中的图片资源</h1><p>上面谈到的图片+文字的两种布局方式中，LinearLayout水平包裹的方式虽然略显臃肿，但是动态替换其中的图片比较方便，直接操作包裹的ImageView即可。而TextView内嵌图片的方式，在动态替换图片资源时，略显繁琐，不过也很简单，主要是对Drawable对象的操作。</p>
+<p>代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.通过图片资源获取Drawable对象</span></span><br><span class="line">Drawable showPwdDrawable = getResources().getDrawable(R.drawable.password_show);</span><br><span class="line"><span class="comment">//2.设置Drawable对象的显示范围</span></span><br><span class="line">showPwdDrawable.setBounds(<span class="number">0</span>, <span class="number">0</span>, showPwdDrawable.getMinimumWidth(), showPwdDrawable.getMinimumHeight());</span><br><span class="line"><span class="comment">//3.将Drawable设置给TextView(方法中的4个参数，分别对应Drawable相对于文字而言放置的位置：左上右下四个位置)</span></span><br><span class="line">textview.setCompoundDrawables(<span class="keyword">null</span>, <span class="keyword">null</span>, showPwdDrawable, <span class="keyword">null</span>);</span><br></pre></td></tr></table></figure></p>
+<p>效果图：<br><img src="http://upload-images.jianshu.io/upload_images/1958298-60900bd93c42a911?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="动态变换TextView中的图片资源"></p>
+<h1 id="4-设置字体和样式"><a href="#4-设置字体和样式" class="headerlink" title="4.设置字体和样式"></a>4.设置字体和样式</h1><p>TextView的<code>typeface</code>属性可以用来设置字体,默认有4种类型</p>
+<ul>
+<li>normal</li>
+<li>sans</li>
+<li>serif</li>
+<li>monospace</li>
+</ul>
+<p><code>textStyle</code>属性可以用来设置样式，默认有3种类型：</p>
+<ul>
+<li>bold 粗体</li>
+<li>italic 斜体</li>
+<li>normal 正常(默认)</li>
+</ul>
+<p>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--粗体+serif样式--&gt;</span><br><span class="line">&lt;TextView</span><br><span class="line">    android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    android:layout_marginTop=&quot;10dp&quot;</span><br><span class="line">    android:text=&quot;@string/study&quot;</span><br><span class="line">    android:textStyle=&quot;bold&quot;</span><br><span class="line">    android:typeface=&quot;serif&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--斜体 + monospace样式--&gt;</span><br><span class="line">&lt;TextView</span><br><span class="line">    android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    android:layout_marginTop=&quot;10dp&quot;</span><br><span class="line">    android:text=&quot;@string/study&quot;</span><br><span class="line">    android:textStyle=&quot;italic&quot;</span><br><span class="line">    android:typeface=&quot;monospace&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>效果图:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-ab88b4a021a9caf5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设置字体和样式"></p>
+<h1 id="5-加载自定义字体"><a href="#5-加载自定义字体" class="headerlink" title="5.加载自定义字体"></a>5.加载自定义字体</h1><p>除了系统默认提供的几种字体以外,还可以加载自定义的字体.<br>注意:字体文件必须是真正的ttf(TrueTypeFont)文件,否则要么没有效果 , 要么直接抛<code>java.lang.RuntimeException: Font asset not found fonts</code>异常,.</p>
+<p>步骤:<br>1.将ttf字体文件放在Module的<code>src/main/assets/fonts/</code>目录下<br>2.加载字体文件到内存,并设置给TextView</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//通过Typeface的静态方法加载字体资源到内存</span><br><span class="line">Typeface typeface = Typeface.createFromAsset(getAssets(), &quot;fonts/华文行楷.ttf&quot;);</span><br><span class="line">//将typeface设置给TextView</span><br><span class="line">tvCustomTypeface.setTypeface(typeface);</span><br></pre></td></tr></table></figure>
+<p>效果图:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1958298-4e940bfad705619d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="加载自定义字体"></p>
+<h1 id="6-限制TextView字符数"><a href="#6-限制TextView字符数" class="headerlink" title="6.限制TextView字符数"></a>6.限制TextView字符数</h1><p>为了UI效果或者屏幕适配等因素,经常需要对TextView展示出来的字数做限制,其实也很简单通过3个属性就可以搞定:</p>
+<ul>
+<li>ellipsize 省略位置</li>
+<li>maxEms 最大字符数,一个汉字占1个字符,1个英文/符号占半个字符;从第maxEms+1位置开始用省略号代替</li>
+<li>maxLines 行数限制(singleLine也行,但是已被标记为Deprecated)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--限制字符数--&gt;</span><br><span class="line">&lt;TextView</span><br><span class="line">     android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">     android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">     android:ellipsize=&quot;end&quot;</span><br><span class="line">     android:maxLines=&quot;1&quot;</span><br><span class="line">     android:maxEms=&quot;7&quot;</span><br><span class="line">     android:text=&quot;@string/study&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>效果图:<br><img src="http://upload-images.jianshu.io/upload_images/1958298-577aa7faf0d06238?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="限制TextView字符数"></p>
+<h1 id="7-多文字展示中常见的【显示全部-收起】"><a href="#7-多文字展示中常见的【显示全部-收起】" class="headerlink" title="7.多文字展示中常见的【显示全部-收起】"></a>7.多文字展示中常见的【显示全部-收起】</h1><p>这个比较常见,比如看个朋友圈或者微博,不会直接将文字内容全部罗列展示出来,而是末尾有个[更多]or[显示全部],点击后就会将文字内容全部显示出来.(当然也有点击后跳转页面的,跟这次谈的内容无关,这是举个例子)</p>
+<p>实现起来也比较简单,通过setMaxLines(int maxLines)方法即可达到目的.</p>
+<p>每次点击[显示全部-收起]按钮时 , 执行以下事件 , 即可实现 . 效果图请看文章开头的gif图.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">showAll = !showAll;</span><br><span class="line">if(showAll)&#123;</span><br><span class="line">      tvShowAll.setMaxLines(2);</span><br><span class="line">      btnShowAll.setText(&quot;查看全部&quot;);</span><br><span class="line">  &#125;else &#123;</span><br><span class="line">      tvShowAll.setMaxLines(20);</span><br><span class="line">      btnShowAll.setText(&quot;收起&quot;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意</p>
+</blockquote>
+<p>开发中当碰到上述问题时,同时必然存在一个前提场景,那就是根据数据内容来动态判断是该展示 [显示全部]按钮.</p>
+<p>此时需要动态获取textview加载了内容后占据了几行,比如我们需求规定超过3行,末尾就要省略+展示[显示更多] . 此时需要用到TextView的<code>getLineCount()</code>方法.</p>
+<blockquote>
+<p>getLineCount() 方法<br>Return the number of lines of text, or 0 if the internal Layout has not been built.返回TextView内容的行数 , 如果没内容则返回0</p>
+</blockquote>
+<p>需要注意的时,此方法不能直接在onCreate()中调用,因为此时TextView的内容可能还没有加载完毕导致获取到得行数为0.可以用如下方式来决定[显示全部]按钮是否显示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">textview.post(new Runnable() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        if(textview.getLineCount() &gt; 3)&#123;</span><br><span class="line">            //textview内容大于行数限制,展示[显示全部]按钮&quot;</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            //textview内容小于等于行数限制&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="8-价格标签与下划线"><a href="#8-价格标签与下划线" class="headerlink" title="8.价格标签与下划线"></a>8.价格标签与下划线</h1><p>在商品交易类模块必然牵扯到商品价格 , 而一般出于促销目的,会在界面上展示出商品原价和现价 ,原价远高于现价, 同时再把原价划上一条横线表示作废以刺激客户消费 . 这是很常见的 价格促销UI.</p>
+<p> 这个效果需要TextView通过Paint对象来绘制,系统都封装好了,我们简单使用即可.</p>
+<p>第一步,正常定义XML</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--价格标签--&gt;</span><br><span class="line">&lt;!--中间横线--&gt;</span><br><span class="line">&lt;TextView</span><br><span class="line">    android:id=&quot;@+id/tv_line_middle&quot;</span><br><span class="line">    android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    android:text=&quot;￥20.00&quot;</span><br><span class="line">    android:textColor=&quot;@android:color/holo_red_dark&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--底部横线--&gt;</span><br><span class="line">&lt;TextView</span><br><span class="line">    android:id=&quot;@+id/tv_line_end&quot;</span><br><span class="line">    android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    android:layout_marginTop=&quot;10dp&quot;</span><br><span class="line">    android:text=&quot;￥20.00&quot;</span><br><span class="line">    android:textColor=&quot;@android:color/holo_red_dark&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>第二步,通过TextView的Paint对象来划线</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//中间横线</span></span><br><span class="line">tvLineMiddle.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG );</span><br><span class="line"><span class="comment">//下划线</span></span><br><span class="line">tvLineEnd.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);</span><br></pre></td></tr></table></figure>
+<p>效果图:<br><img src="http://upload-images.jianshu.io/upload_images/1958298-e6858e7b656bcbf1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="价格标签与下划线"></p>
+<h1 id="9-文字描边与阴影"><a href="#9-文字描边与阴影" class="headerlink" title="9.文字描边与阴影"></a>9.文字描边与阴影</h1><p>涉及属性:</p>
+<ul>
+<li>shadowColor :   Place a blurred shadow of text underneath the text, drawn with the specified color.用指定颜色在文字下方绘制模糊的阴影 </li>
+<li>shadowDx   Horizontal offset of the text shadow. 文字阴影的横向/水平偏移量</li>
+<li>shadowDy  Vertical offset of the text shadow. 文字阴影的纵向/垂直偏移量</li>
+<li>shadowRadius    Blur radius of the text shadow.   阴影的半径范围</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--文字描边与阴影--&gt;</span><br><span class="line">&lt;TextView</span><br><span class="line">    android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    android:shadowColor=&quot;#ff0000&quot;</span><br><span class="line">    android:shadowDx=&quot;5&quot;</span><br><span class="line">    android:shadowDy=&quot;5&quot;</span><br><span class="line">    android:shadowRadius=&quot;5&quot;</span><br><span class="line">    android:text=&quot;@string/study&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>效果图:<br><img src="http://upload-images.jianshu.io/upload_images/1958298-884bd8d17cfe7c09?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="文字描边与阴影"></p>
+<h1 id="10-跑马灯效果"><a href="#10-跑马灯效果" class="headerlink" title="10.跑马灯效果"></a>10.跑马灯效果</h1><p>现在这种效果用的越来越少了,不赘述了.</p>
+<p>直接上代码,效果图见文章顶部gif:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--跑马灯效果--&gt;</span><br><span class="line">&lt;TextView</span><br><span class="line">    android:layout_width=&quot;200dp&quot;</span><br><span class="line">    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    android:background=&quot;@android:color/holo_blue_light&quot;</span><br><span class="line">    android:ellipsize=&quot;marquee&quot;</span><br><span class="line">    android:focusable=&quot;true&quot;</span><br><span class="line">    android:focusableInTouchMode=&quot;true&quot;</span><br><span class="line">    android:marqueeRepeatLimit=&quot;marquee_forever&quot;</span><br><span class="line">    android:singleLine=&quot;true&quot;</span><br><span class="line">    android:text=&quot;@string/poem&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="11-设置字间距与行间距"><a href="#11-设置字间距与行间距" class="headerlink" title="11.设置字间距与行间距"></a>11.设置字间距与行间距</h1><p>涉及属性:</p>
+<ul>
+<li>letterSpacing 字间距<ul>
+<li>Must be a floating point value, such as “0.2”. (0.0~1.0 stands for a letter)  —–必须是0.0~1.0之间的小数,以一个字母为空间标准 </li>
+</ul>
+</li>
+<li>lineSpacingExtra 行距<ul>
+<li>Must be a dimension value, which is a floating point number appended with a unit such as “14.5sp”. Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size), in (inches), mm (millimeters). —–直接通过px,dp,sp等单位指定行距,例如14.5sp</li>
+</ul>
+</li>
+<li>lineSpacingMultiplier 行间距的倍数<ul>
+<li>Must be a floating point value, such as “1.2”.—-比如1.2倍</li>
+</ul>
+</li>
+</ul>
+<p>直接使用上述属性,即可达到设置字间距,行间距的目的,代码如下,效果图见文章顶部gif</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"> &lt;!--字间距0.5字符--&gt;</span><br><span class="line">&lt;TextView</span><br><span class="line">    android:layout_width=&quot;0dp&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:layout_weight=&quot;1&quot;</span><br><span class="line">    android:background=&quot;@android:color/darker_gray&quot;</span><br><span class="line">    android:letterSpacing=&quot;0.5&quot;</span><br><span class="line">    android:text=&quot;@string/poem&quot; /&gt;</span><br><span class="line">    </span><br><span class="line">&lt;!--行间距10sp--&gt;</span><br><span class="line">&lt;TextView</span><br><span class="line">    android:layout_width=&quot;0dp&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:layout_weight=&quot;1&quot;</span><br><span class="line">    android:background=&quot;@android:color/holo_green_light&quot;</span><br><span class="line">    android:lineSpacingExtra=&quot;10sp&quot;</span><br><span class="line">    android:text=&quot;@string/poem&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--行间距1.8倍--&gt;</span><br><span class="line">&lt;TextView</span><br><span class="line">    android:layout_width=&quot;0dp&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:layout_weight=&quot;1&quot;</span><br><span class="line">    android:lineSpacingMultiplier=&quot;1.8&quot;</span><br><span class="line">    android:text=&quot;@string/poem&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><a href="http://download.csdn.net/detail/wangxw725/9766975" target="_blank" rel="noopener">Demo下载地址</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>记录工作，记录成长，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.png" alt="王西文 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="王西文 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+
+        
+         <div>    
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 王西文 的个人博客">王西文</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="http://www.crocutax.com/2016/12/28/开发中的TextView技巧点整理.html" title="开发中的TextView技巧点整理">开发中的TextView技巧点整理</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="http://www.crocutax.com/2016/12/28/开发中的TextView技巧点整理.html" title="开发中的TextView技巧点整理">http://www.crocutax.com/2016/12/28/开发中的TextView技巧点整理.html</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间：</strong>2016年12月28日 - 21时12分
+            </li>  
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 王西文 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+
+       
+      
+        <div class="post-tags">
+          
+            <a href="/tags/经验总结/" rel="tag"># 经验总结</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/23/ViewPager+Fragment组合的预加载和懒加载.html" rel="next" title="ViewPager+Fragment组合的预加载和懒加载">
+                <i class="fa fa-chevron-left"></i> ViewPager+Fragment组合的预加载和懒加载
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/12/笔记-技术小黑屋LIVE-如何写好博客.html" rel="prev" title="笔记-技术小黑屋LIVE-如何写好博客">
+                笔记-技术小黑屋LIVE-如何写好博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+  
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="王西文" />
+          <p class="site-author-name" itemprop="name">王西文</p>
+           
+              <p class="site-description motion-element" itemprop="description">相信技术的力量</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">80</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Crocutax" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/lsyz0021?viewmode=contents" title="星空武哥" target="_blank">星空武哥</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-通过换行符换行"><span class="nav-number">1.</span> <span class="nav-text"><a href="#1-&#x901A;&#x8FC7;&#x6362;&#x884C;&#x7B26;&#x6362;&#x884C;" class="headerlink" title="1.&#x901A;&#x8FC7;&#x6362;&#x884C;&#x7B26;&#x6362;&#x884C;"></a>1.&#x901A;&#x8FC7;&#x6362;&#x884C;&#x7B26;&#x6362;&#x884C;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-在TextView中引入图片资源"><span class="nav-number">2.</span> <span class="nav-text"><a href="#2-&#x5728;TextView&#x4E2D;&#x5F15;&#x5165;&#x56FE;&#x7247;&#x8D44;&#x6E90;" class="headerlink" title="2.&#x5728;TextView&#x4E2D;&#x5F15;&#x5165;&#x56FE;&#x7247;&#x8D44;&#x6E90;"></a>2.&#x5728;TextView&#x4E2D;&#x5F15;&#x5165;&#x56FE;&#x7247;&#x8D44;&#x6E90;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-动态变换TextView中的图片资源"><span class="nav-number">3.</span> <span class="nav-text"><a href="#3-&#x52A8;&#x6001;&#x53D8;&#x6362;TextView&#x4E2D;&#x7684;&#x56FE;&#x7247;&#x8D44;&#x6E90;" class="headerlink" title="3.&#x52A8;&#x6001;&#x53D8;&#x6362;TextView&#x4E2D;&#x7684;&#x56FE;&#x7247;&#x8D44;&#x6E90;"></a>3.&#x52A8;&#x6001;&#x53D8;&#x6362;TextView&#x4E2D;&#x7684;&#x56FE;&#x7247;&#x8D44;&#x6E90;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-设置字体和样式"><span class="nav-number">4.</span> <span class="nav-text"><a href="#4-&#x8BBE;&#x7F6E;&#x5B57;&#x4F53;&#x548C;&#x6837;&#x5F0F;" class="headerlink" title="4.&#x8BBE;&#x7F6E;&#x5B57;&#x4F53;&#x548C;&#x6837;&#x5F0F;"></a>4.&#x8BBE;&#x7F6E;&#x5B57;&#x4F53;&#x548C;&#x6837;&#x5F0F;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-加载自定义字体"><span class="nav-number">5.</span> <span class="nav-text"><a href="#5-&#x52A0;&#x8F7D;&#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;" class="headerlink" title="5.&#x52A0;&#x8F7D;&#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;"></a>5.&#x52A0;&#x8F7D;&#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-限制TextView字符数"><span class="nav-number">6.</span> <span class="nav-text"><a href="#6-&#x9650;&#x5236;TextView&#x5B57;&#x7B26;&#x6570;" class="headerlink" title="6.&#x9650;&#x5236;TextView&#x5B57;&#x7B26;&#x6570;"></a>6.&#x9650;&#x5236;TextView&#x5B57;&#x7B26;&#x6570;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-多文字展示中常见的【显示全部-收起】"><span class="nav-number">7.</span> <span class="nav-text"><a href="#7-&#x591A;&#x6587;&#x5B57;&#x5C55;&#x793A;&#x4E2D;&#x5E38;&#x89C1;&#x7684;&#x3010;&#x663E;&#x793A;&#x5168;&#x90E8;-&#x6536;&#x8D77;&#x3011;" class="headerlink" title="7.&#x591A;&#x6587;&#x5B57;&#x5C55;&#x793A;&#x4E2D;&#x5E38;&#x89C1;&#x7684;&#x3010;&#x663E;&#x793A;&#x5168;&#x90E8;-&#x6536;&#x8D77;&#x3011;"></a>7.&#x591A;&#x6587;&#x5B57;&#x5C55;&#x793A;&#x4E2D;&#x5E38;&#x89C1;&#x7684;&#x3010;&#x663E;&#x793A;&#x5168;&#x90E8;-&#x6536;&#x8D77;&#x3011;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-价格标签与下划线"><span class="nav-number">8.</span> <span class="nav-text"><a href="#8-&#x4EF7;&#x683C;&#x6807;&#x7B7E;&#x4E0E;&#x4E0B;&#x5212;&#x7EBF;" class="headerlink" title="8.&#x4EF7;&#x683C;&#x6807;&#x7B7E;&#x4E0E;&#x4E0B;&#x5212;&#x7EBF;"></a>8.&#x4EF7;&#x683C;&#x6807;&#x7B7E;&#x4E0E;&#x4E0B;&#x5212;&#x7EBF;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-文字描边与阴影"><span class="nav-number">9.</span> <span class="nav-text"><a href="#9-&#x6587;&#x5B57;&#x63CF;&#x8FB9;&#x4E0E;&#x9634;&#x5F71;" class="headerlink" title="9.&#x6587;&#x5B57;&#x63CF;&#x8FB9;&#x4E0E;&#x9634;&#x5F71;"></a>9.&#x6587;&#x5B57;&#x63CF;&#x8FB9;&#x4E0E;&#x9634;&#x5F71;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-跑马灯效果"><span class="nav-number">10.</span> <span class="nav-text"><a href="#10-&#x8DD1;&#x9A6C;&#x706F;&#x6548;&#x679C;" class="headerlink" title="10.&#x8DD1;&#x9A6C;&#x706F;&#x6548;&#x679C;"></a>10.&#x8DD1;&#x9A6C;&#x706F;&#x6548;&#x679C;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-设置字间距与行间距"><span class="nav-number">11.</span> <span class="nav-text"><a href="#11-&#x8BBE;&#x7F6E;&#x5B57;&#x95F4;&#x8DDD;&#x4E0E;&#x884C;&#x95F4;&#x8DDD;" class="headerlink" title="11.&#x8BBE;&#x7F6E;&#x5B57;&#x95F4;&#x8DDD;&#x4E0E;&#x884C;&#x95F4;&#x8DDD;"></a>11.&#x8BBE;&#x7F6E;&#x5B57;&#x95F4;&#x8DDD;&#x4E0E;&#x884C;&#x95F4;&#x8DDD;</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王西文</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "5ee790a9845d46609e2f602d1ce9c06f",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      $('#local-search-input').focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("qyYhQjoPok9leCkdiLJTHbva-gzGzoHsz", "YXAGVpDpaaaxFR0KRrzlWPR9");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
