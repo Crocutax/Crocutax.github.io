@@ -1,3 +1,6 @@
+http://www.crocutax.com/2018/04/23/nginx同一端口多域名转发/
+http://www.crocutax.com/2018/04/22/支付宝支付申请流程记录/
+http://www.crocutax.com/2018/04/22/技术管理之思维方式的转变/
 http://www.crocutax.com/2018/03/13/Linux安装PHP扩展包冲突/
 http://www.crocutax.com/2018/03/13/Linux日常小问题解决记录/
 http://www.crocutax.com/2018/03/13/Laravel采坑记录/

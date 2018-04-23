@@ -99,7 +99,7 @@
 <meta property="og:site_name" content="Crocutax&#39;s Blog">
 <meta property="og:description" content="安装PHP编译安装下载PHP包PHP官网下载链接： https://secure.php.net/downloads.php 选择最新的tar.gz包，通过FTP上传至linux服务器，解压PHP压缩包 tar zxvf php-7.2.2.tar.gz 编译进入php7文件夹 cd php-7.2.2 输入命令： ./configure --enable-fpm --enable-mbstrin">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-13T03:22:50.403Z">
+<meta property="og:updated_time" content="2018-04-22T07:22:39.997Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos7搭建PHP环境">
 <meta name="twitter:description" content="安装PHP编译安装下载PHP包PHP官网下载链接： https://secure.php.net/downloads.php 选择最新的tar.gz包，通过FTP上传至linux服务器，解压PHP压缩包 tar zxvf php-7.2.2.tar.gz 编译进入php7文件夹 cd php-7.2.2 输入命令： ./configure --enable-fpm --enable-mbstrin">
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,298 字
+                  1,311 字
                 </span>
               
 
@@ -558,7 +558,9 @@ Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
 # rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 </code></pre><p>安装</p>
 <pre><code># yum install php70w
-</code></pre><h1 id="配置FPM"><a href="#配置FPM" class="headerlink" title="配置FPM"></a>配置FPM</h1><h2 id="编译安装-1"><a href="#编译安装-1" class="headerlink" title="编译安装"></a>编译安装</h2><p>如果是PHP编译安装 , 那么还需要配置PHP-FPM，并启动FPM服务,让FPM和Nginx可以正常通信。</p>
+</code></pre><p>详细可参考：</p>
+<p><a href="https://blog.csdn.net/zhezhebie/article/details/73325663" target="_blank" rel="noopener">https://blog.csdn.net/zhezhebie/article/details/73325663</a></p>
+<h1 id="配置FPM"><a href="#配置FPM" class="headerlink" title="配置FPM"></a>配置FPM</h1><h2 id="编译安装-1"><a href="#编译安装-1" class="headerlink" title="编译安装"></a>编译安装</h2><p>如果是PHP编译安装 , 那么还需要配置PHP-FPM，并启动FPM服务,让FPM和Nginx可以正常通信。</p>
 <p>按照PHP官网的配置说明，创建配置文件</p>
 <pre><code>cp php.ini-development /usr/local/php/php.ini
 cp /usr/local/etc/php-fpm.conf.default /usr/local/etc/php-fpm.conf
@@ -814,7 +816,7 @@ tcp        0      0 127.0.0.1:9000          0.0.0.0:*              LISTEN      1
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">79</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -836,7 +838,7 @@ tcp        0      0 127.0.0.1:9000          0.0.0.0:*              LISTEN      1
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
