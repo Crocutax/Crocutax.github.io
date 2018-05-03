@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="王西文的博客">
 <meta property="og:description" content="Nginx的反向代理，即可以基于端口进行，也可以基于域名进行。 过多的端口开放,可能意味更高的安全风险，因此只开放一个端口，比如80端口，然后根据域名的不同转发到不同的项目路径或服务器，同样有较多的使用场景。 server {     listen       80;     server_name  farm.test.cn;    #域名1      location / {">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-23T16:11:27.807Z">
+<meta property="og:updated_time" content="2018-04-24T02:29:16.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx同一端口多域名转发">
 <meta name="twitter:description" content="Nginx的反向代理，即可以基于端口进行，也可以基于域名进行。 过多的端口开放,可能意味更高的安全风险，因此只开放一个端口，比如80端口，然后根据域名的不同转发到不同的项目路径或服务器，同样有较多的使用场景。 server {     listen       80;     server_name  farm.test.cn;    #域名1      location / {">
@@ -421,7 +421,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  208 字
+                  303 字
                 </span>
               
 
@@ -468,7 +468,6 @@
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         root         /mnt/web/web_farming/h5;    #域名1的根目录
         index index.html index.htm;
-        # proxy_pass    http://1.2.3.4:8080;    #域名1的请求代理路径
     }
 }
 
@@ -483,10 +482,32 @@
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         root         /mnt/web/offical;    #域名2的根目录
         index index.html index.htm;
-        # proxy_pass    http://1.2.3.4:8010;    #域名2的请求代理路径
     }
 }
-</code></pre>
+</code></pre><p>上面的配置方式只是转发往不同的静态页面，如果是动态页面,那么server的配置方式为:</p>
+<pre><code>server {
+    listen       80;
+    server_name  farm.test.cn;
+
+    location /h5 {
+        proxy_redirect off;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        root         /mnt/web/web_farming;
+        index index.html index.htm;
+   }
+
+     location / {
+       proxy_pass   http://localhost:8080;
+    }
+}
+</code></pre><p>达到的效果为:</p>
+<ul>
+<li>用户访问<code>farm.test.cn/h5</code>时,可以代理到<code>/mnt/web/web_farming/h5/index.html</code>这个页面</li>
+<li>当页面中发起网络请求时,可以转发到<code>http://localhost:8080</code>服务器进行处理</li>
+</ul>
+
       
     </div>
 
@@ -662,7 +683,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">80</span>
+                <span class="site-state-item-count">83</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -684,7 +705,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
