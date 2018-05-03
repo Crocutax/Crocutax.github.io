@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="王西文的博客">
 <meta property="og:description" content="需求：根据分类ID查询分类下所属的商品集合,每个商品又有一个图片集合。 类似的需求有很多，比如经典的一个用户有N个角色，一个角色有N个权限，那么通过用户的id来查询角色和权限数据等等。 至于分页插件，无论是Mybatis-PageHelper还是Mybatis-Plus都可以辅助，这里主要记录不同查询方式对分页的影响。 先展示结果： 12345678910111213141516171819202">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-03T04:34:35.707Z">
+<meta property="og:updated_time" content="2018-05-03T04:36:25.504Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mybatis一对多嵌套查询和分页">
 <meta name="twitter:description" content="需求：根据分类ID查询分类下所属的商品集合,每个商品又有一个图片集合。 类似的需求有很多，比如经典的一个用户有N个角色，一个角色有N个权限，那么通过用户的id来查询角色和权限数据等等。 至于分页插件，无论是Mybatis-PageHelper还是Mybatis-Plus都可以辅助，这里主要记录不同查询方式对分页的影响。 先展示结果： 12345678910111213141516171819202">
@@ -488,7 +488,9 @@
 <blockquote>
 <p>缺点</p>
 </blockquote>
-<p>会将collection中查询到的条数作为分页的约束条件,导致分页数据不准确。</p>
+<ul>
+<li>会将collection中查询到的条数作为分页的约束条件,导致分页数据不准确。</li>
+</ul>
 <p>比如想查<code>page=1,limit=10</code>的数据，本来期望的是查询出10个商品，然后这10个商品分别再嵌套查询出自己的商品图片集合。但是会发现，可能商品只有两三个，每个下面都带了自己的商品图片集合。</p>
 <p><strong>原因：</strong></p>
 <p>先通过表连接把表记录关联进来了，如果有3个商品，关联图片表之后每个商品有4条图片记录，那么其实这时候虽然只有三个商品，但是这个内存中的临时表已经有12条记录了，在语句的最后加上 limit 0,10，其实分页的时候分的是这12条记录。最终就会导致最终的映射结果只出现了3个商品，而非我们期望的10个商品。</p>
@@ -632,6 +634,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/05/03/PHP-or-Java.html" rel="prev" title="PHP还是Java?">
+                PHP还是Java? <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -707,7 +713,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">83</span>
+                <span class="site-state-item-count">84</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

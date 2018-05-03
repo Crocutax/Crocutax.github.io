@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="MySQL连接数当前连接数 mysql &amp;gt; show status like &amp;apos;Threads%&amp;apos;;  最大连接数: mysql &amp;gt; show global variables like &amp;apos;max_conn%&amp;apos;;  设置连接数: mysql &amp;gt; set global max_connections=1000; mysql &amp;gt; set">
+<meta name="description" content="近期公司准备做一个自有产品，技术选型是个绕不开的话题，考虑因素：  项目类型 项目发展规划和前景 现有团队技术构成 后续研发力量补充成本  一期为了尽快完成，选用了PHP，没有分布式，集群等等，单体，短时间内搞定，让大家看到了初版。但是，此时陷入了极大的纠结之中，原因：  根据公司项目的规划，会是一个流量型产品，用Java是最合适的 如果用Java，需要换一种语言重构，虽然还没上线，而且目前是个小">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mysql工作日志">
-<meta property="og:url" content="http://www.crocutax.com/2017/12/14/Mysql工作日志.html">
+<meta property="og:title" content="PHP还是Java?">
+<meta property="og:url" content="http://www.crocutax.com/2018/05/03/PHP-or-Java.html">
 <meta property="og:site_name" content="王西文的博客">
-<meta property="og:description" content="MySQL连接数当前连接数 mysql &amp;gt; show status like &amp;apos;Threads%&amp;apos;;  最大连接数: mysql &amp;gt; show global variables like &amp;apos;max_conn%&amp;apos;;  设置连接数: mysql &amp;gt; set global max_connections=1000; mysql &amp;gt; set">
+<meta property="og:description" content="近期公司准备做一个自有产品，技术选型是个绕不开的话题，考虑因素：  项目类型 项目发展规划和前景 现有团队技术构成 后续研发力量补充成本  一期为了尽快完成，选用了PHP，没有分布式，集群等等，单体，短时间内搞定，让大家看到了初版。但是，此时陷入了极大的纠结之中，原因：  根据公司项目的规划，会是一个流量型产品，用Java是最合适的 如果用Java，需要换一种语言重构，虽然还没上线，而且目前是个小">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-16T01:25:26.838Z">
+<meta property="og:updated_time" content="2018-05-03T05:39:36.660Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mysql工作日志">
-<meta name="twitter:description" content="MySQL连接数当前连接数 mysql &amp;gt; show status like &amp;apos;Threads%&amp;apos;;  最大连接数: mysql &amp;gt; show global variables like &amp;apos;max_conn%&amp;apos;;  设置连接数: mysql &amp;gt; set global max_connections=1000; mysql &amp;gt; set">
+<meta name="twitter:title" content="PHP还是Java?">
+<meta name="twitter:description" content="近期公司准备做一个自有产品，技术选型是个绕不开的话题，考虑因素：  项目类型 项目发展规划和前景 现有团队技术构成 后续研发力量补充成本  一期为了尽快完成，选用了PHP，没有分布式，集群等等，单体，短时间内搞定，让大家看到了初版。但是，此时陷入了极大的纠结之中，原因：  根据公司项目的规划，会是一个流量型产品，用Java是最合适的 如果用Java，需要换一种语言重构，虽然还没上线，而且目前是个小">
 
 
 
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://www.crocutax.com/2017/12/14/Mysql工作日志.html"/>
+  <link rel="canonical" href="http://www.crocutax.com/2018/05/03/PHP-or-Java.html"/>
 
 
 
 
 
-  <title>Mysql工作日志 | 王西文的博客</title>
+  <title>PHP还是Java? | 王西文的博客</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -309,7 +309,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2017/12/14/Mysql工作日志.html">
+    <link itemprop="mainEntityOfPage" href="http://www.crocutax.com/2018/05/03/PHP-or-Java.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王西文">
@@ -330,7 +330,7 @@
             
             
               
-                Mysql工作日志
+                PHP还是Java?
               
             
           </h1>
@@ -345,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-14T18:53:16+08:00">
-                2017-12-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T13:09:40+08:00">
+                2018-05-03
               </time>
             
 
@@ -368,8 +368,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mysql/" itemprop="url" rel="index">
-                    <span itemprop="name">Mysql</span>
+                  <a href="/categories/Note/" itemprop="url" rel="index">
+                    <span itemprop="name">Note</span>
                   </a>
                 </span>
 
@@ -386,7 +386,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/12/14/Mysql工作日志.html#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2018/05/03/PHP-or-Java.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -395,7 +395,7 @@
 
           
           
-             <span id="/2017/12/14/Mysql工作日志.html" class="leancloud_visitors" data-flag-title="Mysql工作日志">
+             <span id="/2018/05/03/PHP-or-Java.html" class="leancloud_visitors" data-flag-title="PHP还是Java?">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  190 字
+                  567 字
                 </span>
               
 
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -454,22 +454,38 @@
       
 
       
-        <h1 id="MySQL连接数"><a href="#MySQL连接数" class="headerlink" title="MySQL连接数"></a>MySQL连接数</h1><pre><code>当前连接数
-mysql &gt; show status like &apos;Threads%&apos;;
+        <p>近期公司准备做一个自有产品，技术选型是个绕不开的话题，考虑因素：</p>
+<ul>
+<li>项目类型</li>
+<li>项目发展规划和前景</li>
+<li>现有团队技术构成</li>
+<li>后续研发力量补充成本</li>
+</ul>
+<p>一期为了尽快完成，选用了PHP，没有分布式，集群等等，单体，短时间内搞定，让大家看到了初版。但是，此时陷入了极大的纠结之中，原因：</p>
+<ul>
+<li>根据公司项目的规划，会是一个流量型产品，用Java是最合适的</li>
+<li>如果用Java，需要换一种语言重构，虽然还没上线，而且目前是个小项目，但是会耗费极大的精力</li>
+<li>缺人</li>
+<li>缺钱，没钱招人</li>
+</ul>
+<p>纠结归纠结，本着把每个项目和产品都做成BAT规模的想法，还是决定开始着手重构，而且PHP的后端早就写完了，而前端目前还在对接过程中，这个空余时间可以用来缓冲替换，于是立即开干。</p>
+<p>当然，之所以这里要记录下，是因为经过将近半个月的努力，还是决定暂时放弃用Java了，已写的，就先封存了。原因如下：</p>
+<ul>
+<li>太耗时了</li>
+<li>不快乐，不幸福</li>
+<li>想明白了一个道理</li>
+</ul>
+<p>很多公司都有前期纯PHP，后期换语言或者异构体系的，淘宝、爱奇艺、新浪、哔哩哔哩等等。。。包括现在我认为Facebook其实也是。</p>
+<p>之前认为“早知如此，何必当初”，现在明白了，其实这是个必经的过程。</p>
+<p>80年代的一句深圳标语“时间就是金钱，效率就是生命”，用在这种选择上非常合适，为了快速的去试错，去验证，节省下时间，提升效率，换来金钱和生命，PHP是最佳的选择。</p>
+<p>那，后期我有几亿日流量，怎么办？</p>
+<ol>
+<li>等有后期了再办。穷的连房租都交不起的时候不用为了考虑未来自己发家致富了到底该如何分配家产而愁眉不展。</li>
+<li>等后期项目验证成功了，不差钱了，来100个Java，快速重构或服务分离，上Go！</li>
+</ol>
+<p>所以，暂时的，再见Java！</p>
+<p>（完）</p>
 
-最大连接数:
-mysql &gt; show global variables like &apos;max_conn%&apos;;
-
-设置连接数:
-mysql &gt; set global max_connections=1000;
-mysql &gt; set global max_connect_errors=1000;
-</code></pre><h1 id="注意mysql关键词"><a href="#注意mysql关键词" class="headerlink" title="注意mysql关键词"></a>注意mysql关键词</h1><p>异常信息:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;order ...at line 1</span><br></pre></td></tr></table></figure>
-<p>解决方案：看看自己定义的sql语句，比如mybatis时的xml文件中，该语句的第1行是否有错误(基本不用怀疑,肯定有错误)。</p>
-<p>自己的问题：把mysql的关键字定义为了表的名字，导致sql语句出错。比如order，option等都是关键字，定义表名时应避开这些关键字。</p>
-<h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><pre><code>查看是否启用了日志 
-mysql&gt;show variables like &apos;log_%&apos;;
-</code></pre>
       
     </div>
 
@@ -528,16 +544,16 @@ mysql&gt;show variables like &apos;log_%&apos;;
 
             <li class="post-copyright-link">
               <strong>本文标题：</strong>
-              <a href="http://www.crocutax.com/2017/12/14/Mysql工作日志.html" title="Mysql工作日志">Mysql工作日志</a>
+              <a href="http://www.crocutax.com/2018/05/03/PHP-or-Java.html" title="PHP还是Java?">PHP还是Java?</a>
             </li>
 
             <li class="post-copyright-link">
               <strong>本文链接：</strong>
-              <a href="http://www.crocutax.com/2017/12/14/Mysql工作日志.html" title="Mysql工作日志">http://www.crocutax.com/2017/12/14/Mysql工作日志.html</a>
+              <a href="http://www.crocutax.com/2018/05/03/PHP-or-Java.html" title="PHP还是Java?">http://www.crocutax.com/2018/05/03/PHP-or-Java.html</a>
             </li>
 
             <li class="post-copyright-date">
-                <strong>发布时间：</strong>2017年12月14日 - 18时12分
+                <strong>发布时间：</strong>2018年5月3日 - 13时05分
             </li>  
 
             <li class="post-copyright-license">
@@ -559,8 +575,8 @@ mysql&gt;show variables like &apos;log_%&apos;;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/14/使用Spring-Task实现定时任务.html" rel="next" title="使用Spring Task实现定时任务">
-                <i class="fa fa-chevron-left"></i> 使用Spring Task实现定时任务
+              <a href="/2018/05/03/mybatis-one-to-many-nested-queries-and-pagination.html" rel="next" title="Mybatis一对多嵌套查询和分页">
+                <i class="fa fa-chevron-left"></i> Mybatis一对多嵌套查询和分页
               </a>
             
           </div>
@@ -568,10 +584,6 @@ mysql&gt;show variables like &apos;log_%&apos;;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/09/PHP开发环境搭建-windows.html" rel="prev" title="PHP开发环境搭建(windows)">
-                PHP开发环境搭建(windows) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -623,17 +635,8 @@ mysql&gt;show variables like &apos;log_%&apos;;
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -727,22 +730,6 @@ mysql&gt;show variables like &apos;log_%&apos;;
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL连接数"><span class="nav-number">1.</span> <span class="nav-text"><a href="#MySQL&#x8FDE;&#x63A5;&#x6570;" class="headerlink" title="MySQL&#x8FDE;&#x63A5;&#x6570;"></a>MySQL&#x8FDE;&#x63A5;&#x6570;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意mysql关键词"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x6CE8;&#x610F;mysql&#x5173;&#x952E;&#x8BCD;" class="headerlink" title="&#x6CE8;&#x610F;mysql&#x5173;&#x952E;&#x8BCD;"></a>&#x6CE8;&#x610F;mysql&#x5173;&#x952E;&#x8BCD;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#日志"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x65E5;&#x5FD7;" class="headerlink" title="&#x65E5;&#x5FD7;"></a>&#x65E5;&#x5FD7;</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
